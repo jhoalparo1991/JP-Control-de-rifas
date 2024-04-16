@@ -1,0 +1,18 @@
+Reporte de formas pago  - COMPLETADO
+Reporte de abonos por boleta - COMPLETADO
+Reporte abonos por vendedor
+Reporte Pagos por cliente - COMPLETADO
+Reporte de boletas vendidas, por vender - COMPLETADO
+Reporte boletas pagadas, vendidas sin pagar , disponibles - COMPLETADO
+********************************
+Filtro de vendedores - COMPLETADO
+Actualizar pantalla - COMPLETADO
+Forma de pago bancolombia - COMPLETADO
+Revisar usuarios-vendedores - COMPLETADO
+Asginacion boletas vendedores - COMPLETADO
+Grabar usuarios desde boleta - COMPLETADO
+Grabar clientes desde boleta - COMPLETADO
+Bloquear boton mientras se cargar el abono - COMPLETADO
+**********************************************************
+Revisar implicaciones al momento de modificar los datos de un abono URGENTE - COMPLETADO
+

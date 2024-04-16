@@ -1,0 +1,388 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props" Condition="Exists('..\packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{27C6D6AD-B281-48D7-BE23-5EC5588D34D4}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>CapaPresentacion</RootNamespace>
+    <AssemblyName>ControlDeRifas</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>C:\Users\jhonatan\Documents\Instaladores\rifas2\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <TargetCulture>es-CO</TargetCulture>
+    <ProductName>Control Rifas</ProductName>
+    <PublisherName>Jhonatan Alberto Padilla Rovira</PublisherName>
+    <SuiteName>JP</SuiteName>
+    <ApplicationRevision>4</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>LOGO-FINAL-2_page-0001.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>6AAC4A1CFADDA5F8870078AE4F06A569BB547E9D</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>CapaPresentacion_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FontAwesome.Sharp, Version=6.3.0.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
+      <HintPath>..\packages\FontAwesome.Sharp.6.3.0\lib\net472\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1620.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1620.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1620.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1620.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1620.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.160.1000.6\lib\net462\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Telerik.Reporting, Version=13.0.19.116, Culture=neutral, PublicKeyToken=a9d7983dfcc261be" />
+    <Reference Include="Telerik.ReportViewer.WinForms, Version=13.0.19.116, Culture=neutral, PublicKeyToken=a9d7983dfcc261be, processorArchitecture=MSIL" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CDatos\Conexion.cs" />
+    <Compile Include="CDatos\D_Boletas.cs" />
+    <Compile Include="CDatos\D_Clientes.cs" />
+    <Compile Include="CDatos\D_Config.cs" />
+    <Compile Include="CDatos\D_Procesos.cs" />
+    <Compile Include="CDatos\D_Reportes.cs" />
+    <Compile Include="CDatos\D_Rifas.cs" />
+    <Compile Include="CDatos\D_Usuarios.cs" />
+    <Compile Include="CEntidades\Boletas.cs" />
+    <Compile Include="CEntidades\Clientes.cs" />
+    <Compile Include="CEntidades\Config.cs" />
+    <Compile Include="CEntidades\ProcesoConexion.cs" />
+    <Compile Include="CEntidades\Rifas.cs" />
+    <Compile Include="CEntidades\Usuarios.cs" />
+    <Compile Include="CNegocio\N_Boletas.cs" />
+    <Compile Include="CNegocio\N_Clientes.cs" />
+    <Compile Include="CNegocio\N_Config.cs" />
+    <Compile Include="CNegocio\N_Procesos.cs" />
+    <Compile Include="CNegocio\N_Reportes.cs" />
+    <Compile Include="CNegocio\N_Rifas.cs" />
+    <Compile Include="CNegocio\N_Usuarios.cs" />
+    <Compile Include="DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_login.Designer.cs">
+      <DependentUpon>Frm_login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_auxiliar_instalacion\Frm_config.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_auxiliar_instalacion\Frm_config.Designer.cs">
+      <DependentUpon>Frm_config.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_helpers\Disenios.cs" />
+    <Compile Include="_menu\Frm_about.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_menu\Frm_about.Designer.cs">
+      <DependentUpon>Frm_about.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_reportes\Frm_reportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_reportes\Frm_reportes.Designer.cs">
+      <DependentUpon>Frm_reportes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_reportes\Frm_reporte_boletas_vendedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_reportes\Frm_reporte_boletas_vendedor.Designer.cs">
+      <DependentUpon>Frm_reporte_boletas_vendedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="_auxiliar_instalacion\Frm_validar_conexion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_auxiliar_instalacion\Frm_validar_conexion.Designer.cs">
+      <DependentUpon>Frm_validar_conexion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_helpers\Configuraciones.cs" />
+    <Compile Include="_helpers\Formularios.cs" />
+    <Compile Include="_helpers\Mensajes.cs" />
+    <Compile Include="_helpers\Validaciones.cs" />
+    <Compile Include="_menu\Frm_menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_menu\Frm_menu.Designer.cs">
+      <DependentUpon>Frm_menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_clientes\Frm_clientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_clientes\Frm_clientes.Designer.cs">
+      <DependentUpon>Frm_clientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_rifas_boletas\Frm_boletas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_rifas_boletas\Frm_abonar_boletas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_rifas_boletas\Frm_mant_usuarios.Designer - Copia.cs">
+      <DependentUpon>Frm_boletas.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_rifas_boletas\Frm_vender_boletas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_rifas_boletas\Frm_vender_boletas.Designer.cs">
+      <DependentUpon>Frm_vender_boletas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_rifas_boletas\Frm_rifas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_rifas_boletas\Frm_rifas.Designer.cs">
+      <DependentUpon>Frm_rifas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_rifas_boletas\Frm_abonar_boletas.Designer.cs">
+      <DependentUpon>Frm_abonar_boletas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_usuarios\Frm_boletas_usuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_usuarios\Frm_boletas_usuarios.Designer.cs">
+      <DependentUpon>Frm_boletas_usuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_usuarios\Frm_usuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_usuarios\Frm_usuarios.Designer.cs">
+      <DependentUpon>Frm_usuarios.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Frm_login.resx">
+      <DependentUpon>Frm_login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_auxiliar_instalacion\Frm_config.resx">
+      <DependentUpon>Frm_config.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_menu\Frm_about.resx">
+      <DependentUpon>Frm_about.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_reportes\Frm_reportes.resx">
+      <DependentUpon>Frm_reportes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_reportes\Frm_reporte_boletas_vendedor.resx">
+      <DependentUpon>Frm_reporte_boletas_vendedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="_auxiliar_instalacion\Frm_validar_conexion.resx">
+      <DependentUpon>Frm_validar_conexion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_menu\Frm_menu.resx">
+      <DependentUpon>Frm_menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_clientes\Frm_clientes.resx">
+      <DependentUpon>Frm_clientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_reportes\RptAbonos.rdlc" />
+    <EmbeddedResource Include="_reportes\RptAbonosPorFechaMonto.rdlc" />
+    <EmbeddedResource Include="_reportes\RptBoletasVendidasPorVendedores.rdlc" />
+    <EmbeddedResource Include="_reportes\RptEstadosBoletas.rdlc" />
+    <EmbeddedResource Include="_reportes\RptPorNroBoleta.rdlc" />
+    <EmbeddedResource Include="_reportes\Rpt_boletas_vendedor.rdlc" />
+    <EmbeddedResource Include="_reportes\Rpt_formas_pago_2.rdlc" />
+    <EmbeddedResource Include="_rifas_boletas\Frm_boletas.resx">
+      <DependentUpon>Frm_boletas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_rifas_boletas\Frm_abonar_boletas.resx">
+      <DependentUpon>Frm_abonar_boletas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_rifas_boletas\Frm_vender_boletas.resx">
+      <DependentUpon>Frm_vender_boletas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_rifas_boletas\Frm_rifas.resx">
+      <DependentUpon>Frm_rifas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_usuarios\Frm_boletas_usuarios.resx">
+      <DependentUpon>Frm_boletas_usuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_usuarios\Frm_usuarios.resx">
+      <DependentUpon>Frm_usuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cerrar-ventana-32-blanco.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\agregar24-gris.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\borrar24-gris.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editar24-gris.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\amarillo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\azul.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\naranja.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\negro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rojo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rosa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\verde.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\seleccion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\salir24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LOGO FINAL 2_page-0001.jpg" />
+    <None Include="Resources\LOGO FINAL 2_page-00011.jpg" />
+    <None Include="Resources\Logo.png" />
+    <Content Include="LOGO-FINAL-2_page-0001.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props'))" />
+  </Target>
+</Project>
