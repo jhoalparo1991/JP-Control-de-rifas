@@ -15,15 +15,46 @@ namespace CapaPresentacion._pagos
             InitializeComponent();
             _helpers.Disenios.dataGridView(dgv_vendedores);
             _helpers.Disenios.dataGridView(Dgv_nuevos_pagos);
+            _helpers.Disenios.dataGridView(Dgv_pagos);
             habilitarBotonoes(false);
             obtenerDatosUsuarioConectado();
             disenioTablas();
             //disenioTablasBoletasSaldar();
+            //mostrarPagos();
         }
 
         DataTable dtDetallePagos = new DataTable();
 
         #region Metodos
+
+        private void mostrarPagos()
+        {
+            try
+            {
+                List<Pagos> pagos = N_Pagos.mostrarPagos().FindAll(
+                    x => x.FechaPago >= Convert.ToDateTime(dt_fecha_ini_pago.Text) &&
+                        x.FechaPago <= Convert.ToDateTime(dt_fecha_fin_pago.Text)
+                    );
+                Dgv_pagos.DataSource = pagos;
+            }
+            catch (Exception e)
+            {
+                _helpers.Mensajes.mensajeErrorException(e);
+            }
+        }
+
+        private void mostrarDetallePagos(int pagoId)
+        {
+            try
+            {
+                List<DtoMostrarDetallePagos> pagos = N_Pagos.mostrarDetallePagos().FindAll(x => x.PagoId==pagoId);
+                Dgv_detalle_pagos_realizados.DataSource = pagos;
+            }
+            catch (Exception e)
+            {
+                _helpers.Mensajes.mensajeErrorException(e);
+            }
+        }
 
         private void disenioTablas()
         {
@@ -293,8 +324,8 @@ namespace CapaPresentacion._pagos
                 _helpers.Mensajes.mensajeAdvertencia("Este vendedor no tiene abonos por pagar en este rango de fecha");
                 return;
             }
-            DateTime fechaIni = dt_fecha_ini.Value;
-            DateTime fechaFIn = dt_fecha_fin.Value;
+            DateTime fechaIni = Convert.ToDateTime(dt_fecha_ini.Text);
+            DateTime fechaFIn = Convert.ToDateTime(dt_fecha_fin.Text);
             int result = DateTime.Compare(fechaIni,fechaFIn);
             if (result > 0 )
             {
@@ -346,8 +377,8 @@ namespace CapaPresentacion._pagos
                     return;
                 }
 
-                DateTime fechaIni = dt_fecha_ini.Value;
-                DateTime fechaFIn = dt_fecha_fin.Value;
+                DateTime fechaIni = Convert.ToDateTime(dt_fecha_ini.Text);
+                DateTime fechaFIn = Convert.ToDateTime(dt_fecha_fin.Text);
                 int result = DateTime.Compare(fechaIni, fechaFIn);
 
                 if (result > 0)
@@ -372,6 +403,7 @@ namespace CapaPresentacion._pagos
                 if (N_Pagos.registrarPagos(obj,dtDetallePagos))
                 {
                     limpiar();
+                    mostrarPagos();
                     dtDetallePagos.Rows.Clear();
                 }
 
@@ -380,6 +412,34 @@ namespace CapaPresentacion._pagos
             catch (Exception ex)
             {
                 _helpers.Mensajes.mensajeErrorException2(ex);
+            }
+        }
+
+        private void dt_fecha_ini_pago_ValueChanged(object sender, EventArgs e)
+        {
+            mostrarPagos();
+        }
+
+        private void dt_fecha_fin_pago_ValueChanged(object sender, EventArgs e)
+        {
+            mostrarPagos();
+        }
+
+        private void Dgv_pagos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(Dgv_pagos.Rows.Count > 0)
+            {
+                int _pagoId = Convert.ToInt32(Dgv_pagos.CurrentRow.Cells["p_id"].Value.ToString());
+                mostrarDetallePagos(_pagoId);
+            }
+        }
+
+        private void Dgv_pagos_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            if (Dgv_pagos.Rows.Count > 0)
+            {
+                int _pagoId = Convert.ToInt32(Dgv_pagos.CurrentRow.Cells["p_id"].Value.ToString());
+                mostrarDetallePagos(_pagoId);
             }
         }
     }

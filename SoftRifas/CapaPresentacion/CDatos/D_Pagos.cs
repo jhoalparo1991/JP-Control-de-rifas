@@ -1,7 +1,9 @@
 ﻿using CapaPresentacion.CEntidades;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Text;
 
 namespace CDatos
 {
@@ -38,6 +40,80 @@ namespace CDatos
             }
             return result;
         }
-      
+
+        public static List<Pagos> mostrarPagos()
+        {
+            List<Pagos> pagos = new List<Pagos>();
+            try
+            {
+                con.Open();
+                StringBuilder builder = new StringBuilder();
+                builder.Append("SELECT * FROM tbl_pago_abonos");
+                SqlCommand command = new SqlCommand(builder.ToString(), con);
+                command.CommandType = CommandType.Text;
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    pagos.Add(new Pagos()
+                    {
+                        Id = Convert.ToInt32(reader["id"]),
+                        UsuarioId = Convert.ToInt32(reader["usuario_id"]),
+                        Identificador= reader["identificador"].ToString(),
+                        FechaPago = Convert.ToDateTime(reader["fecha_pago"].ToString()),
+                        PeriodoPagado= reader["periodo_pagado"].ToString(),
+                        HoraPago = Convert.ToDateTime(reader["hora_pago"].ToString()),
+                        ValorPagos = Convert.ToDecimal(reader["valor_pagos"].ToString()),
+                        Descripcion= reader["descripcion"].ToString(),
+                    });
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+            return pagos;
+        }
+
+        public static List<DtoMostrarDetallePagos> mostrarDetallePagos()
+        {
+            List<DtoMostrarDetallePagos> pagos = new List<DtoMostrarDetallePagos>();
+            try
+            {
+                con.Open();
+                StringBuilder builder = new StringBuilder();
+                builder.Append("SELECT * FROM tbl_pagos_abono_detalle");
+                SqlCommand command = new SqlCommand(builder.ToString(), con);
+                command.CommandType = CommandType.Text;
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    pagos.Add(new DtoMostrarDetallePagos()
+                    {
+                        Id = Convert.ToInt32(reader["id"]),
+                        PagoId = Convert.ToInt32(reader["pago_id"]),
+                        VendedorId = Convert.ToInt32(reader["vendedor_id"]),
+                        Vendedor = reader["nombre_vendedor"].ToString(),
+                        ValorPagado = Convert.ToDecimal(reader["valor_pagado"].ToString()),
+                        FechaPago = Convert.ToDateTime(reader["fecha_pago"].ToString()),
+                        FormaPago = reader["forma_pago"].ToString(),
+                        PeriodoPago = reader["periodo_pagado"].ToString(),
+                        Pagado = Convert.ToBoolean(reader["pagado"]),
+                    });
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+            return pagos;
+        }
     }
 }

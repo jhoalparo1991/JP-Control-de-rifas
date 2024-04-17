@@ -58,6 +58,7 @@ namespace CapaPresentacion._pagos
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.Pn_nuevos_pagos = new System.Windows.Forms.Panel();
+            this.Pn_listado_vendedores = new System.Windows.Forms.Panel();
             this.dgv_vendedores = new System.Windows.Forms.DataGridView();
             this.usId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usNombreCompleto = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,7 +69,16 @@ namespace CapaPresentacion._pagos
             this.usClave = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usComision = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usIsAdmin = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.Lbl_cerrar = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.Dgv_nuevos_pagos = new System.Windows.Forms.DataGridView();
+            this.pago_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vendedor_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre_vendedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valor_pagado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.forma_pago = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.periodo_pagado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.Lbl_punto_1 = new System.Windows.Forms.Label();
@@ -82,28 +92,41 @@ namespace CapaPresentacion._pagos
             this.label9 = new System.Windows.Forms.Label();
             this.Txt_vendedor_id = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.Dgv_pagos = new System.Windows.Forms.DataGridView();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label13 = new System.Windows.Forms.Label();
+            this.dt_fecha_ini_pago = new System.Windows.Forms.DateTimePicker();
+            this.label14 = new System.Windows.Forms.Label();
+            this.dt_fecha_fin_pago = new System.Windows.Forms.DateTimePicker();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.Pn_listado_vendedores = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.label12 = new System.Windows.Forms.Label();
-            this.Lbl_cerrar = new System.Windows.Forms.Label();
-            this.pago_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vendedor_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre_vendedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valor_pagado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.forma_pago = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.periodo_pagado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.p_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.p_usuario_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.p_identificador = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.p_fecha_pago = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.p_periodo_pagado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.p_hora_pago = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.p_valor_pagos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.p_descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Dgv_detalle_pagos_realizados = new System.Windows.Forms.DataGridView();
             this.Pn_pagos.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.Pn_nuevos_pagos.SuspendLayout();
+            this.Pn_listado_vendedores.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_vendedores)).BeginInit();
+            this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_nuevos_pagos)).BeginInit();
             this.panel3.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.Pn_listado_vendedores.SuspendLayout();
-            this.panel4.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Dgv_pagos)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Dgv_detalle_pagos_realizados)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -408,6 +431,16 @@ namespace CapaPresentacion._pagos
             this.Pn_nuevos_pagos.Size = new System.Drawing.Size(895, 355);
             this.Pn_nuevos_pagos.TabIndex = 0;
             // 
+            // Pn_listado_vendedores
+            // 
+            this.Pn_listado_vendedores.Controls.Add(this.dgv_vendedores);
+            this.Pn_listado_vendedores.Controls.Add(this.panel4);
+            this.Pn_listado_vendedores.Location = new System.Drawing.Point(656, 421);
+            this.Pn_listado_vendedores.Name = "Pn_listado_vendedores";
+            this.Pn_listado_vendedores.Size = new System.Drawing.Size(531, 235);
+            this.Pn_listado_vendedores.TabIndex = 10;
+            this.Pn_listado_vendedores.Visible = false;
+            // 
             // dgv_vendedores
             // 
             this.dgv_vendedores.AllowUserToAddRows = false;
@@ -511,6 +544,37 @@ namespace CapaPresentacion._pagos
             this.usIsAdmin.ReadOnly = true;
             this.usIsAdmin.Visible = false;
             // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.Lbl_cerrar);
+            this.panel4.Controls.Add(this.label12);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(531, 39);
+            this.panel4.TabIndex = 0;
+            // 
+            // Lbl_cerrar
+            // 
+            this.Lbl_cerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Lbl_cerrar.AutoSize = true;
+            this.Lbl_cerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_cerrar.Location = new System.Drawing.Point(504, 11);
+            this.Lbl_cerrar.Name = "Lbl_cerrar";
+            this.Lbl_cerrar.Size = new System.Drawing.Size(18, 17);
+            this.Lbl_cerrar.TabIndex = 1;
+            this.Lbl_cerrar.Text = "X";
+            this.Lbl_cerrar.Click += new System.EventHandler(this.Lbl_cerrar_Click);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(15, 11);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(153, 17);
+            this.label12.TabIndex = 0;
+            this.label12.Text = "Listado de vendedores";
+            // 
             // Dgv_nuevos_pagos
             // 
             this.Dgv_nuevos_pagos.AllowUserToAddRows = false;
@@ -532,6 +596,56 @@ namespace CapaPresentacion._pagos
             this.Dgv_nuevos_pagos.Size = new System.Drawing.Size(1187, 557);
             this.Dgv_nuevos_pagos.TabIndex = 1;
             this.Dgv_nuevos_pagos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_nuevos_pagos_CellClick);
+            // 
+            // pago_id
+            // 
+            this.pago_id.DataPropertyName = "pago_id";
+            this.pago_id.HeaderText = "pago_id";
+            this.pago_id.Name = "pago_id";
+            this.pago_id.ReadOnly = true;
+            this.pago_id.Visible = false;
+            // 
+            // vendedor_id
+            // 
+            this.vendedor_id.DataPropertyName = "vendedor_id";
+            this.vendedor_id.HeaderText = "vendedor_id";
+            this.vendedor_id.Name = "vendedor_id";
+            this.vendedor_id.ReadOnly = true;
+            this.vendedor_id.Visible = false;
+            // 
+            // nombre_vendedor
+            // 
+            this.nombre_vendedor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nombre_vendedor.DataPropertyName = "nombre_vendedor";
+            this.nombre_vendedor.HeaderText = "Vendedores";
+            this.nombre_vendedor.Name = "nombre_vendedor";
+            this.nombre_vendedor.ReadOnly = true;
+            // 
+            // valor_pagado
+            // 
+            this.valor_pagado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.valor_pagado.DataPropertyName = "valor_pagado";
+            this.valor_pagado.HeaderText = "Valor Pago";
+            this.valor_pagado.Name = "valor_pagado";
+            this.valor_pagado.ReadOnly = true;
+            this.valor_pagado.Width = 95;
+            // 
+            // forma_pago
+            // 
+            this.forma_pago.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.forma_pago.DataPropertyName = "forma_pago";
+            this.forma_pago.HeaderText = "Forma de pago";
+            this.forma_pago.Name = "forma_pago";
+            this.forma_pago.ReadOnly = true;
+            this.forma_pago.Width = 89;
+            // 
+            // periodo_pagado
+            // 
+            this.periodo_pagado.DataPropertyName = "periodo_pagado";
+            this.periodo_pagado.HeaderText = "periodo_pagado";
+            this.periodo_pagado.Name = "periodo_pagado";
+            this.periodo_pagado.ReadOnly = true;
+            this.periodo_pagado.Visible = false;
             // 
             // panel3
             // 
@@ -656,6 +770,8 @@ namespace CapaPresentacion._pagos
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.Dgv_detalle_pagos_realizados);
+            this.tabPage2.Controls.Add(this.groupBox2);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -664,101 +780,185 @@ namespace CapaPresentacion._pagos
             this.tabPage2.Text = "Pagos realizados";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.panel5);
+            this.groupBox2.Controls.Add(this.panel1);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.groupBox2.Location = new System.Drawing.Point(3, 3);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(388, 355);
+            this.groupBox2.TabIndex = 0;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Consultar Pagos";
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.Dgv_pagos);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel5.Location = new System.Drawing.Point(3, 65);
+            this.panel5.Name = "panel5";
+            this.panel5.Padding = new System.Windows.Forms.Padding(5);
+            this.panel5.Size = new System.Drawing.Size(382, 287);
+            this.panel5.TabIndex = 1;
+            // 
+            // Dgv_pagos
+            // 
+            this.Dgv_pagos.AllowUserToAddRows = false;
+            this.Dgv_pagos.AllowUserToDeleteRows = false;
+            this.Dgv_pagos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Dgv_pagos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.p_id,
+            this.p_usuario_id,
+            this.p_identificador,
+            this.p_fecha_pago,
+            this.p_periodo_pagado,
+            this.p_hora_pago,
+            this.p_valor_pagos,
+            this.p_descripcion});
+            this.Dgv_pagos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Dgv_pagos.Location = new System.Drawing.Point(5, 5);
+            this.Dgv_pagos.Name = "Dgv_pagos";
+            this.Dgv_pagos.ReadOnly = true;
+            this.Dgv_pagos.RowHeadersVisible = false;
+            this.Dgv_pagos.RowTemplate.Height = 25;
+            this.Dgv_pagos.Size = new System.Drawing.Size(372, 277);
+            this.Dgv_pagos.TabIndex = 2;
+            this.Dgv_pagos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_pagos_CellClick);
+            this.Dgv_pagos.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_pagos_CellEnter);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label13);
+            this.panel1.Controls.Add(this.dt_fecha_ini_pago);
+            this.panel1.Controls.Add(this.label14);
+            this.panel1.Controls.Add(this.dt_fecha_fin_pago);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(3, 19);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(382, 46);
+            this.panel1.TabIndex = 0;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(12, 15);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(52, 17);
+            this.label13.TabIndex = 0;
+            this.label13.Text = "Buscar";
+            // 
+            // dt_fecha_ini_pago
+            // 
+            this.dt_fecha_ini_pago.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dt_fecha_ini_pago.Location = new System.Drawing.Point(72, 12);
+            this.dt_fecha_ini_pago.Name = "dt_fecha_ini_pago";
+            this.dt_fecha_ini_pago.Size = new System.Drawing.Size(130, 23);
+            this.dt_fecha_ini_pago.TabIndex = 4;
+            this.dt_fecha_ini_pago.ValueChanged += new System.EventHandler(this.dt_fecha_ini_pago_ValueChanged);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(208, 15);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(19, 17);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "al";
+            // 
+            // dt_fecha_fin_pago
+            // 
+            this.dt_fecha_fin_pago.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dt_fecha_fin_pago.Location = new System.Drawing.Point(233, 12);
+            this.dt_fecha_fin_pago.Name = "dt_fecha_fin_pago";
+            this.dt_fecha_fin_pago.Size = new System.Drawing.Size(130, 23);
+            this.dt_fecha_fin_pago.TabIndex = 5;
+            this.dt_fecha_fin_pago.ValueChanged += new System.EventHandler(this.dt_fecha_fin_pago_ValueChanged);
+            // 
             // timer1
             // 
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // Pn_listado_vendedores
+            // p_id
             // 
-            this.Pn_listado_vendedores.Controls.Add(this.dgv_vendedores);
-            this.Pn_listado_vendedores.Controls.Add(this.panel4);
-            this.Pn_listado_vendedores.Location = new System.Drawing.Point(656, 421);
-            this.Pn_listado_vendedores.Name = "Pn_listado_vendedores";
-            this.Pn_listado_vendedores.Size = new System.Drawing.Size(531, 235);
-            this.Pn_listado_vendedores.TabIndex = 10;
-            this.Pn_listado_vendedores.Visible = false;
+            this.p_id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.p_id.DataPropertyName = "Id";
+            this.p_id.HeaderText = "Id";
+            this.p_id.Name = "p_id";
+            this.p_id.ReadOnly = true;
+            this.p_id.Width = 44;
             // 
-            // panel4
+            // p_usuario_id
             // 
-            this.panel4.Controls.Add(this.Lbl_cerrar);
-            this.panel4.Controls.Add(this.label12);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(531, 39);
-            this.panel4.TabIndex = 0;
+            this.p_usuario_id.DataPropertyName = "UsuarioId";
+            this.p_usuario_id.HeaderText = "usuario_id";
+            this.p_usuario_id.Name = "p_usuario_id";
+            this.p_usuario_id.ReadOnly = true;
+            this.p_usuario_id.Visible = false;
             // 
-            // label12
+            // p_identificador
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(15, 11);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(153, 17);
-            this.label12.TabIndex = 0;
-            this.label12.Text = "Listado de vendedores";
+            this.p_identificador.DataPropertyName = "Identificador";
+            this.p_identificador.HeaderText = "identificador";
+            this.p_identificador.Name = "p_identificador";
+            this.p_identificador.ReadOnly = true;
+            this.p_identificador.Visible = false;
             // 
-            // Lbl_cerrar
+            // p_fecha_pago
             // 
-            this.Lbl_cerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Lbl_cerrar.AutoSize = true;
-            this.Lbl_cerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_cerrar.Location = new System.Drawing.Point(504, 11);
-            this.Lbl_cerrar.Name = "Lbl_cerrar";
-            this.Lbl_cerrar.Size = new System.Drawing.Size(18, 17);
-            this.Lbl_cerrar.TabIndex = 1;
-            this.Lbl_cerrar.Text = "X";
-            this.Lbl_cerrar.Click += new System.EventHandler(this.Lbl_cerrar_Click);
+            this.p_fecha_pago.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.p_fecha_pago.DataPropertyName = "FechaPago";
+            this.p_fecha_pago.HeaderText = "Fecha Pago";
+            this.p_fecha_pago.Name = "p_fecha_pago";
+            this.p_fecha_pago.ReadOnly = true;
+            this.p_fecha_pago.Width = 109;
             // 
-            // pago_id
+            // p_periodo_pagado
             // 
-            this.pago_id.DataPropertyName = "pago_id";
-            this.pago_id.HeaderText = "pago_id";
-            this.pago_id.Name = "pago_id";
-            this.pago_id.ReadOnly = true;
-            this.pago_id.Visible = false;
+            this.p_periodo_pagado.DataPropertyName = "PeriodoPagado";
+            this.p_periodo_pagado.HeaderText = "periodo_pagado";
+            this.p_periodo_pagado.Name = "p_periodo_pagado";
+            this.p_periodo_pagado.ReadOnly = true;
+            this.p_periodo_pagado.Visible = false;
             // 
-            // vendedor_id
+            // p_hora_pago
             // 
-            this.vendedor_id.DataPropertyName = "vendedor_id";
-            this.vendedor_id.HeaderText = "vendedor_id";
-            this.vendedor_id.Name = "vendedor_id";
-            this.vendedor_id.ReadOnly = true;
-            this.vendedor_id.Visible = false;
+            this.p_hora_pago.DataPropertyName = "HoraPago";
+            this.p_hora_pago.HeaderText = "hora_pago";
+            this.p_hora_pago.Name = "p_hora_pago";
+            this.p_hora_pago.ReadOnly = true;
+            this.p_hora_pago.Visible = false;
             // 
-            // nombre_vendedor
+            // p_valor_pagos
             // 
-            this.nombre_vendedor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nombre_vendedor.DataPropertyName = "nombre_vendedor";
-            this.nombre_vendedor.HeaderText = "Vendedores";
-            this.nombre_vendedor.Name = "nombre_vendedor";
-            this.nombre_vendedor.ReadOnly = true;
+            this.p_valor_pagos.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.p_valor_pagos.DataPropertyName = "ValorPagos";
+            this.p_valor_pagos.HeaderText = "Valor Pagado";
+            this.p_valor_pagos.Name = "p_valor_pagos";
+            this.p_valor_pagos.ReadOnly = true;
             // 
-            // valor_pagado
+            // p_descripcion
             // 
-            this.valor_pagado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.valor_pagado.DataPropertyName = "valor_pagado";
-            this.valor_pagado.HeaderText = "Valor Pago";
-            this.valor_pagado.Name = "valor_pagado";
-            this.valor_pagado.ReadOnly = true;
-            this.valor_pagado.Width = 103;
+            this.p_descripcion.DataPropertyName = "Descripcion";
+            this.p_descripcion.HeaderText = "descripcion";
+            this.p_descripcion.Name = "p_descripcion";
+            this.p_descripcion.ReadOnly = true;
+            this.p_descripcion.Visible = false;
             // 
-            // forma_pago
+            // Dgv_detalle_pagos_realizados
             // 
-            this.forma_pago.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.forma_pago.DataPropertyName = "forma_pago";
-            this.forma_pago.HeaderText = "Forma de pago";
-            this.forma_pago.Name = "forma_pago";
-            this.forma_pago.ReadOnly = true;
-            this.forma_pago.Width = 89;
-            // 
-            // periodo_pagado
-            // 
-            this.periodo_pagado.DataPropertyName = "periodo_pagado";
-            this.periodo_pagado.HeaderText = "periodo_pagado";
-            this.periodo_pagado.Name = "periodo_pagado";
-            this.periodo_pagado.ReadOnly = true;
-            this.periodo_pagado.Visible = false;
+            this.Dgv_detalle_pagos_realizados.AllowUserToAddRows = false;
+            this.Dgv_detalle_pagos_realizados.AllowUserToDeleteRows = false;
+            this.Dgv_detalle_pagos_realizados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Dgv_detalle_pagos_realizados.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Dgv_detalle_pagos_realizados.Location = new System.Drawing.Point(391, 3);
+            this.Dgv_detalle_pagos_realizados.Name = "Dgv_detalle_pagos_realizados";
+            this.Dgv_detalle_pagos_realizados.ReadOnly = true;
+            this.Dgv_detalle_pagos_realizados.RowHeadersVisible = false;
+            this.Dgv_detalle_pagos_realizados.RowTemplate.Height = 25;
+            this.Dgv_detalle_pagos_realizados.Size = new System.Drawing.Size(507, 355);
+            this.Dgv_detalle_pagos_realizados.TabIndex = 3;
             // 
             // Frm_pagos_abonos
             // 
@@ -781,14 +981,21 @@ namespace CapaPresentacion._pagos
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.Pn_nuevos_pagos.ResumeLayout(false);
+            this.Pn_listado_vendedores.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_vendedores)).EndInit();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_nuevos_pagos)).EndInit();
             this.panel3.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.Pn_listado_vendedores.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Dgv_pagos)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Dgv_detalle_pagos_realizados)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -858,5 +1065,22 @@ namespace CapaPresentacion._pagos
         private System.Windows.Forms.DataGridViewTextBoxColumn valor_pagado;
         private System.Windows.Forms.DataGridViewTextBoxColumn forma_pago;
         private System.Windows.Forms.DataGridViewTextBoxColumn periodo_pagado;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.DateTimePicker dt_fecha_ini_pago;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.DateTimePicker dt_fecha_fin_pago;
+        private System.Windows.Forms.DataGridView Dgv_pagos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn p_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn p_usuario_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn p_identificador;
+        private System.Windows.Forms.DataGridViewTextBoxColumn p_fecha_pago;
+        private System.Windows.Forms.DataGridViewTextBoxColumn p_periodo_pagado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn p_hora_pago;
+        private System.Windows.Forms.DataGridViewTextBoxColumn p_valor_pagos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn p_descripcion;
+        private System.Windows.Forms.DataGridView Dgv_detalle_pagos_realizados;
     }
 }
