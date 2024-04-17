@@ -36,6 +36,8 @@ namespace CapaPresentacion._rifas_boletas
         {
             txt_saldado.Text = "0";
             txt_vendedor.Select();
+            Cbx_formas_pago.Items.Clear();
+            _helpers.DatosMaestros.mostrarFormasDePago(Cbx_formas_pago);
             Cbx_formas_pago.SelectedIndex = 0;
         }
         internal void mostrarAbonos(int _id)

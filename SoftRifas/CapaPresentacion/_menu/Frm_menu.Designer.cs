@@ -58,6 +58,7 @@ namespace CapaPresentacion._menu
             this.Btn_maximizar = new FontAwesome.Sharp.IconButton();
             this.Btn_cerrar = new FontAwesome.Sharp.IconButton();
             this.panelEscritorio = new System.Windows.Forms.Panel();
+            this.Btn_pago_abonos = new FontAwesome.Sharp.IconButton();
             this.statusStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -157,8 +158,9 @@ namespace CapaPresentacion._menu
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Green;
-            this.panel1.Controls.Add(this.Btn_config);
             this.panel1.Controls.Add(this.Btn_reportes);
+            this.panel1.Controls.Add(this.Btn_pago_abonos);
+            this.panel1.Controls.Add(this.Btn_config);
             this.panel1.Controls.Add(this.Btn_boletas);
             this.panel1.Controls.Add(this.Btn_rifas);
             this.panel1.Controls.Add(this.Btn_clientes);
@@ -207,7 +209,7 @@ namespace CapaPresentacion._menu
             this.Btn_reportes.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Btn_reportes.IconSize = 32;
             this.Btn_reportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Btn_reportes.Location = new System.Drawing.Point(0, 348);
+            this.Btn_reportes.Location = new System.Drawing.Point(0, 389);
             this.Btn_reportes.Name = "Btn_reportes";
             this.Btn_reportes.Size = new System.Drawing.Size(189, 41);
             this.Btn_reportes.TabIndex = 6;
@@ -455,6 +457,29 @@ namespace CapaPresentacion._menu
             this.panelEscritorio.Size = new System.Drawing.Size(819, 617);
             this.panelEscritorio.TabIndex = 5;
             // 
+            // Btn_pago_abonos
+            // 
+            this.Btn_pago_abonos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btn_pago_abonos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Btn_pago_abonos.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.Btn_pago_abonos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_pago_abonos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_pago_abonos.ForeColor = System.Drawing.Color.White;
+            this.Btn_pago_abonos.IconChar = FontAwesome.Sharp.IconChar.Readme;
+            this.Btn_pago_abonos.IconColor = System.Drawing.Color.White;
+            this.Btn_pago_abonos.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Btn_pago_abonos.IconSize = 32;
+            this.Btn_pago_abonos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Btn_pago_abonos.Location = new System.Drawing.Point(0, 348);
+            this.Btn_pago_abonos.Name = "Btn_pago_abonos";
+            this.Btn_pago_abonos.Size = new System.Drawing.Size(189, 41);
+            this.Btn_pago_abonos.TabIndex = 8;
+            this.Btn_pago_abonos.Text = "Pagos de abonos";
+            this.Btn_pago_abonos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Btn_pago_abonos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Btn_pago_abonos.UseVisualStyleBackColor = true;
+            this.Btn_pago_abonos.Click += new System.EventHandler(this.Btn_pago_abonos_Click);
+            // 
             // Frm_menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -513,5 +538,6 @@ namespace CapaPresentacion._menu
         private System.Windows.Forms.PictureBox pictureBox1;
         private FontAwesome.Sharp.IconButton Btn_info;
         private FontAwesome.Sharp.IconButton Btn_config;
+        private FontAwesome.Sharp.IconButton Btn_pago_abonos;
     }
 }

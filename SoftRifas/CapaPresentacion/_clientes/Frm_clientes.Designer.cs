@@ -320,11 +320,11 @@ namespace CapaPresentacion._clientes
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Gray;
             this.label9.Location = new System.Drawing.Point(20, 11);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(185, 19);
+            this.label9.Size = new System.Drawing.Size(170, 20);
             this.label9.TabIndex = 31;
             this.label9.Text = "Mantenimiento de rifas";
             // 
@@ -335,7 +335,7 @@ namespace CapaPresentacion._clientes
             this.Btn_registrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.Btn_registrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.Btn_registrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_registrar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_registrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_registrar.ForeColor = System.Drawing.Color.White;
             this.Btn_registrar.Location = new System.Drawing.Point(226, 310);
             this.Btn_registrar.Name = "Btn_registrar";
@@ -352,7 +352,7 @@ namespace CapaPresentacion._clientes
             this.Btn_cancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGray;
             this.Btn_cancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.Btn_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_cancelar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_cancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_cancelar.Location = new System.Drawing.Point(62, 310);
             this.Btn_cancelar.Name = "Btn_cancelar";
             this.Btn_cancelar.Size = new System.Drawing.Size(109, 38);

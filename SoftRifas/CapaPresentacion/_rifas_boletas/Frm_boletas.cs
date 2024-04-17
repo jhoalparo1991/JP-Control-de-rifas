@@ -41,6 +41,8 @@ namespace CapaPresentacion._rifas_boletas
             Txt_vendedor_id.Text = "0";
             Txt_cliente.Text = "";
             txt_cliente_id.Text = "0";
+            Cbx_formas_pago.Items.Clear();
+            _helpers.DatosMaestros.mostrarFormasDePago(Cbx_formas_pago);
             Cbx_formas_pago.SelectedIndex = 0;
         }
         private void mostrarDatosSesion()

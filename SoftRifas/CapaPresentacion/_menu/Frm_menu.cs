@@ -1,6 +1,7 @@
 ﻿using CapaNegocio;
 using CapaPresentacion._auxiliar_instalacion;
 using CapaPresentacion._clientes;
+using CapaPresentacion._pagos;
 using CapaPresentacion._reportes;
 using CapaPresentacion._rifas_boletas;
 using CapaPresentacion._usuarios;
@@ -140,6 +141,11 @@ namespace CapaPresentacion._menu
         {
             Frm_config frm = new Frm_config();
             frm.ShowDialog();
+        }
+
+        private void Btn_pago_abonos_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo(new Frm_pagos_abonos(), "Pago Abonos");
         }
     }
 }
