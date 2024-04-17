@@ -1,6 +1,8 @@
 ﻿using CDatos;
 using CEntidades;
+using System;
 using System.Collections.Generic;
+using System.Data;
 
 namespace CNegocio
 {
@@ -13,6 +15,16 @@ namespace CNegocio
         public static List<DtoMostrarAbonos> mostrarAbonos(int boletaId)
         {
             return D_Boletas.mostrarAbonos(boletaId);
+        }
+
+        public static DataTable consultarAbonosEntreFechasAndVendedor(int vendedorId, DateTime FIni, DateTime FFin)
+        {
+            return D_Boletas.consultarAbonosEntreFechasAndVendedor(vendedorId, FIni, FFin);
+        }
+
+        public static DataTable obtenerBoletasEntreFechasAndVendedor(int vendedorId, DateTime FIni, DateTime FFin, string codigo)
+        {
+            return D_Boletas.obtenerBoletasEntreFechasAndVendedor(vendedorId, FIni, FFin,codigo);
         }
         public static void contarBoletas(ref int total, int id)
         {

@@ -53,25 +53,11 @@ namespace CapaPresentacion._pagos
             this.Btn_registrar_pago = new System.Windows.Forms.Button();
             this.Btn_borrar = new System.Windows.Forms.Button();
             this.Btn_editar = new System.Windows.Forms.Button();
+            this.Btn_cancelar = new System.Windows.Forms.Button();
             this.Btn_nuevos = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.Pn_nuevos_pagos = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.Dgv_nuevos_pagos = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.Txt_nro_doc = new System.Windows.Forms.TextBox();
-            this.txt_vendedor = new System.Windows.Forms.TextBox();
-            this.txt_valor_pagar = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.cbx_forma_pago = new System.Windows.Forms.ComboBox();
-            this.btn_agregar_pago = new System.Windows.Forms.Button();
-            this.Txt_vendedor_id = new System.Windows.Forms.TextBox();
-            this.Btn_cancelar = new System.Windows.Forms.Button();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.dgv_vendedores = new System.Windows.Forms.DataGridView();
             this.usId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usNombreCompleto = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -82,16 +68,42 @@ namespace CapaPresentacion._pagos
             this.usClave = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usComision = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usIsAdmin = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Dgv_nuevos_pagos = new System.Windows.Forms.DataGridView();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.Lbl_punto_1 = new System.Windows.Forms.Label();
+            this.cbx_forma_pago = new System.Windows.Forms.ComboBox();
+            this.txt_valor_pagar = new System.Windows.Forms.TextBox();
+            this.txt_vendedor = new System.Windows.Forms.TextBox();
+            this.btn_agregar_pago = new System.Windows.Forms.Button();
+            this.Txt_nro_doc = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.Txt_vendedor_id = new System.Windows.Forms.TextBox();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.Pn_listado_vendedores = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
+            this.Lbl_cerrar = new System.Windows.Forms.Label();
+            this.pago_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vendedor_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre_vendedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valor_pagado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.forma_pago = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.periodo_pagado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Pn_pagos.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.Pn_nuevos_pagos.SuspendLayout();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Dgv_nuevos_pagos)).BeginInit();
-            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_vendedores)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Dgv_nuevos_pagos)).BeginInit();
+            this.panel3.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.Pn_listado_vendedores.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -305,6 +317,7 @@ namespace CapaPresentacion._pagos
             this.Btn_registrar_pago.Text = "&Registrar los pagos";
             this.Btn_registrar_pago.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Btn_registrar_pago.UseVisualStyleBackColor = false;
+            this.Btn_registrar_pago.Click += new System.EventHandler(this.Btn_registrar_pago_Click);
             // 
             // Btn_borrar
             // 
@@ -331,6 +344,20 @@ namespace CapaPresentacion._pagos
             this.Btn_editar.Text = "&Modificar";
             this.Btn_editar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Btn_editar.UseVisualStyleBackColor = false;
+            // 
+            // Btn_cancelar
+            // 
+            this.Btn_cancelar.AutoSize = true;
+            this.Btn_cancelar.BackColor = System.Drawing.Color.White;
+            this.Btn_cancelar.Image = global::CapaPresentacion.Properties.Resources.agregar24_gris;
+            this.Btn_cancelar.Location = new System.Drawing.Point(314, 6);
+            this.Btn_cancelar.Name = "Btn_cancelar";
+            this.Btn_cancelar.Size = new System.Drawing.Size(98, 38);
+            this.Btn_cancelar.TabIndex = 0;
+            this.Btn_cancelar.Text = "&Cancelar";
+            this.Btn_cancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Btn_cancelar.UseVisualStyleBackColor = false;
+            this.Btn_cancelar.Click += new System.EventHandler(this.Btn_cancelar_Click);
             // 
             // Btn_nuevos
             // 
@@ -369,20 +396,10 @@ namespace CapaPresentacion._pagos
             this.tabPage1.Text = "Nuevo Pago";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
-            // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(880, 361);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Pagos realizados";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
             // Pn_nuevos_pagos
             // 
             this.Pn_nuevos_pagos.AutoScroll = true;
-            this.Pn_nuevos_pagos.Controls.Add(this.dgv_vendedores);
+            this.Pn_nuevos_pagos.Controls.Add(this.Pn_listado_vendedores);
             this.Pn_nuevos_pagos.Controls.Add(this.Dgv_nuevos_pagos);
             this.Pn_nuevos_pagos.Controls.Add(this.panel3);
             this.Pn_nuevos_pagos.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -390,149 +407,6 @@ namespace CapaPresentacion._pagos
             this.Pn_nuevos_pagos.Name = "Pn_nuevos_pagos";
             this.Pn_nuevos_pagos.Size = new System.Drawing.Size(895, 355);
             this.Pn_nuevos_pagos.TabIndex = 0;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.groupBox1);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(895, 99);
-            this.panel3.TabIndex = 0;
-            // 
-            // Dgv_nuevos_pagos
-            // 
-            this.Dgv_nuevos_pagos.AllowUserToAddRows = false;
-            this.Dgv_nuevos_pagos.AllowUserToDeleteRows = false;
-            this.Dgv_nuevos_pagos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Dgv_nuevos_pagos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Dgv_nuevos_pagos.Location = new System.Drawing.Point(0, 99);
-            this.Dgv_nuevos_pagos.Name = "Dgv_nuevos_pagos";
-            this.Dgv_nuevos_pagos.ReadOnly = true;
-            this.Dgv_nuevos_pagos.RowTemplate.Height = 25;
-            this.Dgv_nuevos_pagos.Size = new System.Drawing.Size(895, 256);
-            this.Dgv_nuevos_pagos.TabIndex = 1;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.Lbl_punto_1);
-            this.groupBox1.Controls.Add(this.cbx_forma_pago);
-            this.groupBox1.Controls.Add(this.txt_valor_pagar);
-            this.groupBox1.Controls.Add(this.txt_vendedor);
-            this.groupBox1.Controls.Add(this.btn_agregar_pago);
-            this.groupBox1.Controls.Add(this.Txt_nro_doc);
-            this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.Txt_vendedor_id);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(0, 0);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(895, 99);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Buscar vendedores";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(37, 29);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(60, 17);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "Nro Doc";
-            // 
-            // Txt_nro_doc
-            // 
-            this.Txt_nro_doc.Location = new System.Drawing.Point(112, 26);
-            this.Txt_nro_doc.Name = "Txt_nro_doc";
-            this.Txt_nro_doc.Size = new System.Drawing.Size(171, 23);
-            this.Txt_nro_doc.TabIndex = 1;
-            this.Txt_nro_doc.TextChanged += new System.EventHandler(this.Txt_nro_doc_TextChanged);
-            this.Txt_nro_doc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_nro_doc_KeyPress);
-            // 
-            // txt_vendedor
-            // 
-            this.txt_vendedor.Enabled = false;
-            this.txt_vendedor.Location = new System.Drawing.Point(289, 26);
-            this.txt_vendedor.Name = "txt_vendedor";
-            this.txt_vendedor.Size = new System.Drawing.Size(352, 23);
-            this.txt_vendedor.TabIndex = 1;
-            // 
-            // txt_valor_pagar
-            // 
-            this.txt_valor_pagar.Enabled = false;
-            this.txt_valor_pagar.Location = new System.Drawing.Point(112, 56);
-            this.txt_valor_pagar.Name = "txt_valor_pagar";
-            this.txt_valor_pagar.Size = new System.Drawing.Size(171, 23);
-            this.txt_valor_pagar.TabIndex = 1;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(12, 59);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(94, 17);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "Valor a pagar";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(293, 59);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(104, 17);
-            this.label11.TabIndex = 0;
-            this.label11.Text = "Forma de pago";
-            // 
-            // cbx_forma_pago
-            // 
-            this.cbx_forma_pago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbx_forma_pago.FormattingEnabled = true;
-            this.cbx_forma_pago.Location = new System.Drawing.Point(403, 55);
-            this.cbx_forma_pago.Name = "cbx_forma_pago";
-            this.cbx_forma_pago.Size = new System.Drawing.Size(238, 24);
-            this.cbx_forma_pago.TabIndex = 2;
-            // 
-            // btn_agregar_pago
-            // 
-            this.btn_agregar_pago.AutoSize = true;
-            this.btn_agregar_pago.BackColor = System.Drawing.Color.White;
-            this.btn_agregar_pago.Image = global::CapaPresentacion.Properties.Resources.agregar24_gris;
-            this.btn_agregar_pago.Location = new System.Drawing.Point(656, 29);
-            this.btn_agregar_pago.Name = "btn_agregar_pago";
-            this.btn_agregar_pago.Size = new System.Drawing.Size(147, 38);
-            this.btn_agregar_pago.TabIndex = 0;
-            this.btn_agregar_pago.Text = "&Agregar Pago";
-            this.btn_agregar_pago.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_agregar_pago.UseVisualStyleBackColor = false;
-            // 
-            // Txt_vendedor_id
-            // 
-            this.Txt_vendedor_id.Enabled = false;
-            this.Txt_vendedor_id.Location = new System.Drawing.Point(825, 29);
-            this.Txt_vendedor_id.Name = "Txt_vendedor_id";
-            this.Txt_vendedor_id.Size = new System.Drawing.Size(49, 23);
-            this.Txt_vendedor_id.TabIndex = 8;
-            // 
-            // Btn_cancelar
-            // 
-            this.Btn_cancelar.AutoSize = true;
-            this.Btn_cancelar.BackColor = System.Drawing.Color.White;
-            this.Btn_cancelar.Image = global::CapaPresentacion.Properties.Resources.agregar24_gris;
-            this.Btn_cancelar.Location = new System.Drawing.Point(314, 6);
-            this.Btn_cancelar.Name = "Btn_cancelar";
-            this.Btn_cancelar.Size = new System.Drawing.Size(98, 38);
-            this.Btn_cancelar.TabIndex = 0;
-            this.Btn_cancelar.Text = "&Cancelar";
-            this.Btn_cancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Btn_cancelar.UseVisualStyleBackColor = false;
-            this.Btn_cancelar.Click += new System.EventHandler(this.Btn_cancelar_Click);
-            // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // dgv_vendedores
             // 
@@ -552,7 +426,8 @@ namespace CapaPresentacion._pagos
             this.usClave,
             this.usComision,
             this.usIsAdmin});
-            this.dgv_vendedores.Location = new System.Drawing.Point(112, 84);
+            this.dgv_vendedores.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgv_vendedores.Location = new System.Drawing.Point(0, 39);
             this.dgv_vendedores.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgv_vendedores.Name = "dgv_vendedores";
             this.dgv_vendedores.ReadOnly = true;
@@ -560,9 +435,8 @@ namespace CapaPresentacion._pagos
             this.dgv_vendedores.RowTemplate.Height = 25;
             this.dgv_vendedores.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgv_vendedores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_vendedores.Size = new System.Drawing.Size(436, 258);
+            this.dgv_vendedores.Size = new System.Drawing.Size(531, 196);
             this.dgv_vendedores.TabIndex = 16;
-            this.dgv_vendedores.Visible = false;
             this.dgv_vendedores.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_vendedores_CellClick);
             // 
             // usId
@@ -637,6 +511,57 @@ namespace CapaPresentacion._pagos
             this.usIsAdmin.ReadOnly = true;
             this.usIsAdmin.Visible = false;
             // 
+            // Dgv_nuevos_pagos
+            // 
+            this.Dgv_nuevos_pagos.AllowUserToAddRows = false;
+            this.Dgv_nuevos_pagos.AllowUserToDeleteRows = false;
+            this.Dgv_nuevos_pagos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Dgv_nuevos_pagos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.pago_id,
+            this.vendedor_id,
+            this.nombre_vendedor,
+            this.valor_pagado,
+            this.forma_pago,
+            this.periodo_pagado});
+            this.Dgv_nuevos_pagos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Dgv_nuevos_pagos.Location = new System.Drawing.Point(0, 99);
+            this.Dgv_nuevos_pagos.Name = "Dgv_nuevos_pagos";
+            this.Dgv_nuevos_pagos.ReadOnly = true;
+            this.Dgv_nuevos_pagos.RowHeadersVisible = false;
+            this.Dgv_nuevos_pagos.RowTemplate.Height = 25;
+            this.Dgv_nuevos_pagos.Size = new System.Drawing.Size(1187, 557);
+            this.Dgv_nuevos_pagos.TabIndex = 1;
+            this.Dgv_nuevos_pagos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_nuevos_pagos_CellClick);
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.groupBox1);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1187, 99);
+            this.panel3.TabIndex = 0;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.Lbl_punto_1);
+            this.groupBox1.Controls.Add(this.cbx_forma_pago);
+            this.groupBox1.Controls.Add(this.txt_valor_pagar);
+            this.groupBox1.Controls.Add(this.txt_vendedor);
+            this.groupBox1.Controls.Add(this.btn_agregar_pago);
+            this.groupBox1.Controls.Add(this.Txt_nro_doc);
+            this.groupBox1.Controls.Add(this.label11);
+            this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.Txt_vendedor_id);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Location = new System.Drawing.Point(0, 0);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1187, 99);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Buscar vendedores";
+            // 
             // Lbl_punto_1
             // 
             this.Lbl_punto_1.AutoSize = true;
@@ -644,6 +569,196 @@ namespace CapaPresentacion._pagos
             this.Lbl_punto_1.Name = "Lbl_punto_1";
             this.Lbl_punto_1.Size = new System.Drawing.Size(0, 17);
             this.Lbl_punto_1.TabIndex = 9;
+            // 
+            // cbx_forma_pago
+            // 
+            this.cbx_forma_pago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbx_forma_pago.FormattingEnabled = true;
+            this.cbx_forma_pago.Location = new System.Drawing.Point(403, 55);
+            this.cbx_forma_pago.Name = "cbx_forma_pago";
+            this.cbx_forma_pago.Size = new System.Drawing.Size(238, 24);
+            this.cbx_forma_pago.TabIndex = 2;
+            // 
+            // txt_valor_pagar
+            // 
+            this.txt_valor_pagar.Enabled = false;
+            this.txt_valor_pagar.Location = new System.Drawing.Point(112, 56);
+            this.txt_valor_pagar.Name = "txt_valor_pagar";
+            this.txt_valor_pagar.Size = new System.Drawing.Size(171, 23);
+            this.txt_valor_pagar.TabIndex = 1;
+            // 
+            // txt_vendedor
+            // 
+            this.txt_vendedor.Enabled = false;
+            this.txt_vendedor.Location = new System.Drawing.Point(289, 26);
+            this.txt_vendedor.Name = "txt_vendedor";
+            this.txt_vendedor.Size = new System.Drawing.Size(352, 23);
+            this.txt_vendedor.TabIndex = 1;
+            // 
+            // btn_agregar_pago
+            // 
+            this.btn_agregar_pago.AutoSize = true;
+            this.btn_agregar_pago.BackColor = System.Drawing.Color.White;
+            this.btn_agregar_pago.Image = global::CapaPresentacion.Properties.Resources.agregar24_gris;
+            this.btn_agregar_pago.Location = new System.Drawing.Point(656, 29);
+            this.btn_agregar_pago.Name = "btn_agregar_pago";
+            this.btn_agregar_pago.Size = new System.Drawing.Size(147, 38);
+            this.btn_agregar_pago.TabIndex = 0;
+            this.btn_agregar_pago.Text = "&Agregar Pago";
+            this.btn_agregar_pago.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_agregar_pago.UseVisualStyleBackColor = false;
+            this.btn_agregar_pago.Click += new System.EventHandler(this.btn_agregar_pago_Click);
+            // 
+            // Txt_nro_doc
+            // 
+            this.Txt_nro_doc.Location = new System.Drawing.Point(112, 26);
+            this.Txt_nro_doc.Name = "Txt_nro_doc";
+            this.Txt_nro_doc.Size = new System.Drawing.Size(171, 23);
+            this.Txt_nro_doc.TabIndex = 1;
+            this.Txt_nro_doc.TextChanged += new System.EventHandler(this.Txt_nro_doc_TextChanged);
+            this.Txt_nro_doc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_nro_doc_KeyPress);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(293, 59);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(104, 17);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "Forma de pago";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(12, 59);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(94, 17);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "Valor a pagar";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(37, 29);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(60, 17);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "Nro Doc";
+            // 
+            // Txt_vendedor_id
+            // 
+            this.Txt_vendedor_id.Enabled = false;
+            this.Txt_vendedor_id.Location = new System.Drawing.Point(809, 29);
+            this.Txt_vendedor_id.Name = "Txt_vendedor_id";
+            this.Txt_vendedor_id.Size = new System.Drawing.Size(49, 23);
+            this.Txt_vendedor_id.TabIndex = 8;
+            this.Txt_vendedor_id.Visible = false;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(901, 361);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Pagos realizados";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // Pn_listado_vendedores
+            // 
+            this.Pn_listado_vendedores.Controls.Add(this.dgv_vendedores);
+            this.Pn_listado_vendedores.Controls.Add(this.panel4);
+            this.Pn_listado_vendedores.Location = new System.Drawing.Point(656, 421);
+            this.Pn_listado_vendedores.Name = "Pn_listado_vendedores";
+            this.Pn_listado_vendedores.Size = new System.Drawing.Size(531, 235);
+            this.Pn_listado_vendedores.TabIndex = 10;
+            this.Pn_listado_vendedores.Visible = false;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.Lbl_cerrar);
+            this.panel4.Controls.Add(this.label12);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(531, 39);
+            this.panel4.TabIndex = 0;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(15, 11);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(153, 17);
+            this.label12.TabIndex = 0;
+            this.label12.Text = "Listado de vendedores";
+            // 
+            // Lbl_cerrar
+            // 
+            this.Lbl_cerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Lbl_cerrar.AutoSize = true;
+            this.Lbl_cerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_cerrar.Location = new System.Drawing.Point(504, 11);
+            this.Lbl_cerrar.Name = "Lbl_cerrar";
+            this.Lbl_cerrar.Size = new System.Drawing.Size(18, 17);
+            this.Lbl_cerrar.TabIndex = 1;
+            this.Lbl_cerrar.Text = "X";
+            this.Lbl_cerrar.Click += new System.EventHandler(this.Lbl_cerrar_Click);
+            // 
+            // pago_id
+            // 
+            this.pago_id.DataPropertyName = "pago_id";
+            this.pago_id.HeaderText = "pago_id";
+            this.pago_id.Name = "pago_id";
+            this.pago_id.ReadOnly = true;
+            this.pago_id.Visible = false;
+            // 
+            // vendedor_id
+            // 
+            this.vendedor_id.DataPropertyName = "vendedor_id";
+            this.vendedor_id.HeaderText = "vendedor_id";
+            this.vendedor_id.Name = "vendedor_id";
+            this.vendedor_id.ReadOnly = true;
+            this.vendedor_id.Visible = false;
+            // 
+            // nombre_vendedor
+            // 
+            this.nombre_vendedor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nombre_vendedor.DataPropertyName = "nombre_vendedor";
+            this.nombre_vendedor.HeaderText = "Vendedores";
+            this.nombre_vendedor.Name = "nombre_vendedor";
+            this.nombre_vendedor.ReadOnly = true;
+            // 
+            // valor_pagado
+            // 
+            this.valor_pagado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.valor_pagado.DataPropertyName = "valor_pagado";
+            this.valor_pagado.HeaderText = "Valor Pago";
+            this.valor_pagado.Name = "valor_pagado";
+            this.valor_pagado.ReadOnly = true;
+            this.valor_pagado.Width = 103;
+            // 
+            // forma_pago
+            // 
+            this.forma_pago.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.forma_pago.DataPropertyName = "forma_pago";
+            this.forma_pago.HeaderText = "Forma de pago";
+            this.forma_pago.Name = "forma_pago";
+            this.forma_pago.ReadOnly = true;
+            this.forma_pago.Width = 89;
+            // 
+            // periodo_pagado
+            // 
+            this.periodo_pagado.DataPropertyName = "periodo_pagado";
+            this.periodo_pagado.HeaderText = "periodo_pagado";
+            this.periodo_pagado.Name = "periodo_pagado";
+            this.periodo_pagado.ReadOnly = true;
+            this.periodo_pagado.Visible = false;
             // 
             // Frm_pagos_abonos
             // 
@@ -656,7 +771,7 @@ namespace CapaPresentacion._pagos
             this.Controls.Add(this.panel2);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Frm_pagos_abonos";
             this.Text = "Frm_pagos_abonos";
             this.Pn_pagos.ResumeLayout(false);
@@ -666,11 +781,14 @@ namespace CapaPresentacion._pagos
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.Pn_nuevos_pagos.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_vendedores)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_nuevos_pagos)).EndInit();
+            this.panel3.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_vendedores)).EndInit();
+            this.Pn_listado_vendedores.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -730,5 +848,15 @@ namespace CapaPresentacion._pagos
         private System.Windows.Forms.DataGridViewTextBoxColumn usComision;
         private System.Windows.Forms.DataGridViewCheckBoxColumn usIsAdmin;
         private System.Windows.Forms.Label Lbl_punto_1;
+        private System.Windows.Forms.Panel Pn_listado_vendedores;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label Lbl_cerrar;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pago_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vendedor_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre_vendedor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn valor_pagado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn forma_pago;
+        private System.Windows.Forms.DataGridViewTextBoxColumn periodo_pagado;
     }
 }

@@ -124,11 +124,13 @@
     <Compile Include="CDatos\D_Config.cs" />
     <Compile Include="CDatos\D_Procesos.cs" />
     <Compile Include="CDatos\D_Reportes.cs" />
+    <Compile Include="CDatos\D_Pagos.cs" />
     <Compile Include="CDatos\D_Rifas.cs" />
     <Compile Include="CDatos\D_Usuarios.cs" />
     <Compile Include="CEntidades\Boletas.cs" />
     <Compile Include="CEntidades\Clientes.cs" />
     <Compile Include="CEntidades\Config.cs" />
+    <Compile Include="CEntidades\Pagos.cs" />
     <Compile Include="CEntidades\ProcesoConexion.cs" />
     <Compile Include="CEntidades\Rifas.cs" />
     <Compile Include="CEntidades\Usuarios.cs" />
@@ -137,6 +139,7 @@
     <Compile Include="CNegocio\N_Config.cs" />
     <Compile Include="CNegocio\N_Procesos.cs" />
     <Compile Include="CNegocio\N_Reportes.cs" />
+    <Compile Include="CNegocio\N_Pagos.cs" />
     <Compile Include="CNegocio\N_Rifas.cs" />
     <Compile Include="CNegocio\N_Usuarios.cs" />
     <Compile Include="DataSet1.Designer.cs">

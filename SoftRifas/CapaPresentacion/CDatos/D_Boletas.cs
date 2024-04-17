@@ -177,6 +177,58 @@ namespace CDatos
             }
             return boletas;
         }
+
+        public static DataTable consultarAbonosEntreFechasAndVendedor(int vendedorId, DateTime FIni, DateTime FFin)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                con.Open();
+                SqlDataAdapter data = new SqlDataAdapter("sp_consultar_abonos_entre_fecha_and_vendedor", con);
+                data.SelectCommand.CommandType = CommandType.StoredProcedure;
+                data.SelectCommand.Parameters.AddWithValue("@vendedor_id", vendedorId);
+                data.SelectCommand.Parameters.AddWithValue("@fecha_ini", FIni);
+                data.SelectCommand.Parameters.AddWithValue("@fecha_fin", FFin);
+                data.Fill(dt);
+                
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+            return dt;
+        }
+
+        public static DataTable obtenerBoletasEntreFechasAndVendedor(int vendedorId, DateTime FIni, DateTime FFin,string codigo)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                con.Open();
+                SqlDataAdapter data = new SqlDataAdapter("sp_obtner_boletas_entre_fecha_and_vendedor", con);
+                data.SelectCommand.CommandType = CommandType.StoredProcedure;
+                data.SelectCommand.Parameters.AddWithValue("@vendedor_id", vendedorId);
+                data.SelectCommand.Parameters.AddWithValue("@fecha_ini", FIni);
+                data.SelectCommand.Parameters.AddWithValue("@fecha_fin", FFin);
+                data.SelectCommand.Parameters.AddWithValue("@codigo", codigo);
+                data.SelectCommand.Parameters.AddWithValue("@terminal", Environment.MachineName.ToString());
+                data.Fill(dt);
+
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+            return dt;
+        }
         public static List<DtoMostrarAsignarBoletasVendedores> mostrarBoletasAsignadasVendedores()
         {
             List<DtoMostrarAsignarBoletasVendedores> boletas = new List<DtoMostrarAsignarBoletasVendedores>();
