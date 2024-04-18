@@ -2,6 +2,18 @@ use db_rifas
 go
 alter table tbl_abonos_boleta add abono_pagado bit
 go
+update tbl_abonos_boleta set abono_pagado=0
+go
+CREATE TYPE [dbo].[ty_pagos_abono_detalle] AS TABLE(
+	[pago_id] [int] NULL,
+	[vendedor_id] [int] NULL,
+	[nombre_vendedor] [varchar](150) NULL,
+	[valor_pagado] [decimal](18, 2) NULL,
+	[forma_pago] [varchar](50) NULL,
+	[periodo_pagado] [varchar](50) NULL
+)
+GO
+go
 CREATE TABLE [dbo].[tbl_boleta_abono_pagado](
 	[id] [int] primary key IDENTITY(1,1) NOT NULL,
 	[codigo_abono] [int] NULL,

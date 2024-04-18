@@ -89,12 +89,12 @@ namespace CapaPresentacion._usuarios
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Green;
-            this.panel1.Controls.Add(this.Btn_cerrar_ventana);
-            this.panel1.Controls.Add(this.Btn_borrar);
-            this.panel1.Controls.Add(this.Btn_editar);
             this.panel1.Controls.Add(this.Btn_nuevos);
+            this.panel1.Controls.Add(this.Btn_editar);
             this.panel1.Controls.Add(this.Txt_buscar);
             this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.Btn_borrar);
+            this.panel1.Controls.Add(this.Btn_cerrar_ventana);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -104,13 +104,13 @@ namespace CapaPresentacion._usuarios
             // 
             // Btn_cerrar_ventana
             // 
-            this.Btn_cerrar_ventana.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Btn_cerrar_ventana.AutoSize = true;
             this.Btn_cerrar_ventana.BackColor = System.Drawing.Color.White;
+            this.Btn_cerrar_ventana.Dock = System.Windows.Forms.DockStyle.Right;
             this.Btn_cerrar_ventana.Image = global::CapaPresentacion.Properties.Resources.salir24;
-            this.Btn_cerrar_ventana.Location = new System.Drawing.Point(732, 6);
+            this.Btn_cerrar_ventana.Location = new System.Drawing.Point(735, 5);
             this.Btn_cerrar_ventana.Name = "Btn_cerrar_ventana";
-            this.Btn_cerrar_ventana.Size = new System.Drawing.Size(95, 38);
+            this.Btn_cerrar_ventana.Size = new System.Drawing.Size(95, 39);
             this.Btn_cerrar_ventana.TabIndex = 4;
             this.Btn_cerrar_ventana.Text = "&Cerrar";
             this.Btn_cerrar_ventana.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -120,13 +120,13 @@ namespace CapaPresentacion._usuarios
             // 
             // Btn_borrar
             // 
-            this.Btn_borrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Btn_borrar.AutoSize = true;
             this.Btn_borrar.BackColor = System.Drawing.Color.White;
+            this.Btn_borrar.Dock = System.Windows.Forms.DockStyle.Right;
             this.Btn_borrar.Image = global::CapaPresentacion.Properties.Resources.borrar24_gris;
-            this.Btn_borrar.Location = new System.Drawing.Point(636, 6);
+            this.Btn_borrar.Location = new System.Drawing.Point(640, 5);
             this.Btn_borrar.Name = "Btn_borrar";
-            this.Btn_borrar.Size = new System.Drawing.Size(95, 38);
+            this.Btn_borrar.Size = new System.Drawing.Size(95, 39);
             this.Btn_borrar.TabIndex = 5;
             this.Btn_borrar.Text = "&Borrar";
             this.Btn_borrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -135,13 +135,13 @@ namespace CapaPresentacion._usuarios
             // 
             // Btn_editar
             // 
-            this.Btn_editar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Btn_editar.AutoSize = true;
             this.Btn_editar.BackColor = System.Drawing.Color.White;
+            this.Btn_editar.Dock = System.Windows.Forms.DockStyle.Right;
             this.Btn_editar.Image = global::CapaPresentacion.Properties.Resources.editar24_gris;
-            this.Btn_editar.Location = new System.Drawing.Point(528, 6);
+            this.Btn_editar.Location = new System.Drawing.Point(533, 5);
             this.Btn_editar.Name = "Btn_editar";
-            this.Btn_editar.Size = new System.Drawing.Size(107, 38);
+            this.Btn_editar.Size = new System.Drawing.Size(107, 39);
             this.Btn_editar.TabIndex = 6;
             this.Btn_editar.Text = "&Modificar";
             this.Btn_editar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -150,13 +150,13 @@ namespace CapaPresentacion._usuarios
             // 
             // Btn_nuevos
             // 
-            this.Btn_nuevos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Btn_nuevos.AutoSize = true;
             this.Btn_nuevos.BackColor = System.Drawing.Color.White;
+            this.Btn_nuevos.Dock = System.Windows.Forms.DockStyle.Right;
             this.Btn_nuevos.Image = global::CapaPresentacion.Properties.Resources.agregar24_gris;
-            this.Btn_nuevos.Location = new System.Drawing.Point(432, 6);
+            this.Btn_nuevos.Location = new System.Drawing.Point(438, 5);
             this.Btn_nuevos.Name = "Btn_nuevos";
-            this.Btn_nuevos.Size = new System.Drawing.Size(95, 38);
+            this.Btn_nuevos.Size = new System.Drawing.Size(95, 39);
             this.Btn_nuevos.TabIndex = 7;
             this.Btn_nuevos.Text = "&Nuevo";
             this.Btn_nuevos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;

@@ -80,28 +80,28 @@ namespace CapaPresentacion._rifas_boletas
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Green;
-            this.panel1.Controls.Add(this.Btn_borrar);
-            this.panel1.Controls.Add(this.Btn_editar);
-            this.panel1.Controls.Add(this.Btn_nuevos);
-            this.panel1.Controls.Add(this.Chk_mostrar_activas);
             this.panel1.Controls.Add(this.Txt_buscar);
             this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.Btn_nuevos);
+            this.panel1.Controls.Add(this.Btn_editar);
+            this.panel1.Controls.Add(this.Chk_mostrar_activas);
+            this.panel1.Controls.Add(this.Btn_borrar);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel1.Padding = new System.Windows.Forms.Padding(5);
             this.panel1.Size = new System.Drawing.Size(874, 58);
             this.panel1.TabIndex = 0;
             // 
             // Btn_borrar
             // 
-            this.Btn_borrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Btn_borrar.AutoSize = true;
             this.Btn_borrar.BackColor = System.Drawing.Color.White;
+            this.Btn_borrar.Dock = System.Windows.Forms.DockStyle.Right;
             this.Btn_borrar.Image = global::CapaPresentacion.Properties.Resources.borrar24_gris;
-            this.Btn_borrar.Location = new System.Drawing.Point(769, 11);
+            this.Btn_borrar.Location = new System.Drawing.Point(774, 5);
             this.Btn_borrar.Name = "Btn_borrar";
-            this.Btn_borrar.Size = new System.Drawing.Size(95, 38);
+            this.Btn_borrar.Size = new System.Drawing.Size(95, 48);
             this.Btn_borrar.TabIndex = 5;
             this.Btn_borrar.Text = "&Borrar";
             this.Btn_borrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -110,13 +110,13 @@ namespace CapaPresentacion._rifas_boletas
             // 
             // Btn_editar
             // 
-            this.Btn_editar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Btn_editar.AutoSize = true;
             this.Btn_editar.BackColor = System.Drawing.Color.White;
+            this.Btn_editar.Dock = System.Windows.Forms.DockStyle.Right;
             this.Btn_editar.Image = global::CapaPresentacion.Properties.Resources.editar24_gris;
-            this.Btn_editar.Location = new System.Drawing.Point(661, 11);
+            this.Btn_editar.Location = new System.Drawing.Point(667, 5);
             this.Btn_editar.Name = "Btn_editar";
-            this.Btn_editar.Size = new System.Drawing.Size(107, 38);
+            this.Btn_editar.Size = new System.Drawing.Size(107, 48);
             this.Btn_editar.TabIndex = 6;
             this.Btn_editar.Text = "&Modificar";
             this.Btn_editar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -125,13 +125,13 @@ namespace CapaPresentacion._rifas_boletas
             // 
             // Btn_nuevos
             // 
-            this.Btn_nuevos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Btn_nuevos.AutoSize = true;
             this.Btn_nuevos.BackColor = System.Drawing.Color.White;
+            this.Btn_nuevos.Dock = System.Windows.Forms.DockStyle.Right;
             this.Btn_nuevos.Image = global::CapaPresentacion.Properties.Resources.agregar24_gris;
-            this.Btn_nuevos.Location = new System.Drawing.Point(565, 11);
+            this.Btn_nuevos.Location = new System.Drawing.Point(572, 5);
             this.Btn_nuevos.Name = "Btn_nuevos";
-            this.Btn_nuevos.Size = new System.Drawing.Size(95, 38);
+            this.Btn_nuevos.Size = new System.Drawing.Size(95, 48);
             this.Btn_nuevos.TabIndex = 7;
             this.Btn_nuevos.Text = "&Nuevo";
             this.Btn_nuevos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -143,21 +143,22 @@ namespace CapaPresentacion._rifas_boletas
             this.Chk_mostrar_activas.AutoSize = true;
             this.Chk_mostrar_activas.Checked = true;
             this.Chk_mostrar_activas.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.Chk_mostrar_activas.Dock = System.Windows.Forms.DockStyle.Left;
             this.Chk_mostrar_activas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Chk_mostrar_activas.ForeColor = System.Drawing.Color.White;
-            this.Chk_mostrar_activas.Location = new System.Drawing.Point(12, 19);
+            this.Chk_mostrar_activas.Location = new System.Drawing.Point(5, 5);
             this.Chk_mostrar_activas.Name = "Chk_mostrar_activas";
-            this.Chk_mostrar_activas.Size = new System.Drawing.Size(161, 22);
+            this.Chk_mostrar_activas.Size = new System.Drawing.Size(161, 48);
             this.Chk_mostrar_activas.TabIndex = 3;
             this.Chk_mostrar_activas.Text = "Mostrar rifas activas";
+            this.Chk_mostrar_activas.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.Chk_mostrar_activas.UseVisualStyleBackColor = true;
             this.Chk_mostrar_activas.CheckedChanged += new System.EventHandler(this.Chk_mostrar_activas_CheckedChanged);
             // 
             // Txt_buscar
             // 
-            this.Txt_buscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Txt_buscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_buscar.Location = new System.Drawing.Point(290, 18);
+            this.Txt_buscar.Location = new System.Drawing.Point(217, 17);
             this.Txt_buscar.Name = "Txt_buscar";
             this.Txt_buscar.Size = new System.Drawing.Size(228, 24);
             this.Txt_buscar.TabIndex = 2;
@@ -165,15 +166,15 @@ namespace CapaPresentacion._rifas_boletas
             // 
             // label2
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Left;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(226, 21);
+            this.label2.Location = new System.Drawing.Point(166, 5);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(45, 18);
+            this.label2.Size = new System.Drawing.Size(45, 48);
             this.label2.TabIndex = 0;
             this.label2.Text = "Filtrar";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // error
             // 

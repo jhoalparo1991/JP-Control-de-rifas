@@ -223,7 +223,7 @@ namespace CapaPresentacion._rifas_boletas
                 dt_fecha_inicio.Value = Convert.ToDateTime(Dgv_rifas.CurrentRow.Cells["FechaInicio"].Value.ToString());
                 dt_fecha_fin.Value = Convert.ToDateTime(Dgv_rifas.CurrentRow.Cells["FechaFin"].Value.ToString());
                 txt_nro_ini.Text = Dgv_rifas.CurrentRow.Cells["NroInicial"].Value.ToString();
-                txt_nro_ini.Text = Dgv_rifas.CurrentRow.Cells["NroFinal"].Value.ToString();
+                txt_nro_fin.Text = Dgv_rifas.CurrentRow.Cells["NroFinal"].Value.ToString();
                 chk_activa.Checked = Convert.ToBoolean(Dgv_rifas.CurrentRow.Cells["Activa"].Value);
                 txt_valor.Text = Dgv_rifas.CurrentRow.Cells["ValorRifa"].Value.ToString();
                 panel2.Visible = true;

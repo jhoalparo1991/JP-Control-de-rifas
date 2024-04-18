@@ -65,22 +65,23 @@ namespace CapaPresentacion._clientes
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_clientes)).BeginInit();
             this.Pn_mant.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Green;
-            this.panel1.Controls.Add(this.Btn_cerrar_ventana);
-            this.panel1.Controls.Add(this.Btn_borrar);
-            this.panel1.Controls.Add(this.Btn_editar);
+            this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.Btn_nuevos);
-            this.panel1.Controls.Add(this.Txt_buscar);
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.Btn_editar);
+            this.panel1.Controls.Add(this.Btn_borrar);
+            this.panel1.Controls.Add(this.Btn_cerrar_ventana);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -90,13 +91,13 @@ namespace CapaPresentacion._clientes
             // 
             // Btn_cerrar_ventana
             // 
-            this.Btn_cerrar_ventana.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Btn_cerrar_ventana.AutoSize = true;
             this.Btn_cerrar_ventana.BackColor = System.Drawing.Color.White;
+            this.Btn_cerrar_ventana.Dock = System.Windows.Forms.DockStyle.Right;
             this.Btn_cerrar_ventana.Image = global::CapaPresentacion.Properties.Resources.salir24;
-            this.Btn_cerrar_ventana.Location = new System.Drawing.Point(725, 3);
+            this.Btn_cerrar_ventana.Location = new System.Drawing.Point(726, 5);
             this.Btn_cerrar_ventana.Name = "Btn_cerrar_ventana";
-            this.Btn_cerrar_ventana.Size = new System.Drawing.Size(95, 38);
+            this.Btn_cerrar_ventana.Size = new System.Drawing.Size(95, 36);
             this.Btn_cerrar_ventana.TabIndex = 3;
             this.Btn_cerrar_ventana.Text = "&Cerrar";
             this.Btn_cerrar_ventana.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -105,13 +106,13 @@ namespace CapaPresentacion._clientes
             // 
             // Btn_borrar
             // 
-            this.Btn_borrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Btn_borrar.AutoSize = true;
             this.Btn_borrar.BackColor = System.Drawing.Color.White;
+            this.Btn_borrar.Dock = System.Windows.Forms.DockStyle.Right;
             this.Btn_borrar.Image = global::CapaPresentacion.Properties.Resources.borrar24_gris;
-            this.Btn_borrar.Location = new System.Drawing.Point(629, 3);
+            this.Btn_borrar.Location = new System.Drawing.Point(631, 5);
             this.Btn_borrar.Name = "Btn_borrar";
-            this.Btn_borrar.Size = new System.Drawing.Size(95, 38);
+            this.Btn_borrar.Size = new System.Drawing.Size(95, 36);
             this.Btn_borrar.TabIndex = 3;
             this.Btn_borrar.Text = "&Borrar";
             this.Btn_borrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -120,13 +121,13 @@ namespace CapaPresentacion._clientes
             // 
             // Btn_editar
             // 
-            this.Btn_editar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Btn_editar.AutoSize = true;
             this.Btn_editar.BackColor = System.Drawing.Color.White;
+            this.Btn_editar.Dock = System.Windows.Forms.DockStyle.Right;
             this.Btn_editar.Image = global::CapaPresentacion.Properties.Resources.editar24_gris;
-            this.Btn_editar.Location = new System.Drawing.Point(521, 3);
+            this.Btn_editar.Location = new System.Drawing.Point(524, 5);
             this.Btn_editar.Name = "Btn_editar";
-            this.Btn_editar.Size = new System.Drawing.Size(107, 38);
+            this.Btn_editar.Size = new System.Drawing.Size(107, 36);
             this.Btn_editar.TabIndex = 3;
             this.Btn_editar.Text = "&Modificar";
             this.Btn_editar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -135,13 +136,13 @@ namespace CapaPresentacion._clientes
             // 
             // Btn_nuevos
             // 
-            this.Btn_nuevos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Btn_nuevos.AutoSize = true;
             this.Btn_nuevos.BackColor = System.Drawing.Color.White;
+            this.Btn_nuevos.Dock = System.Windows.Forms.DockStyle.Right;
             this.Btn_nuevos.Image = global::CapaPresentacion.Properties.Resources.agregar24_gris;
-            this.Btn_nuevos.Location = new System.Drawing.Point(425, 3);
+            this.Btn_nuevos.Location = new System.Drawing.Point(429, 5);
             this.Btn_nuevos.Name = "Btn_nuevos";
-            this.Btn_nuevos.Size = new System.Drawing.Size(95, 38);
+            this.Btn_nuevos.Size = new System.Drawing.Size(95, 36);
             this.Btn_nuevos.TabIndex = 3;
             this.Btn_nuevos.Text = "&Nuevo";
             this.Btn_nuevos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -150,19 +151,21 @@ namespace CapaPresentacion._clientes
             // 
             // Txt_buscar
             // 
+            this.Txt_buscar.Dock = System.Windows.Forms.DockStyle.Left;
             this.Txt_buscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_buscar.Location = new System.Drawing.Point(137, 10);
+            this.Txt_buscar.Location = new System.Drawing.Point(125, 5);
             this.Txt_buscar.Name = "Txt_buscar";
-            this.Txt_buscar.Size = new System.Drawing.Size(228, 22);
+            this.Txt_buscar.Size = new System.Drawing.Size(269, 22);
             this.Txt_buscar.TabIndex = 2;
             this.Txt_buscar.TextChanged += new System.EventHandler(this.Txt_buscar_TextChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(11, 13);
+            this.label1.Location = new System.Drawing.Point(5, 5);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(120, 16);
             this.label1.TabIndex = 0;
@@ -478,6 +481,17 @@ namespace CapaPresentacion._clientes
             this.label8.TabIndex = 17;
             this.label8.Text = "Codigo";
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.Txt_buscar);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(4, 5);
+            this.panel2.Name = "panel2";
+            this.panel2.Padding = new System.Windows.Forms.Padding(5);
+            this.panel2.Size = new System.Drawing.Size(425, 36);
+            this.panel2.TabIndex = 4;
+            // 
             // Frm_clientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -501,6 +515,8 @@ namespace CapaPresentacion._clientes
             this.Pn_mant.ResumeLayout(false);
             this.Pn_mant.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -542,5 +558,6 @@ namespace CapaPresentacion._clientes
         internal System.Windows.Forms.Button Btn_borrar;
         internal System.Windows.Forms.Button Btn_editar;
         internal System.Windows.Forms.Button Btn_nuevos;
+        private System.Windows.Forms.Panel panel2;
     }
 }

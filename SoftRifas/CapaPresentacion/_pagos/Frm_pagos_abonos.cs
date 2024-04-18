@@ -16,6 +16,7 @@ namespace CapaPresentacion._pagos
             _helpers.Disenios.dataGridView(dgv_vendedores);
             _helpers.Disenios.dataGridView(Dgv_nuevos_pagos);
             _helpers.Disenios.dataGridView(Dgv_pagos);
+            _helpers.Disenios.dataGridView(Dgv_detalle_pagos_realizados);
             habilitarBotonoes(false);
             obtenerDatosUsuarioConectado();
             disenioTablas();
@@ -280,6 +281,16 @@ namespace CapaPresentacion._pagos
         private void Dgv_nuevos_pagos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             Pn_listado_vendedores.Visible = false;
+
+            if(Dgv_nuevos_pagos.Rows.Count > 0)
+            {
+                if(Dgv_nuevos_pagos.Columns[e.ColumnIndex].Name == "btn_quitar")
+                {
+                    Dgv_nuevos_pagos.Rows.Remove(Dgv_nuevos_pagos.CurrentRow);
+                }
+            }
+
+            calcularTotal();
         }
 
         private void Lbl_cerrar_Click(object sender, EventArgs e)
@@ -399,13 +410,20 @@ namespace CapaPresentacion._pagos
 
                 };
 
+                DialogResult dialog = MessageBox.Show("Seguro que la informacion a ingresar es correcta, si asi lo es puedes proceder a guardar, valida antes de guardar, no podras modificar un pago despues de guardarlo", "Confirmacion pago de abonos", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
-                if (N_Pagos.registrarPagos(obj,dtDetallePagos))
+                if (dialog == DialogResult.OK)
                 {
-                    limpiar();
-                    mostrarPagos();
-                    dtDetallePagos.Rows.Clear();
+                    if (N_Pagos.registrarPagos(obj, dtDetallePagos))
+                    {
+                        limpiar();
+                        mostrarPagos();
+                        dtDetallePagos.Rows.Clear();
+                    }
+
+
                 }
+
 
 
             }
