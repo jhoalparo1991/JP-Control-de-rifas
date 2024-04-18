@@ -2,6 +2,9 @@ use db_rifas
 go
 alter table tbl_abonos_boleta add abono_pagado bit
 go
+alter table tbl_pagos_abono_detalle alter column fecha_pago date not null
+go
+
 update tbl_abonos_boleta set abono_pagado=0
 go
 CREATE TYPE [dbo].[ty_pagos_abono_detalle] AS TABLE(
@@ -40,7 +43,7 @@ CREATE TABLE [dbo].[tbl_pagos_abono_detalle](
 	[vendedor_id] [int] NOT NULL,
 	[nombre_vendedor] [varchar](150) NOT NULL,
 	[valor_pagado] [decimal](18, 2) NOT NULL,
-	[fecha_pago] [datetime] NOT NULL,
+	[fecha_pago] date NOT NULL,
 	[forma_pago] [varchar](50) NOT NULL,
 	[periodo_pagado] [varchar](50) NOT NULL,
 	[pagado] [bit] NOT NULL,
@@ -182,6 +185,28 @@ begin tran
 	delete from tbl_tmp_pago_abono where terminal=@terminal
 
 commit
+end try
+begin catch
+	rollback
+	print error_message()
+end catch
+go
+create proc sp_borrar_pago_comision
+@id int = 0,
+@abono_id int = 0
+as
+begin try
+	begin tran
+		
+		declare @valor_quitar decimal(18,2)=(select valor_pagado from tbl_pagos_abono_detalle where id=@id)
+
+		update tbl_abonos_boleta set abono_pagado=0 where id=@abono_id
+		update tbl_pago_abonos set valor_pagos=(valor_pagos - @valor_quitar) where id=(select pago_id from tbl_pagos_abono_detalle where id=@id)
+		
+		delete from tbl_pagos_abono_detalle where id=@id
+		delete from tbl_boleta_abono_pagado where codigo_abono=@abono_id
+		
+	commit
 end try
 begin catch
 	rollback

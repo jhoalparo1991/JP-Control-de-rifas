@@ -1,5 +1,5 @@
-﻿using CapaNegocio;
-using CEntidades;
+﻿using CEntidades;
+using CNegocio;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -99,7 +99,7 @@ namespace CapaPresentacion._helpers
                     };
 
 
-                    if (N_Procesos.getConnectionTest(proceso))
+                    if (N_Procesos.getConnectionTest())
                     {
 
                         result = true;

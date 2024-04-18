@@ -21,10 +21,11 @@ namespace CapaPresentacion._pagos
             obtenerDatosUsuarioConectado();
             disenioTablas();
             //disenioTablasBoletasSaldar();
-            //mostrarPagos();
+            mostrarPagos();
         }
 
         DataTable dtDetallePagos = new DataTable();
+        private int _pagoId = 0;
 
         #region Metodos
 
@@ -40,7 +41,7 @@ namespace CapaPresentacion._pagos
             }
             catch (Exception e)
             {
-                _helpers.Mensajes.mensajeErrorException(e);
+               // _helpers.Mensajes.mensajeErrorException(e);
             }
         }
 
@@ -456,8 +457,41 @@ namespace CapaPresentacion._pagos
         {
             if (Dgv_pagos.Rows.Count > 0)
             {
-                int _pagoId = Convert.ToInt32(Dgv_pagos.CurrentRow.Cells["p_id"].Value.ToString());
+                 _pagoId = Convert.ToInt32(Dgv_pagos.CurrentRow.Cells["p_id"].Value.ToString());
                 mostrarDetallePagos(_pagoId);
+            }
+        }
+
+        private void Dgv_detalle_pagos_realizados_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //btn_quitar_pagos
+            Pn_listado_vendedores.Visible = false;
+
+            if (Dgv_detalle_pagos_realizados.Rows.Count > 0)
+            {
+                if (Dgv_detalle_pagos_realizados.Columns[e.ColumnIndex].Name == "btn_quitar_pagos")
+                {
+                    DialogResult dialog = MessageBox.Show("Estas seguro que deseas revertir este pago, este pago te aparecerá pendiente de pagar",
+                                                          "Mensaje confirmacion",
+                                                          MessageBoxButtons.OKCancel,
+                                                          MessageBoxIcon.Question);
+
+                    if(dialog == DialogResult.OK)
+                    {
+                        try
+                        {
+                            int _id = Convert.ToInt32(Dgv_detalle_pagos_realizados.CurrentRow.Cells["d_Id"].Value.ToString());
+                            int _abonoId = Convert.ToInt32(Dgv_detalle_pagos_realizados.CurrentRow.Cells["d_Id"].Value.ToString());
+
+                            //N_Pagos.borrarPagos(_id,_abonoId);
+                            mostrarDetallePagos(_pagoId);
+                        }
+                        catch (Exception ex)
+                        {
+                            _helpers.Mensajes.mensajeErrorException(ex);
+                        }
+                    }
+                }
             }
         }
     }

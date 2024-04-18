@@ -2,13 +2,13 @@
 using CDatos;
 using CEntidades;
 
-namespace CapaNegocio
+namespace CNegocio
 {
     public class N_Procesos
     {
-        public static bool getConnectionTest(ProcesoConexion conexion)
+        public static bool getConnectionTest()
         {
-            return D_Procesos.getConnectionTest(conexion);
+            return D_Procesos.getConnectionTest();
         }
      
     }

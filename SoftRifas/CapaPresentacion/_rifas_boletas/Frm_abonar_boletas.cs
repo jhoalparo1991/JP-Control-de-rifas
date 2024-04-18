@@ -1,5 +1,4 @@
-﻿using CapaNegocio;
-using CapaPresentacion._reportes;
+﻿using CapaPresentacion._reportes;
 using CEntidades;
 using CNegocio;
 using System;

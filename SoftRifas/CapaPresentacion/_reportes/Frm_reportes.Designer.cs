@@ -36,6 +36,9 @@ namespace CapaPresentacion._reportes
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource5 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource6 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource7 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource8 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource9 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_reportes));
             this.spmostrarreporteformaspagoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet1 = new CapaPresentacion.DataSet1();
@@ -44,6 +47,9 @@ namespace CapaPresentacion._reportes
             this.mostrarcantidadboletasvendidaporvendedoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mostrartodoslosabonosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.spreporteabonosfechamontoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.spreportepagosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.spreportedetallepagocomisionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.spreportedetallepagocomisionesvendedoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
@@ -83,6 +89,28 @@ namespace CapaPresentacion._reportes
             this.button4 = new System.Windows.Forms.Button();
             this.dt_fecha_ini = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.reportViewer7 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.dt_pagos_2 = new System.Windows.Forms.DateTimePicker();
+            this.label9 = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
+            this.dt_pagos_1 = new System.Windows.Forms.DateTimePicker();
+            this.label10 = new System.Windows.Forms.Label();
+            this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.reportViewer8 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.label11 = new System.Windows.Forms.Label();
+            this.button6 = new System.Windows.Forms.Button();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label12 = new System.Windows.Forms.Label();
+            this.tabPage9 = new System.Windows.Forms.TabPage();
+            this.reportViewer9 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.Cbx_vendedores = new System.Windows.Forms.ComboBox();
+            this.button7 = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
             this.sp_mostrar_reporte_formas_pagoTableAdapter = new CapaPresentacion.DataSet1TableAdapters.sp_mostrar_reporte_formas_pagoTableAdapter();
             this.sp_reporte_abonos_por_boletaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sp_reporte_abonos_por_boletaTableAdapter = new CapaPresentacion.DataSet1TableAdapters.sp_reporte_abonos_por_boletaTableAdapter();
@@ -95,6 +123,14 @@ namespace CapaPresentacion._reportes
             this.sp_reporte_abonos_fecha_montoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.spreporteabonosfechamontoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sp_reporte_abonos_fecha_montoTableAdapter = new CapaPresentacion.DataSet1TableAdapters.sp_reporte_abonos_fecha_montoTableAdapter();
+            this.sp_reporte_pagosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sp_reporte_pagosTableAdapter = new CapaPresentacion.DataSet1TableAdapters.sp_reporte_pagosTableAdapter();
+            this.sp_reporte_detalle_pago_comisionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sp_reporte_detalle_pago_comisionesTableAdapter = new CapaPresentacion.DataSet1TableAdapters.sp_reporte_detalle_pago_comisionesTableAdapter();
+            this.sp_reporte_detalle_pago_comisiones_vendedoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sp_reporte_detalle_pago_comisiones_vendedoresTableAdapter = new CapaPresentacion.DataSet1TableAdapters.sp_reporte_detalle_pago_comisiones_vendedoresTableAdapter();
+            this.tabPage10 = new System.Windows.Forms.TabPage();
+            this.panel10 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.spmostrarreporteformaspagoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spreporteabonosporboletaBindingSource)).BeginInit();
@@ -102,6 +138,9 @@ namespace CapaPresentacion._reportes
             ((System.ComponentModel.ISupportInitialize)(this.mostrarcantidadboletasvendidaporvendedoresBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mostrartodoslosabonosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spreporteabonosfechamontoBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spreportepagosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spreportedetallepagocomisionesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spreportedetallepagocomisionesvendedoresBindingSource)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -114,12 +153,22 @@ namespace CapaPresentacion._reportes
             this.panel4.SuspendLayout();
             this.tabPage6.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.tabPage7.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.tabPage8.SuspendLayout();
+            this.panel7.SuspendLayout();
+            this.tabPage9.SuspendLayout();
+            this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sp_reporte_abonos_por_boletaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sp_reporte_boletas_por_estadosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mostrar_cantidad_boletas_vendida_por_vendedoresBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mostrar_todos_los_abonosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sp_reporte_abonos_fecha_montoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spreporteabonosfechamontoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sp_reporte_pagosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sp_reporte_detalle_pago_comisionesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sp_reporte_detalle_pago_comisiones_vendedoresBindingSource)).BeginInit();
+            this.tabPage10.SuspendLayout();
             this.SuspendLayout();
             // 
             // spmostrarreporteformaspagoBindingSource
@@ -157,6 +206,21 @@ namespace CapaPresentacion._reportes
             this.spreporteabonosfechamontoBindingSource1.DataMember = "sp_reporte_abonos_fecha_monto";
             this.spreporteabonosfechamontoBindingSource1.DataSource = this.dataSet1;
             // 
+            // spreportepagosBindingSource
+            // 
+            this.spreportepagosBindingSource.DataMember = "sp_reporte_pagos";
+            this.spreportepagosBindingSource.DataSource = this.dataSet1;
+            // 
+            // spreportedetallepagocomisionesBindingSource
+            // 
+            this.spreportedetallepagocomisionesBindingSource.DataMember = "sp_reporte_detalle_pago_comisiones";
+            this.spreportedetallepagocomisionesBindingSource.DataSource = this.dataSet1;
+            // 
+            // spreportedetallepagocomisionesvendedoresBindingSource
+            // 
+            this.spreportedetallepagocomisionesvendedoresBindingSource.DataMember = "sp_reporte_detalle_pago_comisiones_vendedores";
+            this.spreportedetallepagocomisionesvendedoresBindingSource.DataSource = this.dataSet1;
+            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
@@ -165,11 +229,15 @@ namespace CapaPresentacion._reportes
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Controls.Add(this.tabPage6);
+            this.tabControl1.Controls.Add(this.tabPage7);
+            this.tabControl1.Controls.Add(this.tabPage8);
+            this.tabControl1.Controls.Add(this.tabPage9);
+            this.tabControl1.Controls.Add(this.tabPage10);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(898, 490);
+            this.tabControl1.Size = new System.Drawing.Size(898, 548);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -630,6 +698,272 @@ namespace CapaPresentacion._reportes
             this.label2.TabIndex = 2;
             this.label2.Text = "Fecha Inicio";
             // 
+            // tabPage7
+            // 
+            this.tabPage7.Controls.Add(this.reportViewer7);
+            this.tabPage7.Controls.Add(this.panel6);
+            this.tabPage7.Location = new System.Drawing.Point(4, 25);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage7.Size = new System.Drawing.Size(890, 461);
+            this.tabPage7.TabIndex = 6;
+            this.tabPage7.Text = "Pago de comisiones";
+            this.tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // reportViewer7
+            // 
+            this.reportViewer7.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource7.Name = "dsPagoComisiones";
+            reportDataSource7.Value = this.spreportepagosBindingSource;
+            this.reportViewer7.LocalReport.DataSources.Add(reportDataSource7);
+            this.reportViewer7.LocalReport.ReportEmbeddedResource = "CapaPresentacion._reportes._pagos.RptPagoComisiones.rdlc";
+            this.reportViewer7.Location = new System.Drawing.Point(3, 50);
+            this.reportViewer7.Name = "reportViewer7";
+            this.reportViewer7.ServerReport.BearerToken = null;
+            this.reportViewer7.Size = new System.Drawing.Size(884, 408);
+            this.reportViewer7.TabIndex = 1;
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.dt_pagos_2);
+            this.panel6.Controls.Add(this.label9);
+            this.panel6.Controls.Add(this.button5);
+            this.panel6.Controls.Add(this.dt_pagos_1);
+            this.panel6.Controls.Add(this.label10);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel6.Location = new System.Drawing.Point(3, 3);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(884, 47);
+            this.panel6.TabIndex = 0;
+            // 
+            // dt_pagos_2
+            // 
+            this.dt_pagos_2.CalendarForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.dt_pagos_2.CalendarTitleForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.dt_pagos_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.dt_pagos_2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dt_pagos_2.Location = new System.Drawing.Point(323, 11);
+            this.dt_pagos_2.Name = "dt_pagos_2";
+            this.dt_pagos_2.Size = new System.Drawing.Size(120, 23);
+            this.dt_pagos_2.TabIndex = 7;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label9.Location = new System.Drawing.Point(230, 14);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(81, 17);
+            this.label9.TabIndex = 5;
+            this.label9.Text = "Fecha Final";
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.Teal;
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.button5.ForeColor = System.Drawing.Color.White;
+            this.button5.Location = new System.Drawing.Point(461, 10);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(136, 28);
+            this.button5.TabIndex = 9;
+            this.button5.Text = "Generar reporte";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // dt_pagos_1
+            // 
+            this.dt_pagos_1.CalendarForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.dt_pagos_1.CalendarTitleForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.dt_pagos_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.dt_pagos_1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dt_pagos_1.Location = new System.Drawing.Point(102, 11);
+            this.dt_pagos_1.Name = "dt_pagos_1";
+            this.dt_pagos_1.Size = new System.Drawing.Size(120, 23);
+            this.dt_pagos_1.TabIndex = 8;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label10.Location = new System.Drawing.Point(9, 14);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(83, 17);
+            this.label10.TabIndex = 6;
+            this.label10.Text = "Fecha Inicio";
+            // 
+            // tabPage8
+            // 
+            this.tabPage8.Controls.Add(this.reportViewer8);
+            this.tabPage8.Controls.Add(this.panel7);
+            this.tabPage8.Location = new System.Drawing.Point(4, 25);
+            this.tabPage8.Name = "tabPage8";
+            this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage8.Size = new System.Drawing.Size(890, 461);
+            this.tabPage8.TabIndex = 7;
+            this.tabPage8.Text = "Detalle pago comisiones";
+            this.tabPage8.UseVisualStyleBackColor = true;
+            // 
+            // reportViewer8
+            // 
+            this.reportViewer8.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource8.Name = "dsDetallePagoComisiones";
+            reportDataSource8.Value = this.spreportedetallepagocomisionesBindingSource;
+            this.reportViewer8.LocalReport.DataSources.Add(reportDataSource8);
+            this.reportViewer8.LocalReport.ReportEmbeddedResource = "CapaPresentacion._reportes._pagos.RptDetallePagos.rdlc";
+            this.reportViewer8.Location = new System.Drawing.Point(3, 50);
+            this.reportViewer8.Name = "reportViewer8";
+            this.reportViewer8.ServerReport.BearerToken = null;
+            this.reportViewer8.Size = new System.Drawing.Size(884, 408);
+            this.reportViewer8.TabIndex = 2;
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.dateTimePicker2);
+            this.panel7.Controls.Add(this.label11);
+            this.panel7.Controls.Add(this.button6);
+            this.panel7.Controls.Add(this.dateTimePicker1);
+            this.panel7.Controls.Add(this.label12);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel7.Location = new System.Drawing.Point(3, 3);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(884, 47);
+            this.panel7.TabIndex = 1;
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.CalendarForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.dateTimePicker2.CalendarTitleForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker2.Location = new System.Drawing.Point(323, 11);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(120, 23);
+            this.dateTimePicker2.TabIndex = 7;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label11.Location = new System.Drawing.Point(230, 14);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(81, 17);
+            this.label11.TabIndex = 5;
+            this.label11.Text = "Fecha Final";
+            // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.Teal;
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.button6.ForeColor = System.Drawing.Color.White;
+            this.button6.Location = new System.Drawing.Point(461, 10);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(136, 28);
+            this.button6.TabIndex = 9;
+            this.button6.Text = "Generar reporte";
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CalendarForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.dateTimePicker1.CalendarTitleForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(102, 11);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(120, 23);
+            this.dateTimePicker1.TabIndex = 8;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label12.Location = new System.Drawing.Point(9, 14);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(83, 17);
+            this.label12.TabIndex = 6;
+            this.label12.Text = "Fecha Inicio";
+            // 
+            // tabPage9
+            // 
+            this.tabPage9.Controls.Add(this.reportViewer9);
+            this.tabPage9.Controls.Add(this.panel8);
+            this.tabPage9.Location = new System.Drawing.Point(4, 25);
+            this.tabPage9.Name = "tabPage9";
+            this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage9.Size = new System.Drawing.Size(890, 461);
+            this.tabPage9.TabIndex = 8;
+            this.tabPage9.Text = "Detalle Pago Comisiones Por vendedor";
+            this.tabPage9.UseVisualStyleBackColor = true;
+            // 
+            // reportViewer9
+            // 
+            this.reportViewer9.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource9.Name = "dsDetallePagoComisionesPorVendedores";
+            reportDataSource9.Value = this.spreportedetallepagocomisionesvendedoresBindingSource;
+            this.reportViewer9.LocalReport.DataSources.Add(reportDataSource9);
+            this.reportViewer9.LocalReport.ReportEmbeddedResource = "CapaPresentacion._reportes._pagos.RptDetalleComisionesVendedor.rdlc";
+            this.reportViewer9.Location = new System.Drawing.Point(3, 50);
+            this.reportViewer9.Name = "reportViewer9";
+            this.reportViewer9.ServerReport.BearerToken = null;
+            this.reportViewer9.Size = new System.Drawing.Size(884, 408);
+            this.reportViewer9.TabIndex = 3;
+            // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.Cbx_vendedores);
+            this.panel8.Controls.Add(this.button7);
+            this.panel8.Controls.Add(this.label14);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel8.Location = new System.Drawing.Point(3, 3);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(884, 47);
+            this.panel8.TabIndex = 2;
+            // 
+            // Cbx_vendedores
+            // 
+            this.Cbx_vendedores.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Cbx_vendedores.FormattingEnabled = true;
+            this.Cbx_vendedores.Location = new System.Drawing.Point(100, 11);
+            this.Cbx_vendedores.Name = "Cbx_vendedores";
+            this.Cbx_vendedores.Size = new System.Drawing.Size(335, 24);
+            this.Cbx_vendedores.TabIndex = 10;
+            // 
+            // button7
+            // 
+            this.button7.BackColor = System.Drawing.Color.Teal;
+            this.button7.FlatAppearance.BorderSize = 0;
+            this.button7.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.button7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.button7.ForeColor = System.Drawing.Color.White;
+            this.button7.Location = new System.Drawing.Point(461, 10);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(136, 28);
+            this.button7.TabIndex = 9;
+            this.button7.Text = "Generar reporte";
+            this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label14.Location = new System.Drawing.Point(9, 14);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(85, 17);
+            this.label14.TabIndex = 6;
+            this.label14.Text = "Vendedores";
+            // 
             // sp_mostrar_reporte_formas_pagoTableAdapter
             // 
             this.sp_mostrar_reporte_formas_pagoTableAdapter.ClearBeforeFill = true;
@@ -684,12 +1018,58 @@ namespace CapaPresentacion._reportes
             // 
             this.sp_reporte_abonos_fecha_montoTableAdapter.ClearBeforeFill = true;
             // 
+            // sp_reporte_pagosBindingSource
+            // 
+            this.sp_reporte_pagosBindingSource.DataMember = "sp_reporte_pagos";
+            this.sp_reporte_pagosBindingSource.DataSource = this.dataSet1;
+            // 
+            // sp_reporte_pagosTableAdapter
+            // 
+            this.sp_reporte_pagosTableAdapter.ClearBeforeFill = true;
+            // 
+            // sp_reporte_detalle_pago_comisionesBindingSource
+            // 
+            this.sp_reporte_detalle_pago_comisionesBindingSource.DataMember = "sp_reporte_detalle_pago_comisiones";
+            this.sp_reporte_detalle_pago_comisionesBindingSource.DataSource = this.dataSet1;
+            // 
+            // sp_reporte_detalle_pago_comisionesTableAdapter
+            // 
+            this.sp_reporte_detalle_pago_comisionesTableAdapter.ClearBeforeFill = true;
+            // 
+            // sp_reporte_detalle_pago_comisiones_vendedoresBindingSource
+            // 
+            this.sp_reporte_detalle_pago_comisiones_vendedoresBindingSource.DataMember = "sp_reporte_detalle_pago_comisiones_vendedores";
+            this.sp_reporte_detalle_pago_comisiones_vendedoresBindingSource.DataSource = this.dataSet1;
+            // 
+            // sp_reporte_detalle_pago_comisiones_vendedoresTableAdapter
+            // 
+            this.sp_reporte_detalle_pago_comisiones_vendedoresTableAdapter.ClearBeforeFill = true;
+            // 
+            // tabPage10
+            // 
+            this.tabPage10.Controls.Add(this.panel10);
+            this.tabPage10.Location = new System.Drawing.Point(4, 25);
+            this.tabPage10.Name = "tabPage10";
+            this.tabPage10.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage10.Size = new System.Drawing.Size(890, 519);
+            this.tabPage10.TabIndex = 9;
+            this.tabPage10.Text = "Caja Por Dia";
+            this.tabPage10.UseVisualStyleBackColor = true;
+            // 
+            // panel10
+            // 
+            this.panel10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel10.Location = new System.Drawing.Point(3, 3);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(884, 513);
+            this.panel10.TabIndex = 3;
+            // 
             // Frm_reportes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(898, 490);
+            this.ClientSize = new System.Drawing.Size(898, 548);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
@@ -705,6 +1085,9 @@ namespace CapaPresentacion._reportes
             ((System.ComponentModel.ISupportInitialize)(this.mostrarcantidadboletasvendidaporvendedoresBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mostrartodoslosabonosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spreporteabonosfechamontoBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spreportepagosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spreportedetallepagocomisionesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spreportedetallepagocomisionesvendedoresBindingSource)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -720,12 +1103,25 @@ namespace CapaPresentacion._reportes
             this.tabPage6.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            this.tabPage7.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            this.tabPage8.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
+            this.tabPage9.ResumeLayout(false);
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sp_reporte_abonos_por_boletaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sp_reporte_boletas_por_estadosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mostrar_cantidad_boletas_vendida_por_vendedoresBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mostrar_todos_los_abonosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sp_reporte_abonos_fecha_montoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spreporteabonosfechamontoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sp_reporte_pagosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sp_reporte_detalle_pago_comisionesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sp_reporte_detalle_pago_comisiones_vendedoresBindingSource)).EndInit();
+            this.tabPage10.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -790,5 +1186,38 @@ namespace CapaPresentacion._reportes
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DateTimePicker dt_fecha_ini_2;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TabPage tabPage7;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.DateTimePicker dt_pagos_2;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.DateTimePicker dt_pagos_1;
+        private System.Windows.Forms.Label label10;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer7;
+        private System.Windows.Forms.BindingSource sp_reporte_pagosBindingSource;
+        private System.Windows.Forms.BindingSource spreportepagosBindingSource;
+        private DataSet1TableAdapters.sp_reporte_pagosTableAdapter sp_reporte_pagosTableAdapter;
+        private System.Windows.Forms.TabPage tabPage8;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label label12;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer8;
+        private System.Windows.Forms.BindingSource sp_reporte_detalle_pago_comisionesBindingSource;
+        private System.Windows.Forms.BindingSource spreportedetallepagocomisionesBindingSource;
+        private DataSet1TableAdapters.sp_reporte_detalle_pago_comisionesTableAdapter sp_reporte_detalle_pago_comisionesTableAdapter;
+        private System.Windows.Forms.TabPage tabPage9;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.ComboBox Cbx_vendedores;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Label label14;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer9;
+        private System.Windows.Forms.BindingSource sp_reporte_detalle_pago_comisiones_vendedoresBindingSource;
+        private System.Windows.Forms.BindingSource spreportedetallepagocomisionesvendedoresBindingSource;
+        private DataSet1TableAdapters.sp_reporte_detalle_pago_comisiones_vendedoresTableAdapter sp_reporte_detalle_pago_comisiones_vendedoresTableAdapter;
+        private System.Windows.Forms.TabPage tabPage10;
+        private System.Windows.Forms.Panel panel10;
     }
 }

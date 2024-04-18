@@ -1,5 +1,4 @@
-﻿using CapaNegocio;
-using CapaPresentacion._auxiliar_instalacion;
+﻿using CapaPresentacion._auxiliar_instalacion;
 using CapaPresentacion._clientes;
 using CapaPresentacion._pagos;
 using CapaPresentacion._reportes;

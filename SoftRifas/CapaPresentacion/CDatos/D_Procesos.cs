@@ -5,9 +5,9 @@ namespace CDatos
 {
     public class D_Procesos
     {
-        public static bool getConnectionTest(ProcesoConexion conexion)
+        public static bool getConnectionTest()
         {
-            return Conexion.getConnectionTest(conexion);
+            return Conexion.getConnectionTest();
         }
     }
 }

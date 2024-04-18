@@ -20,7 +20,10 @@ namespace CNegocio
         {
             return D_Pagos.mostrarDetallePagos();
         }
-
+        public static bool borrarPagos(int id, int abonoId)
+        {
+            return D_Pagos.borrarPagos(id, abonoId);
+        }
 
     }
 }

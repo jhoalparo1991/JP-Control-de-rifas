@@ -1,5 +1,4 @@
-﻿using CapaNegocio;
-using CapaPresentacion._auxiliar_instalacion;
+﻿using CapaPresentacion._auxiliar_instalacion;
 using CapaPresentacion._menu;
 using CapaPresentacion._usuarios;
 using CEntidades;
@@ -110,10 +109,29 @@ namespace CapaPresentacion
 
         private void Lbl_validacion_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Frm_validar_conexion frm = new Frm_validar_conexion();
-            frm.ShowDialog();
-        }
+            //Frm_validar_conexion frm = new Frm_validar_conexion();
+            //frm.ShowDialog();
 
+            try
+            {
+
+                if (N_Procesos.getConnectionTest())
+                {
+
+
+                    MessageBox.Show("Conexion exitosa con el servidor de base de datos", "Aviso del sistema");
+                }
+                else
+                {
+                    MessageBox.Show("Error en la conexion con el servidor de base de datos", "Aviso del sistema");
+                }
+            }
+            catch (Exception ex)
+            {
+                _helpers.Mensajes.mensajeErrorException(ex);
+            }
+        }
+        
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();

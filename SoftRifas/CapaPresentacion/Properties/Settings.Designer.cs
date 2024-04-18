@@ -26,7 +26,7 @@ namespace CapaPresentacion.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-2TMM54K\\SQLEXPRESS;Initial Catalog=db_rifas;User ID=sa;Passwo" +
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-22L2LNS\\SQLEXPRESS;Initial Catalog=db_rifas;User ID=sa;Passwo" +
             "rd=masterkey")]
         public string db_rifasConnectionString {
             get {

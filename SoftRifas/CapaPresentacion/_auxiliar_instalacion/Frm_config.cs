@@ -1,5 +1,4 @@
-﻿using CapaNegocio;
-using CEntidades;
+﻿using CEntidades;
 using CNegocio;
 using System;
 using System.Linq;

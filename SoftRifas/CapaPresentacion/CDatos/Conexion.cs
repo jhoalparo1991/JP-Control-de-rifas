@@ -1,8 +1,10 @@
 ﻿using CEntidades;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.SqlClient;
 using System.IO;
+using System.Windows;
 
 namespace CDatos
 {
@@ -39,27 +41,14 @@ namespace CDatos
             return listado;
         }
 
-
         public static SqlConnection getConnection()
         {
             SqlConnection con = null;
             try
             {
-                List<string> properties = LeerArchivoconexionDB();
-                SqlConnectionStringBuilder b = new SqlConnectionStringBuilder();
-                if (properties != null && properties.Count > 0)
-                {
-                    b.DataSource = properties[0];
-                    b.InitialCatalog = properties[1];
-                    b.UserID = properties[2];
-                    b.Password = properties[3];
-                    b.IntegratedSecurity = Convert.ToBoolean(properties[4]);
-                    con = new SqlConnection(b.ToString());
-                }
-                else
-                {
-                    con = null;
-                }
+                string conexion = ConfigurationManager.ConnectionStrings["db_rifasConnectionString"].ToString();
+
+                con = new SqlConnection(conexion);
 
             }
             catch (Exception e)
@@ -71,20 +60,16 @@ namespace CDatos
             return con;
         }
 
-        public static bool getConnectionTest(ProcesoConexion conexion)
+        public static bool getConnectionTest()
         {
             bool result = false;
 
             SqlConnection con = new SqlConnection();
             try
             {
-                SqlConnectionStringBuilder b = new SqlConnectionStringBuilder();
-                b.InitialCatalog = conexion.BaseDeDatos;
-                b.DataSource = conexion.Servidor;
-                b.UserID = conexion.Usuario;
-                b.Password = conexion.Password;
-                b.IntegratedSecurity = conexion.SeguridadIntegrada;
-                con = new SqlConnection(b.ToString());
+                string conn = ConfigurationManager.ConnectionStrings["db_rifasConnectionString"].ToString();
+
+                con = new SqlConnection(conn);
                 con.Open();
                 result = true;
 

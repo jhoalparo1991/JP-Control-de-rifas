@@ -101,6 +101,10 @@
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.ConfigurationManager, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Configuration.ConfigurationManager.8.0.0\lib\net462\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Xaml" />
@@ -209,6 +213,12 @@
     <Compile Include="_clientes\Frm_clientes.Designer.cs">
       <DependentUpon>Frm_clientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="_reportes\_cajas\ReporteCajaPorDia.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="_reportes\_cajas\ReporteCajaPorDia.Designer.cs">
+      <DependentUpon>ReporteCajaPorDia.cs</DependentUpon>
+    </Compile>
     <Compile Include="_rifas_boletas\Frm_boletas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -291,6 +301,13 @@
     <EmbeddedResource Include="_reportes\RptPorNroBoleta.rdlc" />
     <EmbeddedResource Include="_reportes\Rpt_boletas_vendedor.rdlc" />
     <EmbeddedResource Include="_reportes\Rpt_formas_pago_2.rdlc" />
+    <EmbeddedResource Include="_reportes\_cajas\ReporteCajaPorDia.resx">
+      <DependentUpon>ReporteCajaPorDia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_reportes\_cajas\rptCajaPorDia.rdlc" />
+    <EmbeddedResource Include="_reportes\_pagos\RptDetalleComisionesVendedor.rdlc" />
+    <EmbeddedResource Include="_reportes\_pagos\RptDetallePagos.rdlc" />
+    <EmbeddedResource Include="_reportes\_pagos\RptPagoComisiones.rdlc" />
     <EmbeddedResource Include="_rifas_boletas\Frm_boletas.resx">
       <DependentUpon>Frm_boletas.cs</DependentUpon>
     </EmbeddedResource>
