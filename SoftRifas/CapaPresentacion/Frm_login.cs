@@ -109,27 +109,10 @@ namespace CapaPresentacion
 
         private void Lbl_validacion_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            //Frm_validar_conexion frm = new Frm_validar_conexion();
-            //frm.ShowDialog();
-
-            try
-            {
-
-                if (N_Procesos.getConnectionTest())
-                {
+            Frm_validar_conexion frm = new Frm_validar_conexion();
+            frm.ShowDialog();
 
 
-                    MessageBox.Show("Conexion exitosa con el servidor de base de datos", "Aviso del sistema");
-                }
-                else
-                {
-                    MessageBox.Show("Error en la conexion con el servidor de base de datos", "Aviso del sistema");
-                }
-            }
-            catch (Exception ex)
-            {
-                _helpers.Mensajes.mensajeErrorException(ex);
-            }
         }
         
 

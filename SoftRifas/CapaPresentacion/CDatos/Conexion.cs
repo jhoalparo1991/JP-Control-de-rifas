@@ -46,9 +46,25 @@ namespace CDatos
             SqlConnection con = null;
             try
             {
-                string conexion = ConfigurationManager.ConnectionStrings["db_rifasConnectionString"].ToString();
+              //  string conexion = ConfigurationManager.ConnectionStrings["db_rifasConnectionString"].ToString();
+                //string prop = CapaPresentacion.Properties.Settings.Default.db_rifasConnectionString;
+                //con = new SqlConnection(prop);
 
-                con = new SqlConnection(conexion);
+                List<string> properties = LeerArchivoconexionDB();
+                SqlConnectionStringBuilder b = new SqlConnectionStringBuilder();
+                if (properties != null && properties.Count > 0)
+                {
+                    b.DataSource = properties[0];
+                    b.InitialCatalog = properties[1];
+                    b.UserID = properties[2];
+                    b.Password = properties[3];
+                    b.IntegratedSecurity = Convert.ToBoolean(properties[4]);
+                    con = new SqlConnection(b.ToString());
+                }
+                else
+                {
+                    con = null;
+                }
 
             }
             catch (Exception e)
@@ -67,7 +83,7 @@ namespace CDatos
             SqlConnection con = new SqlConnection();
             try
             {
-                string conn = ConfigurationManager.ConnectionStrings["db_rifasConnectionString"].ToString();
+                string conn = CapaPresentacion.Properties.Settings.Default.db_rifasConnectionString;
 
                 con = new SqlConnection(conn);
                 con.Open();
