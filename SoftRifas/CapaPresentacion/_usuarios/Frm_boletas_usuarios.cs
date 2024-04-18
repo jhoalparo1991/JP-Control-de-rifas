@@ -143,17 +143,17 @@ namespace CapaPresentacion._usuarios
                     return;
                 }
 
-                DialogResult result = MessageBox.Show("Seguro  que deseas eliminar este registro", "Mensaje de confirmacion",
+                DialogResult result = MessageBox.Show($"Seguro  que deseas quitar la boleta { boletaId }", "Mensaje de confirmacion",
                     MessageBoxButtons.OKCancel,
                     MessageBoxIcon.Question);
 
                 if (result == DialogResult.OK)
                 {
                     N_Boletas.borrarBoletaAsignadaVendedor(boletaId);
-                    dibujarBoletas();
-                    usuarioId = 0;
+                   
+                   // usuarioId = 0;
                 }
-
+                dibujarBoletas();
             }
             catch (Exception ex)
             {

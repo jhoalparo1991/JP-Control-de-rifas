@@ -48,16 +48,16 @@ namespace CapaPresentacion._reportes._cajas
             this.button1 = new System.Windows.Forms.Button();
             this.panelInfo = new System.Windows.Forms.Panel();
             this.panelReporte = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.Btn_cancelar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.Btn_cancelar = new System.Windows.Forms.Button();
             this.panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panelInfo.SuspendLayout();
             this.panelReporte.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel9
@@ -69,7 +69,7 @@ namespace CapaPresentacion._reportes._cajas
             this.panel9.Controls.Add(this.label15);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel9.Location = new System.Drawing.Point(0, 0);
-            this.panel9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel9.Margin = new System.Windows.Forms.Padding(4);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(1192, 50);
             this.panel9.TabIndex = 3;
@@ -81,7 +81,7 @@ namespace CapaPresentacion._reportes._cajas
             this.dateTimePicker3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker3.Location = new System.Drawing.Point(100, 14);
-            this.dateTimePicker3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateTimePicker3.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker3.Name = "dateTimePicker3";
             this.dateTimePicker3.Size = new System.Drawing.Size(159, 23);
             this.dateTimePicker3.TabIndex = 7;
@@ -93,7 +93,7 @@ namespace CapaPresentacion._reportes._cajas
             this.dateTimePicker4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.dateTimePicker4.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker4.Location = new System.Drawing.Point(355, 14);
-            this.dateTimePicker4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateTimePicker4.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker4.Name = "dateTimePicker4";
             this.dateTimePicker4.Size = new System.Drawing.Size(159, 23);
             this.dateTimePicker4.TabIndex = 8;
@@ -119,7 +119,7 @@ namespace CapaPresentacion._reportes._cajas
             this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.button8.ForeColor = System.Drawing.Color.White;
             this.button8.Location = new System.Drawing.Point(522, 8);
-            this.button8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button8.Margin = new System.Windows.Forms.Padding(4);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(181, 34);
             this.button8.TabIndex = 9;
@@ -265,6 +265,7 @@ namespace CapaPresentacion._reportes._cajas
             this.button1.TabIndex = 10;
             this.button1.Text = "Generar Reporte";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Visible = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panelInfo
@@ -293,6 +294,26 @@ namespace CapaPresentacion._reportes._cajas
             this.panelReporte.TabIndex = 12;
             this.panelReporte.Visible = false;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.reportViewer1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Padding = new System.Windows.Forms.Padding(10);
+            this.panel1.Size = new System.Drawing.Size(824, 435);
+            this.panel1.TabIndex = 1;
+            // 
+            // reportViewer1
+            // 
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "CapaPresentacion._reportes._cajas.rptCajaPorDia.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(10, 10);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(804, 415);
+            this.reportViewer1.TabIndex = 0;
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.Btn_cancelar);
@@ -318,26 +339,6 @@ namespace CapaPresentacion._reportes._cajas
             this.Btn_cancelar.UseVisualStyleBackColor = false;
             this.Btn_cancelar.Click += new System.EventHandler(this.Btn_cancelar_Click);
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.reportViewer1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(10);
-            this.panel1.Size = new System.Drawing.Size(824, 435);
-            this.panel1.TabIndex = 1;
-            // 
-            // reportViewer1
-            // 
-            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "CapaPresentacion._reportes._cajas.rptCajaPorDia.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(10, 10);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(804, 415);
-            this.reportViewer1.TabIndex = 0;
-            // 
             // ReporteCajaPorDia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -348,7 +349,7 @@ namespace CapaPresentacion._reportes._cajas
             this.Controls.Add(this.panel9);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ReporteCajaPorDia";
             this.Size = new System.Drawing.Size(1192, 615);
             this.panel9.ResumeLayout(false);
@@ -357,8 +358,8 @@ namespace CapaPresentacion._reportes._cajas
             this.panelInfo.ResumeLayout(false);
             this.panelInfo.PerformLayout();
             this.panelReporte.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

@@ -213,3 +213,25 @@ begin catch
 	print error_message()
 end catch
 go
+
+alter proc sp_quitar_boleta_vendedor
+@boleta_id int
+as
+begin try
+	begin tran
+		declare @boleta_vendida int = (select count(*) from tbl_abonos_boleta where boleta_id=@boleta_id)
+		if @boleta_vendida > 0
+		begin
+			raiserror('No puedes quitar una boleta que ya tiene abonos registrados',16,1)
+		end
+		begin
+		delete from tbl_boletas_vendedores where boleta_id=@boleta_id
+		update tbl_boletas set vendedor_id=0 where id=@boleta_id
+		end
+	commit
+end try
+begin catch
+	rollback
+	print error_message()
+end catch
+go

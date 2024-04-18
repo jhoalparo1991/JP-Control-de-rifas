@@ -297,6 +297,7 @@ namespace CDatos
             {
                 con.Open();
                 SqlCommand command = new SqlCommand("sp_quitar_boleta_vendedor", con);
+                command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.AddWithValue("boleta_id", boletaId);
 
                 result = Convert.ToInt32(command.ExecuteNonQuery()) != 0 ? true : false;
