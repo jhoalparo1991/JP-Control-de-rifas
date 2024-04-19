@@ -1,0 +1,8 @@
+sp_mostrar_reporte_formas_pago
+mostrar_cantidad_boletas_vendida_por_vendedores
+sp_reporte_boletas_por_estados
+sp_reporte_abonos_por_boleta
+sp_reporte_abonos_fecha_monto
+sp_reporte_pagos
+sp_reporte_detalle_pago_comisiones
+mostrar_todos_los_abonos

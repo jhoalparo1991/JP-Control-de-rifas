@@ -1,11 +1,11 @@
 ﻿using CapaPresentacion._auxiliar_instalacion;
 using CapaPresentacion._clientes;
 using CapaPresentacion._pagos;
-using CapaPresentacion._reportes;
 using CapaPresentacion._rifas_boletas;
 using CapaPresentacion._usuarios;
 using CEntidades;
 using CNegocio;
+using ReportsModule;
 using System;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
@@ -127,7 +127,7 @@ namespace CapaPresentacion._menu
 
         private void Btn_reportes_Click(object sender, EventArgs e)
         {
-            AbrirFormularioHijo(new Frm_reportes(), "Reportes");
+          AbrirFormularioHijo(new Frm_reports_menu(), "Reportes");
         }
 
         private void Btn_info_Click(object sender, EventArgs e)
