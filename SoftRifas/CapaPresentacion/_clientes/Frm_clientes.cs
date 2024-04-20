@@ -119,20 +119,6 @@ namespace CapaPresentacion._clientes
             }
         }
 
-        private void Btn_modificar_Click(object sender, EventArgs e)
-        {
-          
-        }
-
-        private void Btn_eliminar_Click(object sender, EventArgs e)
-        {
-          
-        }
-
-        private void Btn_cerrar_Click(object sender, EventArgs e)
-        {
-        }
-
         private void iconPictureBox1_Click(object sender, EventArgs e)
         {
             limpiar();

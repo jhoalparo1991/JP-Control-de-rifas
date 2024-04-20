@@ -7,7 +7,7 @@ begin
 	where id=@abono_boleta_id
 end
 go
-alter proc sp_cambiar_cliente_boleta
+create proc sp_cambiar_cliente_boleta
 @cliente_id int = 0,
 @boleta_id int = 0
 as

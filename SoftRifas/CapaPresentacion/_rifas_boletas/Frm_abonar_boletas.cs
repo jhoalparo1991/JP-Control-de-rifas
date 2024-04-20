@@ -1,4 +1,5 @@
-﻿using CapaPresentacion._rifas_boletas._boletas;
+﻿using CapaPresentacion._clientes;
+using CapaPresentacion._rifas_boletas._boletas;
 using Domain;
 using Entities;
 using System;
@@ -265,21 +266,10 @@ namespace CapaPresentacion._rifas_boletas
         {
             if(Dgv_abonos.Rows.Count > 0)
             {
+                id = Convert.ToInt32(Dgv_abonos.CurrentRow.Cells["b_Id"].Value.ToString().Trim());
                 if (Dgv_abonos.Columns[e.ColumnIndex].Name == "btn_editar_forma_pago")
                 {
-                    id = Convert.ToInt32(Dgv_abonos.CurrentRow.Cells["b_Id"].Value.ToString().Trim());
-                    //txt_id_boleta.Text = Dgv_abonos.CurrentRow.Cells["b_boletaid"].Value.ToString().Trim();
-                    //Txt_boleta.Text = Dgv_abonos.CurrentRow.Cells["b_NroBoleta"].Value.ToString().Trim();
-                    //txt_vendedor_id.Text = Dgv_abonos.CurrentRow.Cells["b_VendedorId"].Value.ToString().Trim();
-                    //txt_vendedor.Text = Dgv_abonos.CurrentRow.Cells["b_Vendedor"].Value.ToString().Trim();
-                    //txt_cliente.Text = Dgv_abonos.CurrentRow.Cells["b_Cliente"].Value.ToString().Trim();
-                    //txt_cliente_id.Text = Dgv_abonos.CurrentRow.Cells["b_ClienteId"].Value.ToString().Trim();
-                    //txt_saldado.Text = Dgv_abonos.CurrentRow.Cells["b_ValorPorPagar"].Value.ToString().Trim();
-                    //Txt_comision.Text = Dgv_abonos.CurrentRow.Cells["b_ValorComision"].Value.ToString().Trim();
-                    //txt_deuda.Text = Dgv_abonos.CurrentRow.Cells["b_abonos"].Value.ToString().Trim();
-                    //Cbx_formas_pago.Text = Dgv_abonos.CurrentRow.Cells["b_FormasPago"].Value.ToString().Trim();
-
-                    DialogResult result = MessageBox.Show("Deseas hacer un  cambio de la forma de pago de este abono","Mensaje de confirmacion",
+                   DialogResult result = MessageBox.Show("Deseas hacer un  cambio de la forma de pago de este abono","Mensaje de confirmacion",
                         MessageBoxButtons.OKCancel,MessageBoxIcon.Question);
 
                     if(result == DialogResult.OK)
@@ -289,6 +279,21 @@ namespace CapaPresentacion._rifas_boletas
                         frmCambio.cbx_formas_pago.Text = Dgv_abonos.CurrentRow.Cells["b_FormasPago"].Value.ToString().Trim();
                         frmCambio.FormClosed += FrmCambio_FormClosed;
                         frmCambio.ShowDialog();
+                    }
+                }else if (Dgv_abonos.Columns[e.ColumnIndex].Name == "btn_cambiar_cliente")
+                {
+                 
+                    DialogResult result = MessageBox.Show("Deseas hacer el cambio de cliente a este abono", "Mensaje de confirmacion",
+                        MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+                    if (result == DialogResult.OK)
+                    {
+                        Frm_cambiar_cliente frmCambioCl = new Frm_cambiar_cliente();
+                        frmCambioCl.clienteIdActual = id;
+                        frmCambioCl._clienteActual= Dgv_abonos.CurrentRow.Cells["b_Cliente"].Value.ToString().Trim();
+                        frmCambioCl.Lbl_boleta_id.Text = Dgv_abonos.CurrentRow.Cells["b_boletaId"].Value.ToString().Trim();
+                        frmCambioCl.FormClosed += FrmCambio_FormClosed;
+                        frmCambioCl.ShowDialog();
                     }
                 }
             }

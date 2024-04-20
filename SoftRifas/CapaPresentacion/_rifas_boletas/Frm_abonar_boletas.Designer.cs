@@ -77,6 +77,7 @@ namespace CapaPresentacion._rifas_boletas
             this.VendedorCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ClienteCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_editar_forma_pago = new System.Windows.Forms.DataGridViewImageColumn();
+            this.btn_cambiar_cliente = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -195,7 +196,8 @@ namespace CapaPresentacion._rifas_boletas
             this.b_FormasPago,
             this.VendedorCC,
             this.ClienteCC,
-            this.btn_editar_forma_pago});
+            this.btn_editar_forma_pago,
+            this.btn_cambiar_cliente});
             this.Dgv_abonos.Location = new System.Drawing.Point(10, 307);
             this.Dgv_abonos.Name = "Dgv_abonos";
             this.Dgv_abonos.ReadOnly = true;
@@ -645,11 +647,20 @@ namespace CapaPresentacion._rifas_boletas
             // btn_editar_forma_pago
             // 
             this.btn_editar_forma_pago.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.btn_editar_forma_pago.HeaderText = "Editar";
+            this.btn_editar_forma_pago.HeaderText = "FP";
             this.btn_editar_forma_pago.Image = global::CapaPresentacion.Properties.Resources.editar24_gris;
             this.btn_editar_forma_pago.Name = "btn_editar_forma_pago";
             this.btn_editar_forma_pago.ReadOnly = true;
-            this.btn_editar_forma_pago.Width = 57;
+            this.btn_editar_forma_pago.Width = 35;
+            // 
+            // btn_cambiar_cliente
+            // 
+            this.btn_cambiar_cliente.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.btn_cambiar_cliente.HeaderText = "Cliente";
+            this.btn_cambiar_cliente.Image = global::CapaPresentacion.Properties.Resources.cliente;
+            this.btn_cambiar_cliente.Name = "btn_cambiar_cliente";
+            this.btn_cambiar_cliente.ReadOnly = true;
+            this.btn_cambiar_cliente.Width = 64;
             // 
             // Frm_abonar_boletas
             // 
@@ -727,5 +738,6 @@ namespace CapaPresentacion._rifas_boletas
         private System.Windows.Forms.DataGridViewTextBoxColumn VendedorCC;
         private System.Windows.Forms.DataGridViewTextBoxColumn ClienteCC;
         private System.Windows.Forms.DataGridViewImageColumn btn_editar_forma_pago;
+        private System.Windows.Forms.DataGridViewImageColumn btn_cambiar_cliente;
     }
 }

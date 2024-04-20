@@ -136,6 +136,12 @@
     <Compile Include="_auxiliar_instalacion\Frm_config.Designer.cs">
       <DependentUpon>Frm_config.cs</DependentUpon>
     </Compile>
+    <Compile Include="_clientes\Frm_cambiar_cliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_clientes\Frm_cambiar_cliente.Designer.cs">
+      <DependentUpon>Frm_cambiar_cliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="_helpers\DatosMaestros.cs" />
     <Compile Include="_helpers\Disenios.cs" />
     <Compile Include="_menu\Frm_about.cs">
@@ -283,6 +289,9 @@
     <EmbeddedResource Include="_auxiliar_instalacion\Frm_config.resx">
       <DependentUpon>Frm_config.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="_clientes\Frm_cambiar_cliente.resx">
+      <DependentUpon>Frm_cambiar_cliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="_menu\Frm_about.resx">
       <DependentUpon>Frm_about.cs</DependentUpon>
     </EmbeddedResource>
@@ -419,6 +428,7 @@
     <None Include="Resources\salir24.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\cliente.png" />
     <None Include="Resources\LOGO FINAL 2_page-0001.jpg" />
     <None Include="Resources\LOGO FINAL 2_page-00011.jpg" />
     <None Include="Resources\Logo.png" />

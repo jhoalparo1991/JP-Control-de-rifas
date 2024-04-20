@@ -31,6 +31,7 @@ namespace CapaPresentacion._usuarios
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.Btn_cerrar = new System.Windows.Forms.Button();
+            this.Lbl_vendedor = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.BtnBorrar = new System.Windows.Forms.Button();
@@ -39,7 +40,6 @@ namespace CapaPresentacion._usuarios
             this.Txt_nro_boleta = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.Fyp_boletas = new System.Windows.Forms.FlowLayoutPanel();
-            this.Lbl_vendedor = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -75,6 +75,17 @@ namespace CapaPresentacion._usuarios
             this.Btn_cerrar.TabIndex = 1;
             this.Btn_cerrar.UseVisualStyleBackColor = true;
             this.Btn_cerrar.Click += new System.EventHandler(this.Btn_cerrar_Click);
+            // 
+            // Lbl_vendedor
+            // 
+            this.Lbl_vendedor.AutoSize = true;
+            this.Lbl_vendedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_vendedor.ForeColor = System.Drawing.Color.White;
+            this.Lbl_vendedor.Location = new System.Drawing.Point(185, 15);
+            this.Lbl_vendedor.Name = "Lbl_vendedor";
+            this.Lbl_vendedor.Size = new System.Drawing.Size(87, 20);
+            this.Lbl_vendedor.TabIndex = 0;
+            this.Lbl_vendedor.Text = "Vendedor";
             // 
             // label1
             // 
@@ -179,16 +190,6 @@ namespace CapaPresentacion._usuarios
             this.Fyp_boletas.Name = "Fyp_boletas";
             this.Fyp_boletas.Size = new System.Drawing.Size(742, 406);
             this.Fyp_boletas.TabIndex = 3;
-            // 
-            // Lbl_vendedor
-            // 
-            this.Lbl_vendedor.AutoSize = true;
-            this.Lbl_vendedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_vendedor.ForeColor = System.Drawing.Color.White;
-            this.Lbl_vendedor.Location = new System.Drawing.Point(185, 15);
-            this.Lbl_vendedor.Name = "Lbl_vendedor";
-            this.Lbl_vendedor.Size = new System.Drawing.Size(0, 20);
-            this.Lbl_vendedor.TabIndex = 0;
             // 
             // Frm_boletas_usuarios
             // 
