@@ -210,7 +210,7 @@ namespace CapaPresentacion._rifas_boletas
         private void Btn_nuevos_Click(object sender, EventArgs e)
         {
             panel2.Visible = true;
-
+            limpiar();
         }
 
         private void Btn_editar_Click(object sender, EventArgs e)

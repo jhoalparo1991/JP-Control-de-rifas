@@ -329,7 +329,7 @@ namespace CapaPresentacion._usuarios
         private void Btn_nuevos_Click(object sender, EventArgs e)
         {
             Pn_mant.Visible = true;
-
+            limpiar();
         }
 
         private void Btn_editar_Click(object sender, EventArgs e)
