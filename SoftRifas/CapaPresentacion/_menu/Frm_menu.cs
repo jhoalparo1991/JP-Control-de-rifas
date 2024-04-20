@@ -5,7 +5,6 @@ using CapaPresentacion._rifas_boletas;
 using CapaPresentacion._usuarios;
 using CEntidades;
 using CNegocio;
-using ReportsModule;
 using System;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
@@ -145,6 +144,13 @@ namespace CapaPresentacion._menu
         private void Btn_pago_abonos_Click(object sender, EventArgs e)
         {
             AbrirFormularioHijo(new Frm_pagos_abonos(), "Pago Abonos");
+        }
+
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+            Frm_login frm = new Frm_login();
+            frm.ShowDialog();
         }
     }
 }

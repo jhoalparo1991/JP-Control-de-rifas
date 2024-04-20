@@ -1,5 +1,4 @@
-﻿using CapaPresentacion._reportes;
-using CEntidades;
+﻿using CEntidades;
 using CNegocio;
 using System;
 using System.Collections.Generic;
@@ -443,15 +442,7 @@ namespace CapaPresentacion._rifas_boletas
 
         private void Btn_reportes_Click(object sender, EventArgs e)
         {
-            if (boletaId <= 0)
-            {
-                _helpers.Mensajes.mensajeAdvertencia("Debes seleccioanr la boleta que deseas generar reporte");
-                return;
-            }
-
-            Frm_reporte_boletas_vendedor frmR = new Frm_reporte_boletas_vendedor();
-            frmR.Txt_boleta_id.Text = boletaId.ToString();
-            frmR.ShowDialog();
+           
         }
 
         private void iconPictureBox1_Click(object sender, EventArgs e)

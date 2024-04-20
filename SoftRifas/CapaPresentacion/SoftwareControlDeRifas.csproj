@@ -148,15 +148,6 @@
     <Compile Include="CNegocio\N_Pagos.cs" />
     <Compile Include="CNegocio\N_Rifas.cs" />
     <Compile Include="CNegocio\N_Usuarios.cs" />
-    <Compile Include="DataSet1.cs">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Compile>
     <Compile Include="Frm_login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,23 +168,71 @@
     <Compile Include="_menu\Frm_about.Designer.cs">
       <DependentUpon>Frm_about.cs</DependentUpon>
     </Compile>
+    <Compile Include="_modulo_reportes\Frm_reports_menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_modulo_reportes\Frm_reports_menu.Designer.cs">
+      <DependentUpon>Frm_reports_menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_modulo_reportes\_rdls\RptAbonosFechaMonto.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="_modulo_reportes\_rdls\RptAbonosFechaMonto.Designer.cs">
+      <DependentUpon>RptAbonosFechaMonto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_modulo_reportes\_rdls\RptEstadosBoletas.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="_modulo_reportes\_rdls\RptEstadosBoletas.Designer.cs">
+      <DependentUpon>RptEstadosBoletas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_modulo_reportes\_rdls\RptMostrarAbonos.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="_modulo_reportes\_rdls\RptMostrarAbonos.Designer.cs">
+      <DependentUpon>RptMostrarAbonos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_modulo_reportes\_rdls\RptMostrarAbonosPorFormasDePago.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="_modulo_reportes\_rdls\RptMostrarAbonosPorFormasDePago.Designer.cs">
+      <DependentUpon>RptMostrarAbonosPorFormasDePago.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_modulo_reportes\_rdls\RptMostrarComisionesVendedores.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="_modulo_reportes\_rdls\RptMostrarComisionesVendedores.Designer.cs">
+      <DependentUpon>RptMostrarComisionesVendedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_modulo_reportes\_rdls\RptMostrarTodosAbonos.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="_modulo_reportes\_rdls\RptMostrarTodosAbonos.Designer.cs">
+      <DependentUpon>RptMostrarTodosAbonos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_modulo_reportes\_rdls\RptPagoComisiones.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="_modulo_reportes\_rdls\RptPagoComisiones.Designer.cs">
+      <DependentUpon>RptPagoComisiones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_modulo_reportes\_rdls\RptPagosRealizados.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="_modulo_reportes\_rdls\RptPagosRealizados.Designer.cs">
+      <DependentUpon>RptPagosRealizados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_modulo_reportes\_rdls\RptVendidasPorVendedores.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="_modulo_reportes\_rdls\RptVendidasPorVendedores.Designer.cs">
+      <DependentUpon>RptVendidasPorVendedores.cs</DependentUpon>
+    </Compile>
     <Compile Include="_pagos\Frm_pagos_abonos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="_pagos\Frm_pagos_abonos.Designer.cs">
       <DependentUpon>Frm_pagos_abonos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="_reportes\Frm_reportes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="_reportes\Frm_reportes.Designer.cs">
-      <DependentUpon>Frm_reportes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="_reportes\Frm_reporte_boletas_vendedor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="_reportes\Frm_reporte_boletas_vendedor.Designer.cs">
-      <DependentUpon>Frm_reporte_boletas_vendedor.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -218,12 +257,6 @@
     </Compile>
     <Compile Include="_clientes\Frm_clientes.Designer.cs">
       <DependentUpon>Frm_clientes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="_reportes\_cajas\ReporteCajaPorDia.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="_reportes\_cajas\ReporteCajaPorDia.Designer.cs">
-      <DependentUpon>ReporteCajaPorDia.cs</DependentUpon>
     </Compile>
     <Compile Include="_rifas_boletas\Frm_boletas.cs">
       <SubType>Form</SubType>
@@ -271,14 +304,38 @@
     <EmbeddedResource Include="_menu\Frm_about.resx">
       <DependentUpon>Frm_about.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="_modulo_reportes\Frm_reports_menu.resx">
+      <DependentUpon>Frm_reports_menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_modulo_reportes\_rdls\RptAbonosFechaMonto.resx">
+      <DependentUpon>RptAbonosFechaMonto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_modulo_reportes\_rdls\RptEstadosBoletas.resx">
+      <DependentUpon>RptEstadosBoletas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_modulo_reportes\_rdls\RptMostrarAbonos.resx">
+      <DependentUpon>RptMostrarAbonos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_modulo_reportes\_rdls\RptMostrarAbonosPorFormasDePago.resx">
+      <DependentUpon>RptMostrarAbonosPorFormasDePago.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_modulo_reportes\_rdls\RptMostrarComisionesVendedores.resx">
+      <DependentUpon>RptMostrarComisionesVendedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_modulo_reportes\_rdls\RptMostrarTodosAbonos.resx">
+      <DependentUpon>RptMostrarTodosAbonos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_modulo_reportes\_rdls\RptPagoComisiones.resx">
+      <DependentUpon>RptPagoComisiones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_modulo_reportes\_rdls\RptPagosRealizados.resx">
+      <DependentUpon>RptPagosRealizados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_modulo_reportes\_rdls\RptVendidasPorVendedores.resx">
+      <DependentUpon>RptVendidasPorVendedores.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="_pagos\Frm_pagos_abonos.resx">
       <DependentUpon>Frm_pagos_abonos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="_reportes\Frm_reportes.resx">
-      <DependentUpon>Frm_reportes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="_reportes\Frm_reporte_boletas_vendedor.resx">
-      <DependentUpon>Frm_reporte_boletas_vendedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -300,20 +357,6 @@
     <EmbeddedResource Include="_clientes\Frm_clientes.resx">
       <DependentUpon>Frm_clientes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="_reportes\RptAbonos.rdlc" />
-    <EmbeddedResource Include="_reportes\RptAbonosPorFechaMonto.rdlc" />
-    <EmbeddedResource Include="_reportes\RptBoletasVendidasPorVendedores.rdlc" />
-    <EmbeddedResource Include="_reportes\RptEstadosBoletas.rdlc" />
-    <EmbeddedResource Include="_reportes\RptPorNroBoleta.rdlc" />
-    <EmbeddedResource Include="_reportes\Rpt_boletas_vendedor.rdlc" />
-    <EmbeddedResource Include="_reportes\Rpt_formas_pago_2.rdlc" />
-    <EmbeddedResource Include="_reportes\_cajas\ReporteCajaPorDia.resx">
-      <DependentUpon>ReporteCajaPorDia.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="_reportes\_cajas\rptCajaPorDia.rdlc" />
-    <EmbeddedResource Include="_reportes\_pagos\RptDetalleComisionesVendedor.rdlc" />
-    <EmbeddedResource Include="_reportes\_pagos\RptDetallePagos.rdlc" />
-    <EmbeddedResource Include="_reportes\_pagos\RptPagoComisiones.rdlc" />
     <EmbeddedResource Include="_rifas_boletas\Frm_boletas.resx">
       <DependentUpon>Frm_boletas.cs</DependentUpon>
     </EmbeddedResource>
@@ -332,20 +375,6 @@
     <EmbeddedResource Include="_usuarios\Frm_usuarios.resx">
       <DependentUpon>Frm_usuarios.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="DataSet1.xsc">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="DataSet1.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="DataSet1.xss">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -426,9 +455,13 @@
     <Folder Include="Properties\DataSources\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ReportsModule\ReportsModule.csproj">
-      <Project>{062ACD2E-780B-477F-82F3-0F4F35D417E1}</Project>
-      <Name>ReportsModule</Name>
+    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
+      <Project>{b5540615-55bd-4e8a-b0a4-f90003aa3117}</Project>
+      <Name>DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain\Domain.csproj">
+      <Project>{b621dcfc-94ee-4ef2-95f3-a7b05c303051}</Project>
+      <Name>Domain</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

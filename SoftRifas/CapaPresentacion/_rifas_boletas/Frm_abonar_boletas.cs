@@ -1,5 +1,4 @@
-﻿using CapaPresentacion._reportes;
-using CEntidades;
+﻿using CEntidades;
 using CNegocio;
 using System;
 using System.Collections.Generic;
@@ -252,9 +251,7 @@ namespace CapaPresentacion._rifas_boletas
                 return;
             }
 
-            Frm_reporte_boletas_vendedor frmR = new Frm_reporte_boletas_vendedor();
-            frmR.Txt_boleta_id.Text = Convert.ToInt32(txt_id_boleta.Text.Trim()).ToString();
-            frmR.ShowDialog();
+        
         }
 
         private void panel1_MouseDown(object sender, MouseEventArgs e)

@@ -393,6 +393,7 @@ namespace CapaPresentacion._rifas_boletas
             this.Btn_usuario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Btn_usuario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Btn_usuario.UseVisualStyleBackColor = true;
+            this.Btn_usuario.Visible = false;
             this.Btn_usuario.Click += new System.EventHandler(this.Btn_usuario_Click);
             // 
             // Btn_registrar

@@ -52,7 +52,7 @@ namespace CapaPresentacion._usuarios
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panel1.Padding = new System.Windows.Forms.Padding(6);
             this.panel1.Size = new System.Drawing.Size(742, 50);
             this.panel1.TabIndex = 1;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
@@ -170,6 +170,7 @@ namespace CapaPresentacion._usuarios
             // 
             // Fyp_boletas
             // 
+            this.Fyp_boletas.AutoScroll = true;
             this.Fyp_boletas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Fyp_boletas.Location = new System.Drawing.Point(0, 105);
             this.Fyp_boletas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);

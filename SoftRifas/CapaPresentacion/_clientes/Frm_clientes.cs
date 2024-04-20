@@ -79,8 +79,8 @@ namespace CapaPresentacion._clientes
 
                 if (N_Clientes.guardar(obj))
                 {
-                    limpiar();
                     mostrarClientes();
+                    limpiar();
                 }
 
 
@@ -135,6 +135,7 @@ namespace CapaPresentacion._clientes
 
         private void iconPictureBox1_Click(object sender, EventArgs e)
         {
+            limpiar();
             Pn_mant.Visible = false;
         }
 
@@ -166,6 +167,7 @@ namespace CapaPresentacion._clientes
         private void Btn_nuevos_Click(object sender, EventArgs e)
         {
             Pn_mant.Visible = true;
+            limpiar();
         }
 
         private void Btn_editar_Click(object sender, EventArgs e)
