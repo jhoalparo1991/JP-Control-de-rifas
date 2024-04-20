@@ -1,5 +1,5 @@
-﻿using CEntidades;
-using CNegocio;
+﻿using Domain;
+using Entities;
 using System;
 using System.Linq;
 using System.Windows.Forms;

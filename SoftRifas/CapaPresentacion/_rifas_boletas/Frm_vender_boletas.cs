@@ -1,5 +1,5 @@
-﻿using CEntidades;
-using CNegocio;
+﻿using Domain;
+using Entities;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -50,6 +50,7 @@ namespace CapaPresentacion._rifas_boletas
                     {
                         frm.Btn_registrar.Enabled = false;
                         frm.txt_deuda.Enabled = false;
+                        frm.Cbx_formas_pago.Enabled = false;
                     }
 
                     frm.txt_id_boleta.Text = boleta.Id.ToString();
@@ -405,15 +406,7 @@ namespace CapaPresentacion._rifas_boletas
         }
         #endregion
 
-        private void Txt_buscar_TextChanged(object sender, EventArgs e)
-        {
-         
-        }
-
-        private void Chk_mostrar_activas_CheckedChanged(object sender, EventArgs e)
-        {
-        
-        }
+  
 
         private void CbxRifas_SelectionChangeCommitted(object sender, EventArgs e)
         {
@@ -494,6 +487,11 @@ namespace CapaPresentacion._rifas_boletas
         private void btn_disponibles_Click(object sender, EventArgs e)
         {
             //dibujarBoletasPorEstado(false);
+        }
+
+        private void Txt_buscar_TextChanged(object sender, EventArgs e)
+        {
+            dibujarBoletas();
         }
     }
 }

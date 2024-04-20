@@ -1,6 +1,5 @@
-﻿using CapaPresentacion.CEntidades;
-using CEntidades;
-using CNegocio;
+﻿using Domain;
+using Entities;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -39,7 +38,7 @@ namespace CapaPresentacion._pagos
                     );
                 Dgv_pagos.DataSource = pagos;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                // _helpers.Mensajes.mensajeErrorException(e);
             }

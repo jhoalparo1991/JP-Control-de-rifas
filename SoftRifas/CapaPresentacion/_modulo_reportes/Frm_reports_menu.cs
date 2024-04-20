@@ -1,10 +1,11 @@
-﻿using DataAccess;
-using Domain;
+﻿using Domain;
+using Entities;
 using ReportsModule._rdls;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
+using Telerik.Reporting;
 
 namespace CapaPresentacion
 {
@@ -22,7 +23,7 @@ namespace CapaPresentacion
             try
             {
                 DataTable dt = new DataTable();
-                UsuariosDomain.mostrarVendedores(dt);
+                N_Usuarios.mostrarVendedores(dt);
                 cbx_vendedor.DataSource = dt;
                 cbx_vendedor.DisplayMember = "nombre_completo".ToString();
                 cbx_vendedor.ValueMember = "id";
@@ -37,7 +38,7 @@ namespace CapaPresentacion
         {
             try
             {
-                List<Rifas> rifas = RifasDomain.mostrarRifas();
+                List<Rifas> rifas = N_Rifas.mostrarRifas();
                 cbx_rifa.DataSource = rifas;
                 cbx_rifa.DisplayMember = "descripcion";
                 cbx_rifa.ValueMember = "id";
@@ -53,10 +54,13 @@ namespace CapaPresentacion
             try
             {
 
-                DataTable dt = D_Reports.ObtenerEstadosBoletas();
+                DataTable dt = N_Reports.ObtenerEstadosBoletas();
                 RptEstadosBoletas rpt = new RptEstadosBoletas();
+                SubReport subReport1 = new SubReport();
+                InstanceReportSource instance = new InstanceReportSource();
+                instance.ReportDocument = rpt;
                 rpt.table1.DataSource = dt;
-                reportViewer1.Report = rpt;
+                reportViewer1.ReportSource = instance;
                 reportViewer1.RefreshReport();
 
             }
@@ -72,7 +76,7 @@ namespace CapaPresentacion
             {
 
                 int nroBoleta = Convert.ToInt32(Txt_nro_boleta.Text.Trim());
-                DataTable dt = D_Reports.mostrarAbonosPorBoleta(nroBoleta.ToString("D4"));
+                DataTable dt = N_Reports.mostrarAbonosPorBoleta(nroBoleta.ToString("D4"));
                 RptMostrarAbonos rpt = new RptMostrarAbonos();
                 rpt.DataSource = dt;
                 rpt.table1.DataSource = dt;
@@ -102,7 +106,7 @@ namespace CapaPresentacion
             try
             {
 
-                DataTable dt = D_Reports.mostrarboletasVendidasPorVendedores();
+                DataTable dt = N_Reports.mostrarboletasVendidasPorVendedores();
                 RptVendidasPorVendedores rpt = new RptVendidasPorVendedores();
                 //rpt.DataSource = dt;
 
@@ -129,7 +133,7 @@ namespace CapaPresentacion
             try
             {
 
-                DataTable dt = D_Reports.mostrarReporteFormasPago(dateTimePicker1.Value,dateTimePicker2.Value,
+                DataTable dt = N_Reports.mostrarReporteFormasPago(dateTimePicker1.Value,dateTimePicker2.Value,
                     Convert.ToInt32(cbx_rifa.SelectedValue));
                 RptMostrarAbonosPorFormasDePago rpt = new RptMostrarAbonosPorFormasDePago();
                // rpt.DataSource = dt;
@@ -157,7 +161,7 @@ namespace CapaPresentacion
             try
             {
 
-                DataTable dt = D_Reports.mostrarAbonosFechaValor(dateTimePicker3.Value, dateTimePicker4.Value,
+                DataTable dt = N_Reports.mostrarAbonosFechaValor(dateTimePicker3.Value, dateTimePicker4.Value,
                     Convert.ToDecimal(textBox1.Text.Trim()));
                 RptAbonosFechaMonto rpt = new RptAbonosFechaMonto();
 
@@ -183,7 +187,7 @@ namespace CapaPresentacion
             try
             {
 
-                DataTable dt = D_Reports.mostrarPagos(dateTimePicker5.Value, dateTimePicker6.Value);
+                DataTable dt = N_Reports.mostrarPagos(dateTimePicker5.Value, dateTimePicker6.Value);
                 RptPagosRealizados rpt = new RptPagosRealizados();
 
                 decimal totalVendidas = 0;
@@ -210,7 +214,7 @@ namespace CapaPresentacion
             try
             {
 
-                DataTable dt = D_Reports.mostrarDetallePagoComisiones(dateTimePicker7.Value, dateTimePicker8.Value);
+                DataTable dt = N_Reports.mostrarDetallePagoComisiones(dateTimePicker7.Value, dateTimePicker8.Value);
                 RptPagoComisiones rpt = new RptPagoComisiones();
 
                 decimal totalVendidas = 0;
@@ -237,7 +241,7 @@ namespace CapaPresentacion
             try
             {
 
-                DataTable dt = D_Reports.mostrarAbonos();
+                DataTable dt = N_Reports.mostrarAbonos();
                 RptMostrarTodosAbonos rpt = new RptMostrarTodosAbonos();
 
                 decimal totalAbonos = 0;
@@ -265,7 +269,7 @@ namespace CapaPresentacion
             try
             {
 
-                DataTable dt = D_Reports.mostrarPagoComisionesPorVendedores(Convert.ToInt32(cbx_vendedor.SelectedValue));
+                DataTable dt = N_Reports.mostrarPagoComisionesPorVendedores(Convert.ToInt32(cbx_vendedor.SelectedValue));
                 RptMostrarComisionesVendedores rpt = new RptMostrarComisionesVendedores();
                 //rpt.DataSource = dt;
                 //decimal totalAbonos = 0;

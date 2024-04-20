@@ -1,5 +1,5 @@
-﻿using CEntidades;
-using CNegocio;
+﻿using Domain;
+using Entities;
 using System;
 using System.Collections.Generic;
 using System.Drawing;

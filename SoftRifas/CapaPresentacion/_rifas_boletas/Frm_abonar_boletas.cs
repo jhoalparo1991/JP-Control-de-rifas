@@ -1,5 +1,6 @@
-﻿using CEntidades;
-using CNegocio;
+﻿using CapaPresentacion._rifas_boletas._boletas;
+using Domain;
+using Entities;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -28,7 +29,8 @@ namespace CapaPresentacion._rifas_boletas
         internal int id = 0;
         private decimal porcentajeComision = 30;
         private int _usuarioId = 0;
-        private int boletaId;
+        private bool _editarFpBoleta = false;
+       // private int boletaId;
         #region metodos
         private void limpiar()
         {
@@ -263,21 +265,38 @@ namespace CapaPresentacion._rifas_boletas
         {
             if(Dgv_abonos.Rows.Count > 0)
             {
-                if (Dgv_abonos.Columns[e.ColumnIndex].Name == "btn_Editar")
+                if (Dgv_abonos.Columns[e.ColumnIndex].Name == "btn_editar_forma_pago")
                 {
                     id = Convert.ToInt32(Dgv_abonos.CurrentRow.Cells["b_Id"].Value.ToString().Trim());
-                    txt_id_boleta.Text = Dgv_abonos.CurrentRow.Cells["b_boletaid"].Value.ToString().Trim();
-                    Txt_boleta.Text = Dgv_abonos.CurrentRow.Cells["b_NroBoleta"].Value.ToString().Trim();
-                    txt_vendedor_id.Text = Dgv_abonos.CurrentRow.Cells["b_VendedorId"].Value.ToString().Trim();
-                    txt_vendedor.Text = Dgv_abonos.CurrentRow.Cells["b_Vendedor"].Value.ToString().Trim();
-                    txt_cliente.Text = Dgv_abonos.CurrentRow.Cells["b_Cliente"].Value.ToString().Trim();
-                    txt_cliente_id.Text = Dgv_abonos.CurrentRow.Cells["b_ClienteId"].Value.ToString().Trim();
-                    txt_saldado.Text = Dgv_abonos.CurrentRow.Cells["b_ValorPorPagar"].Value.ToString().Trim();
-                    Txt_comision.Text = Dgv_abonos.CurrentRow.Cells["b_ValorComision"].Value.ToString().Trim();
-                    txt_deuda.Text = Dgv_abonos.CurrentRow.Cells["b_abonos"].Value.ToString().Trim();
-                    Cbx_formas_pago.Text = Dgv_abonos.CurrentRow.Cells["b_FormasPago"].Value.ToString().Trim();
+                    //txt_id_boleta.Text = Dgv_abonos.CurrentRow.Cells["b_boletaid"].Value.ToString().Trim();
+                    //Txt_boleta.Text = Dgv_abonos.CurrentRow.Cells["b_NroBoleta"].Value.ToString().Trim();
+                    //txt_vendedor_id.Text = Dgv_abonos.CurrentRow.Cells["b_VendedorId"].Value.ToString().Trim();
+                    //txt_vendedor.Text = Dgv_abonos.CurrentRow.Cells["b_Vendedor"].Value.ToString().Trim();
+                    //txt_cliente.Text = Dgv_abonos.CurrentRow.Cells["b_Cliente"].Value.ToString().Trim();
+                    //txt_cliente_id.Text = Dgv_abonos.CurrentRow.Cells["b_ClienteId"].Value.ToString().Trim();
+                    //txt_saldado.Text = Dgv_abonos.CurrentRow.Cells["b_ValorPorPagar"].Value.ToString().Trim();
+                    //Txt_comision.Text = Dgv_abonos.CurrentRow.Cells["b_ValorComision"].Value.ToString().Trim();
+                    //txt_deuda.Text = Dgv_abonos.CurrentRow.Cells["b_abonos"].Value.ToString().Trim();
+                    //Cbx_formas_pago.Text = Dgv_abonos.CurrentRow.Cells["b_FormasPago"].Value.ToString().Trim();
+
+                    DialogResult result = MessageBox.Show("Deseas hacer un  cambio de la forma de pago de este abono","Mensaje de confirmacion",
+                        MessageBoxButtons.OKCancel,MessageBoxIcon.Question);
+
+                    if(result == DialogResult.OK)
+                    {
+                        Frm_cambiar_forma_pago_boleta frmCambio = new Frm_cambiar_forma_pago_boleta();
+                        frmCambio.Lbl_id.Text = id.ToString();
+                        frmCambio.cbx_formas_pago.Text = Dgv_abonos.CurrentRow.Cells["b_FormasPago"].Value.ToString().Trim();
+                        frmCambio.FormClosed += FrmCambio_FormClosed;
+                        frmCambio.ShowDialog();
+                    }
                 }
             }
+        }
+
+        private void FrmCambio_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            mostrarAbonos(Convert.ToInt32(txt_id_boleta.Text.Trim()));
         }
     }
 }

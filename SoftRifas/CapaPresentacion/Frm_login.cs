@@ -1,8 +1,8 @@
 ﻿using CapaPresentacion._auxiliar_instalacion;
 using CapaPresentacion._menu;
 using CapaPresentacion._usuarios;
-using CEntidades;
-using CNegocio;
+using Domain;
+using Entities;
 using System;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
@@ -51,7 +51,7 @@ namespace CapaPresentacion
             {
 
                 N_Usuarios.cerrarSesion();
-
+                Usuarios usuario = new Usuarios();
                 if (string.IsNullOrEmpty(Txt_nro_doc.Text)) {
                     _helpers.Mensajes.mensajeAdvertencia("El campo número de documento es requerido");
                     Txt_nro_doc.Select();
@@ -65,7 +65,7 @@ namespace CapaPresentacion
                     return;
                 }
 
-                Usuarios usuario = N_Usuarios.mostrarUsuarios().Find(x=>x.NroDoc == Txt_nro_doc.Text.Trim() && x.Clave ==Txt_clave.Text.Trim() && x.IsAdmin == true);
+                usuario = N_Usuarios.mostrarUsuarios().Find(x=>x.NroDoc == Txt_nro_doc.Text.Trim() && x.Clave ==Txt_clave.Text.Trim() && x.IsAdmin == true);
 
                 if(usuario  != null)
                 {

@@ -36,22 +36,6 @@ namespace CapaPresentacion._rifas_boletas
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.Dgv_abonos = new System.Windows.Forms.DataGridView();
-            this.b_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.b_boletaId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.b_NroBoleta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.b_VendedorId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.b_Vendedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.b_ClienteId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.b_Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.b_ValorPorPagar = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.b_abonos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.b_ValorComision = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.b_FechaAbono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.b_HoraAbono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.b_FormasPago = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.VendedorCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ClienteCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btn_Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.Cbx_formas_pago = new System.Windows.Forms.ComboBox();
             this.Btn_usuario = new FontAwesome.Sharp.IconButton();
             this.Btn_registrar = new System.Windows.Forms.Button();
@@ -77,6 +61,22 @@ namespace CapaPresentacion._rifas_boletas
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.error = new System.Windows.Forms.ErrorProvider(this.components);
+            this.b_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.b_boletaId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.b_NroBoleta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.b_VendedorId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.b_Vendedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.b_ClienteId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.b_Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.b_ValorPorPagar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.b_abonos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.b_ValorComision = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.b_FechaAbono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.b_HoraAbono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.b_FormasPago = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VendedorCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClienteCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_editar_forma_pago = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -93,7 +93,7 @@ namespace CapaPresentacion._rifas_boletas
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.panel1.Size = new System.Drawing.Size(571, 40);
+            this.panel1.Size = new System.Drawing.Size(690, 40);
             this.panel1.TabIndex = 0;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
@@ -106,7 +106,7 @@ namespace CapaPresentacion._rifas_boletas
             this.Btn_cerrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.Btn_cerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.Btn_cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_cerrar.Location = new System.Drawing.Point(536, 5);
+            this.Btn_cerrar.Location = new System.Drawing.Point(655, 5);
             this.Btn_cerrar.Name = "Btn_cerrar";
             this.Btn_cerrar.Size = new System.Drawing.Size(31, 30);
             this.Btn_cerrar.TabIndex = 1;
@@ -131,7 +131,7 @@ namespace CapaPresentacion._rifas_boletas
             this.panel2.Location = new System.Drawing.Point(0, 40);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(2);
-            this.panel2.Size = new System.Drawing.Size(571, 611);
+            this.panel2.Size = new System.Drawing.Size(690, 611);
             this.panel2.TabIndex = 1;
             // 
             // panel3
@@ -165,7 +165,7 @@ namespace CapaPresentacion._rifas_boletas
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(2, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(567, 607);
+            this.panel3.Size = new System.Drawing.Size(686, 607);
             this.panel3.TabIndex = 0;
             // 
             // Dgv_abonos
@@ -195,7 +195,7 @@ namespace CapaPresentacion._rifas_boletas
             this.b_FormasPago,
             this.VendedorCC,
             this.ClienteCC,
-            this.btn_Editar});
+            this.btn_editar_forma_pago});
             this.Dgv_abonos.Location = new System.Drawing.Point(10, 307);
             this.Dgv_abonos.Name = "Dgv_abonos";
             this.Dgv_abonos.ReadOnly = true;
@@ -203,149 +203,9 @@ namespace CapaPresentacion._rifas_boletas
             this.Dgv_abonos.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Dgv_abonos.RowTemplate.Height = 30;
             this.Dgv_abonos.RowTemplate.ReadOnly = true;
-            this.Dgv_abonos.Size = new System.Drawing.Size(547, 290);
+            this.Dgv_abonos.Size = new System.Drawing.Size(666, 290);
             this.Dgv_abonos.TabIndex = 14;
             this.Dgv_abonos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_abonos_CellClick);
-            // 
-            // b_Id
-            // 
-            this.b_Id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.b_Id.DataPropertyName = "Id";
-            this.b_Id.HeaderText = "Id";
-            this.b_Id.Name = "b_Id";
-            this.b_Id.ReadOnly = true;
-            this.b_Id.Visible = false;
-            // 
-            // b_boletaId
-            // 
-            this.b_boletaId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.b_boletaId.DataPropertyName = "BoletaId";
-            this.b_boletaId.HeaderText = "BoletaId";
-            this.b_boletaId.Name = "b_boletaId";
-            this.b_boletaId.ReadOnly = true;
-            this.b_boletaId.Visible = false;
-            // 
-            // b_NroBoleta
-            // 
-            this.b_NroBoleta.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.b_NroBoleta.DataPropertyName = "NroBoleta";
-            this.b_NroBoleta.HeaderText = "Nro Boleta";
-            this.b_NroBoleta.Name = "b_NroBoleta";
-            this.b_NroBoleta.ReadOnly = true;
-            this.b_NroBoleta.Visible = false;
-            // 
-            // b_VendedorId
-            // 
-            this.b_VendedorId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.b_VendedorId.DataPropertyName = "VendedorId";
-            this.b_VendedorId.HeaderText = "VendedorId";
-            this.b_VendedorId.Name = "b_VendedorId";
-            this.b_VendedorId.ReadOnly = true;
-            this.b_VendedorId.Visible = false;
-            // 
-            // b_Vendedor
-            // 
-            this.b_Vendedor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.b_Vendedor.DataPropertyName = "Vendedor";
-            this.b_Vendedor.HeaderText = "Vendedor";
-            this.b_Vendedor.Name = "b_Vendedor";
-            this.b_Vendedor.ReadOnly = true;
-            this.b_Vendedor.Visible = false;
-            // 
-            // b_ClienteId
-            // 
-            this.b_ClienteId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.b_ClienteId.DataPropertyName = "ClienteId";
-            this.b_ClienteId.HeaderText = "ClienteId";
-            this.b_ClienteId.Name = "b_ClienteId";
-            this.b_ClienteId.ReadOnly = true;
-            this.b_ClienteId.Visible = false;
-            // 
-            // b_Cliente
-            // 
-            this.b_Cliente.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.b_Cliente.DataPropertyName = "Cliente";
-            this.b_Cliente.HeaderText = "Cliente";
-            this.b_Cliente.Name = "b_Cliente";
-            this.b_Cliente.ReadOnly = true;
-            this.b_Cliente.Visible = false;
-            // 
-            // b_ValorPorPagar
-            // 
-            this.b_ValorPorPagar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.b_ValorPorPagar.DataPropertyName = "ValorPorPagar";
-            this.b_ValorPorPagar.HeaderText = "Deuda";
-            this.b_ValorPorPagar.Name = "b_ValorPorPagar";
-            this.b_ValorPorPagar.ReadOnly = true;
-            this.b_ValorPorPagar.Width = 82;
-            // 
-            // b_abonos
-            // 
-            this.b_abonos.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.b_abonos.DataPropertyName = "Abonos";
-            this.b_abonos.HeaderText = "Abonos";
-            this.b_abonos.Name = "b_abonos";
-            this.b_abonos.ReadOnly = true;
-            this.b_abonos.Width = 89;
-            // 
-            // b_ValorComision
-            // 
-            this.b_ValorComision.DataPropertyName = "Comision";
-            this.b_ValorComision.HeaderText = "Comision";
-            this.b_ValorComision.Name = "b_ValorComision";
-            this.b_ValorComision.ReadOnly = true;
-            // 
-            // b_FechaAbono
-            // 
-            this.b_FechaAbono.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.b_FechaAbono.DataPropertyName = "FechaAbono";
-            this.b_FechaAbono.HeaderText = "Fecha Abono";
-            this.b_FechaAbono.Name = "b_FechaAbono";
-            this.b_FechaAbono.ReadOnly = true;
-            this.b_FechaAbono.Width = 130;
-            // 
-            // b_HoraAbono
-            // 
-            this.b_HoraAbono.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.b_HoraAbono.DataPropertyName = "HoraAbono";
-            this.b_HoraAbono.HeaderText = "Hora Abono";
-            this.b_HoraAbono.Name = "b_HoraAbono";
-            this.b_HoraAbono.ReadOnly = true;
-            this.b_HoraAbono.Visible = false;
-            // 
-            // b_FormasPago
-            // 
-            this.b_FormasPago.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.b_FormasPago.DataPropertyName = "FormasPago";
-            this.b_FormasPago.HeaderText = "Forma de Pago";
-            this.b_FormasPago.Name = "b_FormasPago";
-            this.b_FormasPago.ReadOnly = true;
-            this.b_FormasPago.Width = 143;
-            // 
-            // VendedorCC
-            // 
-            this.VendedorCC.DataPropertyName = "VendedorCC";
-            this.VendedorCC.HeaderText = "VendedorCC";
-            this.VendedorCC.Name = "VendedorCC";
-            this.VendedorCC.ReadOnly = true;
-            this.VendedorCC.Visible = false;
-            // 
-            // ClienteCC
-            // 
-            this.ClienteCC.DataPropertyName = "ClienteCC";
-            this.ClienteCC.HeaderText = "ClienteCC";
-            this.ClienteCC.Name = "ClienteCC";
-            this.ClienteCC.ReadOnly = true;
-            this.ClienteCC.Visible = false;
-            // 
-            // btn_Editar
-            // 
-            this.btn_Editar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.btn_Editar.HeaderText = "";
-            this.btn_Editar.Image = global::CapaPresentacion.Properties.Resources.editar24_gris;
-            this.btn_Editar.Name = "btn_Editar";
-            this.btn_Editar.ReadOnly = true;
-            this.btn_Editar.Visible = false;
             // 
             // Cbx_formas_pago
             // 
@@ -547,6 +407,7 @@ namespace CapaPresentacion._rifas_boletas
             this.txt_id_boleta.ReadOnly = true;
             this.txt_id_boleta.Size = new System.Drawing.Size(54, 22);
             this.txt_id_boleta.TabIndex = 0;
+            this.txt_id_boleta.Visible = false;
             // 
             // label6
             // 
@@ -642,13 +503,161 @@ namespace CapaPresentacion._rifas_boletas
             // 
             this.error.ContainerControl = this;
             // 
+            // b_Id
+            // 
+            this.b_Id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.b_Id.DataPropertyName = "Id";
+            this.b_Id.HeaderText = "Id";
+            this.b_Id.Name = "b_Id";
+            this.b_Id.ReadOnly = true;
+            this.b_Id.Visible = false;
+            this.b_Id.Width = 29;
+            // 
+            // b_boletaId
+            // 
+            this.b_boletaId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.b_boletaId.DataPropertyName = "BoletaId";
+            this.b_boletaId.HeaderText = "BoletaId";
+            this.b_boletaId.Name = "b_boletaId";
+            this.b_boletaId.ReadOnly = true;
+            this.b_boletaId.Visible = false;
+            this.b_boletaId.Width = 75;
+            // 
+            // b_NroBoleta
+            // 
+            this.b_NroBoleta.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.b_NroBoleta.DataPropertyName = "NroBoleta";
+            this.b_NroBoleta.HeaderText = "Nro Boleta";
+            this.b_NroBoleta.Name = "b_NroBoleta";
+            this.b_NroBoleta.ReadOnly = true;
+            this.b_NroBoleta.Visible = false;
+            this.b_NroBoleta.Width = 90;
+            // 
+            // b_VendedorId
+            // 
+            this.b_VendedorId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.b_VendedorId.DataPropertyName = "VendedorId";
+            this.b_VendedorId.HeaderText = "VendedorId";
+            this.b_VendedorId.Name = "b_VendedorId";
+            this.b_VendedorId.ReadOnly = true;
+            this.b_VendedorId.Visible = false;
+            this.b_VendedorId.Width = 99;
+            // 
+            // b_Vendedor
+            // 
+            this.b_Vendedor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.b_Vendedor.DataPropertyName = "Vendedor";
+            this.b_Vendedor.HeaderText = "Vendedor";
+            this.b_Vendedor.Name = "b_Vendedor";
+            this.b_Vendedor.ReadOnly = true;
+            this.b_Vendedor.Visible = false;
+            this.b_Vendedor.Width = 85;
+            // 
+            // b_ClienteId
+            // 
+            this.b_ClienteId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.b_ClienteId.DataPropertyName = "ClienteId";
+            this.b_ClienteId.HeaderText = "ClienteId";
+            this.b_ClienteId.Name = "b_ClienteId";
+            this.b_ClienteId.ReadOnly = true;
+            this.b_ClienteId.Visible = false;
+            this.b_ClienteId.Width = 78;
+            // 
+            // b_Cliente
+            // 
+            this.b_Cliente.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.b_Cliente.DataPropertyName = "Cliente";
+            this.b_Cliente.HeaderText = "Cliente";
+            this.b_Cliente.Name = "b_Cliente";
+            this.b_Cliente.ReadOnly = true;
+            this.b_Cliente.Visible = false;
+            this.b_Cliente.Width = 64;
+            // 
+            // b_ValorPorPagar
+            // 
+            this.b_ValorPorPagar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.b_ValorPorPagar.DataPropertyName = "ValorPorPagar";
+            this.b_ValorPorPagar.HeaderText = "Deuda";
+            this.b_ValorPorPagar.Name = "b_ValorPorPagar";
+            this.b_ValorPorPagar.ReadOnly = true;
+            this.b_ValorPorPagar.Width = 82;
+            // 
+            // b_abonos
+            // 
+            this.b_abonos.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.b_abonos.DataPropertyName = "Abonos";
+            this.b_abonos.HeaderText = "Abonos";
+            this.b_abonos.Name = "b_abonos";
+            this.b_abonos.ReadOnly = true;
+            this.b_abonos.Width = 89;
+            // 
+            // b_ValorComision
+            // 
+            this.b_ValorComision.DataPropertyName = "Comision";
+            this.b_ValorComision.HeaderText = "Comision";
+            this.b_ValorComision.Name = "b_ValorComision";
+            this.b_ValorComision.ReadOnly = true;
+            // 
+            // b_FechaAbono
+            // 
+            this.b_FechaAbono.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.b_FechaAbono.DataPropertyName = "FechaAbono";
+            this.b_FechaAbono.HeaderText = "Fecha Abono";
+            this.b_FechaAbono.Name = "b_FechaAbono";
+            this.b_FechaAbono.ReadOnly = true;
+            this.b_FechaAbono.Width = 130;
+            // 
+            // b_HoraAbono
+            // 
+            this.b_HoraAbono.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.b_HoraAbono.DataPropertyName = "HoraAbono";
+            this.b_HoraAbono.HeaderText = "Hora Abono";
+            this.b_HoraAbono.Name = "b_HoraAbono";
+            this.b_HoraAbono.ReadOnly = true;
+            this.b_HoraAbono.Visible = false;
+            this.b_HoraAbono.Width = 120;
+            // 
+            // b_FormasPago
+            // 
+            this.b_FormasPago.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.b_FormasPago.DataPropertyName = "FormasPago";
+            this.b_FormasPago.HeaderText = "Forma de Pago";
+            this.b_FormasPago.Name = "b_FormasPago";
+            this.b_FormasPago.ReadOnly = true;
+            this.b_FormasPago.Width = 143;
+            // 
+            // VendedorCC
+            // 
+            this.VendedorCC.DataPropertyName = "VendedorCC";
+            this.VendedorCC.HeaderText = "VendedorCC";
+            this.VendedorCC.Name = "VendedorCC";
+            this.VendedorCC.ReadOnly = true;
+            this.VendedorCC.Visible = false;
+            // 
+            // ClienteCC
+            // 
+            this.ClienteCC.DataPropertyName = "ClienteCC";
+            this.ClienteCC.HeaderText = "ClienteCC";
+            this.ClienteCC.Name = "ClienteCC";
+            this.ClienteCC.ReadOnly = true;
+            this.ClienteCC.Visible = false;
+            // 
+            // btn_editar_forma_pago
+            // 
+            this.btn_editar_forma_pago.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.btn_editar_forma_pago.HeaderText = "Editar";
+            this.btn_editar_forma_pago.Image = global::CapaPresentacion.Properties.Resources.editar24_gris;
+            this.btn_editar_forma_pago.Name = "btn_editar_forma_pago";
+            this.btn_editar_forma_pago.ReadOnly = true;
+            this.btn_editar_forma_pago.Width = 57;
+            // 
             // Frm_abonar_boletas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Gray;
-            this.ClientSize = new System.Drawing.Size(571, 651);
+            this.ClientSize = new System.Drawing.Size(690, 651);
             this.ControlBox = false;
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -717,6 +726,6 @@ namespace CapaPresentacion._rifas_boletas
         private System.Windows.Forms.DataGridViewTextBoxColumn b_FormasPago;
         private System.Windows.Forms.DataGridViewTextBoxColumn VendedorCC;
         private System.Windows.Forms.DataGridViewTextBoxColumn ClienteCC;
-        private System.Windows.Forms.DataGridViewImageColumn btn_Editar;
+        private System.Windows.Forms.DataGridViewImageColumn btn_editar_forma_pago;
     }
 }

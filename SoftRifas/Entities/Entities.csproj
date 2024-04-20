@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B621DCFC-94EE-4EF2-95F3-A7B05C303051}</ProjectGuid>
+    <ProjectGuid>{41C602AB-0EDF-493B-B053-EDA2CA6AA03D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Domain</RootNamespace>
-    <AssemblyName>Domain</AssemblyName>
+    <RootNamespace>Entities</RootNamespace>
+    <AssemblyName>Entities</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,25 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="N_Reports.cs" />
-    <Compile Include="N_Boletas.cs" />
-    <Compile Include="N_Clientes.cs" />
-    <Compile Include="N_Config.cs" />
-    <Compile Include="N_Pagos.cs" />
-    <Compile Include="N_Procesos.cs" />
-    <Compile Include="N_Rifas.cs" />
-    <Compile Include="N_Usuarios.cs" />
+    <Compile Include="Boletas.cs" />
+    <Compile Include="Clientes.cs" />
+    <Compile Include="Config.cs" />
+    <Compile Include="Pagos.cs" />
+    <Compile Include="ProcesoConexion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
-      <Project>{B5540615-55BD-4E8A-B0A4-F90003AA3117}</Project>
-      <Name>DataAccess</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Entities\Entities.csproj">
-      <Project>{41C602AB-0EDF-493B-B053-EDA2CA6AA03D}</Project>
-      <Name>Entities</Name>
-    </ProjectReference>
+    <Compile Include="Rifas.cs" />
+    <Compile Include="Usuarios.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

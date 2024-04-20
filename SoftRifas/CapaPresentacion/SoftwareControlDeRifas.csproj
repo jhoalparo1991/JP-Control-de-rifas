@@ -124,30 +124,6 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CDatos\Conexion.cs" />
-    <Compile Include="CDatos\D_Boletas.cs" />
-    <Compile Include="CDatos\D_Clientes.cs" />
-    <Compile Include="CDatos\D_Config.cs" />
-    <Compile Include="CDatos\D_Procesos.cs" />
-    <Compile Include="CDatos\D_Reportes.cs" />
-    <Compile Include="CDatos\D_Pagos.cs" />
-    <Compile Include="CDatos\D_Rifas.cs" />
-    <Compile Include="CDatos\D_Usuarios.cs" />
-    <Compile Include="CEntidades\Boletas.cs" />
-    <Compile Include="CEntidades\Clientes.cs" />
-    <Compile Include="CEntidades\Config.cs" />
-    <Compile Include="CEntidades\Pagos.cs" />
-    <Compile Include="CEntidades\ProcesoConexion.cs" />
-    <Compile Include="CEntidades\Rifas.cs" />
-    <Compile Include="CEntidades\Usuarios.cs" />
-    <Compile Include="CNegocio\N_Boletas.cs" />
-    <Compile Include="CNegocio\N_Clientes.cs" />
-    <Compile Include="CNegocio\N_Config.cs" />
-    <Compile Include="CNegocio\N_Procesos.cs" />
-    <Compile Include="CNegocio\N_Reportes.cs" />
-    <Compile Include="CNegocio\N_Pagos.cs" />
-    <Compile Include="CNegocio\N_Rifas.cs" />
-    <Compile Include="CNegocio\N_Usuarios.cs" />
     <Compile Include="Frm_login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -283,6 +259,12 @@
     <Compile Include="_rifas_boletas\Frm_abonar_boletas.Designer.cs">
       <DependentUpon>Frm_abonar_boletas.cs</DependentUpon>
     </Compile>
+    <Compile Include="_rifas_boletas\_boletas\Frm_cambiar_forma_pago_boleta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_rifas_boletas\_boletas\Frm_cambiar_forma_pago_boleta.Designer.cs">
+      <DependentUpon>Frm_cambiar_forma_pago_boleta.cs</DependentUpon>
+    </Compile>
     <Compile Include="_usuarios\Frm_boletas_usuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -369,12 +351,18 @@
     <EmbeddedResource Include="_rifas_boletas\Frm_rifas.resx">
       <DependentUpon>Frm_rifas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="_rifas_boletas\_boletas\Frm_cambiar_forma_pago_boleta.resx">
+      <DependentUpon>Frm_cambiar_forma_pago_boleta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="_usuarios\Frm_boletas_usuarios.resx">
       <DependentUpon>Frm_boletas_usuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="_usuarios\Frm_usuarios.resx">
       <DependentUpon>Frm_usuarios.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -462,6 +450,10 @@
     <ProjectReference Include="..\Domain\Domain.csproj">
       <Project>{b621dcfc-94ee-4ef2-95f3-a7b05c303051}</Project>
       <Name>Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entities\Entities.csproj">
+      <Project>{41C602AB-0EDF-493B-B053-EDA2CA6AA03D}</Project>
+      <Name>Entities</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

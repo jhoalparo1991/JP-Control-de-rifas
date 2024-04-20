@@ -176,7 +176,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Frm_about";
-            this.Padding = new System.Windows.Forms.Padding(11, 11, 11, 11);
+            this.Padding = new System.Windows.Forms.Padding(11);
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
