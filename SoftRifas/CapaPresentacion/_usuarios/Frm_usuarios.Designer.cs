@@ -31,12 +31,12 @@ namespace CapaPresentacion._usuarios
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.Btn_cerrar_ventana = new System.Windows.Forms.Button();
-            this.Btn_borrar = new System.Windows.Forms.Button();
-            this.Btn_editar = new System.Windows.Forms.Button();
             this.Btn_nuevos = new System.Windows.Forms.Button();
+            this.Btn_editar = new System.Windows.Forms.Button();
             this.Txt_buscar = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.Btn_borrar = new System.Windows.Forms.Button();
+            this.Btn_cerrar_ventana = new System.Windows.Forms.Button();
             this.error = new System.Windows.Forms.ErrorProvider(this.components);
             this.Dgv_usuarios = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -102,36 +102,20 @@ namespace CapaPresentacion._usuarios
             this.panel1.Size = new System.Drawing.Size(834, 49);
             this.panel1.TabIndex = 0;
             // 
-            // Btn_cerrar_ventana
+            // Btn_nuevos
             // 
-            this.Btn_cerrar_ventana.AutoSize = true;
-            this.Btn_cerrar_ventana.BackColor = System.Drawing.Color.White;
-            this.Btn_cerrar_ventana.Dock = System.Windows.Forms.DockStyle.Right;
-            this.Btn_cerrar_ventana.Image = global::CapaPresentacion.Properties.Resources.salir24;
-            this.Btn_cerrar_ventana.Location = new System.Drawing.Point(735, 5);
-            this.Btn_cerrar_ventana.Name = "Btn_cerrar_ventana";
-            this.Btn_cerrar_ventana.Size = new System.Drawing.Size(95, 39);
-            this.Btn_cerrar_ventana.TabIndex = 4;
-            this.Btn_cerrar_ventana.Text = "&Cerrar";
-            this.Btn_cerrar_ventana.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Btn_cerrar_ventana.UseVisualStyleBackColor = false;
-            this.Btn_cerrar_ventana.Visible = false;
-            this.Btn_cerrar_ventana.Click += new System.EventHandler(this.Btn_cerrar_ventana_Click);
-            // 
-            // Btn_borrar
-            // 
-            this.Btn_borrar.AutoSize = true;
-            this.Btn_borrar.BackColor = System.Drawing.Color.White;
-            this.Btn_borrar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.Btn_borrar.Image = global::CapaPresentacion.Properties.Resources.borrar24_gris;
-            this.Btn_borrar.Location = new System.Drawing.Point(640, 5);
-            this.Btn_borrar.Name = "Btn_borrar";
-            this.Btn_borrar.Size = new System.Drawing.Size(95, 39);
-            this.Btn_borrar.TabIndex = 5;
-            this.Btn_borrar.Text = "&Borrar";
-            this.Btn_borrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Btn_borrar.UseVisualStyleBackColor = false;
-            this.Btn_borrar.Click += new System.EventHandler(this.Btn_borrar_Click);
+            this.Btn_nuevos.AutoSize = true;
+            this.Btn_nuevos.BackColor = System.Drawing.Color.White;
+            this.Btn_nuevos.Dock = System.Windows.Forms.DockStyle.Right;
+            this.Btn_nuevos.Image = global::CapaPresentacion.Properties.Resources.agregar24_gris;
+            this.Btn_nuevos.Location = new System.Drawing.Point(438, 5);
+            this.Btn_nuevos.Name = "Btn_nuevos";
+            this.Btn_nuevos.Size = new System.Drawing.Size(95, 39);
+            this.Btn_nuevos.TabIndex = 7;
+            this.Btn_nuevos.Text = "&Nuevo";
+            this.Btn_nuevos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Btn_nuevos.UseVisualStyleBackColor = false;
+            this.Btn_nuevos.Click += new System.EventHandler(this.Btn_nuevos_Click);
             // 
             // Btn_editar
             // 
@@ -147,21 +131,6 @@ namespace CapaPresentacion._usuarios
             this.Btn_editar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Btn_editar.UseVisualStyleBackColor = false;
             this.Btn_editar.Click += new System.EventHandler(this.Btn_editar_Click);
-            // 
-            // Btn_nuevos
-            // 
-            this.Btn_nuevos.AutoSize = true;
-            this.Btn_nuevos.BackColor = System.Drawing.Color.White;
-            this.Btn_nuevos.Dock = System.Windows.Forms.DockStyle.Right;
-            this.Btn_nuevos.Image = global::CapaPresentacion.Properties.Resources.agregar24_gris;
-            this.Btn_nuevos.Location = new System.Drawing.Point(438, 5);
-            this.Btn_nuevos.Name = "Btn_nuevos";
-            this.Btn_nuevos.Size = new System.Drawing.Size(95, 39);
-            this.Btn_nuevos.TabIndex = 7;
-            this.Btn_nuevos.Text = "&Nuevo";
-            this.Btn_nuevos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Btn_nuevos.UseVisualStyleBackColor = false;
-            this.Btn_nuevos.Click += new System.EventHandler(this.Btn_nuevos_Click);
             // 
             // Txt_buscar
             // 
@@ -182,6 +151,37 @@ namespace CapaPresentacion._usuarios
             this.label1.Size = new System.Drawing.Size(96, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Vendedores";
+            // 
+            // Btn_borrar
+            // 
+            this.Btn_borrar.AutoSize = true;
+            this.Btn_borrar.BackColor = System.Drawing.Color.White;
+            this.Btn_borrar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.Btn_borrar.Image = global::CapaPresentacion.Properties.Resources.borrar24_gris;
+            this.Btn_borrar.Location = new System.Drawing.Point(640, 5);
+            this.Btn_borrar.Name = "Btn_borrar";
+            this.Btn_borrar.Size = new System.Drawing.Size(95, 39);
+            this.Btn_borrar.TabIndex = 5;
+            this.Btn_borrar.Text = "&Borrar";
+            this.Btn_borrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Btn_borrar.UseVisualStyleBackColor = false;
+            this.Btn_borrar.Click += new System.EventHandler(this.Btn_borrar_Click);
+            // 
+            // Btn_cerrar_ventana
+            // 
+            this.Btn_cerrar_ventana.AutoSize = true;
+            this.Btn_cerrar_ventana.BackColor = System.Drawing.Color.White;
+            this.Btn_cerrar_ventana.Dock = System.Windows.Forms.DockStyle.Right;
+            this.Btn_cerrar_ventana.Image = global::CapaPresentacion.Properties.Resources.salir24;
+            this.Btn_cerrar_ventana.Location = new System.Drawing.Point(735, 5);
+            this.Btn_cerrar_ventana.Name = "Btn_cerrar_ventana";
+            this.Btn_cerrar_ventana.Size = new System.Drawing.Size(95, 39);
+            this.Btn_cerrar_ventana.TabIndex = 4;
+            this.Btn_cerrar_ventana.Text = "&Cerrar";
+            this.Btn_cerrar_ventana.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Btn_cerrar_ventana.UseVisualStyleBackColor = false;
+            this.Btn_cerrar_ventana.Visible = false;
+            this.Btn_cerrar_ventana.Click += new System.EventHandler(this.Btn_cerrar_ventana_Click);
             // 
             // error
             // 
@@ -429,7 +429,7 @@ namespace CapaPresentacion._usuarios
             this.Btn_registrar.Name = "Btn_registrar";
             this.Btn_registrar.Size = new System.Drawing.Size(109, 38);
             this.Btn_registrar.TabIndex = 28;
-            this.Btn_registrar.Text = "Registrar";
+            this.Btn_registrar.Text = "&Registrar";
             this.Btn_registrar.UseVisualStyleBackColor = false;
             this.Btn_registrar.Click += new System.EventHandler(this.Btn_registrar_Click);
             // 
@@ -445,7 +445,7 @@ namespace CapaPresentacion._usuarios
             this.Btn_cancelar.Name = "Btn_cancelar";
             this.Btn_cancelar.Size = new System.Drawing.Size(109, 38);
             this.Btn_cancelar.TabIndex = 29;
-            this.Btn_cancelar.Text = "Cancelar";
+            this.Btn_cancelar.Text = "&Cancelar";
             this.Btn_cancelar.UseVisualStyleBackColor = false;
             this.Btn_cancelar.Click += new System.EventHandler(this.Btn_cancelar_Click);
             // 

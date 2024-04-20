@@ -24,20 +24,24 @@ namespace CapaPresentacion._usuarios
 
         #region metodos
 
+        private void obtenerInfoUsuario()
+        {
+            Txt_id.Text = Dgv_usuarios.CurrentRow.Cells["id"].Value.ToString();
+            Txt_nombres.Text = Dgv_usuarios.CurrentRow.Cells["nombre_completo"].Value.ToString();
+            Txt_nro_doc.Text = Dgv_usuarios.CurrentRow.Cells["nro_doc"].Value.ToString();
+            Txt_dir.Text = Dgv_usuarios.CurrentRow.Cells["Direccion"].Value.ToString();
+            Txt_cel.Text = Dgv_usuarios.CurrentRow.Cells["Celular"].Value.ToString();
+            Txt_tel.Text = Dgv_usuarios.CurrentRow.Cells["Telefono"].Value.ToString();
+            Txt_clave.Text = Dgv_usuarios.CurrentRow.Cells["Clave"].Value.ToString();
+            Txt_clave.Enabled = false;
+            Txt_comision.Text = Dgv_usuarios.CurrentRow.Cells["Comision"].Value.ToString();
+            Chk_is_admin.Checked = Convert.ToBoolean(Dgv_usuarios.CurrentRow.Cells["is_admin"].Value);
+        }
         private void verEditarInformacion(bool edit)
         {
             if (usuarioId > 0)
             {
-                Txt_id.Text = Dgv_usuarios.CurrentRow.Cells["id"].Value.ToString();
-                Txt_nombres.Text = Dgv_usuarios.CurrentRow.Cells["nombre_completo"].Value.ToString();
-                Txt_nro_doc.Text = Dgv_usuarios.CurrentRow.Cells["nro_doc"].Value.ToString();
-                Txt_dir.Text = Dgv_usuarios.CurrentRow.Cells["Direccion"].Value.ToString();
-                Txt_cel.Text = Dgv_usuarios.CurrentRow.Cells["Celular"].Value.ToString();
-                Txt_tel.Text = Dgv_usuarios.CurrentRow.Cells["Telefono"].Value.ToString();
-                Txt_clave.Text = Dgv_usuarios.CurrentRow.Cells["Clave"].Value.ToString();
-                Txt_clave.Enabled = false;
-                Txt_comision.Text = Dgv_usuarios.CurrentRow.Cells["Comision"].Value.ToString();
-                Chk_is_admin.Checked = Convert.ToBoolean(Dgv_usuarios.CurrentRow.Cells["is_admin"].Value);
+                obtenerInfoUsuario();
                 Pn_mant.Visible = true;
 
                 if(edit == false)
@@ -62,6 +66,7 @@ namespace CapaPresentacion._usuarios
                     Frm_boletas_usuarios frm = new Frm_boletas_usuarios();
                     frm.Lbl_usuario_id.Text = usuarioId.ToString();
                     frm.usuarioId = usuarioId;
+                    frm.Lbl_vendedor.Text = Txt_nombres.Text.Trim().ToUpper();
                     frm.dibujarBoletas();
                     frm.ShowDialog();
                 }
@@ -211,8 +216,7 @@ namespace CapaPresentacion._usuarios
             if(Dgv_usuarios.Rows.Count > 0)
             {
                 usuarioId = Convert.ToInt32(Dgv_usuarios.CurrentRow.Cells["id"].Value.ToString());
-
-               
+                obtenerInfoUsuario();               
             }
         }
 

@@ -39,6 +39,7 @@ namespace CapaPresentacion._usuarios
             this.Txt_nro_boleta = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.Fyp_boletas = new System.Windows.Forms.FlowLayoutPanel();
+            this.Lbl_vendedor = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -47,6 +48,7 @@ namespace CapaPresentacion._usuarios
             // 
             this.panel1.BackColor = System.Drawing.Color.Green;
             this.panel1.Controls.Add(this.Btn_cerrar);
+            this.panel1.Controls.Add(this.Lbl_vendedor);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -178,6 +180,16 @@ namespace CapaPresentacion._usuarios
             this.Fyp_boletas.Size = new System.Drawing.Size(742, 406);
             this.Fyp_boletas.TabIndex = 3;
             // 
+            // Lbl_vendedor
+            // 
+            this.Lbl_vendedor.AutoSize = true;
+            this.Lbl_vendedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_vendedor.ForeColor = System.Drawing.Color.White;
+            this.Lbl_vendedor.Location = new System.Drawing.Point(185, 15);
+            this.Lbl_vendedor.Name = "Lbl_vendedor";
+            this.Lbl_vendedor.Size = new System.Drawing.Size(0, 20);
+            this.Lbl_vendedor.TabIndex = 0;
+            // 
             // Frm_boletas_usuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -213,5 +225,6 @@ namespace CapaPresentacion._usuarios
         private System.Windows.Forms.Button Btn_registrar;
         private System.Windows.Forms.FlowLayoutPanel Fyp_boletas;
         private System.Windows.Forms.Button BtnBorrar;
+        internal System.Windows.Forms.Label Lbl_vendedor;
     }
 }
