@@ -310,6 +310,29 @@ namespace DataAccess
             }
             return result;
         }
+        public static bool cambiarClienteBoleta(int boletaId, int clienteId)
+        {
+            bool result = false;
+            try
+            {
+                con.Open();
+                SqlCommand command = new SqlCommand("sp_cambiar_cliente_boleta", con);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@cliente_id", clienteId);
+                command.Parameters.AddWithValue("@boleta_id", boletaId);
+
+                result = Convert.ToInt32(command.ExecuteNonQuery()) != 0 ? true : false;
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+            return result;
+        }
         public static bool borrarBoletaAsignadaVendedor(int boletaId)
         {
             bool result = false;

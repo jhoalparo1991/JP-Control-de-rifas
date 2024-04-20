@@ -56,5 +56,10 @@ namespace Domain
         {
             return D_Boletas.borrarBoletaAsignadaVendedor(boletaId);
         }
+        public static bool cambiarClienteBoleta(int boletaId, int clienteId)
+        {
+            return D_Boletas.cambiarClienteBoleta(boletaId, clienteId);
+        }
+
     }
 }
