@@ -34,6 +34,10 @@ namespace CapaPresentacion._clientes
             this.panel2 = new System.Windows.Forms.Panel();
             this.Txt_buscar = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.Btn_nuevos = new System.Windows.Forms.Button();
+            this.Btn_editar = new System.Windows.Forms.Button();
+            this.Btn_borrar = new System.Windows.Forms.Button();
+            this.Btn_cerrar_ventana = new System.Windows.Forms.Button();
             this.error = new System.Windows.Forms.ErrorProvider(this.components);
             this.Dgv_clientes = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,7 +46,9 @@ namespace CapaPresentacion._clientes
             this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.celular = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_sel = new System.Windows.Forms.DataGridViewImageColumn();
             this.Pn_mant = new System.Windows.Forms.Panel();
+            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.label9 = new System.Windows.Forms.Label();
             this.Btn_registrar = new System.Windows.Forms.Button();
             this.Btn_cancelar = new System.Windows.Forms.Button();
@@ -59,12 +65,6 @@ namespace CapaPresentacion._clientes
             this.label3 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.btn_sel = new System.Windows.Forms.DataGridViewImageColumn();
-            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
-            this.Btn_nuevos = new System.Windows.Forms.Button();
-            this.Btn_editar = new System.Windows.Forms.Button();
-            this.Btn_borrar = new System.Windows.Forms.Button();
-            this.Btn_cerrar_ventana = new System.Windows.Forms.Button();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -122,6 +122,66 @@ namespace CapaPresentacion._clientes
             this.label1.TabIndex = 0;
             this.label1.Text = "Listado de clientes";
             // 
+            // Btn_nuevos
+            // 
+            this.Btn_nuevos.AutoSize = true;
+            this.Btn_nuevos.BackColor = System.Drawing.Color.White;
+            this.Btn_nuevos.Dock = System.Windows.Forms.DockStyle.Right;
+            this.Btn_nuevos.Image = global::CapaPresentacion.Properties.Resources.agregar24_gris;
+            this.Btn_nuevos.Location = new System.Drawing.Point(429, 5);
+            this.Btn_nuevos.Name = "Btn_nuevos";
+            this.Btn_nuevos.Size = new System.Drawing.Size(95, 36);
+            this.Btn_nuevos.TabIndex = 3;
+            this.Btn_nuevos.Text = "&Nuevo";
+            this.Btn_nuevos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Btn_nuevos.UseVisualStyleBackColor = false;
+            this.Btn_nuevos.Click += new System.EventHandler(this.Btn_nuevos_Click);
+            // 
+            // Btn_editar
+            // 
+            this.Btn_editar.AutoSize = true;
+            this.Btn_editar.BackColor = System.Drawing.Color.White;
+            this.Btn_editar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.Btn_editar.Image = global::CapaPresentacion.Properties.Resources.editar24_gris;
+            this.Btn_editar.Location = new System.Drawing.Point(524, 5);
+            this.Btn_editar.Name = "Btn_editar";
+            this.Btn_editar.Size = new System.Drawing.Size(107, 36);
+            this.Btn_editar.TabIndex = 3;
+            this.Btn_editar.Text = "&Modificar";
+            this.Btn_editar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Btn_editar.UseVisualStyleBackColor = false;
+            this.Btn_editar.Click += new System.EventHandler(this.Btn_editar_Click);
+            // 
+            // Btn_borrar
+            // 
+            this.Btn_borrar.AutoSize = true;
+            this.Btn_borrar.BackColor = System.Drawing.Color.White;
+            this.Btn_borrar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.Btn_borrar.Image = global::CapaPresentacion.Properties.Resources.borrar24_gris;
+            this.Btn_borrar.Location = new System.Drawing.Point(631, 5);
+            this.Btn_borrar.Name = "Btn_borrar";
+            this.Btn_borrar.Size = new System.Drawing.Size(95, 36);
+            this.Btn_borrar.TabIndex = 3;
+            this.Btn_borrar.Text = "&Borrar";
+            this.Btn_borrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Btn_borrar.UseVisualStyleBackColor = false;
+            this.Btn_borrar.Click += new System.EventHandler(this.Btn_borrar_Click);
+            // 
+            // Btn_cerrar_ventana
+            // 
+            this.Btn_cerrar_ventana.AutoSize = true;
+            this.Btn_cerrar_ventana.BackColor = System.Drawing.Color.White;
+            this.Btn_cerrar_ventana.Dock = System.Windows.Forms.DockStyle.Right;
+            this.Btn_cerrar_ventana.Image = global::CapaPresentacion.Properties.Resources.salir24;
+            this.Btn_cerrar_ventana.Location = new System.Drawing.Point(726, 5);
+            this.Btn_cerrar_ventana.Name = "Btn_cerrar_ventana";
+            this.Btn_cerrar_ventana.Size = new System.Drawing.Size(95, 36);
+            this.Btn_cerrar_ventana.TabIndex = 3;
+            this.Btn_cerrar_ventana.Text = "&Cerrar";
+            this.Btn_cerrar_ventana.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Btn_cerrar_ventana.UseVisualStyleBackColor = false;
+            this.Btn_cerrar_ventana.Click += new System.EventHandler(this.Btn_cerrar_ventana_Click);
+            // 
             // error
             // 
             this.error.ContainerControl = this;
@@ -161,7 +221,6 @@ namespace CapaPresentacion._clientes
             this.id.Name = "id";
             this.id.ReadOnly = true;
             this.id.Visible = false;
-            this.id.Width = 22;
             // 
             // nombre_completo
             // 
@@ -196,7 +255,6 @@ namespace CapaPresentacion._clientes
             this.celular.Name = "celular";
             this.celular.ReadOnly = true;
             this.celular.Visible = false;
-            this.celular.Width = 64;
             // 
             // telefono
             // 
@@ -206,7 +264,15 @@ namespace CapaPresentacion._clientes
             this.telefono.Name = "telefono";
             this.telefono.ReadOnly = true;
             this.telefono.Visible = false;
-            this.telefono.Width = 74;
+            // 
+            // btn_sel
+            // 
+            this.btn_sel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.btn_sel.HeaderText = "Seleccionar";
+            this.btn_sel.Image = global::CapaPresentacion.Properties.Resources.seleccion;
+            this.btn_sel.Name = "btn_sel";
+            this.btn_sel.ReadOnly = true;
+            this.btn_sel.Visible = false;
             // 
             // Pn_mant
             // 
@@ -233,6 +299,22 @@ namespace CapaPresentacion._clientes
             this.Pn_mant.Size = new System.Drawing.Size(403, 369);
             this.Pn_mant.TabIndex = 2;
             this.Pn_mant.Visible = false;
+            // 
+            // iconPictureBox1
+            // 
+            this.iconPictureBox1.BackColor = System.Drawing.Color.White;
+            this.iconPictureBox1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.X;
+            this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox1.IconSize = 29;
+            this.iconPictureBox1.Location = new System.Drawing.Point(358, 6);
+            this.iconPictureBox1.Name = "iconPictureBox1";
+            this.iconPictureBox1.Size = new System.Drawing.Size(29, 30);
+            this.iconPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.iconPictureBox1.TabIndex = 32;
+            this.iconPictureBox1.TabStop = false;
+            this.iconPictureBox1.Click += new System.EventHandler(this.iconPictureBox1_Click);
             // 
             // label9
             // 
@@ -402,92 +484,6 @@ namespace CapaPresentacion._clientes
             this.dataGridViewImageColumn1.Image = global::CapaPresentacion.Properties.Resources.editar24_gris;
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             this.dataGridViewImageColumn1.Visible = false;
-            // 
-            // btn_sel
-            // 
-            this.btn_sel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.btn_sel.HeaderText = "Seleccionar";
-            this.btn_sel.Image = global::CapaPresentacion.Properties.Resources.seleccion;
-            this.btn_sel.Name = "btn_sel";
-            this.btn_sel.ReadOnly = true;
-            this.btn_sel.Visible = false;
-            this.btn_sel.Width = 69;
-            // 
-            // iconPictureBox1
-            // 
-            this.iconPictureBox1.BackColor = System.Drawing.Color.White;
-            this.iconPictureBox1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.X;
-            this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox1.IconSize = 29;
-            this.iconPictureBox1.Location = new System.Drawing.Point(358, 6);
-            this.iconPictureBox1.Name = "iconPictureBox1";
-            this.iconPictureBox1.Size = new System.Drawing.Size(29, 30);
-            this.iconPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.iconPictureBox1.TabIndex = 32;
-            this.iconPictureBox1.TabStop = false;
-            this.iconPictureBox1.Click += new System.EventHandler(this.iconPictureBox1_Click);
-            // 
-            // Btn_nuevos
-            // 
-            this.Btn_nuevos.AutoSize = true;
-            this.Btn_nuevos.BackColor = System.Drawing.Color.White;
-            this.Btn_nuevos.Dock = System.Windows.Forms.DockStyle.Right;
-            this.Btn_nuevos.Image = global::CapaPresentacion.Properties.Resources.agregar24_gris;
-            this.Btn_nuevos.Location = new System.Drawing.Point(429, 5);
-            this.Btn_nuevos.Name = "Btn_nuevos";
-            this.Btn_nuevos.Size = new System.Drawing.Size(95, 36);
-            this.Btn_nuevos.TabIndex = 3;
-            this.Btn_nuevos.Text = "&Nuevo";
-            this.Btn_nuevos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Btn_nuevos.UseVisualStyleBackColor = false;
-            this.Btn_nuevos.Click += new System.EventHandler(this.Btn_nuevos_Click);
-            // 
-            // Btn_editar
-            // 
-            this.Btn_editar.AutoSize = true;
-            this.Btn_editar.BackColor = System.Drawing.Color.White;
-            this.Btn_editar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.Btn_editar.Image = global::CapaPresentacion.Properties.Resources.editar24_gris;
-            this.Btn_editar.Location = new System.Drawing.Point(524, 5);
-            this.Btn_editar.Name = "Btn_editar";
-            this.Btn_editar.Size = new System.Drawing.Size(107, 36);
-            this.Btn_editar.TabIndex = 3;
-            this.Btn_editar.Text = "&Modificar";
-            this.Btn_editar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Btn_editar.UseVisualStyleBackColor = false;
-            this.Btn_editar.Click += new System.EventHandler(this.Btn_editar_Click);
-            // 
-            // Btn_borrar
-            // 
-            this.Btn_borrar.AutoSize = true;
-            this.Btn_borrar.BackColor = System.Drawing.Color.White;
-            this.Btn_borrar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.Btn_borrar.Image = global::CapaPresentacion.Properties.Resources.borrar24_gris;
-            this.Btn_borrar.Location = new System.Drawing.Point(631, 5);
-            this.Btn_borrar.Name = "Btn_borrar";
-            this.Btn_borrar.Size = new System.Drawing.Size(95, 36);
-            this.Btn_borrar.TabIndex = 3;
-            this.Btn_borrar.Text = "&Borrar";
-            this.Btn_borrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Btn_borrar.UseVisualStyleBackColor = false;
-            this.Btn_borrar.Click += new System.EventHandler(this.Btn_borrar_Click);
-            // 
-            // Btn_cerrar_ventana
-            // 
-            this.Btn_cerrar_ventana.AutoSize = true;
-            this.Btn_cerrar_ventana.BackColor = System.Drawing.Color.White;
-            this.Btn_cerrar_ventana.Dock = System.Windows.Forms.DockStyle.Right;
-            this.Btn_cerrar_ventana.Image = global::CapaPresentacion.Properties.Resources.salir24;
-            this.Btn_cerrar_ventana.Location = new System.Drawing.Point(726, 5);
-            this.Btn_cerrar_ventana.Name = "Btn_cerrar_ventana";
-            this.Btn_cerrar_ventana.Size = new System.Drawing.Size(95, 36);
-            this.Btn_cerrar_ventana.TabIndex = 3;
-            this.Btn_cerrar_ventana.Text = "&Cerrar";
-            this.Btn_cerrar_ventana.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Btn_cerrar_ventana.UseVisualStyleBackColor = false;
-            this.Btn_cerrar_ventana.Click += new System.EventHandler(this.Btn_cerrar_ventana_Click);
             // 
             // dataGridViewImageColumn2
             // 

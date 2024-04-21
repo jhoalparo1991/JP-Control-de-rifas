@@ -428,6 +428,12 @@
     <Compile Include="_modulo_reportes\_rdls\RptVendidasPorVendedores.Designer.cs">
       <DependentUpon>RptVendidasPorVendedores.cs</DependentUpon>
     </Compile>
+    <Compile Include="_pagos\Frm_quitar_cobro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_pagos\Frm_quitar_cobro.Designer.cs">
+      <DependentUpon>Frm_quitar_cobro.cs</DependentUpon>
+    </Compile>
     <Compile Include="_pagos\Frm_pagos_abonos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -563,6 +569,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="_modulo_reportes\_rdls\RptVendidasPorVendedores.resx">
       <DependentUpon>RptVendidasPorVendedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_pagos\Frm_quitar_cobro.resx">
+      <DependentUpon>Frm_quitar_cobro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="_pagos\Frm_pagos_abonos.resx">
       <DependentUpon>Frm_pagos_abonos.cs</DependentUpon>

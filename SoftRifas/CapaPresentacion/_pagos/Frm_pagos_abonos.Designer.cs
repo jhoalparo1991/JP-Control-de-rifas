@@ -120,7 +120,7 @@ namespace CapaPresentacion._pagos
             this.d_FormaPago = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.d_PeriodoPago = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.d_Pagado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.btn_quitar_pagos = new System.Windows.Forms.DataGridViewImageColumn();
+            this.btn_detalle = new System.Windows.Forms.DataGridViewImageColumn();
             this.btn_imprimir_pago = new System.Windows.Forms.DataGridViewImageColumn();
             this.Pn_pagos.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -824,7 +824,7 @@ namespace CapaPresentacion._pagos
             this.d_FormaPago,
             this.d_PeriodoPago,
             this.d_Pagado,
-            this.btn_quitar_pagos,
+            this.btn_detalle,
             this.btn_imprimir_pago});
             this.Dgv_detalle_pagos_realizados.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Dgv_detalle_pagos_realizados.Location = new System.Drawing.Point(391, 3);
@@ -1080,15 +1080,14 @@ namespace CapaPresentacion._pagos
             this.d_Pagado.ReadOnly = true;
             this.d_Pagado.Visible = false;
             // 
-            // btn_quitar_pagos
+            // btn_detalle
             // 
-            this.btn_quitar_pagos.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.btn_quitar_pagos.HeaderText = "Quitar";
-            this.btn_quitar_pagos.Image = global::CapaPresentacion.Properties.Resources.borrar24_gris;
-            this.btn_quitar_pagos.Name = "btn_quitar_pagos";
-            this.btn_quitar_pagos.ReadOnly = true;
-            this.btn_quitar_pagos.Visible = false;
-            this.btn_quitar_pagos.Width = 53;
+            this.btn_detalle.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.btn_detalle.HeaderText = "Detalle";
+            this.btn_detalle.Image = global::CapaPresentacion.Properties.Resources.editar24_gris;
+            this.btn_detalle.Name = "btn_detalle";
+            this.btn_detalle.ReadOnly = true;
+            this.btn_detalle.Width = 58;
             // 
             // btn_imprimir_pago
             // 
@@ -1231,7 +1230,7 @@ namespace CapaPresentacion._pagos
         private System.Windows.Forms.DataGridViewTextBoxColumn d_FormaPago;
         private System.Windows.Forms.DataGridViewTextBoxColumn d_PeriodoPago;
         private System.Windows.Forms.DataGridViewCheckBoxColumn d_Pagado;
-        private System.Windows.Forms.DataGridViewImageColumn btn_quitar_pagos;
+        private System.Windows.Forms.DataGridViewImageColumn btn_detalle;
         private System.Windows.Forms.DataGridViewImageColumn btn_imprimir_pago;
     }
 }

@@ -20,9 +20,14 @@ namespace Domain
         {
             return D_Pagos.mostrarDetallePagos();
         }
-        public static bool borrarPagos(int id, int abonoId)
+        public static bool borrarPagos(int id, int abonoId, int vendedorId, int boletaId, int pagoId, decimal valor, int idInfoBoletaPagada)
         {
-            return D_Pagos.borrarPagos(id, abonoId);
+            return D_Pagos.borrarPagos(id, abonoId,vendedorId,boletaId,pagoId,valor, idInfoBoletaPagada);
+        }
+
+        public static DataTable mostrarDetallePagado(int idDetalle)
+        {
+            return D_Pagos.mostrarDetallePagado(idDetalle);
         }
 
     }

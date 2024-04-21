@@ -40,7 +40,6 @@ namespace DataAccess
             }
             return result;
         }
-
         public static List<Pagos> mostrarPagos()
         {
             List<Pagos> pagos = new List<Pagos>();
@@ -77,7 +76,6 @@ namespace DataAccess
             }
             return pagos;
         }
-
         public static List<DtoMostrarDetallePagos> mostrarDetallePagos()
         {
             List<DtoMostrarDetallePagos> pagos = new List<DtoMostrarDetallePagos>();
@@ -116,7 +114,28 @@ namespace DataAccess
             return pagos;
         }
 
-        public static bool borrarPagos(int id, int abonoId)
+        public static DataTable mostrarDetallePagado(int idDetalle)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                con.Open();
+                SqlDataAdapter command = new SqlDataAdapter("sp_mostrar_detalle_pagado", con);
+                command.SelectCommand.CommandType = CommandType.StoredProcedure;
+                command.SelectCommand.Parameters.AddWithValue("id", idDetalle);
+                command.Fill(dt);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+            return dt;
+        }
+        public static bool borrarPagos(int id, int abonoId, int vendedorId,int boletaId,int pagoId,decimal valor, int idInfoBoletaPagada)
         {
             bool result = false;
             try
@@ -126,6 +145,11 @@ namespace DataAccess
                 command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.AddWithValue("@id", id);
                 command.Parameters.AddWithValue("@abono_id", abonoId);
+                command.Parameters.AddWithValue("@vendedor_id", vendedorId);
+                command.Parameters.AddWithValue("@boleta_id", boletaId);
+                command.Parameters.AddWithValue("@pago_id", pagoId);
+                command.Parameters.AddWithValue("@valor", valor);
+                command.Parameters.AddWithValue("@idInfoBoletaPagada", idInfoBoletaPagada);
 
                 result = Convert.ToInt32(command.ExecuteNonQuery()) != 0 ? true : false;
             }

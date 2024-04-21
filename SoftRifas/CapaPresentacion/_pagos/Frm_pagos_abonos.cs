@@ -28,7 +28,7 @@ namespace CapaPresentacion._pagos
 
         #region Metodos
 
-        private void mostrarPagos()
+        public void mostrarPagos()
         {
             try
             {
@@ -44,7 +44,7 @@ namespace CapaPresentacion._pagos
             }
         }
 
-        private void mostrarDetallePagos(int pagoId)
+        public void mostrarDetallePagos(int pagoId)
         {
             try
             {
@@ -471,24 +471,12 @@ namespace CapaPresentacion._pagos
                 int _id = Convert.ToInt32(Dgv_detalle_pagos_realizados.CurrentRow.Cells["d_Id"].Value.ToString());
                 int _VendedorId = Convert.ToInt32(Dgv_detalle_pagos_realizados.CurrentRow.Cells["d_VendedorId"].Value.ToString());
 
-                if (Dgv_detalle_pagos_realizados.Columns[e.ColumnIndex].Name == "btn_quitar_pagos")
+                if (Dgv_detalle_pagos_realizados.Columns[e.ColumnIndex].Name == "btn_detalle")
                 {
-                    DialogResult dialog = MessageBox.Show("Estas seguro que deseas revertir este pago, este pago te aparecerá pendiente de pagar",
-                    "Mensaje confirmacion",
-                    MessageBoxButtons.OKCancel,
-                    MessageBoxIcon.Question);
-
-                    if(dialog == DialogResult.OK)
-                    {
-                        try
-                        {
-                            mostrarDetallePagos(_pagoId);
-                        }
-                        catch (Exception ex)
-                        {
-                            _helpers.Mensajes.mensajeErrorException(ex);
-                        }
-                    }
+                    Frm_quitar_cobro frm = new Frm_quitar_cobro(this);
+                    frm._idDetallePago = _id;
+                    frm.mostrarPagos();
+                    frm.ShowDialog();
                 }
                 else if (Dgv_detalle_pagos_realizados.Columns[e.ColumnIndex].Name == "btn_imprimir_pago")
                 {
