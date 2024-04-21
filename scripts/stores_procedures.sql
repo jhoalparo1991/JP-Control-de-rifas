@@ -36,7 +36,7 @@ a.forma_pago,
 case 
 	when a.abono_pagado=0 then 'Sin Pagar'
 	when a.abono_pagado=1 then 'Pagada'
-	end as 'Comision pagada'
+	end as 'ComisionPagada'
  from tbl_abonos_boleta a
 inner join tbl_usuarios b on a.vendedor_id=b.id
 inner join tbl_clientes c on a.cliente_id=c.id
