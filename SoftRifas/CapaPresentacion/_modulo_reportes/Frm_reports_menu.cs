@@ -338,5 +338,37 @@ namespace CapaPresentacion
                 MessageBox.Show(ex.Message, "Aviso del sistema");
             }
         }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                List<DtoMostarGastos> dt = N_Gastos.mostrarGastos()
+                    .FindAll( x => x.Fecha >= dateTimePicker11.Value && x.Fecha <= dateTimePicker12.Value);
+
+                RptMostrarEgresosPorFecha rpt = new RptMostrarEgresosPorFecha();
+
+                decimal total = 0;
+                foreach (var row in dt)
+                {
+                    total += row.Valor;
+                }
+
+                rpt.table1.DataSource = dt;
+                rpt.txtFechaIni.Value = dateTimePicker11.Text.ToString();
+                rpt.txtFechaFin.Value = dateTimePicker12.Text.ToString();
+                rpt.Txt_total_abono.Value = total.ToString();
+
+                reportViewer11.Report = rpt;
+
+                reportViewer11.RefreshReport();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Aviso del sistema");
+            }
+        }
     }
 }

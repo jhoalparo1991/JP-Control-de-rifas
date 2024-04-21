@@ -178,7 +178,7 @@ namespace CapaPresentacion._menu
 
         private void btnRegistrarGastos_Click(object sender, EventArgs e)
         {
-
+            AbrirFormularioHijo(new Frm_gastos(), "Gastos");
         }
     }
 }

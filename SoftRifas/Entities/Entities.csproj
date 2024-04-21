@@ -48,6 +48,7 @@
     <Compile Include="Boletas.cs" />
     <Compile Include="Clientes.cs" />
     <Compile Include="Config.cs" />
+    <Compile Include="Gastos.cs" />
     <Compile Include="Pagos.cs" />
     <Compile Include="ProcesoConexion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

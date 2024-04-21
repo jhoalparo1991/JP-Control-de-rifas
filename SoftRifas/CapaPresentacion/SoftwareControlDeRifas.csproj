@@ -318,6 +318,24 @@
     <Compile Include="_clientes\Frm_cambiar_cliente.Designer.cs">
       <DependentUpon>Frm_cambiar_cliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="_egresos\Frm_registrar_egresos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_egresos\Frm_registrar_egresos.Designer.cs">
+      <DependentUpon>Frm_registrar_egresos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_egresos\Frm_gastos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_egresos\Frm_gastos.Designer.cs">
+      <DependentUpon>Frm_gastos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_egresos\Frm_reporte_egresos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_egresos\Frm_reporte_egresos.Designer.cs">
+      <DependentUpon>Frm_reporte_egresos.cs</DependentUpon>
+    </Compile>
     <Compile Include="_egresos\Frm_tipos_de_gastos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -349,6 +367,12 @@
     </Compile>
     <Compile Include="_modulo_reportes\_rdls\RptEstadosBoletas.Designer.cs">
       <DependentUpon>RptEstadosBoletas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_modulo_reportes\_rdls\RptMostrarEgresosPorFecha.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="_modulo_reportes\_rdls\RptMostrarEgresosPorFecha.Designer.cs">
+      <DependentUpon>RptMostrarEgresosPorFecha.cs</DependentUpon>
     </Compile>
     <Compile Include="_modulo_reportes\_rdls\RptMostrarComisionAbonosPorVendedores.cs">
       <SubType>Component</SubType>
@@ -480,6 +504,15 @@
     <EmbeddedResource Include="_clientes\Frm_cambiar_cliente.resx">
       <DependentUpon>Frm_cambiar_cliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="_egresos\Frm_registrar_egresos.resx">
+      <DependentUpon>Frm_registrar_egresos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_egresos\Frm_gastos.resx">
+      <DependentUpon>Frm_gastos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_egresos\Frm_reporte_egresos.resx">
+      <DependentUpon>Frm_reporte_egresos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="_egresos\Frm_tipos_de_gastos.resx">
       <DependentUpon>Frm_tipos_de_gastos.cs</DependentUpon>
     </EmbeddedResource>
@@ -494,6 +527,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="_modulo_reportes\_rdls\RptEstadosBoletas.resx">
       <DependentUpon>RptEstadosBoletas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_modulo_reportes\_rdls\RptMostrarEgresosPorFecha.resx">
+      <DependentUpon>RptMostrarEgresosPorFecha.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="_modulo_reportes\_rdls\RptMostrarComisionAbonosPorVendedores.resx">
       <DependentUpon>RptMostrarComisionAbonosPorVendedores.cs</DependentUpon>

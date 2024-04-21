@@ -30,8 +30,7 @@ namespace CapaPresentacion._rifas_boletas
         internal int id = 0;
         private decimal porcentajeComision = 30;
         private int _usuarioId = 0;
-        private bool _editarFpBoleta = false;
-       // private int boletaId;
+
         #region metodos
         private void limpiar()
         {
