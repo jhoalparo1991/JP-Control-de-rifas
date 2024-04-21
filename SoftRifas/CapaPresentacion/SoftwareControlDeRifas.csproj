@@ -368,6 +368,12 @@
     <Compile Include="_modulo_reportes\_rdls\RptEstadosBoletas.Designer.cs">
       <DependentUpon>RptEstadosBoletas.cs</DependentUpon>
     </Compile>
+    <Compile Include="_modulo_reportes\_rdls\RptMostrarReporteCajaDiario.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="_modulo_reportes\_rdls\RptMostrarReporteCajaDiario.Designer.cs">
+      <DependentUpon>RptMostrarReporteCajaDiario.cs</DependentUpon>
+    </Compile>
     <Compile Include="_modulo_reportes\_rdls\RptMostrarEgresosPorFecha.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -527,6 +533,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="_modulo_reportes\_rdls\RptEstadosBoletas.resx">
       <DependentUpon>RptEstadosBoletas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_modulo_reportes\_rdls\RptMostrarReporteCajaDiario.resx">
+      <DependentUpon>RptMostrarReporteCajaDiario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="_modulo_reportes\_rdls\RptMostrarEgresosPorFecha.resx">
       <DependentUpon>RptMostrarEgresosPorFecha.cs</DependentUpon>

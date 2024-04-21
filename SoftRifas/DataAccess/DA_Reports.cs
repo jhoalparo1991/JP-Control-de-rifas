@@ -227,5 +227,53 @@ namespace DataAccess
             }
             return dt;
         }
+
+        public static DataTable mostrarReporteCaja(DateTime fecha)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                con.Open();
+                SqlDataAdapter command = new SqlDataAdapter("sp_reporte_caja", con);
+                command.SelectCommand.CommandType = CommandType.StoredProcedure;
+                command.SelectCommand.Parameters.AddWithValue("@fecha", fecha);
+                command.Fill(dt);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+            return dt;
+        }
+
+        public static DataTable mostrarReporteFormasPagoCaja(DateTime fecha)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                con.Open();
+                StringBuilder b = new StringBuilder();
+                b.AppendLine("select forma_pago, sum(valor_abono) valor");
+                b.AppendLine(" from tbl_abonos_boleta where fecha_abono=@fecha");
+                b.AppendLine("group by forma_pago");
+                SqlDataAdapter command = new SqlDataAdapter(b.ToString(), con);
+                command.SelectCommand.CommandType = CommandType.Text;
+                command.SelectCommand.Parameters.AddWithValue("@fecha", fecha);
+                command.Fill(dt);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+            return dt;
+        }
     }
 }

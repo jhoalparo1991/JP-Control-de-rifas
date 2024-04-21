@@ -106,6 +106,12 @@ namespace CapaPresentacion
             this.dateTimePicker12 = new System.Windows.Forms.DateTimePicker();
             this.label17 = new System.Windows.Forms.Label();
             this.button10 = new System.Windows.Forms.Button();
+            this.tabPage12 = new System.Windows.Forms.TabPage();
+            this.reportViewer12 = new Telerik.ReportViewer.WinForms.ReportViewer();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.dateTimePicker13 = new System.Windows.Forms.DateTimePicker();
+            this.label19 = new System.Windows.Forms.Label();
+            this.button11 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage8.SuspendLayout();
@@ -128,6 +134,8 @@ namespace CapaPresentacion
             this.panel6.SuspendLayout();
             this.tabPage11.SuspendLayout();
             this.panel10.SuspendLayout();
+            this.tabPage12.SuspendLayout();
+            this.panel11.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -143,6 +151,7 @@ namespace CapaPresentacion
             this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Controls.Add(this.tabPage7);
             this.tabControl1.Controls.Add(this.tabPage11);
+            this.tabControl1.Controls.Add(this.tabPage12);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
@@ -945,6 +954,69 @@ namespace CapaPresentacion
             this.button10.UseVisualStyleBackColor = true;
             this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
+            // tabPage12
+            // 
+            this.tabPage12.Controls.Add(this.reportViewer12);
+            this.tabPage12.Controls.Add(this.panel11);
+            this.tabPage12.Location = new System.Drawing.Point(4, 25);
+            this.tabPage12.Name = "tabPage12";
+            this.tabPage12.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage12.Size = new System.Drawing.Size(1059, 525);
+            this.tabPage12.TabIndex = 11;
+            this.tabPage12.Text = "Caja";
+            this.tabPage12.UseVisualStyleBackColor = true;
+            // 
+            // reportViewer12
+            // 
+            this.reportViewer12.AccessibilityKeyMap = null;
+            this.reportViewer12.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.reportViewer12.Location = new System.Drawing.Point(3, 49);
+            this.reportViewer12.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.reportViewer12.Name = "reportViewer12";
+            this.reportViewer12.Size = new System.Drawing.Size(1053, 473);
+            this.reportViewer12.TabIndex = 9;
+            this.reportViewer12.ViewMode = Telerik.ReportViewer.WinForms.ViewMode.PrintPreview;
+            // 
+            // panel11
+            // 
+            this.panel11.Controls.Add(this.dateTimePicker13);
+            this.panel11.Controls.Add(this.label19);
+            this.panel11.Controls.Add(this.button11);
+            this.panel11.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel11.Location = new System.Drawing.Point(3, 3);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(1053, 46);
+            this.panel11.TabIndex = 8;
+            // 
+            // dateTimePicker13
+            // 
+            this.dateTimePicker13.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker13.Location = new System.Drawing.Point(58, 10);
+            this.dateTimePicker13.Name = "dateTimePicker13";
+            this.dateTimePicker13.Size = new System.Drawing.Size(120, 23);
+            this.dateTimePicker13.TabIndex = 5;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(8, 13);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(47, 17);
+            this.label19.TabIndex = 4;
+            this.label19.Text = "Fecha";
+            // 
+            // button11
+            // 
+            this.button11.AutoSize = true;
+            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button11.Location = new System.Drawing.Point(184, 5);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(182, 30);
+            this.button11.TabIndex = 2;
+            this.button11.Text = "Generar Reporte";
+            this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
+            // 
             // Frm_reports_menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -987,6 +1059,9 @@ namespace CapaPresentacion
             this.tabPage11.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
+            this.tabPage12.ResumeLayout(false);
+            this.panel11.ResumeLayout(false);
+            this.panel11.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1070,6 +1145,12 @@ namespace CapaPresentacion
         private System.Windows.Forms.DateTimePicker dateTimePicker12;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.TabPage tabPage12;
+        private Telerik.ReportViewer.WinForms.ReportViewer reportViewer12;
+        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.DateTimePicker dateTimePicker13;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Button button11;
     }
 }
 

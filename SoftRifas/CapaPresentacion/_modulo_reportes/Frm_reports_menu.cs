@@ -370,5 +370,48 @@ namespace CapaPresentacion
                 MessageBox.Show(ex.Message, "Aviso del sistema");
             }
         }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                DataTable dt = N_Reports.mostrarReporteCaja(dateTimePicker13.Value);
+
+                RptMostrarReporteCajaDiario rpt = new RptMostrarReporteCajaDiario();
+
+                rpt.table1.DataSource = dt;
+
+                decimal total = 0;
+                decimal _abonos = 0;
+                decimal _comisionPagada = 0;
+                decimal _gastos = 0;
+                foreach (DataRow row in dt.Rows)
+                {
+                    total += Convert.ToDecimal(row["valor"].ToString());
+                    rpt.txtFecha.Value = dateTimePicker13.Text.ToString();
+                    rpt.txtTotalFp.Value = total.ToString("C2");
+                    rpt.txtAbonos.Value = Convert.ToDecimal(row["total_abonos"]).ToString("C2");
+                    _abonos = Convert.ToDecimal(row["total_abonos"]);
+                    _comisionPagada = Convert.ToDecimal(row["total_comision_pagada"]);
+                    _gastos = Convert.ToDecimal(row["total_gastos"]);
+                    rpt.txtTotalComisiones.Value = Convert.ToDecimal(row["total_comisiones"]).ToString("C2");
+                    rpt.txtgastos.Value = Convert.ToDecimal(row["total_gastos"]).ToString("C2");
+                   // rpt.Txt_total.Value = Convert.ToDecimal(row["caja"]).ToString("C2");
+                    rpt.txtComisionesPagada.Value = Convert.ToDecimal(row["total_comision_pagada"]).ToString("C2");
+                }
+
+                rpt.Txt_total.Value = (_abonos - (_comisionPagada + _gastos)).ToString("C2");
+                rpt.txtTotalFp.Value = total.ToString("C2");
+                reportViewer12.Report = rpt;
+
+                reportViewer12.RefreshReport();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Aviso del sistema");
+            }
+        }
     }
 }

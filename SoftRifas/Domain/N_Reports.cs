@@ -55,5 +55,15 @@ namespace Domain
         {
             return DA_Reports.mostrarAbonosComisionesPorVendedores(fechaIni, fechaFin, vendedorId);
         }
+
+        public static DataTable mostrarReporteCaja(DateTime fecha)
+        {
+            return DA_Reports.mostrarReporteCaja(fecha);
+        }
+
+        public static DataTable mostrarReporteFormasPagoCaja(DateTime fecha)
+        {
+            return DA_Reports.mostrarReporteFormasPagoCaja(fecha);
+        }
     }
 }
