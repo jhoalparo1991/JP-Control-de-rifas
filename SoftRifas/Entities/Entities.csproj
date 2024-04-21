@@ -52,6 +52,7 @@
     <Compile Include="ProcesoConexion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rifas.cs" />
+    <Compile Include="TiposGastos.cs" />
     <Compile Include="Usuarios.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

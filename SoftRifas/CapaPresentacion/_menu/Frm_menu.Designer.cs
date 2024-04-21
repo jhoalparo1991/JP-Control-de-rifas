@@ -42,7 +42,6 @@ namespace CapaPresentacion._menu
             this.Lbl_usuario = new System.Windows.Forms.ToolStripStatusLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnCerrarSesion = new FontAwesome.Sharp.IconButton();
             this.Btn_reportes = new FontAwesome.Sharp.IconButton();
             this.Btn_pago_abonos = new FontAwesome.Sharp.IconButton();
             this.Btn_config = new FontAwesome.Sharp.IconButton();
@@ -52,6 +51,7 @@ namespace CapaPresentacion._menu
             this.Btn_usuario = new FontAwesome.Sharp.IconButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnCerrarSesion = new FontAwesome.Sharp.IconButton();
             this.panel3 = new System.Windows.Forms.Panel();
             this.Btn_info = new FontAwesome.Sharp.IconButton();
             this.Lbl_nombre_form = new System.Windows.Forms.Label();
@@ -60,12 +60,18 @@ namespace CapaPresentacion._menu
             this.Btn_maximizar = new FontAwesome.Sharp.IconButton();
             this.Btn_cerrar = new FontAwesome.Sharp.IconButton();
             this.panelEscritorio = new System.Windows.Forms.Panel();
+            this.panelGastos = new System.Windows.Forms.Panel();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.btnTiposGastos = new FontAwesome.Sharp.IconButton();
+            this.btnRegistrarGastos = new FontAwesome.Sharp.IconButton();
             this.statusStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
+            this.panelGastos.SuspendLayout();
             this.SuspendLayout();
             // 
             // statusStrip1
@@ -159,6 +165,7 @@ namespace CapaPresentacion._menu
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Green;
+            this.panel1.Controls.Add(this.panelGastos);
             this.panel1.Controls.Add(this.Btn_reportes);
             this.panel1.Controls.Add(this.Btn_pago_abonos);
             this.panel1.Controls.Add(this.Btn_config);
@@ -173,29 +180,6 @@ namespace CapaPresentacion._menu
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(189, 681);
             this.panel1.TabIndex = 3;
-            // 
-            // btnCerrarSesion
-            // 
-            this.btnCerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCerrarSesion.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnCerrarSesion.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrarSesion.ForeColor = System.Drawing.Color.White;
-            this.btnCerrarSesion.IconChar = FontAwesome.Sharp.IconChar.X;
-            this.btnCerrarSesion.IconColor = System.Drawing.Color.White;
-            this.btnCerrarSesion.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnCerrarSesion.IconSize = 32;
-            this.btnCerrarSesion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCerrarSesion.Location = new System.Drawing.Point(0, 640);
-            this.btnCerrarSesion.Name = "btnCerrarSesion";
-            this.btnCerrarSesion.Size = new System.Drawing.Size(189, 41);
-            this.btnCerrarSesion.TabIndex = 9;
-            this.btnCerrarSesion.Text = "Cerrar Sesion";
-            this.btnCerrarSesion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCerrarSesion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCerrarSesion.UseVisualStyleBackColor = true;
-            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
             // 
             // Btn_reportes
             // 
@@ -228,7 +212,7 @@ namespace CapaPresentacion._menu
             this.Btn_pago_abonos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_pago_abonos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_pago_abonos.ForeColor = System.Drawing.Color.White;
-            this.Btn_pago_abonos.IconChar = FontAwesome.Sharp.IconChar.Readme;
+            this.Btn_pago_abonos.IconChar = FontAwesome.Sharp.IconChar.MoneyCheck;
             this.Btn_pago_abonos.IconColor = System.Drawing.Color.White;
             this.Btn_pago_abonos.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Btn_pago_abonos.IconSize = 32;
@@ -378,6 +362,29 @@ namespace CapaPresentacion._menu
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
+            // btnCerrarSesion
+            // 
+            this.btnCerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCerrarSesion.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnCerrarSesion.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrarSesion.ForeColor = System.Drawing.Color.White;
+            this.btnCerrarSesion.IconChar = FontAwesome.Sharp.IconChar.X;
+            this.btnCerrarSesion.IconColor = System.Drawing.Color.White;
+            this.btnCerrarSesion.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCerrarSesion.IconSize = 32;
+            this.btnCerrarSesion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCerrarSesion.Location = new System.Drawing.Point(0, 640);
+            this.btnCerrarSesion.Name = "btnCerrarSesion";
+            this.btnCerrarSesion.Size = new System.Drawing.Size(189, 41);
+            this.btnCerrarSesion.TabIndex = 9;
+            this.btnCerrarSesion.Text = "Cerrar Sesion";
+            this.btnCerrarSesion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCerrarSesion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCerrarSesion.UseVisualStyleBackColor = true;
+            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
+            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Green;
@@ -504,6 +511,97 @@ namespace CapaPresentacion._menu
             this.panelEscritorio.Size = new System.Drawing.Size(819, 617);
             this.panelEscritorio.TabIndex = 5;
             // 
+            // panelGastos
+            // 
+            this.panelGastos.Controls.Add(this.btnRegistrarGastos);
+            this.panelGastos.Controls.Add(this.btnTiposGastos);
+            this.panelGastos.Controls.Add(this.panel4);
+            this.panelGastos.Controls.Add(this.iconButton1);
+            this.panelGastos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelGastos.Location = new System.Drawing.Point(0, 430);
+            this.panelGastos.Name = "panelGastos";
+            this.panelGastos.Size = new System.Drawing.Size(189, 41);
+            this.panelGastos.TabIndex = 0;
+            // 
+            // iconButton1
+            // 
+            this.iconButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButton1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconButton1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton1.ForeColor = System.Drawing.Color.White;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Paypal;
+            this.iconButton1.IconColor = System.Drawing.Color.White;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.IconSize = 32;
+            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton1.Location = new System.Drawing.Point(0, 0);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(189, 41);
+            this.iconButton1.TabIndex = 7;
+            this.iconButton1.Text = "Egresos";
+            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton1.UseVisualStyleBackColor = true;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
+            // 
+            // panel4
+            // 
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel4.Location = new System.Drawing.Point(0, 41);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(18, 0);
+            this.panel4.TabIndex = 8;
+            // 
+            // btnTiposGastos
+            // 
+            this.btnTiposGastos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTiposGastos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnTiposGastos.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnTiposGastos.FlatAppearance.BorderSize = 0;
+            this.btnTiposGastos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTiposGastos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTiposGastos.ForeColor = System.Drawing.Color.White;
+            this.btnTiposGastos.IconChar = FontAwesome.Sharp.IconChar.MoneyCheckDollar;
+            this.btnTiposGastos.IconColor = System.Drawing.Color.White;
+            this.btnTiposGastos.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnTiposGastos.IconSize = 32;
+            this.btnTiposGastos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTiposGastos.Location = new System.Drawing.Point(18, 41);
+            this.btnTiposGastos.Name = "btnTiposGastos";
+            this.btnTiposGastos.Size = new System.Drawing.Size(171, 41);
+            this.btnTiposGastos.TabIndex = 9;
+            this.btnTiposGastos.Text = "Tipos de gastos";
+            this.btnTiposGastos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTiposGastos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnTiposGastos.UseVisualStyleBackColor = true;
+            this.btnTiposGastos.Click += new System.EventHandler(this.btnTiposGastos_Click);
+            // 
+            // btnRegistrarGastos
+            // 
+            this.btnRegistrarGastos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRegistrarGastos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnRegistrarGastos.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnRegistrarGastos.FlatAppearance.BorderSize = 0;
+            this.btnRegistrarGastos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegistrarGastos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrarGastos.ForeColor = System.Drawing.Color.White;
+            this.btnRegistrarGastos.IconChar = FontAwesome.Sharp.IconChar.MoneyCheckDollar;
+            this.btnRegistrarGastos.IconColor = System.Drawing.Color.White;
+            this.btnRegistrarGastos.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnRegistrarGastos.IconSize = 32;
+            this.btnRegistrarGastos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRegistrarGastos.Location = new System.Drawing.Point(18, 82);
+            this.btnRegistrarGastos.Name = "btnRegistrarGastos";
+            this.btnRegistrarGastos.Size = new System.Drawing.Size(171, 41);
+            this.btnRegistrarGastos.TabIndex = 10;
+            this.btnRegistrarGastos.Text = "Registrar gastos";
+            this.btnRegistrarGastos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRegistrarGastos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRegistrarGastos.UseVisualStyleBackColor = true;
+            this.btnRegistrarGastos.Click += new System.EventHandler(this.btnRegistrarGastos_Click);
+            // 
             // Frm_menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -529,6 +627,7 @@ namespace CapaPresentacion._menu
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
+            this.panelGastos.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -564,5 +663,10 @@ namespace CapaPresentacion._menu
         private FontAwesome.Sharp.IconButton Btn_config;
         private FontAwesome.Sharp.IconButton Btn_pago_abonos;
         private FontAwesome.Sharp.IconButton btnCerrarSesion;
+        private System.Windows.Forms.Panel panelGastos;
+        private FontAwesome.Sharp.IconButton iconButton1;
+        private System.Windows.Forms.Panel panel4;
+        private FontAwesome.Sharp.IconButton btnRegistrarGastos;
+        private FontAwesome.Sharp.IconButton btnTiposGastos;
     }
 }

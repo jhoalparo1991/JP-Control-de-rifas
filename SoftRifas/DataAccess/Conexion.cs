@@ -139,7 +139,6 @@ namespace DataAccess
                 {
                     result = false;
                 }
-                return result;
             }
             catch (Exception e)
             {

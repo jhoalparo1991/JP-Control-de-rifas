@@ -1,5 +1,6 @@
 ﻿using CapaPresentacion._auxiliar_instalacion;
 using CapaPresentacion._clientes;
+using CapaPresentacion._egresos;
 using CapaPresentacion._pagos;
 using CapaPresentacion._rifas_boletas;
 using CapaPresentacion._usuarios;
@@ -21,6 +22,18 @@ namespace CapaPresentacion._menu
             Lbl_equipo.Text = Environment.MachineName;
             mostrarDatosSesion();
             inicioForm();
+        }
+
+        private void contraerMenuGastos()
+        {
+            if(panelGastos.Height == 126)
+            {
+                panelGastos.Height = 41;
+            }
+            else
+            {
+                panelGastos.Height = 126;
+            }
         }
 
         private void inicioForm()
@@ -151,6 +164,21 @@ namespace CapaPresentacion._menu
             this.Dispose();
             Frm_login frm = new Frm_login();
             frm.ShowDialog();
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            contraerMenuGastos();
+        }
+
+        private void btnTiposGastos_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo(new Frm_tipos_de_gastos(), "Tipos de gasto");
+        }
+
+        private void btnRegistrarGastos_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

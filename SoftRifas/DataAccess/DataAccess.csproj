@@ -49,6 +49,7 @@
     <Compile Include="D_Pagos.cs" />
     <Compile Include="D_Procesos.cs" />
     <Compile Include="D_Rifas.cs" />
+    <Compile Include="D_TiposGastos.cs" />
     <Compile Include="D_Usuarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

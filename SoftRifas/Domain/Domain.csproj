@@ -48,6 +48,7 @@
     <Compile Include="N_Pagos.cs" />
     <Compile Include="N_Procesos.cs" />
     <Compile Include="N_Rifas.cs" />
+    <Compile Include="N_TiposGastos.cs" />
     <Compile Include="N_Usuarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
