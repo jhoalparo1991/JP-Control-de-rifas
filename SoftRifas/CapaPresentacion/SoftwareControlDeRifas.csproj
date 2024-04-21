@@ -168,6 +168,12 @@
     <Compile Include="_modulo_reportes\_rdls\RptEstadosBoletas.Designer.cs">
       <DependentUpon>RptEstadosBoletas.cs</DependentUpon>
     </Compile>
+    <Compile Include="_modulo_reportes\_rdls\RptMostrarComisionAbonosPorVendedores.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="_modulo_reportes\_rdls\RptMostrarComisionAbonosPorVendedores.Designer.cs">
+      <DependentUpon>RptMostrarComisionAbonosPorVendedores.cs</DependentUpon>
+    </Compile>
     <Compile Include="_modulo_reportes\_rdls\RptMostrarAbonos.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -304,6 +310,9 @@
     <EmbeddedResource Include="_modulo_reportes\_rdls\RptEstadosBoletas.resx">
       <DependentUpon>RptEstadosBoletas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="_modulo_reportes\_rdls\RptMostrarComisionAbonosPorVendedores.resx">
+      <DependentUpon>RptMostrarComisionAbonosPorVendedores.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="_modulo_reportes\_rdls\RptMostrarAbonos.resx">
       <DependentUpon>RptMostrarAbonos.cs</DependentUpon>
     </EmbeddedResource>
@@ -428,6 +437,7 @@
     <None Include="Resources\salir24.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\imprimir.png" />
     <None Include="Resources\cliente.png" />
     <None Include="Resources\LOGO FINAL 2_page-0001.jpg" />
     <None Include="Resources\LOGO FINAL 2_page-00011.jpg" />

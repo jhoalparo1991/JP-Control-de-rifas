@@ -447,7 +447,7 @@ namespace CapaPresentacion._pagos
         {
             if(Dgv_pagos.Rows.Count > 0)
             {
-                int _pagoId = Convert.ToInt32(Dgv_pagos.CurrentRow.Cells["p_id"].Value.ToString());
+                _pagoId = Convert.ToInt32(Dgv_pagos.CurrentRow.Cells["p_id"].Value.ToString());
                 mostrarDetallePagos(_pagoId);
             }
         }
@@ -468,21 +468,20 @@ namespace CapaPresentacion._pagos
 
             if (Dgv_detalle_pagos_realizados.Rows.Count > 0)
             {
+                int _id = Convert.ToInt32(Dgv_detalle_pagos_realizados.CurrentRow.Cells["d_Id"].Value.ToString());
+                int _VendedorId = Convert.ToInt32(Dgv_detalle_pagos_realizados.CurrentRow.Cells["d_VendedorId"].Value.ToString());
+
                 if (Dgv_detalle_pagos_realizados.Columns[e.ColumnIndex].Name == "btn_quitar_pagos")
                 {
                     DialogResult dialog = MessageBox.Show("Estas seguro que deseas revertir este pago, este pago te aparecerá pendiente de pagar",
-                                                          "Mensaje confirmacion",
-                                                          MessageBoxButtons.OKCancel,
-                                                          MessageBoxIcon.Question);
+                    "Mensaje confirmacion",
+                    MessageBoxButtons.OKCancel,
+                    MessageBoxIcon.Question);
 
                     if(dialog == DialogResult.OK)
                     {
                         try
                         {
-                            int _id = Convert.ToInt32(Dgv_detalle_pagos_realizados.CurrentRow.Cells["d_Id"].Value.ToString());
-                            int _abonoId = Convert.ToInt32(Dgv_detalle_pagos_realizados.CurrentRow.Cells["d_Id"].Value.ToString());
-
-                            //N_Pagos.borrarPagos(_id,_abonoId);
                             mostrarDetallePagos(_pagoId);
                         }
                         catch (Exception ex)
@@ -490,6 +489,10 @@ namespace CapaPresentacion._pagos
                             _helpers.Mensajes.mensajeErrorException(ex);
                         }
                     }
+                }
+                else if (Dgv_detalle_pagos_realizados.Columns[e.ColumnIndex].Name == "btn_imprimir_pago")
+                {
+                    
                 }
             }
         }

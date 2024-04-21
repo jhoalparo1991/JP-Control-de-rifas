@@ -16,17 +16,18 @@ namespace CapaPresentacion
             InitializeComponent();
             cargarEstadosBoletas();
             mostrarRifas();
-            mostrarVendedores();
+            mostrarVendedores(cbx_vendedor);
+            mostrarVendedores(Cbx_vendedor_01);
         }
-        private void mostrarVendedores()
+        private void mostrarVendedores(ComboBox cbx)
         {
             try
             {
                 DataTable dt = new DataTable();
                 N_Usuarios.mostrarVendedores(dt);
-                cbx_vendedor.DataSource = dt;
-                cbx_vendedor.DisplayMember = "nombre_completo".ToString();
-                cbx_vendedor.ValueMember = "id";
+                cbx.DataSource = dt;
+                cbx.DisplayMember = "nombre_completo".ToString();
+                cbx.ValueMember = "id";
             }
             catch (Exception e)
             {
@@ -77,9 +78,19 @@ namespace CapaPresentacion
 
                 int nroBoleta = Convert.ToInt32(Txt_nro_boleta.Text.Trim());
                 DataTable dt = N_Reports.mostrarAbonosPorBoleta(nroBoleta.ToString("D4"));
+
+                decimal _totalAbonos = 0;
+                decimal _totalComision = 0;
+                foreach (DataRow row in dt.Rows)
+                {
+                    _totalAbonos += Convert.ToDecimal(row["abonos"].ToString());
+                    _totalComision += Convert.ToDecimal(row["valor_comision"].ToString());
+                }
+
                 RptMostrarAbonos rpt = new RptMostrarAbonos();
-                rpt.DataSource = dt;
                 rpt.table1.DataSource = dt;
+                rpt.Txt_total_abono.Value = _totalAbonos.ToString();
+                rpt.Txt_total_comision.Value = _totalComision.ToString();
                 reportViewer2.Report = rpt;
                 reportViewer2.RefreshReport();
 
@@ -284,6 +295,42 @@ namespace CapaPresentacion
                 //rpt.txt_comisiones.Value = totalComisiones.ToString();
                 reportViewer9.Report = rpt;
                 reportViewer9.RefreshReport();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Aviso del sistema");
+            }
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                DataTable dt = N_Reports.mostrarAbonosComisionesPorVendedores(dateTimePicker9.Value, dateTimePicker10.Value,
+                    Convert.ToInt32(Cbx_vendedor_01.SelectedValue));
+               
+                RptMostrarComisionAbonosPorVendedores rpt = new RptMostrarComisionAbonosPorVendedores();
+
+                decimal totalAbonos = 0;
+                decimal totalComisiones = 0;
+                foreach (DataRow row in dt.Rows)
+                {
+                    totalAbonos += Convert.ToDecimal(row["valor_abono"].ToString());
+                    totalComisiones += Convert.ToDecimal(row["valor_comision"].ToString());
+                }
+
+                rpt.table1.DataSource = dt;
+                rpt.txtVendedor.Value = Cbx_vendedor_01.Text.ToString().ToUpper();
+                rpt.txtFechaIni.Value = dateTimePicker9.Text.ToString();
+                rpt.txtFechaFin.Value = dateTimePicker10.Text.ToString();
+                rpt.Txt_total_abono.Value = totalAbonos.ToString();
+                rpt.Txt_total_comision.Value = totalComisiones.ToString();
+
+                reportViewer10.Report = rpt;
+
+                reportViewer10.RefreshReport();
 
             }
             catch (Exception ex)
