@@ -1,6 +1,9 @@
 ﻿using Domain;
 using Entities;
 using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -8,36 +11,60 @@ namespace CapaPresentacion._auxiliar_instalacion
 {
     public partial class Frm_config : Form
     {
-        int total = 0;
         int id = 0;
         public Frm_config()
         {
             InitializeComponent();
             this.ControlBox = false;
             this.Text = "";
-            limpiar();
-            cargarBoletas();
+            mostrarConfig();
         }
 
-        private void limpiar()
+        private static string _DIRECTORIO = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "SoftRifas");
+        private static string _ARCHIVO_DB = Path.Combine(_DIRECTORIO, "connection_string.txt");
+
+        private static List<string> LeerArchivoconexionDB()
         {
-            txt_color.Text = "0";
-            txt_nro_boletas.Text = "0";
-            txt_nro_boletas.Text = "0";
-            txt_nro_botones.Text = "0";
-            id = 0;
+
+            List<string> listado = new List<string>();
+
+            try
+            {
+                if (File.Exists(_ARCHIVO_DB))
+                {
+                    using (StreamReader reader = new StreamReader(_ARCHIVO_DB))
+                    {
+                        string lineas;
+                        while ((lineas = reader.ReadLine()) != null)
+                        {
+                            listado.Add(lineas);
+                        }
+                    }
+                }
+
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+
+            return listado;
         }
-        private void cargarBoletas()
-        {
-            int rifaId = N_Rifas.mostrarRifas().Find(x=>x.Activa==true).Id;
-            N_Boletas.contarBoletas(ref total,rifaId);
-            txt_nro_boletas.Text = total.ToString();
-        }
+
+
         private void mostrarConfig()
         {
             try
             {
                Config config =  N_Config.mostrarConfig().FirstOrDefault();
+
+                if(config != null)
+                {
+                    id = config.Id;
+                    txtRutaCopiaSeguridad.Text = config.RutaCopiaSeguridad.ToString();
+
+                }
+
             }
             catch (Exception e)
             {
@@ -46,54 +73,40 @@ namespace CapaPresentacion._auxiliar_instalacion
             }
         }
 
-        private void calcularPaginas()
-        {
-
-            if (string.IsNullOrEmpty(txt_nro_boletas_pagina.Text))
-            {
-                return;
-            }
-
-
-            int _nroBoletasPagina = Convert.ToInt32(txt_nro_boletas_pagina.Text.Trim());
-
-            int paginas = (total / _nroBoletasPagina);
-
-            txt_nro_botones.Text = paginas.ToString();
-
-        }
-
         private void guardar()
         {
             try
             {
-                if (string.IsNullOrEmpty(txt_color.Text))
+
+                if (string.IsNullOrEmpty(txtRutaCopiaSeguridad.Text))
                 {
-                    _helpers.Mensajes.mensajeAdvertencia("Debes seleccionar un color");
-                    return;
-                }
-                if (string.IsNullOrEmpty(txt_nro_boletas.Text))
-                {
-                    _helpers.Mensajes.mensajeAdvertencia("Debes tener boletas registradas");
-                    return;
-                }
-                if (string.IsNullOrEmpty(txt_nro_boletas_pagina.Text))
-                {
-                    _helpers.Mensajes.mensajeAdvertencia("Debes tener boletas registradas");
+                    _helpers.Mensajes.mensajeAdvertencia("Elija la ruta donde se almacenaran las copias de seguridad");
+                    button1.Select();
                     return;
                 }
 
 
                 Config config = new Config() { 
                     Id = id,
-                    NroBotones = Convert.ToInt32(txt_nro_botones.Text.Trim()),
-                    NroRegistrosPorPagina = Convert.ToInt32(txt_nro_boletas_pagina.Text.Trim()),
-                    Color = Convert.ToInt32(txt_color.Text.Trim()),
+                    RutaCopiaSeguridad = txtRutaCopiaSeguridad.Text.Trim()
                 };
+
 
                 if (N_Config.crearConfig(config))
                 {
+                    mostrarConfig();
 
+                    Lbl_estado.ForeColor = Color.White;
+                    if (N_Config.crearBackup(txtRutaCopiaSeguridad.Text.Trim()))
+                    {
+                        Lbl_estado.Text = "Estado : Copia de base de datos generada con exito";
+                        Lbl_estado.BackColor = Color.Green;
+                    }
+                    else
+                    {
+                        Lbl_estado.Text = "Estado : Hubo un error, no se pudo crear la copia de seguridad";
+                        Lbl_estado.BackColor = Color.Red;
+                    }
                 }
 
             }
@@ -113,57 +126,23 @@ namespace CapaPresentacion._auxiliar_instalacion
             this.Close();
         }
 
-        private void txt_nro_botones_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            _helpers.Validaciones.soloNumero(sender,e);
-        }
-
-        private void txt_nro_boletas_pagina_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            _helpers.Validaciones.soloNumero(sender, e);
-        }
-
-        private void txt_color_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            _helpers.Validaciones.soloNumero(sender, e);
-        }
-
-        private void txt_nro_botones_Leave(object sender, EventArgs e)
-        {
-            _helpers.Validaciones.completarCampos(txt_nro_botones);
-        }
-
-        private void txt_nro_boletas_pagina_Leave(object sender, EventArgs e)
-        {
-            _helpers.Validaciones.completarCampos(txt_nro_boletas_pagina);
-        }
-
-        private void txt_color_Leave(object sender, EventArgs e)
-        {
-            _helpers.Validaciones.completarCampos(txt_color);
-        }
-
-        private void txt_nro_boletas_pagina_TextChanged(object sender, EventArgs e)
-        {
-            calcularPaginas();
-        }
-
-        private void txt_color_Click(object sender, EventArgs e)
-        {
-            using(ColorDialog cd = new ColorDialog())
-            {
-                if(cd.ShowDialog() == DialogResult.OK)
-                {
-                    int color = cd.Color.ToArgb();
-                    txt_color.Text = color.ToString();
-                }
-                    
-            }
-        }
 
         private void Btn_conectar_Click(object sender, EventArgs e)
         {
             guardar();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            using(FolderBrowserDialog fbd = new FolderBrowserDialog())
+            {
+                fbd.Description = "Ruta copias de seguridad";
+                
+                if(fbd.ShowDialog() == DialogResult.OK)
+                {
+                    txtRutaCopiaSeguridad.Text = Path.Combine(fbd.SelectedPath.ToString(),"DBRIFAS.BAK");
+                }
+            }
         }
     }
 }

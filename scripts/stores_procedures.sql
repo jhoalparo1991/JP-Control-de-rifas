@@ -1,3 +1,9 @@
+alter table tbl_config add ruta_copia_seguridad varchar(max)
+alter table tbl_config drop column nro_botones
+alter table tbl_config drop column nro_registros_por_pagina
+alter table tbl_config drop column color
+
+go
 create proc sp_editar_forma_pago_boleta
 @abono_boleta_id int = 0,
 @forma_pago varchar(50) = ''
@@ -43,4 +49,19 @@ inner join tbl_clientes c on a.cliente_id=c.id
 inner join tbl_boletas d on a.boleta_id =d.id
 where a.vendedor_id=@vendedor_id and
 a.fecha_abono between @fecha_ini and @fecha_fin
+go
+alter proc [dbo].[sp_guardar_config]
+@id int = 0,
+@ruta_copia_seguridad varchar(max) = ''
+as
+if @id <= 0
+begin
+	insert into tbl_config values(@ruta_copia_seguridad) 
+end
+else
+begin
+	update tbl_config set ruta_copia_seguridad=@ruta_copia_seguridad
+						  where id=@id
+end
+
 go

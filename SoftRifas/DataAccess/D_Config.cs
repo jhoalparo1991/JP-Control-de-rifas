@@ -27,9 +27,7 @@ namespace DataAccess
                     config.Add(new Config()
                     {
                         Id = Convert.ToInt32(reader["id"]),
-                        NroBotones = Convert.ToInt32(reader["nro_botones"]),
-                        NroRegistrosPorPagina = Convert.ToInt32(reader["nro_registros_por_pagina"]),
-                        Color = Convert.ToInt32(reader["color"]),
+                        RutaCopiaSeguridad = reader["ruta_copia_seguridad"].ToString(),
                     });
                 }
             }
@@ -52,9 +50,7 @@ namespace DataAccess
                 SqlCommand command = new SqlCommand("sp_guardar_config", con);
                 command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.AddWithValue("@id", obj.Id);
-                command.Parameters.AddWithValue("@nro_botones", obj.NroBotones);
-                command.Parameters.AddWithValue("@nro_registros_por_pagina", obj.NroRegistrosPorPagina);
-                command.Parameters.AddWithValue("@color", obj.Color);
+                command.Parameters.AddWithValue("@ruta_copia_seguridad", obj.RutaCopiaSeguridad);
 
                 result = Convert.ToInt32(command.ExecuteNonQuery()) != 0 ? true : false;
             }

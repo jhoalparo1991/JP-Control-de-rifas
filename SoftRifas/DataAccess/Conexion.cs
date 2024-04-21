@@ -110,5 +110,45 @@ namespace DataAccess
             return result;
         }
 
+        public static bool crearBackup(string path)
+        {
+
+            bool result = true;
+            string scriptSQL = $@"BACKUP DATABASE db_rifas TO  DISK = N'{path}' WITH NOFORMAT, NOINIT,  NAME = N'db_rifas-Full Database Backup', SKIP, NOREWIND, NOUNLOAD, STATS = 10";
+            try
+            {
+                List<string> properties = LeerArchivoconexionDB();
+                SqlConnectionStringBuilder b = new SqlConnectionStringBuilder();
+                if (properties != null && properties.Count > 0)
+                {
+                    b.DataSource = properties[0];
+                    b.InitialCatalog = properties[1];
+                    b.UserID = properties[2];
+                    b.Password = properties[3];
+                    b.IntegratedSecurity = Convert.ToBoolean(properties[4]);
+                    using(SqlConnection con = new SqlConnection(b.ConnectionString))
+                    {
+                        con.Open();
+                        SqlCommand command = new SqlCommand(scriptSQL, con);
+                        command.ExecuteNonQuery();
+                        con.Close();
+
+                    };
+                }
+                else
+                {
+                    result = false;
+                }
+                return result;
+            }
+            catch (Exception e)
+            {
+
+                throw new Exception(e.Message);
+            }
+
+            return result;
+        }
+
     }
 }

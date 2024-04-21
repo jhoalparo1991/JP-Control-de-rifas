@@ -15,5 +15,10 @@ namespace Domain
         {
             return D_Config.mostrarConfig();
         }
+
+        public static bool crearBackup(string path)
+        {
+            return Conexion.crearBackup(path);
+        }
     }
 }
