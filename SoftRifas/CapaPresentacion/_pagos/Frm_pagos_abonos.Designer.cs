@@ -94,6 +94,17 @@ namespace CapaPresentacion._pagos
             this.Txt_vendedor_id = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.Dgv_detalle_pagos_realizados = new System.Windows.Forms.DataGridView();
+            this.d_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.d_PagoId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.d_VendedorId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.d_Vendedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.d_ValorPagado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.d_FechaPago = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.d_FormaPago = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.d_PeriodoPago = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.d_Pagado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.btn_detalle = new System.Windows.Forms.DataGridViewImageColumn();
+            this.btn_imprimir_pago = new System.Windows.Forms.DataGridViewImageColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.Dgv_pagos = new System.Windows.Forms.DataGridView();
@@ -111,17 +122,6 @@ namespace CapaPresentacion._pagos
             this.label14 = new System.Windows.Forms.Label();
             this.dt_fecha_fin_pago = new System.Windows.Forms.DateTimePicker();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.d_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.d_PagoId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.d_VendedorId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.d_Vendedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.d_ValorPagado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.d_FechaPago = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.d_FormaPago = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.d_PeriodoPago = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.d_Pagado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.btn_detalle = new System.Windows.Forms.DataGridViewImageColumn();
-            this.btn_imprimir_pago = new System.Windows.Forms.DataGridViewImageColumn();
             this.Pn_pagos.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -165,6 +165,7 @@ namespace CapaPresentacion._pagos
             this.txt_usuario_id.Name = "txt_usuario_id";
             this.txt_usuario_id.Size = new System.Drawing.Size(49, 23);
             this.txt_usuario_id.TabIndex = 7;
+            this.txt_usuario_id.Visible = false;
             // 
             // label2
             // 
@@ -275,6 +276,7 @@ namespace CapaPresentacion._pagos
             this.Txt_id.Name = "Txt_id";
             this.Txt_id.Size = new System.Drawing.Size(49, 23);
             this.Txt_id.TabIndex = 8;
+            this.Txt_id.Visible = false;
             // 
             // label8
             // 
@@ -836,6 +838,101 @@ namespace CapaPresentacion._pagos
             this.Dgv_detalle_pagos_realizados.TabIndex = 3;
             this.Dgv_detalle_pagos_realizados.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_detalle_pagos_realizados_CellClick);
             // 
+            // d_Id
+            // 
+            this.d_Id.DataPropertyName = "Id";
+            this.d_Id.HeaderText = "Id";
+            this.d_Id.Name = "d_Id";
+            this.d_Id.ReadOnly = true;
+            this.d_Id.Visible = false;
+            // 
+            // d_PagoId
+            // 
+            this.d_PagoId.DataPropertyName = "PagoId";
+            this.d_PagoId.HeaderText = "PagoId";
+            this.d_PagoId.Name = "d_PagoId";
+            this.d_PagoId.ReadOnly = true;
+            this.d_PagoId.Visible = false;
+            // 
+            // d_VendedorId
+            // 
+            this.d_VendedorId.DataPropertyName = "VendedorId";
+            this.d_VendedorId.HeaderText = "VendedorId";
+            this.d_VendedorId.Name = "d_VendedorId";
+            this.d_VendedorId.ReadOnly = true;
+            this.d_VendedorId.Visible = false;
+            // 
+            // d_Vendedor
+            // 
+            this.d_Vendedor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.d_Vendedor.DataPropertyName = "Vendedor";
+            this.d_Vendedor.HeaderText = "Vendedor";
+            this.d_Vendedor.Name = "d_Vendedor";
+            this.d_Vendedor.ReadOnly = true;
+            this.d_Vendedor.Width = 95;
+            // 
+            // d_ValorPagado
+            // 
+            this.d_ValorPagado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.d_ValorPagado.DataPropertyName = "ValorPagado";
+            this.d_ValorPagado.HeaderText = "Valor Pagado";
+            this.d_ValorPagado.Name = "d_ValorPagado";
+            this.d_ValorPagado.ReadOnly = true;
+            this.d_ValorPagado.Width = 119;
+            // 
+            // d_FechaPago
+            // 
+            this.d_FechaPago.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.d_FechaPago.DataPropertyName = "FechaPago";
+            this.d_FechaPago.HeaderText = "FechaPago";
+            this.d_FechaPago.Name = "d_FechaPago";
+            this.d_FechaPago.ReadOnly = true;
+            this.d_FechaPago.Visible = false;
+            // 
+            // d_FormaPago
+            // 
+            this.d_FormaPago.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.d_FormaPago.DataPropertyName = "FormaPago";
+            this.d_FormaPago.HeaderText = "Forma Pago";
+            this.d_FormaPago.Name = "d_FormaPago";
+            this.d_FormaPago.ReadOnly = true;
+            this.d_FormaPago.Width = 110;
+            // 
+            // d_PeriodoPago
+            // 
+            this.d_PeriodoPago.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.d_PeriodoPago.DataPropertyName = "PeriodoPago";
+            this.d_PeriodoPago.HeaderText = "Periodo Pago";
+            this.d_PeriodoPago.Name = "d_PeriodoPago";
+            this.d_PeriodoPago.ReadOnly = true;
+            this.d_PeriodoPago.Width = 119;
+            // 
+            // d_Pagado
+            // 
+            this.d_Pagado.DataPropertyName = "Pagado";
+            this.d_Pagado.HeaderText = "Pagado";
+            this.d_Pagado.Name = "d_Pagado";
+            this.d_Pagado.ReadOnly = true;
+            this.d_Pagado.Visible = false;
+            // 
+            // btn_detalle
+            // 
+            this.btn_detalle.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.btn_detalle.HeaderText = "Detalle";
+            this.btn_detalle.Image = global::CapaPresentacion.Properties.Resources.editar24_gris;
+            this.btn_detalle.Name = "btn_detalle";
+            this.btn_detalle.ReadOnly = true;
+            this.btn_detalle.Width = 58;
+            // 
+            // btn_imprimir_pago
+            // 
+            this.btn_imprimir_pago.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.btn_imprimir_pago.HeaderText = "Imprimir";
+            this.btn_imprimir_pago.Image = global::CapaPresentacion.Properties.Resources.imprimir;
+            this.btn_imprimir_pago.Name = "btn_imprimir_pago";
+            this.btn_imprimir_pago.ReadOnly = true;
+            this.btn_imprimir_pago.Width = 63;
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.panel5);
@@ -1001,102 +1098,6 @@ namespace CapaPresentacion._pagos
             // 
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // d_Id
-            // 
-            this.d_Id.DataPropertyName = "Id";
-            this.d_Id.HeaderText = "Id";
-            this.d_Id.Name = "d_Id";
-            this.d_Id.ReadOnly = true;
-            this.d_Id.Visible = false;
-            // 
-            // d_PagoId
-            // 
-            this.d_PagoId.DataPropertyName = "PagoId";
-            this.d_PagoId.HeaderText = "PagoId";
-            this.d_PagoId.Name = "d_PagoId";
-            this.d_PagoId.ReadOnly = true;
-            this.d_PagoId.Visible = false;
-            // 
-            // d_VendedorId
-            // 
-            this.d_VendedorId.DataPropertyName = "VendedorId";
-            this.d_VendedorId.HeaderText = "VendedorId";
-            this.d_VendedorId.Name = "d_VendedorId";
-            this.d_VendedorId.ReadOnly = true;
-            this.d_VendedorId.Visible = false;
-            // 
-            // d_Vendedor
-            // 
-            this.d_Vendedor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.d_Vendedor.DataPropertyName = "Vendedor";
-            this.d_Vendedor.HeaderText = "Vendedor";
-            this.d_Vendedor.Name = "d_Vendedor";
-            this.d_Vendedor.ReadOnly = true;
-            this.d_Vendedor.Width = 95;
-            // 
-            // d_ValorPagado
-            // 
-            this.d_ValorPagado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.d_ValorPagado.DataPropertyName = "ValorPagado";
-            this.d_ValorPagado.HeaderText = "Valor Pagado";
-            this.d_ValorPagado.Name = "d_ValorPagado";
-            this.d_ValorPagado.ReadOnly = true;
-            this.d_ValorPagado.Width = 119;
-            // 
-            // d_FechaPago
-            // 
-            this.d_FechaPago.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.d_FechaPago.DataPropertyName = "FechaPago";
-            this.d_FechaPago.HeaderText = "FechaPago";
-            this.d_FechaPago.Name = "d_FechaPago";
-            this.d_FechaPago.ReadOnly = true;
-            this.d_FechaPago.Visible = false;
-            this.d_FechaPago.Width = 105;
-            // 
-            // d_FormaPago
-            // 
-            this.d_FormaPago.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.d_FormaPago.DataPropertyName = "FormaPago";
-            this.d_FormaPago.HeaderText = "Forma Pago";
-            this.d_FormaPago.Name = "d_FormaPago";
-            this.d_FormaPago.ReadOnly = true;
-            this.d_FormaPago.Width = 110;
-            // 
-            // d_PeriodoPago
-            // 
-            this.d_PeriodoPago.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.d_PeriodoPago.DataPropertyName = "PeriodoPago";
-            this.d_PeriodoPago.HeaderText = "Periodo Pago";
-            this.d_PeriodoPago.Name = "d_PeriodoPago";
-            this.d_PeriodoPago.ReadOnly = true;
-            this.d_PeriodoPago.Width = 119;
-            // 
-            // d_Pagado
-            // 
-            this.d_Pagado.DataPropertyName = "Pagado";
-            this.d_Pagado.HeaderText = "Pagado";
-            this.d_Pagado.Name = "d_Pagado";
-            this.d_Pagado.ReadOnly = true;
-            this.d_Pagado.Visible = false;
-            // 
-            // btn_detalle
-            // 
-            this.btn_detalle.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.btn_detalle.HeaderText = "Detalle";
-            this.btn_detalle.Image = global::CapaPresentacion.Properties.Resources.editar24_gris;
-            this.btn_detalle.Name = "btn_detalle";
-            this.btn_detalle.ReadOnly = true;
-            this.btn_detalle.Width = 58;
-            // 
-            // btn_imprimir_pago
-            // 
-            this.btn_imprimir_pago.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.btn_imprimir_pago.HeaderText = "Imprimir";
-            this.btn_imprimir_pago.Image = global::CapaPresentacion.Properties.Resources.imprimir;
-            this.btn_imprimir_pago.Name = "btn_imprimir_pago";
-            this.btn_imprimir_pago.ReadOnly = true;
-            this.btn_imprimir_pago.Width = 63;
             // 
             // Frm_pagos_abonos
             // 
