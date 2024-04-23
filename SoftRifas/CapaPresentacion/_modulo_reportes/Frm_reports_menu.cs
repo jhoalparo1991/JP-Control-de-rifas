@@ -335,8 +335,11 @@ namespace CapaPresentacion
             try
             {
 
+                DateTime fechaIni = Convert.ToDateTime(dateTimePicker11.Text);
+                DateTime fechaFin= Convert.ToDateTime(dateTimePicker12.Text);
+
                 List<DtoMostarGastos> dt = N_Gastos.mostrarGastos()
-                    .FindAll( x => x.Fecha >= dateTimePicker11.Value && x.Fecha <= dateTimePicker12.Value);
+                    .FindAll( x => x.Fecha >= fechaIni && x.Fecha <= fechaFin);
 
                 RptMostrarEgresosPorFecha rpt = new RptMostrarEgresosPorFecha();
 
@@ -376,7 +379,6 @@ namespace CapaPresentacion
                 decimal total = 0;
                 decimal _abonos = 0;
                 decimal _comisionPagada = 0;
-                decimal _gastos = 0;
                 foreach (DataRow row in dt.Rows)
                 {
                     total += Convert.ToDecimal(row["valor"].ToString());
@@ -385,14 +387,11 @@ namespace CapaPresentacion
                     rpt.txtAbonos.Value = Convert.ToDecimal(row["total_abonos"]).ToString("C2");
                     _abonos = Convert.ToDecimal(row["total_abonos"]);
                     _comisionPagada = Convert.ToDecimal(row["total_comision_pagada"]);
-                    _gastos = Convert.ToDecimal(row["total_gastos"]);
                     rpt.txtTotalComisiones.Value = Convert.ToDecimal(row["total_comisiones"]).ToString("C2");
-                    rpt.txtgastos.Value = Convert.ToDecimal(row["total_gastos"]).ToString("C2");
-                   // rpt.Txt_total.Value = Convert.ToDecimal(row["caja"]).ToString("C2");
                     rpt.txtComisionesPagada.Value = Convert.ToDecimal(row["total_comision_pagada"]).ToString("C2");
                 }
 
-                rpt.Txt_total.Value = (_abonos - (_comisionPagada + _gastos)).ToString("C2");
+                rpt.Txt_total.Value = (_abonos - _comisionPagada).ToString("C2");
                 rpt.txtTotalFp.Value = total.ToString("C2");
                 reportViewer12.Report = rpt;
 

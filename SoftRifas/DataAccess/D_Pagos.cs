@@ -164,5 +164,28 @@ namespace DataAccess
             }
             return result;
         }
+
+        public static bool borrarPagosTemporalesPorTerminal()
+        {
+            bool result = false;
+            try
+            {
+                con.Open();
+                SqlCommand command = new SqlCommand("sp_borrar_pagos_temporales", con);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@terminal", Environment.MachineName.ToString().Trim());
+
+                result = Convert.ToInt32(command.ExecuteNonQuery()) != 0 ? true : false;
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+            return result;
+        }
     }
 }

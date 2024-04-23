@@ -416,9 +416,12 @@ namespace CapaPresentacion._pagos
                 {
                     if (N_Pagos.registrarPagos(obj, dtDetallePagos))
                     {
+
+
                         limpiar();
                         mostrarPagos();
                         dtDetallePagos.Rows.Clear();
+                        N_Pagos.borrarPagosTemporalesPorTerminal();
                     }
 
 

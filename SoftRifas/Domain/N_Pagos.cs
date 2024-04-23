@@ -30,5 +30,10 @@ namespace Domain
             return D_Pagos.mostrarDetallePagado(idDetalle,vendedorId);
         }
 
+        public static bool borrarPagosTemporalesPorTerminal()
+        {
+            return D_Pagos.borrarPagosTemporalesPorTerminal();
+        }
+
     }
 }
