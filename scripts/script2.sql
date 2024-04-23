@@ -1,3 +1,4 @@
+
 use db_rifas
 go
 alter table tbl_abonos_boleta add abono_pagado bit

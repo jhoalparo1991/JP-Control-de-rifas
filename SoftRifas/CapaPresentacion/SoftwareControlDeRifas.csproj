@@ -368,6 +368,12 @@
     <Compile Include="_modulo_reportes\_rdls\RptEstadosBoletas.Designer.cs">
       <DependentUpon>RptEstadosBoletas.cs</DependentUpon>
     </Compile>
+    <Compile Include="_modulo_reportes\_rdls\RptMostrarComisionesVendedores2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="_modulo_reportes\_rdls\RptMostrarComisionesVendedores2.Designer.cs">
+      <DependentUpon>RptMostrarComisionesVendedores2.cs</DependentUpon>
+    </Compile>
     <Compile Include="_modulo_reportes\_rdls\RptMostrarReporteCajaDiario.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -427,6 +433,12 @@
     </Compile>
     <Compile Include="_modulo_reportes\_rdls\RptVendidasPorVendedores.Designer.cs">
       <DependentUpon>RptVendidasPorVendedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_pagos\Frm_imprimir_comision_pagada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_pagos\Frm_imprimir_comision_pagada.Designer.cs">
+      <DependentUpon>Frm_imprimir_comision_pagada.cs</DependentUpon>
     </Compile>
     <Compile Include="_pagos\Frm_quitar_cobro.cs">
       <SubType>Form</SubType>
@@ -540,6 +552,9 @@
     <EmbeddedResource Include="_modulo_reportes\_rdls\RptEstadosBoletas.resx">
       <DependentUpon>RptEstadosBoletas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="_modulo_reportes\_rdls\RptMostrarComisionesVendedores2.resx">
+      <DependentUpon>RptMostrarComisionesVendedores2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="_modulo_reportes\_rdls\RptMostrarReporteCajaDiario.resx">
       <DependentUpon>RptMostrarReporteCajaDiario.cs</DependentUpon>
     </EmbeddedResource>
@@ -569,6 +584,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="_modulo_reportes\_rdls\RptVendidasPorVendedores.resx">
       <DependentUpon>RptVendidasPorVendedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_pagos\Frm_imprimir_comision_pagada.resx">
+      <DependentUpon>Frm_imprimir_comision_pagada.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="_pagos\Frm_quitar_cobro.resx">
       <DependentUpon>Frm_quitar_cobro.cs</DependentUpon>

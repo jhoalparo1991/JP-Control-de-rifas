@@ -25,9 +25,9 @@ namespace Domain
             return D_Pagos.borrarPagos(id, abonoId,vendedorId,boletaId,pagoId,valor, idInfoBoletaPagada);
         }
 
-        public static DataTable mostrarDetallePagado(int idDetalle)
+        public static DataTable mostrarDetallePagado(int idDetalle, int vendedorId)
         {
-            return D_Pagos.mostrarDetallePagado(idDetalle);
+            return D_Pagos.mostrarDetallePagado(idDetalle,vendedorId);
         }
 
     }

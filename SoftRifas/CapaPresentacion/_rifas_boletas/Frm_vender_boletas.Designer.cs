@@ -172,7 +172,6 @@ namespace CapaPresentacion._rifas_boletas
             this.Txt_buscar.Name = "Txt_buscar";
             this.Txt_buscar.Size = new System.Drawing.Size(252, 23);
             this.Txt_buscar.TabIndex = 2;
-            this.Txt_buscar.TextChanged += new System.EventHandler(this.Txt_buscar_TextChanged);
             this.Txt_buscar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Txt_buscar_KeyDown);
             // 
             // panel6

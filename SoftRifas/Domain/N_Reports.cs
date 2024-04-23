@@ -65,5 +65,10 @@ namespace Domain
         {
             return DA_Reports.mostrarReporteFormasPagoCaja(fecha);
         }
+
+        public static DataTable mostrarPagoComisionesPorVendedoresIdDetallePago(int id)
+        {
+            return DA_Reports.mostrarPagoComisionesPorVendedoresIdDetallePago(id);
+        }
     }
 }

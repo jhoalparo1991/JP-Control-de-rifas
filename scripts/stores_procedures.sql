@@ -1,3 +1,5 @@
+use db_rifas
+go
 alter table tbl_config add ruta_copia_seguridad varchar(max)
 alter table tbl_config drop column nro_botones
 alter table tbl_config drop column nro_registros_por_pagina

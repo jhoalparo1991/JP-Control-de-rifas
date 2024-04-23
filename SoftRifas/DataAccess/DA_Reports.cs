@@ -203,7 +203,27 @@ namespace DataAccess
             }
             return dt;
         }
-
+        public static DataTable mostrarPagoComisionesPorVendedoresIdDetallePago(int id)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                con.Open();
+                SqlDataAdapter command = new SqlDataAdapter("sp_reporte_detalle_pago_comisiones_vendedores_por_id", con);
+                command.SelectCommand.CommandType = CommandType.StoredProcedure;
+                command.SelectCommand.Parameters.AddWithValue("id", id);
+                command.Fill(dt);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+            return dt;
+        }
         public static DataTable mostrarAbonosComisionesPorVendedores(DateTime fechaIni, DateTime fechaFin, int vendedorId)
         {
             DataTable dt = new DataTable();

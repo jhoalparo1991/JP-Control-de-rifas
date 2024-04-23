@@ -1,3 +1,5 @@
+use db_rifas
+go
 create proc sp_reporte_caja-- '04-20-2024'
 @fecha date
 as

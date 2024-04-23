@@ -488,10 +488,5 @@ namespace CapaPresentacion._rifas_boletas
         {
             //dibujarBoletasPorEstado(false);
         }
-
-        private void Txt_buscar_TextChanged(object sender, EventArgs e)
-        {
-            dibujarBoletas();
-        }
     }
 }

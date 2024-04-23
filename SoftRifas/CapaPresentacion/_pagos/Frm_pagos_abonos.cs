@@ -475,12 +475,17 @@ namespace CapaPresentacion._pagos
                 {
                     Frm_quitar_cobro frm = new Frm_quitar_cobro(this);
                     frm._idDetallePago = _id;
+                    frm._vendedorId = _VendedorId;
                     frm.mostrarPagos();
                     frm.ShowDialog();
                 }
                 else if (Dgv_detalle_pagos_realizados.Columns[e.ColumnIndex].Name == "btn_imprimir_pago")
                 {
-                    
+                    Frm_imprimir_comision_pagada frm = new Frm_imprimir_comision_pagada();
+                    frm.id = _id;
+                    frm.vendedorId = _VendedorId;
+                    frm.mostrarReporteDetallePago();
+                    frm.ShowDialog();
                 }
             }
         }

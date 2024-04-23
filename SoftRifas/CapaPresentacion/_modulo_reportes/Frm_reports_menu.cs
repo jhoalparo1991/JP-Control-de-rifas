@@ -282,17 +282,8 @@ namespace CapaPresentacion
 
                 DataTable dt = N_Reports.mostrarPagoComisionesPorVendedores(Convert.ToInt32(cbx_vendedor.SelectedValue));
                 RptMostrarComisionesVendedores rpt = new RptMostrarComisionesVendedores();
-                //rpt.DataSource = dt;
-                //decimal totalAbonos = 0;
-                //decimal totalComisiones = 0;
-                //foreach (DataRow row in dt.Rows)
-                //{
-                //    totalAbonos += Convert.ToDecimal(row["abonos"].ToString());
-                //    totalComisiones += Convert.ToDecimal(row["valor_comision"].ToString());
-                //}
+             
                 rpt.table1.DataSource = dt;
-                //rpt.txt_abonos.Value = totalAbonos.ToString();
-                //rpt.txt_comisiones.Value = totalComisiones.ToString();
                 reportViewer9.Report = rpt;
                 reportViewer9.RefreshReport();
 

@@ -20,12 +20,13 @@ namespace CapaPresentacion._pagos
         }
 
         internal int _idDetallePago = 0;
+        internal int _vendedorId;
 
         public void mostrarPagos()
         {
             try
             {
-                DataTable dt = N_Pagos.mostrarDetallePagado(_idDetallePago);
+                DataTable dt = N_Pagos.mostrarDetallePagado(_idDetallePago,_vendedorId);
                 Dgv.DataSource = dt;
             }
             catch (Exception e)

@@ -1,8 +1,4 @@
-select * from tbl_pago_abonos;
-select * from tbl_pagos_abono_detalle
-select * from tbl_abonos_boleta;
-select * from tbl_boleta_abono_pagado;
-go
+
 ALTER proc [dbo].[sp_registrar_pagos]
 @usuario_id int =0,
 @identificador varchar(50)='',

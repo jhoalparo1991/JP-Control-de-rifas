@@ -1,3 +1,5 @@
+use db_rifas
+go
 create proc sp_reporte_pagos
 @fecha_ini date = null,
 @fecha_fin date = null

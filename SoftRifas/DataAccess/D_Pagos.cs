@@ -114,7 +114,7 @@ namespace DataAccess
             return pagos;
         }
 
-        public static DataTable mostrarDetallePagado(int idDetalle)
+        public static DataTable mostrarDetallePagado(int idDetalle, int vendedorId)
         {
             DataTable dt = new DataTable();
             try
@@ -123,6 +123,7 @@ namespace DataAccess
                 SqlDataAdapter command = new SqlDataAdapter("sp_mostrar_detalle_pagado", con);
                 command.SelectCommand.CommandType = CommandType.StoredProcedure;
                 command.SelectCommand.Parameters.AddWithValue("id", idDetalle);
+                command.SelectCommand.Parameters.AddWithValue("vendedor_id", vendedorId);
                 command.Fill(dt);
             }
             catch (Exception e)
