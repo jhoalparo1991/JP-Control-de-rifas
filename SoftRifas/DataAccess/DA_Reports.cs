@@ -248,7 +248,7 @@ namespace DataAccess
             return dt;
         }
 
-        public static DataTable mostrarReporteCaja(DateTime fecha)
+        public static DataTable mostrarReporteCaja(DateTime fecha, DateTime fecha2)
         {
             DataTable dt = new DataTable();
             try
@@ -257,6 +257,7 @@ namespace DataAccess
                 SqlDataAdapter command = new SqlDataAdapter("sp_reporte_caja", con);
                 command.SelectCommand.CommandType = CommandType.StoredProcedure;
                 command.SelectCommand.Parameters.AddWithValue("@fecha", fecha);
+                command.SelectCommand.Parameters.AddWithValue("@fecha2", fecha2);
                 command.Fill(dt);
             }
             catch (Exception e)

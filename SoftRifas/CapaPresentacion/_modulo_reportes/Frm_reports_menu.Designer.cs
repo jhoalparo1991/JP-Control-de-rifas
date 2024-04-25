@@ -112,6 +112,8 @@ namespace CapaPresentacion
             this.dateTimePicker13 = new System.Windows.Forms.DateTimePicker();
             this.label19 = new System.Windows.Forms.Label();
             this.button11 = new System.Windows.Forms.Button();
+            this.dateTimePicker14 = new System.Windows.Forms.DateTimePicker();
+            this.label18 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage8.SuspendLayout();
@@ -979,7 +981,9 @@ namespace CapaPresentacion
             // 
             // panel11
             // 
+            this.panel11.Controls.Add(this.dateTimePicker14);
             this.panel11.Controls.Add(this.dateTimePicker13);
+            this.panel11.Controls.Add(this.label18);
             this.panel11.Controls.Add(this.label19);
             this.panel11.Controls.Add(this.button11);
             this.panel11.Dock = System.Windows.Forms.DockStyle.Top;
@@ -1009,13 +1013,30 @@ namespace CapaPresentacion
             // 
             this.button11.AutoSize = true;
             this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.Location = new System.Drawing.Point(184, 5);
+            this.button11.Location = new System.Drawing.Point(434, 5);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(182, 30);
             this.button11.TabIndex = 2;
             this.button11.Text = "Generar Reporte";
             this.button11.UseVisualStyleBackColor = true;
             this.button11.Click += new System.EventHandler(this.button11_Click);
+            // 
+            // dateTimePicker14
+            // 
+            this.dateTimePicker14.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker14.Location = new System.Drawing.Point(209, 10);
+            this.dateTimePicker14.Name = "dateTimePicker14";
+            this.dateTimePicker14.Size = new System.Drawing.Size(120, 23);
+            this.dateTimePicker14.TabIndex = 5;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(184, 13);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(19, 17);
+            this.label18.TabIndex = 4;
+            this.label18.Text = "al";
             // 
             // Frm_reports_menu
             // 
@@ -1151,6 +1172,8 @@ namespace CapaPresentacion
         private System.Windows.Forms.DateTimePicker dateTimePicker13;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.DateTimePicker dateTimePicker14;
+        private System.Windows.Forms.Label label18;
     }
 }
 

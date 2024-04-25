@@ -41,6 +41,8 @@ namespace ReportsModule._rdls
             this.txtTotalComisiones = new Telerik.Reporting.TextBox();
             this.textBox5 = new Telerik.Reporting.TextBox();
             this.pageFooterSection1 = new Telerik.Reporting.PageFooterSection();
+            this.txtFechafin = new Telerik.Reporting.TextBox();
+            this.textBox14 = new Telerik.Reporting.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // textBox10
@@ -65,14 +67,16 @@ namespace ReportsModule._rdls
             // 
             // pageHeaderSection1
             // 
-            this.pageHeaderSection1.Height = Telerik.Reporting.Drawing.Unit.Cm(2.6D);
+            this.pageHeaderSection1.Height = Telerik.Reporting.Drawing.Unit.Cm(3.2D);
             this.pageHeaderSection1.Items.AddRange(new Telerik.Reporting.ReportItemBase[] {
             this.pictureBox1,
             this.textBox1,
             this.textBox4,
             this.txtFecha,
             this.textBox8,
-            this.textBox9});
+            this.textBox9,
+            this.textBox14,
+            this.txtFechafin});
             this.pageHeaderSection1.Name = "pageHeaderSection1";
             // 
             // pictureBox1
@@ -104,7 +108,7 @@ namespace ReportsModule._rdls
             this.textBox4.Style.Font.Size = Telerik.Reporting.Drawing.Unit.Point(14D);
             this.textBox4.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Left;
             this.textBox4.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
-            this.textBox4.Value = "Fecha";
+            this.textBox4.Value = "Fecha Ini";
             // 
             // txtFecha
             // 
@@ -116,7 +120,7 @@ namespace ReportsModule._rdls
             // 
             // textBox8
             // 
-            this.textBox8.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Cm(0.4D), Telerik.Reporting.Drawing.Unit.Cm(1.8D));
+            this.textBox8.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Cm(0.4D), Telerik.Reporting.Drawing.Unit.Cm(2.4D));
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Cm(3.7D), Telerik.Reporting.Drawing.Unit.Cm(0.6D));
             this.textBox8.Style.Font.Bold = true;
@@ -127,7 +131,7 @@ namespace ReportsModule._rdls
             // 
             // textBox9
             // 
-            this.textBox9.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Cm(4.1D), Telerik.Reporting.Drawing.Unit.Cm(1.8D));
+            this.textBox9.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Cm(4.1D), Telerik.Reporting.Drawing.Unit.Cm(2.4D));
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Cm(8.9D), Telerik.Reporting.Drawing.Unit.Cm(0.6D));
             this.textBox9.Value = "= Now()";
@@ -332,6 +336,25 @@ namespace ReportsModule._rdls
             this.pageFooterSection1.Height = Telerik.Reporting.Drawing.Unit.Cm(0.8D);
             this.pageFooterSection1.Name = "pageFooterSection1";
             // 
+            // txtFechafin
+            // 
+            this.txtFechafin.Format = "{0:d}";
+            this.txtFechafin.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Cm(4.1D), Telerik.Reporting.Drawing.Unit.Cm(1.8D));
+            this.txtFechafin.Name = "txtFechafin";
+            this.txtFechafin.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Cm(8.9D), Telerik.Reporting.Drawing.Unit.Cm(0.6D));
+            this.txtFechafin.Value = "";
+            // 
+            // textBox14
+            // 
+            this.textBox14.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Cm(0.4D), Telerik.Reporting.Drawing.Unit.Cm(1.8D));
+            this.textBox14.Name = "textBox14";
+            this.textBox14.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Cm(3.7D), Telerik.Reporting.Drawing.Unit.Cm(0.6D));
+            this.textBox14.Style.Font.Bold = true;
+            this.textBox14.Style.Font.Size = Telerik.Reporting.Drawing.Unit.Point(14D);
+            this.textBox14.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Left;
+            this.textBox14.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
+            this.textBox14.Value = "Fecha Fin";
+            // 
             // RptMostrarReporteCajaDiario
             // 
             this.Items.AddRange(new Telerik.Reporting.ReportItemBase[] {
@@ -382,5 +405,7 @@ namespace ReportsModule._rdls
         public Telerik.Reporting.TextBox txtTotalFp;
         private Telerik.Reporting.TextBox textBox3;
         private Telerik.Reporting.TextBox textBox5;
+        private Telerik.Reporting.TextBox textBox14;
+        public Telerik.Reporting.TextBox txtFechafin;
     }
 }

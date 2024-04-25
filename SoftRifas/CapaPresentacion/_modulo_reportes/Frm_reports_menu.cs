@@ -369,8 +369,9 @@ namespace CapaPresentacion
         {
             try
             {
-
-                DataTable dt = N_Reports.mostrarReporteCaja(dateTimePicker13.Value);
+                DateTime fecha1 = Convert.ToDateTime(dateTimePicker13.Text);
+                DateTime fecha2 = Convert.ToDateTime(dateTimePicker14.Text);
+                DataTable dt = N_Reports.mostrarReporteCaja(fecha1,fecha2);
 
                 RptMostrarReporteCajaDiario rpt = new RptMostrarReporteCajaDiario();
 
@@ -383,6 +384,7 @@ namespace CapaPresentacion
                 {
                     total += Convert.ToDecimal(row["valor"].ToString());
                     rpt.txtFecha.Value = dateTimePicker13.Text.ToString();
+                    rpt.txtFechafin.Value = dateTimePicker14.Text.ToString();
                     rpt.txtTotalFp.Value = total.ToString("C2");
                     rpt.txtAbonos.Value = Convert.ToDecimal(row["total_abonos"]).ToString("C2");
                     _abonos = Convert.ToDecimal(row["total_abonos"]);
