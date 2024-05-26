@@ -302,5 +302,39 @@ namespace CapaPresentacion._rifas_boletas
         {
             mostrarAbonos(Convert.ToInt32(txt_id_boleta.Text.Trim()));
         }
+
+        private void hacerCalculos()
+        {
+            if(Dgv_abonos.Rows.Count <= 0)
+            {
+                Lbl_deuda.Text = "0";
+                Lbl_total_abonos.Text = "0";
+                Lbl_total_comision.Text = "0";
+            }
+            else
+            {
+                decimal _deuda = 0;
+                decimal _abonos = 0;
+                decimal _comision = 0;
+                decimal _valorBoleta = Convert.ToDecimal(txt_valor.Text.Trim());
+
+                for(int i=0; i < Dgv_abonos.Rows.Count; i++)
+                {
+                    _abonos += Convert.ToDecimal(Dgv_abonos.Rows[i].Cells["b_abonos"].Value.ToString()); 
+                    _comision += Convert.ToDecimal(Dgv_abonos.Rows[i].Cells["b_ValorComision"].Value.ToString()); 
+                }
+
+                _deuda = (_valorBoleta - _abonos);
+
+                Lbl_total_abonos.Text = _abonos.ToString("C2");
+                Lbl_total_comision.Text = _comision.ToString("C2");
+                Lbl_deuda.Text = _deuda.ToString("C2");
+
+            }
+        }
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            hacerCalculos();
+        }
     }
 }
