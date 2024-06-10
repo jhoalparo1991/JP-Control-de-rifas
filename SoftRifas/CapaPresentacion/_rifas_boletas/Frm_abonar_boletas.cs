@@ -20,6 +20,7 @@ namespace CapaPresentacion._rifas_boletas
             _helpers.Disenios.dataGridView(Dgv_abonos);
             limpiar();
             mostrarDatosSesion();
+            obtenerComisionVendedor();
         }
 
         private void iniciarForm()
@@ -28,10 +29,45 @@ namespace CapaPresentacion._rifas_boletas
             this.Text = "";
         }
         internal int id = 0;
-        private decimal porcentajeComision = 30;
+        private decimal porcentajeComision = 0;
         private int _usuarioId = 0;
 
         #region metodos
+
+        private void obtenerComisionVendedor()
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(txt_vendedor_id.Text))
+                {
+                    porcentajeComision = 30;
+                }
+
+                if (Convert.ToInt32(txt_vendedor_id.Text) <= 0)
+                {
+                    porcentajeComision = 30;
+                }
+
+                Usuarios user = N_Usuarios.mostrarUsuarios().Find(x => x.Id == Convert.ToInt32(txt_vendedor_id.Text.Trim()));
+
+                if(user != null)
+                {
+                    porcentajeComision = user.Comision;
+                }
+                else
+                {
+                    porcentajeComision = 30;
+                }
+
+                txt_porc_comision.Text = porcentajeComision.ToString();
+
+            }
+            catch (Exception e)
+            {
+
+                _helpers.Mensajes.mensajeErrorException(e);
+            }
+        }
         private void limpiar()
         {
             txt_saldado.Text = "0";
@@ -94,8 +130,12 @@ namespace CapaPresentacion._rifas_boletas
                 Txt_comision.Text = "0";
             }
 
-
+            obtenerComisionVendedor();
             //   decimal valorBoleta = Convert.ToDecimal(txt_valor_boleta.Text.Trim());
+
+
+
+
             decimal valorAbono = Convert.ToDecimal(txt_deuda.Text.Trim());
 
             decimal comision = (valorAbono * porcentajeComision) / 100;

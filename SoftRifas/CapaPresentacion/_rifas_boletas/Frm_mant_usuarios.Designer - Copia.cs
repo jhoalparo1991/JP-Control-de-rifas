@@ -81,6 +81,7 @@ namespace CapaPresentacion._rifas_boletas
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.error = new System.Windows.Forms.ErrorProvider(this.components);
+            this.txt_porc_comision = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -160,6 +161,7 @@ namespace CapaPresentacion._rifas_boletas
             this.panel3.Controls.Add(this.txt_valor_boleta);
             this.panel3.Controls.Add(this.txt_cliente_id);
             this.panel3.Controls.Add(this.Txt_vendedor_id);
+            this.panel3.Controls.Add(this.txt_porc_comision);
             this.panel3.Controls.Add(this.Txt_id);
             this.panel3.Controls.Add(this.Txt_id_boleta);
             this.panel3.Controls.Add(this.txt_cc_cl);
@@ -714,6 +716,18 @@ namespace CapaPresentacion._rifas_boletas
             // 
             this.error.ContainerControl = this;
             // 
+            // txt_porc_comision
+            // 
+            this.txt_porc_comision.Enabled = false;
+            this.txt_porc_comision.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_porc_comision.Location = new System.Drawing.Point(458, 11);
+            this.txt_porc_comision.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_porc_comision.Name = "txt_porc_comision";
+            this.txt_porc_comision.ReadOnly = true;
+            this.txt_porc_comision.Size = new System.Drawing.Size(64, 22);
+            this.txt_porc_comision.TabIndex = 2;
+            this.txt_porc_comision.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_id_KeyPress);
+            // 
             // Frm_boletas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -795,6 +809,7 @@ namespace CapaPresentacion._rifas_boletas
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        internal System.Windows.Forms.TextBox txt_porc_comision;
 
         public static int GetIdUsuario { get; internal set; }
         public static string GetUsuarioNombre { get; internal set; }

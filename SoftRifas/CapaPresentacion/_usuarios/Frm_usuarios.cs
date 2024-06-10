@@ -233,6 +233,7 @@ namespace CapaPresentacion._usuarios
                 Frm_boletas.GetIdUsuario = usuarioId;
                 Frm_boletas.GetUsuarioNombre = Dgv_usuarios.CurrentRow.Cells["nombre_completo"].Value.ToString();
                 Frm_boletas.GetUsuarioNroDoc = Dgv_usuarios.CurrentRow.Cells["nro_doc"].Value.ToString();
+                Frm_boletas.porcentajeComision = Convert.ToDecimal(Dgv_usuarios.CurrentRow.Cells["comision"].Value.ToString());
                 this.Close();
             }
         }

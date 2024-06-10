@@ -22,13 +22,51 @@ namespace CapaPresentacion._rifas_boletas
             _helpers.Formularios.marcarCampoSeleccionado(this.Controls);
             limpiar();
             mostrarDatosSesion();
+            obtenerComisionVendedor();
         }
         internal int id = 0;
         int _usuarioId = 0;
-        internal decimal porcentajeComision = 30;
+        public static decimal porcentajeComision = 0;
         internal static string GetUsuarioNroDoc;
         internal static string GetClienteNroDoc;
         #region metodos
+
+        private void obtenerComisionVendedor()
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(Txt_vendedor_id.Text))
+                {
+                    porcentajeComision = 30;
+                    return;
+                }
+
+                if (Convert.ToInt32(Txt_vendedor_id.Text) <= 0)
+                {
+                    porcentajeComision = 30;
+                    return;
+                }
+
+                Usuarios user = N_Usuarios.mostrarUsuarios().Find(x => x.Id == Convert.ToInt32(Txt_vendedor_id.Text.Trim()));
+
+                if (user != null)
+                {
+                    porcentajeComision = user.Comision;
+                }
+                else
+                {
+                    porcentajeComision = 30;
+                }
+
+                txt_porc_comision.Text = porcentajeComision.ToString();
+
+            }
+            catch (Exception e)
+            {
+
+                _helpers.Mensajes.mensajeErrorException(e);
+            }
+        }
         private void limpiar()
         {
             Txt_nro_boleta.Text = "0";
@@ -349,7 +387,7 @@ namespace CapaPresentacion._rifas_boletas
                 Txt_comision.Text = "0";
             }
 
-
+            obtenerComisionVendedor();
          //   decimal valorBoleta = Convert.ToDecimal(txt_valor_boleta.Text.Trim());
             decimal valorAbono = Convert.ToDecimal(Txt_abono.Text.Trim());
 
@@ -379,12 +417,14 @@ namespace CapaPresentacion._rifas_boletas
                 Txt_vendedor_id.Text = GetIdUsuario.ToString();
                 Txt_vendedor.Text = GetUsuarioNombre;
                 Txt_cc_ve.Text = GetUsuarioNroDoc;
+                txt_porc_comision.Text = porcentajeComision.ToString();
             }
             else
             {
                 Txt_vendedor.Text = "";
                 Txt_vendedor_id.Text = "0";
                 Txt_cc_ve.Text = "";
+                txt_porc_comision.Text = "0";
             }
         }
 
@@ -427,6 +467,7 @@ namespace CapaPresentacion._rifas_boletas
         private void Txt_cc_ve_TextChanged(object sender, EventArgs e)
         {
             buscarVendedor();
+           // obtenerComisionVendedor();
         }
 
         private void txt_cc_cl_KeyPress(object sender, KeyPressEventArgs e)
@@ -443,6 +484,8 @@ namespace CapaPresentacion._rifas_boletas
                 Txt_vendedor.Text = dgv_vendedores.CurrentRow.Cells["usNombreCompleto"].Value.ToString();
                 Txt_cc_ve.Text = dgv_vendedores.CurrentRow.Cells["usNroDoc"].Value.ToString();
                 Txt_vendedor_id.Text = dgv_vendedores.CurrentRow.Cells["usId"].Value.ToString();
+                porcentajeComision = Convert.ToDecimal(dgv_vendedores.CurrentRow.Cells["usComision"].Value.ToString());
+                txt_porc_comision.Text = dgv_vendedores.CurrentRow.Cells["usComision"].Value.ToString().Trim();
                 dgv_vendedores.Visible = false;
             }
         }
