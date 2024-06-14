@@ -355,5 +355,30 @@ namespace DataAccess
             }
             return result;
         }
+
+        public static bool borrarAbonosBoletas(int boletaId, int idAbonoBoleta, int vendedorId)
+        {
+            bool result = false;
+            try
+            {
+                con.Open();
+                SqlCommand command = new SqlCommand("sp_borrar_abono_boleta", con);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@boleta_id", boletaId);
+                command.Parameters.AddWithValue("@id_abono_boleta", idAbonoBoleta);
+                command.Parameters.AddWithValue("@vendedor_id", vendedorId);
+
+                result = Convert.ToInt32(command.ExecuteNonQuery()) != 0 ? true : false;
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+            return result;
+        }
     }
 }

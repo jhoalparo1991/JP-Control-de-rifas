@@ -50,7 +50,7 @@ namespace CapaPresentacion._rifas_boletas
 
                 Usuarios user = N_Usuarios.mostrarUsuarios().Find(x => x.Id == Convert.ToInt32(txt_vendedor_id.Text.Trim()));
 
-                if(user != null)
+                if (user != null)
                 {
                     porcentajeComision = user.Comision;
                 }
@@ -130,11 +130,11 @@ namespace CapaPresentacion._rifas_boletas
                 Txt_comision.Text = "0";
             }
 
-            obtenerComisionVendedor();
+
             //   decimal valorBoleta = Convert.ToDecimal(txt_valor_boleta.Text.Trim());
 
 
-
+            obtenerComisionVendedor();
 
             decimal valorAbono = Convert.ToDecimal(txt_deuda.Text.Trim());
 
@@ -333,6 +333,41 @@ namespace CapaPresentacion._rifas_boletas
                         frmCambioCl.Lbl_boleta_id.Text = Dgv_abonos.CurrentRow.Cells["b_boletaId"].Value.ToString().Trim();
                         frmCambioCl.FormClosed += FrmCambio_FormClosed;
                         frmCambioCl.ShowDialog();
+                    }
+                    //
+                } else if (Dgv_abonos.Columns[e.ColumnIndex].Name == "btn_borrar_abono")
+                {
+                    DialogResult result = MessageBox.Show("Estas segura que deseas eliminar este abono, se eliminaran sus pagos si tiene, este proceso no se podra revertir -- PRECAUCION", "Borrar Abono Boleta",
+                       MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+                    if (result == DialogResult.OK)
+                    {
+
+                        int _vendedorId = Convert.ToInt32(Dgv_abonos.CurrentRow.Cells["b_VendedorId"].Value.ToString().Trim());
+                        int _boletaId = Convert.ToInt32(Dgv_abonos.CurrentRow.Cells["b_boletaId"].Value.ToString().Trim());
+                        int _abonoBoletaId = Convert.ToInt32(Dgv_abonos.CurrentRow.Cells["b_Id"].Value.ToString().Trim());
+
+                        _helpers.Mensajes.mensajeInformacion($"vendedor { _vendedorId}, boleta_id {_boletaId}, abono {_abonoBoletaId}");
+
+                        try
+                        {
+                            if(N_Boletas.borrarAbonosBoletas(_boletaId, _abonoBoletaId, _vendedorId))
+                            {
+                            _helpers.Mensajes.mensajeInformacion("Registro borrado con exito");
+                            frm.mostrarTodasBoletas();
+                            mostrarAbonos(Convert.ToInt32(txt_id_boleta.Text.Trim()));
+
+                            }
+                            else
+                            {
+                                _helpers.Mensajes.mensajeAdvertencia("No se pudo eliminar el registro");
+                            }
+
+                        }
+                        catch (Exception ex)
+                        {
+                            _helpers.Mensajes.mensajeError(ex.Message);
+                        }
                     }
                 }
             }
