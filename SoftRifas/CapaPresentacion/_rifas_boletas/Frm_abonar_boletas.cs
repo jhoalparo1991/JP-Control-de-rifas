@@ -20,7 +20,6 @@ namespace CapaPresentacion._rifas_boletas
             _helpers.Disenios.dataGridView(Dgv_abonos);
             limpiar();
             mostrarDatosSesion();
-            obtenerComisionVendedor();
         }
 
         private void iniciarForm()
@@ -38,28 +37,19 @@ namespace CapaPresentacion._rifas_boletas
         {
             try
             {
-                if (string.IsNullOrEmpty(txt_vendedor_id.Text))
-                {
-                    porcentajeComision = 30;
-                }
-
-                if (Convert.ToInt32(txt_vendedor_id.Text) <= 0)
-                {
-                    porcentajeComision = 30;
-                }
+              
 
                 Usuarios user = N_Usuarios.mostrarUsuarios().Find(x => x.Id == Convert.ToInt32(txt_vendedor_id.Text.Trim()));
 
                 if (user != null)
                 {
-                    porcentajeComision = user.Comision;
+                    txt_porc_comision.Text = user.Comision.ToString();
                 }
                 else
                 {
-                    porcentajeComision = 30;
+                    txt_porc_comision.Text = "30";
                 }
 
-                txt_porc_comision.Text = porcentajeComision.ToString();
 
             }
             catch (Exception e)
@@ -93,8 +83,9 @@ namespace CapaPresentacion._rifas_boletas
                     Txt_cc_ve.Text = abono.VendedorCC.ToString().Trim();
                     Txt_cc_cl.Text = abono.ClienteCC.ToString().Trim();
                 }
+                
+                obtenerComisionVendedor();
 
-               
 
                 txt_saldado.Text = (Convert.ToDecimal(txt_valor.Text.Trim()) - _totalAbonos).ToString();
             }
@@ -121,25 +112,32 @@ namespace CapaPresentacion._rifas_boletas
         }
         private void calcularComision()
         {
-            if (string.IsNullOrEmpty(txt_deuda.Text.Trim()))
+            try
             {
-                return;
+                if (string.IsNullOrEmpty(txt_deuda.Text.Trim()))
+                {
+                    return;
+                }
+                else
+                {
+                    Txt_comision.Text = "0";
+                }
+
+
+                //   decimal valorBoleta = Convert.ToDecimal(txt_valor_boleta.Text.Trim());
+
+                porcentajeComision = Convert.ToDecimal(txt_porc_comision.Text.Trim());
+
+
+                decimal valorAbono = Convert.ToDecimal(txt_deuda.Text.Trim());
+
+                decimal comision = (valorAbono * porcentajeComision) / 100;
+                Txt_comision.Text = comision.ToString();
             }
-            else
+            catch (Exception e)
             {
-                Txt_comision.Text = "0";
+                _helpers.Mensajes.mensajeAdvertencia(e.Message);
             }
-
-
-            //   decimal valorBoleta = Convert.ToDecimal(txt_valor_boleta.Text.Trim());
-
-
-            obtenerComisionVendedor();
-
-            decimal valorAbono = Convert.ToDecimal(txt_deuda.Text.Trim());
-
-            decimal comision = (valorAbono * porcentajeComision) / 100;
-            Txt_comision.Text = comision.ToString();
         }
         private void guardar()
         {
@@ -354,8 +352,9 @@ namespace CapaPresentacion._rifas_boletas
                             if(N_Boletas.borrarAbonosBoletas(_boletaId, _abonoBoletaId, _vendedorId))
                             {
                             _helpers.Mensajes.mensajeInformacion("Registro borrado con exito");
-                            frm.mostrarTodasBoletas();
-                            mostrarAbonos(Convert.ToInt32(txt_id_boleta.Text.Trim()));
+                                frm.mostrarTodasBoletas();
+                                frm.dibujarBoletas();
+                                mostrarAbonos(Convert.ToInt32(txt_id_boleta.Text.Trim()));
 
                             }
                             else
