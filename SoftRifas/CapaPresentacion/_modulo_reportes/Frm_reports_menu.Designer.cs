@@ -109,11 +109,39 @@ namespace CapaPresentacion
             this.tabPage12 = new System.Windows.Forms.TabPage();
             this.reportViewer12 = new Telerik.ReportViewer.WinForms.ReportViewer();
             this.panel11 = new System.Windows.Forms.Panel();
+            this.dateTimePicker14 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker13 = new System.Windows.Forms.DateTimePicker();
+            this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.button11 = new System.Windows.Forms.Button();
-            this.dateTimePicker14 = new System.Windows.Forms.DateTimePicker();
-            this.label18 = new System.Windows.Forms.Label();
+            this.tabPage13 = new System.Windows.Forms.TabPage();
+            this.reportViewer13 = new Telerik.ReportViewer.WinForms.ReportViewer();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.cbxFormaPago = new System.Windows.Forms.ComboBox();
+            this.dtFecha16 = new System.Windows.Forms.DateTimePicker();
+            this.dtFecha15 = new System.Windows.Forms.DateTimePicker();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.button12 = new System.Windows.Forms.Button();
+            this.tabPage14 = new System.Windows.Forms.TabPage();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.label22 = new System.Windows.Forms.Label();
+            this.Lbl_total_comisiones_paga = new System.Windows.Forms.Label();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.Lbl_total_gastos = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.panel15 = new System.Windows.Forms.Panel();
+            this.Lbl_total_abonos = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.panel16 = new System.Windows.Forms.Panel();
+            this.label26 = new System.Windows.Forms.Label();
+            this.forma_pago = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.abono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel17 = new System.Windows.Forms.Panel();
+            this.Lbl_comisiones_por_pagar = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage8.SuspendLayout();
@@ -138,6 +166,16 @@ namespace CapaPresentacion
             this.panel10.SuspendLayout();
             this.tabPage12.SuspendLayout();
             this.panel11.SuspendLayout();
+            this.tabPage13.SuspendLayout();
+            this.panel12.SuspendLayout();
+            this.tabPage14.SuspendLayout();
+            this.panel13.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
+            this.panel14.SuspendLayout();
+            this.panel15.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel16.SuspendLayout();
+            this.panel17.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -154,6 +192,8 @@ namespace CapaPresentacion
             this.tabControl1.Controls.Add(this.tabPage7);
             this.tabControl1.Controls.Add(this.tabPage11);
             this.tabControl1.Controls.Add(this.tabPage12);
+            this.tabControl1.Controls.Add(this.tabPage13);
+            this.tabControl1.Controls.Add(this.tabPage14);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
@@ -992,6 +1032,14 @@ namespace CapaPresentacion
             this.panel11.Size = new System.Drawing.Size(1053, 46);
             this.panel11.TabIndex = 8;
             // 
+            // dateTimePicker14
+            // 
+            this.dateTimePicker14.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker14.Location = new System.Drawing.Point(209, 10);
+            this.dateTimePicker14.Name = "dateTimePicker14";
+            this.dateTimePicker14.Size = new System.Drawing.Size(120, 23);
+            this.dateTimePicker14.TabIndex = 5;
+            // 
             // dateTimePicker13
             // 
             this.dateTimePicker13.Format = System.Windows.Forms.DateTimePickerFormat.Short;
@@ -999,6 +1047,15 @@ namespace CapaPresentacion
             this.dateTimePicker13.Name = "dateTimePicker13";
             this.dateTimePicker13.Size = new System.Drawing.Size(120, 23);
             this.dateTimePicker13.TabIndex = 5;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(184, 13);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(19, 17);
+            this.label18.TabIndex = 4;
+            this.label18.Text = "al";
             // 
             // label19
             // 
@@ -1021,22 +1078,321 @@ namespace CapaPresentacion
             this.button11.UseVisualStyleBackColor = true;
             this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
-            // dateTimePicker14
+            // tabPage13
             // 
-            this.dateTimePicker14.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker14.Location = new System.Drawing.Point(209, 10);
-            this.dateTimePicker14.Name = "dateTimePicker14";
-            this.dateTimePicker14.Size = new System.Drawing.Size(120, 23);
-            this.dateTimePicker14.TabIndex = 5;
+            this.tabPage13.Controls.Add(this.reportViewer13);
+            this.tabPage13.Controls.Add(this.panel12);
+            this.tabPage13.Location = new System.Drawing.Point(4, 25);
+            this.tabPage13.Name = "tabPage13";
+            this.tabPage13.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage13.Size = new System.Drawing.Size(1059, 525);
+            this.tabPage13.TabIndex = 12;
+            this.tabPage13.Text = "Reporte abonos formas de pago";
+            this.tabPage13.UseVisualStyleBackColor = true;
             // 
-            // label18
+            // reportViewer13
             // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(184, 13);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(19, 17);
-            this.label18.TabIndex = 4;
-            this.label18.Text = "al";
+            this.reportViewer13.AccessibilityKeyMap = null;
+            this.reportViewer13.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.reportViewer13.Location = new System.Drawing.Point(3, 49);
+            this.reportViewer13.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.reportViewer13.Name = "reportViewer13";
+            this.reportViewer13.Size = new System.Drawing.Size(1053, 473);
+            this.reportViewer13.TabIndex = 8;
+            this.reportViewer13.ViewMode = Telerik.ReportViewer.WinForms.ViewMode.PrintPreview;
+            // 
+            // panel12
+            // 
+            this.panel12.Controls.Add(this.cbxFormaPago);
+            this.panel12.Controls.Add(this.dtFecha16);
+            this.panel12.Controls.Add(this.dtFecha15);
+            this.panel12.Controls.Add(this.label20);
+            this.panel12.Controls.Add(this.label21);
+            this.panel12.Controls.Add(this.button12);
+            this.panel12.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel12.Location = new System.Drawing.Point(3, 3);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(1053, 46);
+            this.panel12.TabIndex = 7;
+            // 
+            // cbxFormaPago
+            // 
+            this.cbxFormaPago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxFormaPago.FormattingEnabled = true;
+            this.cbxFormaPago.Items.AddRange(new object[] {
+            "Efectivo en Caja",
+            "Consignacion Bancaria",
+            "Transferencia Virtual",
+            "Nequi",
+            "Daviplata",
+            "TransfiYa ",
+            "Bono",
+            "Bancolombia"});
+            this.cbxFormaPago.Location = new System.Drawing.Point(338, 10);
+            this.cbxFormaPago.Name = "cbxFormaPago";
+            this.cbxFormaPago.Size = new System.Drawing.Size(245, 24);
+            this.cbxFormaPago.TabIndex = 10;
+            // 
+            // dtFecha16
+            // 
+            this.dtFecha16.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtFecha16.Location = new System.Drawing.Point(212, 10);
+            this.dtFecha16.Name = "dtFecha16";
+            this.dtFecha16.Size = new System.Drawing.Size(120, 23);
+            this.dtFecha16.TabIndex = 8;
+            // 
+            // dtFecha15
+            // 
+            this.dtFecha15.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtFecha15.Location = new System.Drawing.Point(61, 10);
+            this.dtFecha15.Name = "dtFecha15";
+            this.dtFecha15.Size = new System.Drawing.Size(120, 23);
+            this.dtFecha15.TabIndex = 9;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(187, 13);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(19, 17);
+            this.label20.TabIndex = 6;
+            this.label20.Text = "al";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(11, 13);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(47, 17);
+            this.label21.TabIndex = 7;
+            this.label21.Text = "Fecha";
+            // 
+            // button12
+            // 
+            this.button12.AutoSize = true;
+            this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button12.Location = new System.Drawing.Point(642, 7);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(182, 30);
+            this.button12.TabIndex = 2;
+            this.button12.Text = "Generar Reporte";
+            this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
+            // 
+            // tabPage14
+            // 
+            this.tabPage14.Controls.Add(this.flowLayoutPanel1);
+            this.tabPage14.Location = new System.Drawing.Point(4, 25);
+            this.tabPage14.Name = "tabPage14";
+            this.tabPage14.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage14.Size = new System.Drawing.Size(1059, 525);
+            this.tabPage14.TabIndex = 13;
+            this.tabPage14.Text = "Acumulados";
+            this.tabPage14.UseVisualStyleBackColor = true;
+            // 
+            // panel13
+            // 
+            this.panel13.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel13.Controls.Add(this.Lbl_total_comisiones_paga);
+            this.panel13.Controls.Add(this.label22);
+            this.panel13.Location = new System.Drawing.Point(190, 3);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(181, 114);
+            this.panel13.TabIndex = 0;
+            // 
+            // label22
+            // 
+            this.label22.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(0, 0);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(177, 48);
+            this.label22.TabIndex = 0;
+            this.label22.Text = "Total Comisiones Pagadas";
+            this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Lbl_total_comisiones_paga
+            // 
+            this.Lbl_total_comisiones_paga.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Lbl_total_comisiones_paga.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Lbl_total_comisiones_paga.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_total_comisiones_paga.ForeColor = System.Drawing.Color.White;
+            this.Lbl_total_comisiones_paga.Location = new System.Drawing.Point(0, 48);
+            this.Lbl_total_comisiones_paga.Name = "Lbl_total_comisiones_paga";
+            this.Lbl_total_comisiones_paga.Size = new System.Drawing.Size(177, 62);
+            this.Lbl_total_comisiones_paga.TabIndex = 1;
+            this.Lbl_total_comisiones_paga.Text = "0000000000";
+            this.Lbl_total_comisiones_paga.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.panel17);
+            this.flowLayoutPanel1.Controls.Add(this.panel13);
+            this.flowLayoutPanel1.Controls.Add(this.panel14);
+            this.flowLayoutPanel1.Controls.Add(this.panel15);
+            this.flowLayoutPanel1.Controls.Add(this.panel16);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1053, 519);
+            this.flowLayoutPanel1.TabIndex = 1;
+            // 
+            // panel14
+            // 
+            this.panel14.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel14.Controls.Add(this.Lbl_total_gastos);
+            this.panel14.Controls.Add(this.label24);
+            this.panel14.Location = new System.Drawing.Point(377, 3);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(181, 114);
+            this.panel14.TabIndex = 2;
+            // 
+            // Lbl_total_gastos
+            // 
+            this.Lbl_total_gastos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.Lbl_total_gastos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Lbl_total_gastos.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_total_gastos.ForeColor = System.Drawing.Color.White;
+            this.Lbl_total_gastos.Location = new System.Drawing.Point(0, 48);
+            this.Lbl_total_gastos.Name = "Lbl_total_gastos";
+            this.Lbl_total_gastos.Size = new System.Drawing.Size(177, 62);
+            this.Lbl_total_gastos.TabIndex = 1;
+            this.Lbl_total_gastos.Text = "0000000000";
+            this.Lbl_total_gastos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label24
+            // 
+            this.label24.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(0, 0);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(177, 48);
+            this.label24.TabIndex = 0;
+            this.label24.Text = "Total Gastos";
+            this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel15
+            // 
+            this.panel15.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel15.Controls.Add(this.Lbl_total_abonos);
+            this.panel15.Controls.Add(this.label25);
+            this.panel15.Location = new System.Drawing.Point(564, 3);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(181, 114);
+            this.panel15.TabIndex = 3;
+            // 
+            // Lbl_total_abonos
+            // 
+            this.Lbl_total_abonos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.Lbl_total_abonos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Lbl_total_abonos.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_total_abonos.ForeColor = System.Drawing.Color.White;
+            this.Lbl_total_abonos.Location = new System.Drawing.Point(0, 48);
+            this.Lbl_total_abonos.Name = "Lbl_total_abonos";
+            this.Lbl_total_abonos.Size = new System.Drawing.Size(177, 62);
+            this.Lbl_total_abonos.TabIndex = 1;
+            this.Lbl_total_abonos.Text = "0000000000";
+            this.Lbl_total_abonos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label25
+            // 
+            this.label25.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(0, 0);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(177, 48);
+            this.label25.TabIndex = 0;
+            this.label25.Text = "Total abonos";
+            this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.forma_pago,
+            this.abono});
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 34);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.RowTemplate.Height = 30;
+            this.dataGridView1.Size = new System.Drawing.Size(261, 200);
+            this.dataGridView1.TabIndex = 4;
+            // 
+            // panel16
+            // 
+            this.panel16.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel16.Controls.Add(this.dataGridView1);
+            this.panel16.Controls.Add(this.label26);
+            this.panel16.Location = new System.Drawing.Point(751, 3);
+            this.panel16.Name = "panel16";
+            this.panel16.Size = new System.Drawing.Size(265, 238);
+            this.panel16.TabIndex = 5;
+            // 
+            // label26
+            // 
+            this.label26.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(0, 0);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(261, 34);
+            this.label26.TabIndex = 0;
+            this.label26.Text = "Abonos por formas de pago";
+            this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // forma_pago
+            // 
+            this.forma_pago.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.forma_pago.DataPropertyName = "forma_pago";
+            this.forma_pago.HeaderText = "Forma Pago";
+            this.forma_pago.Name = "forma_pago";
+            this.forma_pago.ReadOnly = true;
+            // 
+            // abono
+            // 
+            this.abono.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.abono.DataPropertyName = "abono";
+            this.abono.HeaderText = "Abono";
+            this.abono.Name = "abono";
+            this.abono.ReadOnly = true;
+            this.abono.Width = 74;
+            // 
+            // panel17
+            // 
+            this.panel17.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel17.Controls.Add(this.Lbl_comisiones_por_pagar);
+            this.panel17.Controls.Add(this.label27);
+            this.panel17.Location = new System.Drawing.Point(3, 3);
+            this.panel17.Name = "panel17";
+            this.panel17.Size = new System.Drawing.Size(181, 114);
+            this.panel17.TabIndex = 6;
+            // 
+            // Lbl_comisiones_por_pagar
+            // 
+            this.Lbl_comisiones_por_pagar.BackColor = System.Drawing.Color.Red;
+            this.Lbl_comisiones_por_pagar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Lbl_comisiones_por_pagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_comisiones_por_pagar.ForeColor = System.Drawing.Color.White;
+            this.Lbl_comisiones_por_pagar.Location = new System.Drawing.Point(0, 48);
+            this.Lbl_comisiones_por_pagar.Name = "Lbl_comisiones_por_pagar";
+            this.Lbl_comisiones_por_pagar.Size = new System.Drawing.Size(177, 62);
+            this.Lbl_comisiones_por_pagar.TabIndex = 1;
+            this.Lbl_comisiones_por_pagar.Text = "0000000000";
+            this.Lbl_comisiones_por_pagar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label27
+            // 
+            this.label27.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(0, 0);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(177, 48);
+            this.label27.TabIndex = 0;
+            this.label27.Text = "Total Comisiones Por Pagar";
+            this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Frm_reports_menu
             // 
@@ -1048,6 +1404,7 @@ namespace CapaPresentacion
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Frm_reports_menu";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Frm_reports_menu_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage8.ResumeLayout(false);
@@ -1083,6 +1440,17 @@ namespace CapaPresentacion
             this.tabPage12.ResumeLayout(false);
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
+            this.tabPage13.ResumeLayout(false);
+            this.panel12.ResumeLayout(false);
+            this.panel12.PerformLayout();
+            this.tabPage14.ResumeLayout(false);
+            this.panel13.ResumeLayout(false);
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.panel14.ResumeLayout(false);
+            this.panel15.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel16.ResumeLayout(false);
+            this.panel17.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1174,6 +1542,34 @@ namespace CapaPresentacion
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.DateTimePicker dateTimePicker14;
         private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TabPage tabPage13;
+        private Telerik.ReportViewer.WinForms.ReportViewer reportViewer13;
+        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.ComboBox cbxFormaPago;
+        private System.Windows.Forms.DateTimePicker dtFecha16;
+        private System.Windows.Forms.DateTimePicker dtFecha15;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.TabPage tabPage14;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Panel panel13;
+        private System.Windows.Forms.Label Lbl_total_comisiones_paga;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Panel panel14;
+        private System.Windows.Forms.Label Lbl_total_gastos;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Panel panel15;
+        private System.Windows.Forms.Label Lbl_total_abonos;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Panel panel16;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn forma_pago;
+        private System.Windows.Forms.DataGridViewTextBoxColumn abono;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Panel panel17;
+        private System.Windows.Forms.Label Lbl_comisiones_por_pagar;
+        private System.Windows.Forms.Label label27;
     }
 }
 

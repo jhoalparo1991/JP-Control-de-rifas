@@ -296,5 +296,141 @@ namespace DataAccess
             }
             return dt;
         }
+
+        public static DataTable mostrarAbonosPorFormaDePago(DateTime fecha1, DateTime fecha2, string formaPago)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                con.Open();
+                SqlDataAdapter command = new SqlDataAdapter("sp_mostrar_todos_abonos_por_formas_pago", con);
+                command.SelectCommand.CommandType = CommandType.StoredProcedure;
+                command.SelectCommand.Parameters.AddWithValue("@forma_pago", formaPago);
+                command.SelectCommand.Parameters.AddWithValue("@fecha1", fecha1);
+                command.SelectCommand.Parameters.AddWithValue("@fecha2", fecha2);
+                command.Fill(dt);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+            return dt;
+        }
+
+        public static DataTable mostrarTotalComisionesPagadas()
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                con.Open();
+                SqlDataAdapter command = new SqlDataAdapter("sp_mostrar_total_comisiones_pagada", con);
+                command.SelectCommand.CommandType = CommandType.StoredProcedure;
+                command.Fill(dt);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+            return dt;
+        }
+
+        public static DataTable mostrarTotalComisionesPorPagar()
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                con.Open();
+                SqlDataAdapter command = new SqlDataAdapter("sp_mostrar_total_comisiones_por_pagada", con);
+                command.SelectCommand.CommandType = CommandType.StoredProcedure;
+                command.Fill(dt);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+            return dt;
+        }
+
+
+        public static DataTable sumarTotalGastos()
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                con.Open();
+                SqlDataAdapter command = new SqlDataAdapter("select sum(valor) as gastos from tbl_gastos", con);
+                command.SelectCommand.CommandType = CommandType.Text;
+                command.Fill(dt);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+            return dt;
+        }
+
+        public static DataTable sumarTotalAbonos()
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                con.Open();
+                SqlDataAdapter command = new SqlDataAdapter("select sum(valor_abono) from tbl_abonos_boleta where valor_abono >0", con);
+                command.SelectCommand.CommandType = CommandType.Text;
+                command.Fill(dt);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+            return dt;
+        }
+
+
+        public static DataTable abonosPorFormasDePago()
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                con.Open();
+                StringBuilder d = new StringBuilder();
+                d.AppendLine("select sum(valor_abono) abono,forma_pago ")
+                    .AppendLine("from tbl_abonos_boleta where valor_abono >0")
+                    .AppendLine("group by forma_pago ");
+                SqlDataAdapter command = new SqlDataAdapter(d.ToString(), con);
+                command.SelectCommand.CommandType = CommandType.Text;
+                command.Fill(dt);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+            return dt;
+        }
+
     }
 }

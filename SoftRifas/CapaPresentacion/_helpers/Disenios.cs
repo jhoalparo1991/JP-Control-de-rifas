@@ -11,7 +11,7 @@ namespace CapaPresentacion._helpers
             dgv.AllowUserToAddRows = false;
             dgv.AllowUserToDeleteRows = false;
             dgv.AllowUserToResizeRows = false;
-            dgv.AllowUserToOrderColumns = false;
+            dgv.AllowUserToOrderColumns = true;
             dgv.AllowUserToResizeColumns = false;
             dgv.EnableHeadersVisualStyles = false;
             dgv.ColumnHeadersHeight = 35;

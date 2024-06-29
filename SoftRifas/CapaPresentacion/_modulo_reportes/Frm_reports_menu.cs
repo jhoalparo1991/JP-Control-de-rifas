@@ -235,8 +235,8 @@ namespace CapaPresentacion
                 }
                 rpt.table1.DataSource = dt;
                 rpt.textBox11.Value = totalVendidas.ToString();
-                rpt.txt_fecha_ini.Value = dateTimePicker5.Value.ToShortDateString();
-                rpt.Txt_fecha_fin.Value = dateTimePicker6.Value.ToShortDateString();
+                rpt.txt_fecha_ini.Value = dateTimePicker7.Value.ToShortDateString();
+                rpt.Txt_fecha_fin.Value = dateTimePicker8.Value.ToShortDateString();
                 reportViewer7.Report = rpt;
                 reportViewer7.RefreshReport();
 
@@ -403,6 +403,134 @@ namespace CapaPresentacion
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Aviso del sistema");
+            }
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DateTime fecha1 = Convert.ToDateTime(dtFecha15.Text);
+                DateTime fecha2 = Convert.ToDateTime(dtFecha16.Text);
+                string formaPago = cbxFormaPago.Text.Trim();
+                DataTable dt = N_Reports.mostrarAbonosPorFormasDePago(fecha1, fecha2, formaPago);
+
+                RptMostrarTodosAbonosFormasPago rpt = new RptMostrarTodosAbonosFormasPago();
+
+                decimal totalAbonos = 0;
+                decimal totalComisiones = 0;
+
+
+                foreach (DataRow row in dt.Rows)
+                {
+                    totalAbonos += Convert.ToDecimal(row["abonos"].ToString());
+                    totalComisiones += Convert.ToDecimal(row["valor_comision"].ToString());
+                }
+                rpt.table1.DataSource = dt;
+                rpt.txt_abonos.Value = totalAbonos.ToString();
+                rpt.txt_comisiones.Value = totalComisiones.ToString();
+                rpt.txtFecha1.Value = fecha1.ToString();
+                rpt.txtFecha2.Value = fecha2.ToString();
+                rpt.txtFormaPago.Value = cbxFormaPago.Text;
+                reportViewer13.Report = rpt;
+                reportViewer13.RefreshReport();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Aviso del sistema");
+            }
+        }
+
+        private void Frm_reports_menu_Load(object sender, EventArgs e)
+        {
+            cargaInicial();
+        }
+
+        private void cargaInicial()
+        {
+            cargarTotalcomisionesPagada();
+            cargarTotalGastos();
+            cargarTotalAbonos();
+            mostrarAbonosFormasPago();
+            cargarTotalcomisionesPorPagar();
+
+        }
+
+
+        private void cargarTotalcomisionesPagada()
+        {
+            try
+            {
+                DataTable dt = N_Reports.mostrarTotalComisionesPagadas();
+
+                Lbl_total_comisiones_paga.Text =Convert.ToDecimal(dt.Rows[0]["comision"].ToString()).ToString("C2");
+
+            }
+            catch (Exception e)
+            {
+                _helpers.Mensajes.mensajeAdvertencia(e.Message);
+            }
+        }
+        private void cargarTotalcomisionesPorPagar()
+        {
+            try
+            {
+                DataTable dt = N_Reports.mostrarTotalComisionesPorPagar();
+
+                Lbl_comisiones_por_pagar.Text = Convert.ToDecimal(dt.Rows[0]["comision"].ToString()).ToString("C2");
+
+            }
+            catch (Exception e)
+            {
+                _helpers.Mensajes.mensajeAdvertencia(e.Message);
+            }
+        }
+
+        private void cargarTotalGastos()
+        {
+            try
+            {
+                DataTable dt = N_Reports.sumarTotalGastos();
+
+                Lbl_total_gastos.Text = Convert.ToDecimal(dt.Rows[0]["gastos"].ToString()).ToString("C2");
+
+            }
+            catch (Exception e)
+            {
+                _helpers.Mensajes.mensajeAdvertencia(e.Message);
+            }
+        }
+
+
+        private void cargarTotalAbonos()
+        {
+            try
+            {
+                DataTable dt = N_Reports.sumarTotalAbonos();
+
+                Lbl_total_abonos.Text = Convert.ToDecimal(dt.Rows[0][0].ToString()).ToString("C2");
+
+            }
+            catch (Exception e)
+            {
+                _helpers.Mensajes.mensajeAdvertencia(e.Message);
+            }
+        }
+
+
+        private void mostrarAbonosFormasPago()
+        {
+            try
+            {
+                _helpers.Disenios.dataGridView(dataGridView1);
+                DataTable dt = N_Reports.abonosPorFormasDePago();
+                dataGridView1.DataSource = dt;
+
+            }
+            catch (Exception e)
+            {
+                _helpers.Mensajes.mensajeAdvertencia(e.Message);
             }
         }
     }

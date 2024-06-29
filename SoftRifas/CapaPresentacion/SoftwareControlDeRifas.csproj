@@ -410,6 +410,12 @@
     <Compile Include="_modulo_reportes\_rdls\RptMostrarComisionesVendedores.Designer.cs">
       <DependentUpon>RptMostrarComisionesVendedores.cs</DependentUpon>
     </Compile>
+    <Compile Include="_modulo_reportes\_rdls\RptMostrarTodosAbonosFormasPago.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="_modulo_reportes\_rdls\RptMostrarTodosAbonosFormasPago.Designer.cs">
+      <DependentUpon>RptMostrarTodosAbonosFormasPago.cs</DependentUpon>
+    </Compile>
     <Compile Include="_modulo_reportes\_rdls\RptMostrarTodosAbonos.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -572,6 +578,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="_modulo_reportes\_rdls\RptMostrarComisionesVendedores.resx">
       <DependentUpon>RptMostrarComisionesVendedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_modulo_reportes\_rdls\RptMostrarTodosAbonosFormasPago.resx">
+      <DependentUpon>RptMostrarTodosAbonosFormasPago.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="_modulo_reportes\_rdls\RptMostrarTodosAbonos.resx">
       <DependentUpon>RptMostrarTodosAbonos.cs</DependentUpon>

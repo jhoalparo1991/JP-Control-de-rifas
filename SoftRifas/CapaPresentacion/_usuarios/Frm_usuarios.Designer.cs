@@ -39,15 +39,6 @@ namespace CapaPresentacion._usuarios
             this.Btn_cerrar_ventana = new System.Windows.Forms.Button();
             this.error = new System.Windows.Forms.ErrorProvider(this.components);
             this.Dgv_usuarios = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre_completo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nro_doc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.celular = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clave = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.comision = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.is_admin = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.agregarBoletasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verInformacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -78,6 +69,15 @@ namespace CapaPresentacion._usuarios
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre_completo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nro_doc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.celular = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clave = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.comision = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.is_admin = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_usuarios)).BeginInit();
@@ -99,7 +99,7 @@ namespace CapaPresentacion._usuarios
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.panel1.Size = new System.Drawing.Size(834, 49);
+            this.panel1.Size = new System.Drawing.Size(1086, 49);
             this.panel1.TabIndex = 0;
             // 
             // Btn_nuevos
@@ -108,7 +108,7 @@ namespace CapaPresentacion._usuarios
             this.Btn_nuevos.BackColor = System.Drawing.Color.White;
             this.Btn_nuevos.Dock = System.Windows.Forms.DockStyle.Right;
             this.Btn_nuevos.Image = global::CapaPresentacion.Properties.Resources.agregar24_gris;
-            this.Btn_nuevos.Location = new System.Drawing.Point(438, 5);
+            this.Btn_nuevos.Location = new System.Drawing.Point(690, 5);
             this.Btn_nuevos.Name = "Btn_nuevos";
             this.Btn_nuevos.Size = new System.Drawing.Size(95, 39);
             this.Btn_nuevos.TabIndex = 7;
@@ -123,7 +123,7 @@ namespace CapaPresentacion._usuarios
             this.Btn_editar.BackColor = System.Drawing.Color.White;
             this.Btn_editar.Dock = System.Windows.Forms.DockStyle.Right;
             this.Btn_editar.Image = global::CapaPresentacion.Properties.Resources.editar24_gris;
-            this.Btn_editar.Location = new System.Drawing.Point(533, 5);
+            this.Btn_editar.Location = new System.Drawing.Point(785, 5);
             this.Btn_editar.Name = "Btn_editar";
             this.Btn_editar.Size = new System.Drawing.Size(107, 39);
             this.Btn_editar.TabIndex = 6;
@@ -158,7 +158,7 @@ namespace CapaPresentacion._usuarios
             this.Btn_borrar.BackColor = System.Drawing.Color.White;
             this.Btn_borrar.Dock = System.Windows.Forms.DockStyle.Right;
             this.Btn_borrar.Image = global::CapaPresentacion.Properties.Resources.borrar24_gris;
-            this.Btn_borrar.Location = new System.Drawing.Point(640, 5);
+            this.Btn_borrar.Location = new System.Drawing.Point(892, 5);
             this.Btn_borrar.Name = "Btn_borrar";
             this.Btn_borrar.Size = new System.Drawing.Size(95, 39);
             this.Btn_borrar.TabIndex = 5;
@@ -173,7 +173,7 @@ namespace CapaPresentacion._usuarios
             this.Btn_cerrar_ventana.BackColor = System.Drawing.Color.White;
             this.Btn_cerrar_ventana.Dock = System.Windows.Forms.DockStyle.Right;
             this.Btn_cerrar_ventana.Image = global::CapaPresentacion.Properties.Resources.salir24;
-            this.Btn_cerrar_ventana.Location = new System.Drawing.Point(735, 5);
+            this.Btn_cerrar_ventana.Location = new System.Drawing.Point(987, 5);
             this.Btn_cerrar_ventana.Name = "Btn_cerrar_ventana";
             this.Btn_cerrar_ventana.Size = new System.Drawing.Size(95, 39);
             this.Btn_cerrar_ventana.TabIndex = 4;
@@ -191,6 +191,7 @@ namespace CapaPresentacion._usuarios
             // 
             this.Dgv_usuarios.AllowUserToAddRows = false;
             this.Dgv_usuarios.AllowUserToDeleteRows = false;
+            this.Dgv_usuarios.AllowUserToOrderColumns = true;
             this.Dgv_usuarios.BackgroundColor = System.Drawing.Color.White;
             this.Dgv_usuarios.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.Dgv_usuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -213,90 +214,10 @@ namespace CapaPresentacion._usuarios
             this.Dgv_usuarios.RowTemplate.Height = 30;
             this.Dgv_usuarios.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Dgv_usuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Dgv_usuarios.Size = new System.Drawing.Size(414, 406);
+            this.Dgv_usuarios.Size = new System.Drawing.Size(666, 406);
             this.Dgv_usuarios.TabIndex = 1;
             this.Dgv_usuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_usuarios_CellClick);
             this.Dgv_usuarios.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_usuarios_CellDoubleClick);
-            // 
-            // id
-            // 
-            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.id.DataPropertyName = "Id";
-            this.id.HeaderText = "Id";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Visible = false;
-            // 
-            // nombre_completo
-            // 
-            this.nombre_completo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nombre_completo.DataPropertyName = "NombreCompleto";
-            this.nombre_completo.HeaderText = "Nombres y Apellidos";
-            this.nombre_completo.Name = "nombre_completo";
-            this.nombre_completo.ReadOnly = true;
-            // 
-            // nro_doc
-            // 
-            this.nro_doc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.nro_doc.DataPropertyName = "NroDoc";
-            this.nro_doc.HeaderText = "Nro Doc";
-            this.nro_doc.Name = "nro_doc";
-            this.nro_doc.ReadOnly = true;
-            this.nro_doc.Width = 85;
-            // 
-            // direccion
-            // 
-            this.direccion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.direccion.DataPropertyName = "Direccion";
-            this.direccion.HeaderText = "Direccion";
-            this.direccion.Name = "direccion";
-            this.direccion.ReadOnly = true;
-            this.direccion.Visible = false;
-            // 
-            // celular
-            // 
-            this.celular.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.celular.DataPropertyName = "Celular";
-            this.celular.HeaderText = "Celular";
-            this.celular.Name = "celular";
-            this.celular.ReadOnly = true;
-            this.celular.Visible = false;
-            // 
-            // telefono
-            // 
-            this.telefono.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.telefono.DataPropertyName = "Telefono";
-            this.telefono.HeaderText = "Telefono";
-            this.telefono.Name = "telefono";
-            this.telefono.ReadOnly = true;
-            this.telefono.Visible = false;
-            // 
-            // clave
-            // 
-            this.clave.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.clave.DataPropertyName = "Clave";
-            this.clave.HeaderText = "Clave";
-            this.clave.Name = "clave";
-            this.clave.ReadOnly = true;
-            this.clave.Visible = false;
-            // 
-            // comision
-            // 
-            this.comision.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.comision.DataPropertyName = "Comision";
-            this.comision.HeaderText = "% comision";
-            this.comision.Name = "comision";
-            this.comision.ReadOnly = true;
-            this.comision.Width = 105;
-            // 
-            // is_admin
-            // 
-            this.is_admin.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.is_admin.DataPropertyName = "IsAdmin";
-            this.is_admin.HeaderText = "Admin";
-            this.is_admin.Name = "is_admin";
-            this.is_admin.ReadOnly = true;
-            this.is_admin.Visible = false;
             // 
             // contextMenuStrip1
             // 
@@ -383,7 +304,7 @@ namespace CapaPresentacion._usuarios
             this.Pn_mant.Controls.Add(this.label3);
             this.Pn_mant.Controls.Add(this.label2);
             this.Pn_mant.Dock = System.Windows.Forms.DockStyle.Right;
-            this.Pn_mant.Location = new System.Drawing.Point(414, 49);
+            this.Pn_mant.Location = new System.Drawing.Point(666, 49);
             this.Pn_mant.Name = "Pn_mant";
             this.Pn_mant.Size = new System.Drawing.Size(420, 406);
             this.Pn_mant.TabIndex = 2;
@@ -622,12 +543,94 @@ namespace CapaPresentacion._usuarios
             this.label2.Text = "Codigo";
             this.label2.Visible = false;
             // 
+            // id
+            // 
+            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.id.DataPropertyName = "Id";
+            this.id.HeaderText = "Id";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
+            this.id.Width = 29;
+            // 
+            // nombre_completo
+            // 
+            this.nombre_completo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nombre_completo.DataPropertyName = "NombreCompleto";
+            this.nombre_completo.HeaderText = "Nombres y Apellidos";
+            this.nombre_completo.Name = "nombre_completo";
+            this.nombre_completo.ReadOnly = true;
+            // 
+            // nro_doc
+            // 
+            this.nro_doc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.nro_doc.DataPropertyName = "NroDoc";
+            this.nro_doc.HeaderText = "Nro Doc";
+            this.nro_doc.Name = "nro_doc";
+            this.nro_doc.ReadOnly = true;
+            this.nro_doc.Width = 92;
+            // 
+            // direccion
+            // 
+            this.direccion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.direccion.DataPropertyName = "Direccion";
+            this.direccion.HeaderText = "Direccion";
+            this.direccion.Name = "direccion";
+            this.direccion.ReadOnly = true;
+            // 
+            // celular
+            // 
+            this.celular.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.celular.DataPropertyName = "Celular";
+            this.celular.HeaderText = "Celular";
+            this.celular.Name = "celular";
+            this.celular.ReadOnly = true;
+            this.celular.Width = 83;
+            // 
+            // telefono
+            // 
+            this.telefono.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.telefono.DataPropertyName = "Telefono";
+            this.telefono.HeaderText = "Telefono";
+            this.telefono.Name = "telefono";
+            this.telefono.ReadOnly = true;
+            this.telefono.Width = 96;
+            // 
+            // clave
+            // 
+            this.clave.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.clave.DataPropertyName = "Clave";
+            this.clave.HeaderText = "Clave";
+            this.clave.Name = "clave";
+            this.clave.ReadOnly = true;
+            this.clave.Visible = false;
+            this.clave.Width = 73;
+            // 
+            // comision
+            // 
+            this.comision.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.comision.DataPropertyName = "Comision";
+            this.comision.HeaderText = "% comision";
+            this.comision.Name = "comision";
+            this.comision.ReadOnly = true;
+            this.comision.Width = 105;
+            // 
+            // is_admin
+            // 
+            this.is_admin.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.is_admin.DataPropertyName = "IsAdmin";
+            this.is_admin.HeaderText = "Admin";
+            this.is_admin.Name = "is_admin";
+            this.is_admin.ReadOnly = true;
+            this.is_admin.Visible = false;
+            this.is_admin.Width = 60;
+            // 
             // Frm_usuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(834, 455);
+            this.ClientSize = new System.Drawing.Size(1086, 455);
             this.ControlBox = false;
             this.Controls.Add(this.Dgv_usuarios);
             this.Controls.Add(this.Pn_mant);
@@ -687,6 +690,10 @@ namespace CapaPresentacion._usuarios
         private System.Windows.Forms.ToolStripMenuItem modificarVendedorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem borrarVendedorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem agregarNuevoVendedorToolStripMenuItem;
+        internal System.Windows.Forms.Button Btn_cerrar_ventana;
+        internal System.Windows.Forms.Button Btn_borrar;
+        internal System.Windows.Forms.Button Btn_editar;
+        internal System.Windows.Forms.Button Btn_nuevos;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre_completo;
         private System.Windows.Forms.DataGridViewTextBoxColumn nro_doc;
@@ -696,9 +703,5 @@ namespace CapaPresentacion._usuarios
         private System.Windows.Forms.DataGridViewTextBoxColumn clave;
         private System.Windows.Forms.DataGridViewTextBoxColumn comision;
         private System.Windows.Forms.DataGridViewCheckBoxColumn is_admin;
-        internal System.Windows.Forms.Button Btn_cerrar_ventana;
-        internal System.Windows.Forms.Button Btn_borrar;
-        internal System.Windows.Forms.Button Btn_editar;
-        internal System.Windows.Forms.Button Btn_nuevos;
     }
 }

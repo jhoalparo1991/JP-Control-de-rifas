@@ -40,13 +40,6 @@ namespace CapaPresentacion._clientes
             this.Btn_cerrar_ventana = new System.Windows.Forms.Button();
             this.error = new System.Windows.Forms.ErrorProvider(this.components);
             this.Dgv_clientes = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre_completo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nro_doc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.celular = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btn_sel = new System.Windows.Forms.DataGridViewImageColumn();
             this.Pn_mant = new System.Windows.Forms.Panel();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -66,6 +59,13 @@ namespace CapaPresentacion._clientes
             this.label8 = new System.Windows.Forms.Label();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre_completo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nro_doc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.celular = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_sel = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
@@ -190,6 +190,7 @@ namespace CapaPresentacion._clientes
             // 
             this.Dgv_clientes.AllowUserToAddRows = false;
             this.Dgv_clientes.AllowUserToDeleteRows = false;
+            this.Dgv_clientes.AllowUserToOrderColumns = true;
             this.Dgv_clientes.BackgroundColor = System.Drawing.Color.White;
             this.Dgv_clientes.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.Dgv_clientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -209,70 +210,9 @@ namespace CapaPresentacion._clientes
             this.Dgv_clientes.RowTemplate.Height = 30;
             this.Dgv_clientes.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Dgv_clientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Dgv_clientes.Size = new System.Drawing.Size(422, 369);
+            this.Dgv_clientes.Size = new System.Drawing.Size(422, 447);
             this.Dgv_clientes.TabIndex = 1;
             this.Dgv_clientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_clientes_CellClick);
-            // 
-            // id
-            // 
-            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.id.DataPropertyName = "Id";
-            this.id.HeaderText = "Id";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Visible = false;
-            // 
-            // nombre_completo
-            // 
-            this.nombre_completo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nombre_completo.DataPropertyName = "NombreCompleto";
-            this.nombre_completo.HeaderText = "Nombres y Apellidos";
-            this.nombre_completo.Name = "nombre_completo";
-            this.nombre_completo.ReadOnly = true;
-            // 
-            // nro_doc
-            // 
-            this.nro_doc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.nro_doc.DataPropertyName = "NroDoc";
-            this.nro_doc.HeaderText = "Nro Doc";
-            this.nro_doc.Name = "nro_doc";
-            this.nro_doc.ReadOnly = true;
-            this.nro_doc.Width = 85;
-            // 
-            // direccion
-            // 
-            this.direccion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.direccion.DataPropertyName = "Direccion";
-            this.direccion.HeaderText = "Direccion";
-            this.direccion.Name = "direccion";
-            this.direccion.ReadOnly = true;
-            // 
-            // celular
-            // 
-            this.celular.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.celular.DataPropertyName = "Celular";
-            this.celular.HeaderText = "Celular";
-            this.celular.Name = "celular";
-            this.celular.ReadOnly = true;
-            this.celular.Visible = false;
-            // 
-            // telefono
-            // 
-            this.telefono.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.telefono.DataPropertyName = "Telefono";
-            this.telefono.HeaderText = "Telefono";
-            this.telefono.Name = "telefono";
-            this.telefono.ReadOnly = true;
-            this.telefono.Visible = false;
-            // 
-            // btn_sel
-            // 
-            this.btn_sel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.btn_sel.HeaderText = "Seleccionar";
-            this.btn_sel.Image = global::CapaPresentacion.Properties.Resources.seleccion;
-            this.btn_sel.Name = "btn_sel";
-            this.btn_sel.ReadOnly = true;
-            this.btn_sel.Visible = false;
             // 
             // Pn_mant
             // 
@@ -296,7 +236,7 @@ namespace CapaPresentacion._clientes
             this.Pn_mant.Dock = System.Windows.Forms.DockStyle.Right;
             this.Pn_mant.Location = new System.Drawing.Point(422, 46);
             this.Pn_mant.Name = "Pn_mant";
-            this.Pn_mant.Size = new System.Drawing.Size(403, 369);
+            this.Pn_mant.Size = new System.Drawing.Size(403, 447);
             this.Pn_mant.TabIndex = 2;
             this.Pn_mant.Visible = false;
             // 
@@ -492,12 +432,75 @@ namespace CapaPresentacion._clientes
             this.dataGridViewImageColumn2.Image = global::CapaPresentacion.Properties.Resources.borrar24_gris;
             this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
             // 
+            // id
+            // 
+            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.id.DataPropertyName = "Id";
+            this.id.HeaderText = "Id";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
+            this.id.Width = 29;
+            // 
+            // nombre_completo
+            // 
+            this.nombre_completo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nombre_completo.DataPropertyName = "NombreCompleto";
+            this.nombre_completo.HeaderText = "Nombres y Apellidos";
+            this.nombre_completo.Name = "nombre_completo";
+            this.nombre_completo.ReadOnly = true;
+            // 
+            // nro_doc
+            // 
+            this.nro_doc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.nro_doc.DataPropertyName = "NroDoc";
+            this.nro_doc.HeaderText = "Nro Doc";
+            this.nro_doc.Name = "nro_doc";
+            this.nro_doc.ReadOnly = true;
+            this.nro_doc.Width = 92;
+            // 
+            // direccion
+            // 
+            this.direccion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.direccion.DataPropertyName = "Direccion";
+            this.direccion.HeaderText = "Direccion";
+            this.direccion.Name = "direccion";
+            this.direccion.ReadOnly = true;
+            // 
+            // celular
+            // 
+            this.celular.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.celular.DataPropertyName = "Celular";
+            this.celular.HeaderText = "Celular";
+            this.celular.Name = "celular";
+            this.celular.ReadOnly = true;
+            this.celular.Width = 83;
+            // 
+            // telefono
+            // 
+            this.telefono.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.telefono.DataPropertyName = "Telefono";
+            this.telefono.HeaderText = "Telefono";
+            this.telefono.Name = "telefono";
+            this.telefono.ReadOnly = true;
+            this.telefono.Width = 96;
+            // 
+            // btn_sel
+            // 
+            this.btn_sel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.btn_sel.HeaderText = "Seleccionar";
+            this.btn_sel.Image = global::CapaPresentacion.Properties.Resources.seleccion;
+            this.btn_sel.Name = "btn_sel";
+            this.btn_sel.ReadOnly = true;
+            this.btn_sel.Visible = false;
+            this.btn_sel.Width = 98;
+            // 
             // Frm_clientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(825, 415);
+            this.ClientSize = new System.Drawing.Size(825, 493);
             this.ControlBox = false;
             this.Controls.Add(this.Dgv_clientes);
             this.Controls.Add(this.Pn_mant);
@@ -547,6 +550,11 @@ namespace CapaPresentacion._clientes
         private System.Windows.Forms.Label label8;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private System.Windows.Forms.Label label9;
+        internal System.Windows.Forms.Button Btn_cerrar_ventana;
+        internal System.Windows.Forms.Button Btn_borrar;
+        internal System.Windows.Forms.Button Btn_editar;
+        internal System.Windows.Forms.Button Btn_nuevos;
+        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre_completo;
         private System.Windows.Forms.DataGridViewTextBoxColumn nro_doc;
@@ -554,10 +562,5 @@ namespace CapaPresentacion._clientes
         private System.Windows.Forms.DataGridViewTextBoxColumn celular;
         private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
         private System.Windows.Forms.DataGridViewImageColumn btn_sel;
-        internal System.Windows.Forms.Button Btn_cerrar_ventana;
-        internal System.Windows.Forms.Button Btn_borrar;
-        internal System.Windows.Forms.Button Btn_editar;
-        internal System.Windows.Forms.Button Btn_nuevos;
-        private System.Windows.Forms.Panel panel2;
     }
 }

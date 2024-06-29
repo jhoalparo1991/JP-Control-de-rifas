@@ -16,6 +16,12 @@ namespace Domain
         {
             return DA_Reports.mostrarAbonos();
         }
+
+        public static DataTable mostrarAbonosPorFormasDePago(DateTime fecha1, DateTime fecha2, string formaPago)
+        {
+            return DA_Reports.mostrarAbonosPorFormaDePago(fecha1,fecha2,formaPago);
+        }
+
         public static DataTable mostrarAbonosPorBoleta(string boleta)
         {
             return DA_Reports.mostrarAbonosPorBoleta(boleta);
@@ -70,5 +76,32 @@ namespace Domain
         {
             return DA_Reports.mostrarPagoComisionesPorVendedoresIdDetallePago(id);
         }
+
+
+        public static DataTable mostrarTotalComisionesPagadas()
+        {
+             return DA_Reports.mostrarTotalComisionesPagadas();
+        }
+
+        public static DataTable sumarTotalGastos()
+        {
+            return DA_Reports.sumarTotalGastos();
+        }
+
+        public static DataTable sumarTotalAbonos()
+        {
+            return DA_Reports.sumarTotalAbonos();
+        }
+
+        public static DataTable abonosPorFormasDePago()
+        {
+            return DA_Reports.abonosPorFormasDePago();
+        }
+
+        public static DataTable mostrarTotalComisionesPorPagar()
+        {
+            return DA_Reports.mostrarTotalComisionesPorPagar();
+        }
+
     }
 }
