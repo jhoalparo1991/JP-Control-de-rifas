@@ -150,7 +150,7 @@ namespace CapaPresentacion
             this.Txt_clave.PasswordChar = '*';
             this.Txt_clave.Size = new System.Drawing.Size(258, 28);
             this.Txt_clave.TabIndex = 1;
-            this.Txt_clave.Text = "1111";
+            this.Txt_clave.Text = "0000";
             this.Txt_clave.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Txt_nro_doc
@@ -164,7 +164,7 @@ namespace CapaPresentacion
             this.Txt_nro_doc.Name = "Txt_nro_doc";
             this.Txt_nro_doc.Size = new System.Drawing.Size(258, 28);
             this.Txt_nro_doc.TabIndex = 1;
-            this.Txt_nro_doc.Text = "1";
+            this.Txt_nro_doc.Text = "0000";
             this.Txt_nro_doc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Txt_nro_doc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_nro_doc_KeyPress);
             // 

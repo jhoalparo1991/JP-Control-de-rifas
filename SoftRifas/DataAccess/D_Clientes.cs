@@ -18,7 +18,7 @@ namespace DataAccess
             {
                 con.Open();
                 StringBuilder builder = new StringBuilder();
-                builder.Append("SELECT * FROM tbl_clientes");
+                builder.Append("SELECT * FROM tbl_clientes order by nombre_completo");
                 SqlCommand command = new SqlCommand(builder.ToString(), con);
                 command.CommandType = CommandType.Text;
                 SqlDataReader reader = command.ExecuteReader();
@@ -96,6 +96,31 @@ namespace DataAccess
             return result;
         }
 
-      
+        public static DataTable mostrarBoletasClientes(int clienteId)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                con.Open();
+                StringBuilder b = new StringBuilder();
+                b.AppendLine("select cliente_id,nro_boleta from tbl_abonos_boleta");
+                b.AppendLine(" where cliente_id=@cliente_id");
+                b.AppendLine(" group by nro_boleta,cliente_id");
+                b.AppendLine(" order by nro_boleta");
+                SqlDataAdapter command = new SqlDataAdapter(b.ToString(), con);
+                command.SelectCommand.CommandType = CommandType.Text;
+                command.SelectCommand.Parameters.AddWithValue("@cliente_id", clienteId);
+                command.Fill(dt);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+            return dt;
+        }
     }
 }

@@ -2,6 +2,7 @@
 using CapaPresentacion._clientes;
 using CapaPresentacion._egresos;
 using CapaPresentacion._pagos;
+using CapaPresentacion._pagos_comisiones;
 using CapaPresentacion._rifas_boletas;
 using CapaPresentacion._usuarios;
 using Domain;
@@ -156,7 +157,7 @@ namespace CapaPresentacion._menu
 
         private void Btn_pago_abonos_Click(object sender, EventArgs e)
         {
-            AbrirFormularioHijo(new Frm_pagos_abonos(), "Pago Abonos");
+            AbrirFormularioHijo(new Frm_pagos_abonos(), "Pago de comisiones");
         }
 
         private void btnCerrarSesion_Click(object sender, EventArgs e)

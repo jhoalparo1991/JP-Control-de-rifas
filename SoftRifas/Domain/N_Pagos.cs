@@ -35,5 +35,17 @@ namespace Domain
             return D_Pagos.borrarPagosTemporalesPorTerminal();
         }
 
+        #region Pago comision vendedores
+        public static bool sp_pagar_comision_vendedor(int vendedorId, int clienteId, int boletaId, int abonoId, decimal valorPagado)
+        {
+            return D_Pagos.sp_pagar_comision_vendedor(vendedorId, clienteId, boletaId,abonoId,valorPagado);
+        }
+
+        public static bool borrar_pago_comision_vendedor(int vendedorId, int clienteId, int boletaId, int abonoId)
+        {
+            return D_Pagos.borrar_pago_comision_vendedor(vendedorId, clienteId, boletaId, abonoId);
+        }
+        #endregion
+
     }
 }

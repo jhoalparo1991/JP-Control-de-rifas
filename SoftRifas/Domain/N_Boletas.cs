@@ -67,5 +67,15 @@ namespace Domain
             return D_Boletas.cambiarClienteBoleta(boletaId, clienteId);
         }
 
+        public static DataTable mostrarAbonosBoletaPorVendedor(int vendedorId)
+        {
+            return D_Boletas.mostrarAbonosBoletaPorVendedor(vendedorId);
+        }
+
+        public static bool pagarReversarPagoComision(int boletaId, int idAbonoBoleta, int vendedorId, bool estado)
+        {
+            return D_Boletas.pagarReversarPagoComision(boletaId, idAbonoBoleta, vendedorId, estado);
+        }
+
     }
 }

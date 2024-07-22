@@ -39,6 +39,15 @@ namespace CapaPresentacion._usuarios
             this.Btn_cerrar_ventana = new System.Windows.Forms.Button();
             this.error = new System.Windows.Forms.ErrorProvider(this.components);
             this.Dgv_usuarios = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre_completo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nro_doc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.celular = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clave = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.comision = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.is_admin = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.agregarBoletasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verInformacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -69,15 +78,6 @@ namespace CapaPresentacion._usuarios
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre_completo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nro_doc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.celular = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clave = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.comision = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.is_admin = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_usuarios)).BeginInit();
@@ -192,8 +192,9 @@ namespace CapaPresentacion._usuarios
             this.Dgv_usuarios.AllowUserToAddRows = false;
             this.Dgv_usuarios.AllowUserToDeleteRows = false;
             this.Dgv_usuarios.AllowUserToOrderColumns = true;
+            this.Dgv_usuarios.AllowUserToResizeColumns = false;
+            this.Dgv_usuarios.AllowUserToResizeRows = false;
             this.Dgv_usuarios.BackgroundColor = System.Drawing.Color.White;
-            this.Dgv_usuarios.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.Dgv_usuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Dgv_usuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
@@ -218,6 +219,85 @@ namespace CapaPresentacion._usuarios
             this.Dgv_usuarios.TabIndex = 1;
             this.Dgv_usuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_usuarios_CellClick);
             this.Dgv_usuarios.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_usuarios_CellDoubleClick);
+            // 
+            // id
+            // 
+            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.id.DataPropertyName = "Id";
+            this.id.HeaderText = "Id";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
+            // 
+            // nombre_completo
+            // 
+            this.nombre_completo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nombre_completo.DataPropertyName = "NombreCompleto";
+            this.nombre_completo.HeaderText = "Nombres y Apellidos";
+            this.nombre_completo.Name = "nombre_completo";
+            this.nombre_completo.ReadOnly = true;
+            // 
+            // nro_doc
+            // 
+            this.nro_doc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.nro_doc.DataPropertyName = "NroDoc";
+            this.nro_doc.HeaderText = "Nro Doc";
+            this.nro_doc.Name = "nro_doc";
+            this.nro_doc.ReadOnly = true;
+            this.nro_doc.Width = 85;
+            // 
+            // direccion
+            // 
+            this.direccion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.direccion.DataPropertyName = "Direccion";
+            this.direccion.HeaderText = "Direccion";
+            this.direccion.Name = "direccion";
+            this.direccion.ReadOnly = true;
+            // 
+            // celular
+            // 
+            this.celular.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.celular.DataPropertyName = "Celular";
+            this.celular.HeaderText = "Celular";
+            this.celular.Name = "celular";
+            this.celular.ReadOnly = true;
+            this.celular.Width = 83;
+            // 
+            // telefono
+            // 
+            this.telefono.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.telefono.DataPropertyName = "Telefono";
+            this.telefono.HeaderText = "Telefono";
+            this.telefono.Name = "telefono";
+            this.telefono.ReadOnly = true;
+            this.telefono.Width = 96;
+            // 
+            // clave
+            // 
+            this.clave.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.clave.DataPropertyName = "Clave";
+            this.clave.HeaderText = "Clave";
+            this.clave.Name = "clave";
+            this.clave.ReadOnly = true;
+            this.clave.Visible = false;
+            // 
+            // comision
+            // 
+            this.comision.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.comision.DataPropertyName = "Comision";
+            this.comision.HeaderText = "% comision";
+            this.comision.Name = "comision";
+            this.comision.ReadOnly = true;
+            this.comision.Width = 105;
+            // 
+            // is_admin
+            // 
+            this.is_admin.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.is_admin.DataPropertyName = "IsAdmin";
+            this.is_admin.HeaderText = "Admin";
+            this.is_admin.Name = "is_admin";
+            this.is_admin.ReadOnly = true;
+            this.is_admin.Visible = false;
             // 
             // contextMenuStrip1
             // 
@@ -542,88 +622,6 @@ namespace CapaPresentacion._usuarios
             this.label2.TabIndex = 19;
             this.label2.Text = "Codigo";
             this.label2.Visible = false;
-            // 
-            // id
-            // 
-            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.id.DataPropertyName = "Id";
-            this.id.HeaderText = "Id";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Visible = false;
-            this.id.Width = 29;
-            // 
-            // nombre_completo
-            // 
-            this.nombre_completo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nombre_completo.DataPropertyName = "NombreCompleto";
-            this.nombre_completo.HeaderText = "Nombres y Apellidos";
-            this.nombre_completo.Name = "nombre_completo";
-            this.nombre_completo.ReadOnly = true;
-            // 
-            // nro_doc
-            // 
-            this.nro_doc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.nro_doc.DataPropertyName = "NroDoc";
-            this.nro_doc.HeaderText = "Nro Doc";
-            this.nro_doc.Name = "nro_doc";
-            this.nro_doc.ReadOnly = true;
-            this.nro_doc.Width = 92;
-            // 
-            // direccion
-            // 
-            this.direccion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.direccion.DataPropertyName = "Direccion";
-            this.direccion.HeaderText = "Direccion";
-            this.direccion.Name = "direccion";
-            this.direccion.ReadOnly = true;
-            // 
-            // celular
-            // 
-            this.celular.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.celular.DataPropertyName = "Celular";
-            this.celular.HeaderText = "Celular";
-            this.celular.Name = "celular";
-            this.celular.ReadOnly = true;
-            this.celular.Width = 83;
-            // 
-            // telefono
-            // 
-            this.telefono.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.telefono.DataPropertyName = "Telefono";
-            this.telefono.HeaderText = "Telefono";
-            this.telefono.Name = "telefono";
-            this.telefono.ReadOnly = true;
-            this.telefono.Width = 96;
-            // 
-            // clave
-            // 
-            this.clave.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.clave.DataPropertyName = "Clave";
-            this.clave.HeaderText = "Clave";
-            this.clave.Name = "clave";
-            this.clave.ReadOnly = true;
-            this.clave.Visible = false;
-            this.clave.Width = 73;
-            // 
-            // comision
-            // 
-            this.comision.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.comision.DataPropertyName = "Comision";
-            this.comision.HeaderText = "% comision";
-            this.comision.Name = "comision";
-            this.comision.ReadOnly = true;
-            this.comision.Width = 105;
-            // 
-            // is_admin
-            // 
-            this.is_admin.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.is_admin.DataPropertyName = "IsAdmin";
-            this.is_admin.HeaderText = "Admin";
-            this.is_admin.Name = "is_admin";
-            this.is_admin.ReadOnly = true;
-            this.is_admin.Visible = false;
-            this.is_admin.Width = 60;
             // 
             // Frm_usuarios
             // 

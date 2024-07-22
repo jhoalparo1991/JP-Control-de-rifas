@@ -380,5 +380,58 @@ namespace DataAccess
             }
             return result;
         }
+
+        public static DataTable mostrarAbonosBoletaPorVendedor(int vendedorId)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                con.Open();
+                string sql = "select id,cliente_id,cliente,boleta_id,nro_boleta,valor_abono,valor_comision,abono_pagado " +
+                    "from v_listado_abonos where vendedor_id=@vendedor_id and valor_comision>0";
+                SqlDataAdapter data = new SqlDataAdapter(sql, con);
+                data.SelectCommand.CommandType = CommandType.Text;
+                data.SelectCommand.Parameters.AddWithValue("@vendedor_id", vendedorId);
+                data.Fill(dt);
+
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+            return dt;
+        }
+
+        public static bool pagarReversarPagoComision(int boletaId, int idAbonoBoleta, int vendedorId, bool estado)
+        {
+            bool result = false;
+            try
+            {
+                con.Open();
+                string sql = "update tbl_abonos_boleta set abono_pagado=@estado where " +
+                    "id=@id and boleta_id=@boleta_id and vendedor_id=@vendedor_id";
+                SqlCommand command = new SqlCommand(sql, con);
+                command.CommandType = CommandType.Text;
+                command.Parameters.AddWithValue("@boleta_id", boletaId);
+                command.Parameters.AddWithValue("@vendedor_id", vendedorId);
+                command.Parameters.AddWithValue("@id", idAbonoBoleta);
+                command.Parameters.AddWithValue("@estado", estado);
+
+                result = Convert.ToInt32(command.ExecuteNonQuery()) != 0 ? true : false;
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+            return result;
+        }
     }
 }

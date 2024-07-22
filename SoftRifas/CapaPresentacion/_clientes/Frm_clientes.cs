@@ -3,6 +3,7 @@ using Domain;
 using Entities;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Windows.Forms;
 
 namespace CapaPresentacion._clientes
@@ -16,6 +17,7 @@ namespace CapaPresentacion._clientes
             _helpers.Formularios.marcarCampoSeleccionado(this.Controls);
             _helpers.Disenios.dataGridView(Dgv_clientes);
             mostrarClientes();
+            mostrarBoletasClientes();
             limpiar();
         }
         private int clienteId = 0;
@@ -27,6 +29,20 @@ namespace CapaPresentacion._clientes
                 List<Clientes> clientes = N_Clientes.mostrarClientes().FindAll(x => x.NombreCompleto.Contains(Txt_buscar.Text.Trim()) ||
                                                            x.NroDoc.Contains(Txt_buscar.Text.Trim()));
                 Dgv_clientes.DataSource = clientes;
+            }
+            catch (Exception e)
+            {
+                _helpers.Mensajes.mensajeErrorException(e);
+            }
+        }
+
+        public void mostrarBoletasClientes()
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                dt = N_Clientes.mostrarBoletasClientes(clienteId);
+                dgvBoletas.DataSource = dt;
             }
             catch (Exception e)
             {
@@ -116,6 +132,7 @@ namespace CapaPresentacion._clientes
                     Frm_boletas.GetClienteNroDoc = Dgv_clientes.CurrentRow.Cells["nro_doc"].Value.ToString();
                     this.Close();
                 }
+                mostrarBoletasClientes();
             }
         }
 
@@ -202,6 +219,16 @@ namespace CapaPresentacion._clientes
         {
             this.Close();
 
+        }
+
+        private void Dgv_clientes_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            if (Dgv_clientes.Rows.Count > 0)
+            {
+                clienteId = Convert.ToInt32(Dgv_clientes.CurrentRow.Cells["id"].Value.ToString());
+          
+                mostrarBoletasClientes();
+            }
         }
     }
 }

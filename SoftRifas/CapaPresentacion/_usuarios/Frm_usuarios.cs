@@ -15,7 +15,7 @@ namespace CapaPresentacion._usuarios
             this.FormBorderStyle = FormBorderStyle.None;
             mostrarUsuarios();
             _helpers.Formularios.marcarCampoSeleccionado(this.Controls);
-            _helpers.Disenios.dataGridView(Dgv_usuarios);
+            //_helpers.Disenios.dataGridView(Dgv_usuarios);
             limpiar();
         }
         private int usuarioId = 0;

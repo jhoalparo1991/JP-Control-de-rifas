@@ -62,7 +62,7 @@ namespace Domain
             return DA_Reports.mostrarAbonosComisionesPorVendedores(fechaIni, fechaFin, vendedorId);
         }
 
-        public static DataTable mostrarReporteCaja(DateTime fecha, DateTime fecha2)
+        public static DataTable mostrarReporteCaja(string fecha, string fecha2)
         {
             return DA_Reports.mostrarReporteCaja(fecha,fecha2);
         }
@@ -101,6 +101,11 @@ namespace Domain
         public static DataTable mostrarTotalComisionesPorPagar()
         {
             return DA_Reports.mostrarTotalComisionesPorPagar();
+        }
+
+        public static DataTable mostrarReporteTotalCaja()
+        {
+            return DA_Reports.mostrarReporteTotalCaja();
         }
 
     }

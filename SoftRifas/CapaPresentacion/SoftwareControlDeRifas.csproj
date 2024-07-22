@@ -482,6 +482,30 @@
     <Compile Include="_clientes\Frm_clientes.Designer.cs">
       <DependentUpon>Frm_clientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="_pagos_comisiones\Frm_pago_comisiones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_pagos_comisiones\Frm_pago_comisiones.Designer.cs">
+      <DependentUpon>Frm_pago_comisiones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_pagos_comisiones\Frm_reporte_pagos_comision.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_pagos_comisiones\Frm_reporte_pagos_comision.Designer.cs">
+      <DependentUpon>Frm_reporte_pagos_comision.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_pagos_comisiones\rptInfoAbonos.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="_pagos_comisiones\rptInfoAbonos.Designer.cs">
+      <DependentUpon>rptInfoAbonos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_pagos_comisiones\rptInfoPagoComisiones.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="_pagos_comisiones\rptInfoPagoComisiones.Designer.cs">
+      <DependentUpon>rptInfoPagoComisiones.cs</DependentUpon>
+    </Compile>
     <Compile Include="_rifas_boletas\Frm_boletas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -622,6 +646,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="_clientes\Frm_clientes.resx">
       <DependentUpon>Frm_clientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_pagos_comisiones\Frm_pago_comisiones.resx">
+      <DependentUpon>Frm_pago_comisiones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_pagos_comisiones\Frm_reporte_pagos_comision.resx">
+      <DependentUpon>Frm_reporte_pagos_comision.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_pagos_comisiones\rptInfoAbonos.resx">
+      <DependentUpon>rptInfoAbonos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_pagos_comisiones\rptInfoPagoComisiones.resx">
+      <DependentUpon>rptInfoPagoComisiones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="_rifas_boletas\Frm_boletas.resx">
       <DependentUpon>Frm_boletas.cs</DependentUpon>

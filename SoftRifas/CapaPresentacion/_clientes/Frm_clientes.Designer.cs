@@ -40,6 +40,13 @@ namespace CapaPresentacion._clientes
             this.Btn_cerrar_ventana = new System.Windows.Forms.Button();
             this.error = new System.Windows.Forms.ErrorProvider(this.components);
             this.Dgv_clientes = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre_completo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nro_doc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.celular = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_sel = new System.Windows.Forms.DataGridViewImageColumn();
             this.Pn_mant = new System.Windows.Forms.Panel();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -59,19 +66,19 @@ namespace CapaPresentacion._clientes
             this.label8 = new System.Windows.Forms.Label();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre_completo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nro_doc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.celular = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btn_sel = new System.Windows.Forms.DataGridViewImageColumn();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.dgvBoletas = new System.Windows.Forms.DataGridView();
+            this.cliente_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nro_boleta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_clientes)).BeginInit();
             this.Pn_mant.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBoletas)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -86,7 +93,7 @@ namespace CapaPresentacion._clientes
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.panel1.Size = new System.Drawing.Size(825, 46);
+            this.panel1.Size = new System.Drawing.Size(1059, 46);
             this.panel1.TabIndex = 0;
             // 
             // panel2
@@ -97,7 +104,7 @@ namespace CapaPresentacion._clientes
             this.panel2.Location = new System.Drawing.Point(4, 5);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(5);
-            this.panel2.Size = new System.Drawing.Size(425, 36);
+            this.panel2.Size = new System.Drawing.Size(659, 36);
             this.panel2.TabIndex = 4;
             // 
             // Txt_buscar
@@ -128,7 +135,7 @@ namespace CapaPresentacion._clientes
             this.Btn_nuevos.BackColor = System.Drawing.Color.White;
             this.Btn_nuevos.Dock = System.Windows.Forms.DockStyle.Right;
             this.Btn_nuevos.Image = global::CapaPresentacion.Properties.Resources.agregar24_gris;
-            this.Btn_nuevos.Location = new System.Drawing.Point(429, 5);
+            this.Btn_nuevos.Location = new System.Drawing.Point(663, 5);
             this.Btn_nuevos.Name = "Btn_nuevos";
             this.Btn_nuevos.Size = new System.Drawing.Size(95, 36);
             this.Btn_nuevos.TabIndex = 3;
@@ -143,7 +150,7 @@ namespace CapaPresentacion._clientes
             this.Btn_editar.BackColor = System.Drawing.Color.White;
             this.Btn_editar.Dock = System.Windows.Forms.DockStyle.Right;
             this.Btn_editar.Image = global::CapaPresentacion.Properties.Resources.editar24_gris;
-            this.Btn_editar.Location = new System.Drawing.Point(524, 5);
+            this.Btn_editar.Location = new System.Drawing.Point(758, 5);
             this.Btn_editar.Name = "Btn_editar";
             this.Btn_editar.Size = new System.Drawing.Size(107, 36);
             this.Btn_editar.TabIndex = 3;
@@ -158,7 +165,7 @@ namespace CapaPresentacion._clientes
             this.Btn_borrar.BackColor = System.Drawing.Color.White;
             this.Btn_borrar.Dock = System.Windows.Forms.DockStyle.Right;
             this.Btn_borrar.Image = global::CapaPresentacion.Properties.Resources.borrar24_gris;
-            this.Btn_borrar.Location = new System.Drawing.Point(631, 5);
+            this.Btn_borrar.Location = new System.Drawing.Point(865, 5);
             this.Btn_borrar.Name = "Btn_borrar";
             this.Btn_borrar.Size = new System.Drawing.Size(95, 36);
             this.Btn_borrar.TabIndex = 3;
@@ -173,7 +180,7 @@ namespace CapaPresentacion._clientes
             this.Btn_cerrar_ventana.BackColor = System.Drawing.Color.White;
             this.Btn_cerrar_ventana.Dock = System.Windows.Forms.DockStyle.Right;
             this.Btn_cerrar_ventana.Image = global::CapaPresentacion.Properties.Resources.salir24;
-            this.Btn_cerrar_ventana.Location = new System.Drawing.Point(726, 5);
+            this.Btn_cerrar_ventana.Location = new System.Drawing.Point(960, 5);
             this.Btn_cerrar_ventana.Name = "Btn_cerrar_ventana";
             this.Btn_cerrar_ventana.Size = new System.Drawing.Size(95, 36);
             this.Btn_cerrar_ventana.TabIndex = 3;
@@ -210,9 +217,71 @@ namespace CapaPresentacion._clientes
             this.Dgv_clientes.RowTemplate.Height = 30;
             this.Dgv_clientes.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Dgv_clientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Dgv_clientes.Size = new System.Drawing.Size(422, 447);
+            this.Dgv_clientes.Size = new System.Drawing.Size(505, 439);
             this.Dgv_clientes.TabIndex = 1;
             this.Dgv_clientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_clientes_CellClick);
+            this.Dgv_clientes.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_clientes_CellEnter);
+            // 
+            // id
+            // 
+            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.id.DataPropertyName = "Id";
+            this.id.HeaderText = "Id";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
+            // 
+            // nombre_completo
+            // 
+            this.nombre_completo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nombre_completo.DataPropertyName = "NombreCompleto";
+            this.nombre_completo.HeaderText = "Nombres y Apellidos";
+            this.nombre_completo.Name = "nombre_completo";
+            this.nombre_completo.ReadOnly = true;
+            // 
+            // nro_doc
+            // 
+            this.nro_doc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.nro_doc.DataPropertyName = "NroDoc";
+            this.nro_doc.HeaderText = "Nro Doc";
+            this.nro_doc.Name = "nro_doc";
+            this.nro_doc.ReadOnly = true;
+            this.nro_doc.Width = 85;
+            // 
+            // direccion
+            // 
+            this.direccion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.direccion.DataPropertyName = "Direccion";
+            this.direccion.HeaderText = "Direccion";
+            this.direccion.Name = "direccion";
+            this.direccion.ReadOnly = true;
+            // 
+            // celular
+            // 
+            this.celular.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.celular.DataPropertyName = "Celular";
+            this.celular.HeaderText = "Celular";
+            this.celular.Name = "celular";
+            this.celular.ReadOnly = true;
+            this.celular.Width = 83;
+            // 
+            // telefono
+            // 
+            this.telefono.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.telefono.DataPropertyName = "Telefono";
+            this.telefono.HeaderText = "Telefono";
+            this.telefono.Name = "telefono";
+            this.telefono.ReadOnly = true;
+            this.telefono.Width = 96;
+            // 
+            // btn_sel
+            // 
+            this.btn_sel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.btn_sel.HeaderText = "Seleccionar";
+            this.btn_sel.Image = global::CapaPresentacion.Properties.Resources.seleccion;
+            this.btn_sel.Name = "btn_sel";
+            this.btn_sel.ReadOnly = true;
+            this.btn_sel.Visible = false;
             // 
             // Pn_mant
             // 
@@ -234,9 +303,9 @@ namespace CapaPresentacion._clientes
             this.Pn_mant.Controls.Add(this.label3);
             this.Pn_mant.Controls.Add(this.label8);
             this.Pn_mant.Dock = System.Windows.Forms.DockStyle.Right;
-            this.Pn_mant.Location = new System.Drawing.Point(422, 46);
+            this.Pn_mant.Location = new System.Drawing.Point(656, 46);
             this.Pn_mant.Name = "Pn_mant";
-            this.Pn_mant.Size = new System.Drawing.Size(403, 447);
+            this.Pn_mant.Size = new System.Drawing.Size(403, 439);
             this.Pn_mant.TabIndex = 2;
             this.Pn_mant.Visible = false;
             // 
@@ -432,77 +501,72 @@ namespace CapaPresentacion._clientes
             this.dataGridViewImageColumn2.Image = global::CapaPresentacion.Properties.Resources.borrar24_gris;
             this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
             // 
-            // id
+            // panel3
             // 
-            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.id.DataPropertyName = "Id";
-            this.id.HeaderText = "Id";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Visible = false;
-            this.id.Width = 29;
+            this.panel3.Controls.Add(this.dgvBoletas);
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel3.Location = new System.Drawing.Point(505, 46);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(151, 439);
+            this.panel3.TabIndex = 3;
             // 
-            // nombre_completo
+            // dgvBoletas
             // 
-            this.nombre_completo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nombre_completo.DataPropertyName = "NombreCompleto";
-            this.nombre_completo.HeaderText = "Nombres y Apellidos";
-            this.nombre_completo.Name = "nombre_completo";
-            this.nombre_completo.ReadOnly = true;
+            this.dgvBoletas.AllowUserToAddRows = false;
+            this.dgvBoletas.AllowUserToDeleteRows = false;
+            this.dgvBoletas.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.dgvBoletas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBoletas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.cliente_id,
+            this.nro_boleta});
+            this.dgvBoletas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvBoletas.Location = new System.Drawing.Point(0, 50);
+            this.dgvBoletas.Name = "dgvBoletas";
+            this.dgvBoletas.ReadOnly = true;
+            this.dgvBoletas.RowHeadersVisible = false;
+            this.dgvBoletas.RowTemplate.Height = 40;
+            this.dgvBoletas.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvBoletas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvBoletas.Size = new System.Drawing.Size(151, 389);
+            this.dgvBoletas.TabIndex = 1;
             // 
-            // nro_doc
+            // cliente_id
             // 
-            this.nro_doc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.nro_doc.DataPropertyName = "NroDoc";
-            this.nro_doc.HeaderText = "Nro Doc";
-            this.nro_doc.Name = "nro_doc";
-            this.nro_doc.ReadOnly = true;
-            this.nro_doc.Width = 92;
+            this.cliente_id.DataPropertyName = "cliente_id";
+            this.cliente_id.HeaderText = "cliente_id";
+            this.cliente_id.Name = "cliente_id";
+            this.cliente_id.ReadOnly = true;
+            this.cliente_id.Visible = false;
             // 
-            // direccion
+            // nro_boleta
             // 
-            this.direccion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.direccion.DataPropertyName = "Direccion";
-            this.direccion.HeaderText = "Direccion";
-            this.direccion.Name = "direccion";
-            this.direccion.ReadOnly = true;
+            this.nro_boleta.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nro_boleta.DataPropertyName = "nro_boleta";
+            this.nro_boleta.HeaderText = "Nro Boleta";
+            this.nro_boleta.Name = "nro_boleta";
+            this.nro_boleta.ReadOnly = true;
             // 
-            // celular
+            // label2
             // 
-            this.celular.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.celular.DataPropertyName = "Celular";
-            this.celular.HeaderText = "Celular";
-            this.celular.Name = "celular";
-            this.celular.ReadOnly = true;
-            this.celular.Width = 83;
-            // 
-            // telefono
-            // 
-            this.telefono.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.telefono.DataPropertyName = "Telefono";
-            this.telefono.HeaderText = "Telefono";
-            this.telefono.Name = "telefono";
-            this.telefono.ReadOnly = true;
-            this.telefono.Width = 96;
-            // 
-            // btn_sel
-            // 
-            this.btn_sel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.btn_sel.HeaderText = "Seleccionar";
-            this.btn_sel.Image = global::CapaPresentacion.Properties.Resources.seleccion;
-            this.btn_sel.Name = "btn_sel";
-            this.btn_sel.ReadOnly = true;
-            this.btn_sel.Visible = false;
-            this.btn_sel.Width = 98;
+            this.label2.BackColor = System.Drawing.Color.Gainsboro;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label2.Location = new System.Drawing.Point(0, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(151, 50);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "BOLETAS";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Frm_clientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(825, 493);
+            this.ClientSize = new System.Drawing.Size(1059, 485);
             this.ControlBox = false;
             this.Controls.Add(this.Dgv_clientes);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.Pn_mant);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -520,6 +584,8 @@ namespace CapaPresentacion._clientes
             this.Pn_mant.ResumeLayout(false);
             this.Pn_mant.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
+            this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBoletas)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -562,5 +628,10 @@ namespace CapaPresentacion._clientes
         private System.Windows.Forms.DataGridViewTextBoxColumn celular;
         private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
         private System.Windows.Forms.DataGridViewImageColumn btn_sel;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridView dgvBoletas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cliente_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nro_boleta;
     }
 }

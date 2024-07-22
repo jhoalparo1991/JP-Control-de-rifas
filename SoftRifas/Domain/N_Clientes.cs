@@ -1,6 +1,7 @@
 ﻿using DataAccess;
 using Entities;
 using System.Collections.Generic;
+using System.Data;
 
 namespace Domain
 {
@@ -19,6 +20,11 @@ namespace Domain
         public static bool borrar(int clienteId)
         {
             return D_Clientes.borrar(clienteId);
+        }
+
+        public static DataTable mostrarBoletasClientes(int clienteId)
+        {
+            return D_Clientes.mostrarBoletasClientes(clienteId);
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaPresentacion._pagos_comisiones;
+using System;
 using System.Windows.Forms;
 
 namespace CapaPresentacion

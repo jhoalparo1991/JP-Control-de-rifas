@@ -18,7 +18,7 @@ namespace DataAccess
             {
                 con.Open();
                 StringBuilder sql = new StringBuilder();
-                sql.AppendLine("select top(1000) * from tbl_usuarios");
+                sql.AppendLine("select top(1000) * from tbl_usuarios order by nombre_completo");
                 SqlDataAdapter data = new SqlDataAdapter(sql.ToString(), con);
                 data.SelectCommand.CommandType = CommandType.Text;
                 data.Fill(dt);
@@ -40,7 +40,7 @@ namespace DataAccess
             {
                 con.Open();
                 StringBuilder builder = new StringBuilder();
-                builder.Append("SELECT * FROM tbl_usuarios");
+                builder.Append("SELECT * FROM tbl_usuarios order by nombre_completo");
                 SqlCommand command = new SqlCommand(builder.ToString(), con);
                 command.CommandType = CommandType.Text;
                 SqlDataReader reader = command.ExecuteReader();
@@ -70,6 +70,7 @@ namespace DataAccess
             }
             return usuarios;
         }
+
         public static InicioSesion mostrarUsuarioSesion()
         {
             InicioSesion sesion = new InicioSesion();

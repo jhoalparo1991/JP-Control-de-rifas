@@ -248,15 +248,15 @@ namespace DataAccess
             return dt;
         }
 
-        public static DataTable mostrarReporteCaja(DateTime fecha, DateTime fecha2)
+        public static DataTable mostrarReporteCaja(string fecha, string fecha2)
         {
             DataTable dt = new DataTable();
             try
             {
                 con.Open();
-                SqlDataAdapter command = new SqlDataAdapter("sp_reporte_caja", con);
+                SqlDataAdapter command = new SqlDataAdapter("sp_mostrar_caja_por_dia", con);
                 command.SelectCommand.CommandType = CommandType.StoredProcedure;
-                command.SelectCommand.Parameters.AddWithValue("@fecha", fecha);
+                command.SelectCommand.Parameters.AddWithValue("@fecha1", fecha);
                 command.SelectCommand.Parameters.AddWithValue("@fecha2", fecha2);
                 command.Fill(dt);
             }
@@ -419,6 +419,27 @@ namespace DataAccess
                     .AppendLine("group by forma_pago ");
                 SqlDataAdapter command = new SqlDataAdapter(d.ToString(), con);
                 command.SelectCommand.CommandType = CommandType.Text;
+                command.Fill(dt);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+            return dt;
+        }
+
+        public static DataTable mostrarReporteTotalCaja()
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                con.Open();
+                SqlDataAdapter command = new SqlDataAdapter("sp_mostrar_reporte_total_caja", con);
+                command.SelectCommand.CommandType = CommandType.StoredProcedure;
                 command.Fill(dt);
             }
             catch (Exception e)

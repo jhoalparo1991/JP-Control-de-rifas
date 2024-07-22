@@ -187,5 +187,64 @@ namespace DataAccess
             }
             return result;
         }
+
+        #region Pago comisiones vendedores
+        public static bool sp_pagar_comision_vendedor(int vendedorId, int clienteId, int boletaId, int abonoId,decimal valorPagado)
+        {
+            bool result = false;
+            try
+            {
+                con.Open();
+                SqlCommand command = new SqlCommand("sp_pagar_comision_vendedor", con);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@vendedor_id", vendedorId);
+                command.Parameters.AddWithValue("@cliente_id", clienteId);
+                command.Parameters.AddWithValue("@boleta_id", boletaId);
+                command.Parameters.AddWithValue("@abono_id", abonoId);
+                command.Parameters.AddWithValue("@valor_pagado", valorPagado);
+
+                result = Convert.ToInt32(command.ExecuteNonQuery()) != 0 ? true : false;
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+            return result;
+        }
+
+        public static bool borrar_pago_comision_vendedor(int vendedorId, int clienteId, int boletaId, int abonoId)
+        {
+            bool result = false;
+            try
+            {
+                con.Open();
+                string sql = "delete from tbl_pago_comisiones where vendedor_id=@vendedor_id and cliente_id=@cliente_id " +
+                    "and boleta_id=@boleta_id and abono_id=@abono_id";
+                SqlCommand command = new SqlCommand(sql, con);
+                command.CommandType = CommandType.Text;
+                command.Parameters.AddWithValue("@vendedor_id", vendedorId);
+                command.Parameters.AddWithValue("@cliente_id", clienteId);
+                command.Parameters.AddWithValue("@boleta_id", boletaId);
+                command.Parameters.AddWithValue("@abono_id", abonoId);
+
+                result = Convert.ToInt32(command.ExecuteNonQuery()) != 0 ? true : false;
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+            return result;
+        }
+
+        #endregion
+
     }
 }

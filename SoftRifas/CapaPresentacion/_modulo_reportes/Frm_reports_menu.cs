@@ -18,6 +18,7 @@ namespace CapaPresentacion
             mostrarRifas();
             mostrarVendedores(cbx_vendedor);
             mostrarVendedores(Cbx_vendedor_01);
+            mostrarReporteTotalCaja();
         }
         private void mostrarVendedores(ComboBox cbx)
         {
@@ -369,32 +370,41 @@ namespace CapaPresentacion
         {
             try
             {
-                DateTime fecha1 = Convert.ToDateTime(dateTimePicker13.Text);
-                DateTime fecha2 = Convert.ToDateTime(dateTimePicker14.Text);
+                string fecha1 = dateTimePicker13.Text;
+                string fecha2 = dateTimePicker14.Text;
                 DataTable dt = N_Reports.mostrarReporteCaja(fecha1,fecha2);
 
                 RptMostrarReporteCajaDiario rpt = new RptMostrarReporteCajaDiario();
 
-                rpt.table1.DataSource = dt;
+                //rpt.table1.DataSource = dt;
 
-                decimal total = 0;
-                decimal _abonos = 0;
-                decimal _comisionPagada = 0;
-                foreach (DataRow row in dt.Rows)
+                //decimal total = 0;
+                //decimal _abonos = 0;
+                //decimal _comisionPagada = 0;
+                //foreach (DataRow row in dt.Rows)
+                //{
+                //    total += Convert.ToDecimal(row["valor"].ToString());
+
+                //    rpt.txtTotalFp.Value = total.ToString("C2");
+                //    rpt.txtAbonos.Value = Convert.ToDecimal(row["total_abonos"]).ToString("C2");
+                //    _abonos = Convert.ToDecimal(row["total_abonos"]);
+                //    _comisionPagada = Convert.ToDecimal(row["total_comision_pagada"]);
+                //    rpt.txtTotalComisiones.Value = Convert.ToDecimal(row["total_comisiones"]).ToString("C2");
+                //    rpt.txtComisionesPagada.Value = Convert.ToDecimal(row["total_comision_pagada"]).ToString("C2");
+                //}
+
+                //rpt.Txt_total.Value = (_abonos - _comisionPagada).ToString("C2");
+                //rpt.txtTotalFp.Value = total.ToString("C2");
+
+                rpt.txtFecha.Value = dateTimePicker13.Text.ToString();
+                rpt.txtFechafin.Value = dateTimePicker14.Text.ToString();
+                if (dt.Rows.Count > 0)
                 {
-                    total += Convert.ToDecimal(row["valor"].ToString());
-                    rpt.txtFecha.Value = dateTimePicker13.Text.ToString();
-                    rpt.txtFechafin.Value = dateTimePicker14.Text.ToString();
-                    rpt.txtTotalFp.Value = total.ToString("C2");
-                    rpt.txtAbonos.Value = Convert.ToDecimal(row["total_abonos"]).ToString("C2");
-                    _abonos = Convert.ToDecimal(row["total_abonos"]);
-                    _comisionPagada = Convert.ToDecimal(row["total_comision_pagada"]);
-                    rpt.txtTotalComisiones.Value = Convert.ToDecimal(row["total_comisiones"]).ToString("C2");
-                    rpt.txtComisionesPagada.Value = Convert.ToDecimal(row["total_comision_pagada"]).ToString("C2");
+                    rpt.txtAbonos.Value = Convert.ToDecimal(dt.Rows[0]["abonos"].ToString()).ToString("C2");
+                    rpt.txtGastos.Value = Convert.ToDecimal(dt.Rows[0]["gastos"].ToString()).ToString("C2");
+                    rpt.txtComisionesPagada.Value = Convert.ToDecimal(dt.Rows[0]["comision"].ToString()).ToString("C2");
+                    rpt.Txt_total.Value = Convert.ToDecimal(dt.Rows[0]["caja"].ToString()).ToString("C2");
                 }
-
-                rpt.Txt_total.Value = (_abonos - _comisionPagada).ToString("C2");
-                rpt.txtTotalFp.Value = total.ToString("C2");
                 reportViewer12.Report = rpt;
 
                 reportViewer12.RefreshReport();
@@ -526,6 +536,24 @@ namespace CapaPresentacion
                 _helpers.Disenios.dataGridView(dataGridView1);
                 DataTable dt = N_Reports.abonosPorFormasDePago();
                 dataGridView1.DataSource = dt;
+
+            }
+            catch (Exception e)
+            {
+                _helpers.Mensajes.mensajeAdvertencia(e.Message);
+            }
+        }
+
+        private void mostrarReporteTotalCaja()
+        {
+            try
+            {
+                DataTable dt = N_Reports.mostrarReporteTotalCaja();
+                if(dt.Rows.Count > 0)
+                {
+                    decimal _totalCaja = Convert.ToDecimal(dt.Rows[0]["caja"].ToString()); 
+                    lblTotalCaja.Text = _totalCaja.ToString("C2");
+                }
 
             }
             catch (Exception e)

@@ -2970,7 +2970,4 @@
         RQAUUUUAFFFFABRRRQAUUUUAf//Z
 </value>
   </data>
-  <metadata name="$this.SnapGridSize" type="Telerik.Reporting.Drawing.Unit, Telerik.Reporting, Version=13.0.19.116, Culture=neutral, PublicKeyToken=a9d7983dfcc261be">
-    <value>0.1cm</value>
-  </metadata>
 </root>
