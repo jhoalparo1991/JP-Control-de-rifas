@@ -135,10 +135,7 @@ namespace CapaPresentacion._pagos_comisiones
 
                     if (dialog == DialogResult.OK)
                     {
-                        if(N_Boletas.pagarReversarPagoComision(_boletaId, _abonoId, _vendedorId, false))
-                        {
                             borrarPagoComisionVendedor();
-                        }
                     }
                     else
                     {
@@ -152,10 +149,7 @@ namespace CapaPresentacion._pagos_comisiones
 
                     if(dialog == DialogResult.OK)
                     {
-                        if (N_Boletas.pagarReversarPagoComision(_boletaId, _abonoId, _vendedorId, true)) {
                             registrarPagoComision();                        
-                        }
-
                     }
                     else
                     {

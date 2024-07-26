@@ -36,8 +36,8 @@ namespace CapaPresentacion
 
         private void limpiar()
         {
-            Txt_clave.Text = "";
-            Txt_nro_doc.Text = "";
+            Txt_clave.Text = "0614";
+            Txt_nro_doc.Text = "1036620759";
             Txt_nro_doc.Select();
         }
         private void Txt_nro_doc_KeyPress(object sender, KeyPressEventArgs e)

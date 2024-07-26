@@ -42,14 +42,9 @@ namespace Domain
             return DA_Reports.mostrarAbonosFechaValor(fechaIni, fechaFin, valor);
         }
 
-        public static DataTable mostrarPagos(DateTime fechaIni, DateTime fechaFin)
+        public static DataTable mostrarListadoComisionesPagadas(DateTime fechaIni, DateTime fechaFin)
         {
-            return DA_Reports.mostrarPagos(fechaIni, fechaFin);
-        }
-
-        public static DataTable mostrarDetallePagoComisiones(DateTime fechaIni, DateTime fechaFin)
-        {
-            return DA_Reports.mostrarDetallePagoComisiones(fechaIni, fechaFin);
+            return DA_Reports.mostrarListadoComisionesPagadas(fechaIni, fechaFin);
         }
 
         public static DataTable mostrarPagoComisionesPorVendedores(int vendedorId)

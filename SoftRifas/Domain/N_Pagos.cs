@@ -1,5 +1,6 @@
 ﻿using DataAccess;
 using Entities;
+using System;
 using System.Collections.Generic;
 using System.Data;
 
@@ -44,6 +45,11 @@ namespace Domain
         public static bool borrar_pago_comision_vendedor(int vendedorId, int clienteId, int boletaId, int abonoId)
         {
             return D_Pagos.borrar_pago_comision_vendedor(vendedorId, clienteId, boletaId, abonoId);
+        }
+
+        public static DataTable mostrarPagoComisionPorVendedor(int vendedorId, DateTime fecha1, DateTime fecha2)
+        {
+            return D_Pagos.mostrarPagoComisionPorVendedor(vendedorId, fecha1, fecha2);
         }
         #endregion
 

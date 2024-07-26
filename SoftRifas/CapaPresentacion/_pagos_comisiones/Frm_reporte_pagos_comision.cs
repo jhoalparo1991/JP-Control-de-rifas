@@ -14,9 +14,26 @@ namespace CapaPresentacion._pagos_comisiones
 
         private void Frm_reporte_pagos_comision_Load(object sender, EventArgs e)
         {
-
+            mostrarVendedores();
             this.reportViewer1.RefreshReport();
             //this.reportViewer2.RefreshReport();
+            //this.reportViewer3.RefreshReport();
+        }
+
+        private void mostrarVendedores()
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                N_Usuarios.mostrarVendedores(dt);
+                cbxVendedores.DataSource = dt;
+                cbxVendedores.DisplayMember = "nombre_completo";
+                cbxVendedores.ValueMember = "id";
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message, "Aviso del sistema");
+            }
         }
 
         public void mostrarInformacionComisionesVendedor(string nroAbonos,string totalComision,string totalPagado,string totalComisionPendiete,string vendedor)
@@ -65,6 +82,24 @@ namespace CapaPresentacion._pagos_comisiones
             {
                 MessageBox.Show(ex.Message, "Aviso del sistema");
             }
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            DateTime fecha1 = dateTimePicker1.Value;
+            DateTime fecha2 = dateTimePicker2.Value;
+            int _vendedorId = Convert.ToInt32(cbxVendedores.SelectedValue);
+
+            DataTable dt = N_Pagos.mostrarPagoComisionPorVendedor(_vendedorId, fecha1, fecha2);
+
+            rptListadoComisionPagada rpt = new rptListadoComisionPagada();
+            //rpt.DataSource = dt;
+            rpt.txtVendedor.Value = cbxVendedores.Text.Trim().ToUpper();
+            rpt.txtFecha1.Value = fecha1.ToShortDateString();
+            rpt.txtFecha2.Value = fecha2.ToShortDateString();
+            rpt.table1.DataSource = dt;
+            reportViewer3.Report = rpt;
+            reportViewer3.RefreshReport();
         }
     }
 }

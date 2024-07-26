@@ -90,14 +90,6 @@ namespace CapaPresentacion
             this.dateTimePicker6 = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
-            this.tabPage7 = new System.Windows.Forms.TabPage();
-            this.reportViewer7 = new Telerik.ReportViewer.WinForms.ReportViewer();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.dateTimePicker7 = new System.Windows.Forms.DateTimePicker();
-            this.label10 = new System.Windows.Forms.Label();
-            this.dateTimePicker8 = new System.Windows.Forms.DateTimePicker();
-            this.label11 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
             this.tabPage11 = new System.Windows.Forms.TabPage();
             this.reportViewer11 = new Telerik.ReportViewer.WinForms.ReportViewer();
             this.panel10 = new System.Windows.Forms.Panel();
@@ -137,14 +129,14 @@ namespace CapaPresentacion
             this.panel15 = new System.Windows.Forms.Panel();
             this.Lbl_total_abonos = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
+            this.panel18 = new System.Windows.Forms.Panel();
+            this.lblTotalCaja = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
             this.panel16 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.forma_pago = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.abono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label26 = new System.Windows.Forms.Label();
-            this.panel18 = new System.Windows.Forms.Panel();
-            this.lblTotalCaja = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage8.SuspendLayout();
@@ -163,8 +155,6 @@ namespace CapaPresentacion
             this.panel4.SuspendLayout();
             this.tabPage6.SuspendLayout();
             this.panel5.SuspendLayout();
-            this.tabPage7.SuspendLayout();
-            this.panel6.SuspendLayout();
             this.tabPage11.SuspendLayout();
             this.panel10.SuspendLayout();
             this.tabPage12.SuspendLayout();
@@ -177,9 +167,9 @@ namespace CapaPresentacion
             this.panel13.SuspendLayout();
             this.panel14.SuspendLayout();
             this.panel15.SuspendLayout();
+            this.panel18.SuspendLayout();
             this.panel16.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panel18.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -193,7 +183,6 @@ namespace CapaPresentacion
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Controls.Add(this.tabPage6);
-            this.tabControl1.Controls.Add(this.tabPage7);
             this.tabControl1.Controls.Add(this.tabPage11);
             this.tabControl1.Controls.Add(this.tabPage12);
             this.tabControl1.Controls.Add(this.tabPage13);
@@ -763,7 +752,7 @@ namespace CapaPresentacion
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage6.Size = new System.Drawing.Size(1059, 525);
             this.tabPage6.TabIndex = 5;
-            this.tabPage6.Text = "Pagos Realizado";
+            this.tabPage6.Text = "Comisiones Pagadas";
             this.tabPage6.UseVisualStyleBackColor = true;
             // 
             // reportViewer6
@@ -835,88 +824,6 @@ namespace CapaPresentacion
             this.button5.Text = "Generar Reporte";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // tabPage7
-            // 
-            this.tabPage7.Controls.Add(this.reportViewer7);
-            this.tabPage7.Controls.Add(this.panel6);
-            this.tabPage7.Location = new System.Drawing.Point(4, 25);
-            this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(1059, 525);
-            this.tabPage7.TabIndex = 6;
-            this.tabPage7.Text = "Detalle pagos realizados";
-            this.tabPage7.UseVisualStyleBackColor = true;
-            // 
-            // reportViewer7
-            // 
-            this.reportViewer7.AccessibilityKeyMap = null;
-            this.reportViewer7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.reportViewer7.Location = new System.Drawing.Point(3, 49);
-            this.reportViewer7.Margin = new System.Windows.Forms.Padding(4);
-            this.reportViewer7.Name = "reportViewer7";
-            this.reportViewer7.Size = new System.Drawing.Size(1053, 473);
-            this.reportViewer7.TabIndex = 5;
-            this.reportViewer7.ViewMode = Telerik.ReportViewer.WinForms.ViewMode.PrintPreview;
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.dateTimePicker7);
-            this.panel6.Controls.Add(this.label10);
-            this.panel6.Controls.Add(this.dateTimePicker8);
-            this.panel6.Controls.Add(this.label11);
-            this.panel6.Controls.Add(this.button6);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(3, 3);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1053, 46);
-            this.panel6.TabIndex = 4;
-            // 
-            // dateTimePicker7
-            // 
-            this.dateTimePicker7.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker7.Location = new System.Drawing.Point(84, 10);
-            this.dateTimePicker7.Name = "dateTimePicker7";
-            this.dateTimePicker7.Size = new System.Drawing.Size(120, 23);
-            this.dateTimePicker7.TabIndex = 5;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(210, 13);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(19, 17);
-            this.label10.TabIndex = 4;
-            this.label10.Text = "al";
-            // 
-            // dateTimePicker8
-            // 
-            this.dateTimePicker8.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker8.Location = new System.Drawing.Point(235, 10);
-            this.dateTimePicker8.Name = "dateTimePicker8";
-            this.dateTimePicker8.Size = new System.Drawing.Size(120, 23);
-            this.dateTimePicker8.TabIndex = 5;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(8, 13);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(70, 17);
-            this.label11.TabIndex = 4;
-            this.label11.Text = "Fecha del";
-            // 
-            // button6
-            // 
-            this.button6.AutoSize = true;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(361, 6);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(182, 30);
-            this.button6.TabIndex = 2;
-            this.button6.Text = "Generar Reporte";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // tabPage11
             // 
@@ -1222,7 +1129,7 @@ namespace CapaPresentacion
             // 
             this.Lbl_comisiones_por_pagar.BackColor = System.Drawing.Color.Red;
             this.Lbl_comisiones_por_pagar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Lbl_comisiones_por_pagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_comisiones_por_pagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_comisiones_por_pagar.ForeColor = System.Drawing.Color.White;
             this.Lbl_comisiones_por_pagar.Location = new System.Drawing.Point(0, 48);
             this.Lbl_comisiones_por_pagar.Name = "Lbl_comisiones_por_pagar";
@@ -1256,7 +1163,7 @@ namespace CapaPresentacion
             // 
             this.Lbl_total_comisiones_paga.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.Lbl_total_comisiones_paga.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Lbl_total_comisiones_paga.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_total_comisiones_paga.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_total_comisiones_paga.ForeColor = System.Drawing.Color.White;
             this.Lbl_total_comisiones_paga.Location = new System.Drawing.Point(0, 48);
             this.Lbl_total_comisiones_paga.Name = "Lbl_total_comisiones_paga";
@@ -1290,7 +1197,7 @@ namespace CapaPresentacion
             // 
             this.Lbl_total_gastos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.Lbl_total_gastos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Lbl_total_gastos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_total_gastos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_total_gastos.ForeColor = System.Drawing.Color.White;
             this.Lbl_total_gastos.Location = new System.Drawing.Point(0, 48);
             this.Lbl_total_gastos.Name = "Lbl_total_gastos";
@@ -1324,7 +1231,7 @@ namespace CapaPresentacion
             // 
             this.Lbl_total_abonos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.Lbl_total_abonos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Lbl_total_abonos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_total_abonos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_total_abonos.ForeColor = System.Drawing.Color.White;
             this.Lbl_total_abonos.Location = new System.Drawing.Point(0, 48);
             this.Lbl_total_abonos.Name = "Lbl_total_abonos";
@@ -1343,6 +1250,40 @@ namespace CapaPresentacion
             this.label25.TabIndex = 0;
             this.label25.Text = "Total abonos";
             this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel18
+            // 
+            this.panel18.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel18.Controls.Add(this.lblTotalCaja);
+            this.panel18.Controls.Add(this.label28);
+            this.panel18.Location = new System.Drawing.Point(751, 3);
+            this.panel18.Name = "panel18";
+            this.panel18.Size = new System.Drawing.Size(181, 114);
+            this.panel18.TabIndex = 7;
+            // 
+            // lblTotalCaja
+            // 
+            this.lblTotalCaja.BackColor = System.Drawing.Color.Green;
+            this.lblTotalCaja.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblTotalCaja.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalCaja.ForeColor = System.Drawing.Color.White;
+            this.lblTotalCaja.Location = new System.Drawing.Point(0, 48);
+            this.lblTotalCaja.Name = "lblTotalCaja";
+            this.lblTotalCaja.Size = new System.Drawing.Size(177, 62);
+            this.lblTotalCaja.TabIndex = 1;
+            this.lblTotalCaja.Text = "0000000000";
+            this.lblTotalCaja.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label28
+            // 
+            this.label28.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Location = new System.Drawing.Point(0, 0);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(177, 48);
+            this.label28.TabIndex = 0;
+            this.label28.Text = "Total Caja";
+            this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel16
             // 
@@ -1399,40 +1340,6 @@ namespace CapaPresentacion
             this.label26.Text = "Abonos por formas de pago";
             this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panel18
-            // 
-            this.panel18.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel18.Controls.Add(this.lblTotalCaja);
-            this.panel18.Controls.Add(this.label28);
-            this.panel18.Location = new System.Drawing.Point(751, 3);
-            this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(181, 114);
-            this.panel18.TabIndex = 7;
-            // 
-            // lblTotalCaja
-            // 
-            this.lblTotalCaja.BackColor = System.Drawing.Color.Green;
-            this.lblTotalCaja.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblTotalCaja.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalCaja.ForeColor = System.Drawing.Color.White;
-            this.lblTotalCaja.Location = new System.Drawing.Point(0, 48);
-            this.lblTotalCaja.Name = "lblTotalCaja";
-            this.lblTotalCaja.Size = new System.Drawing.Size(177, 62);
-            this.lblTotalCaja.TabIndex = 1;
-            this.lblTotalCaja.Text = "0000000000";
-            this.lblTotalCaja.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label28
-            // 
-            this.label28.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(0, 0);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(177, 48);
-            this.label28.TabIndex = 0;
-            this.label28.Text = "Total Caja";
-            this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // Frm_reports_menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1470,9 +1377,6 @@ namespace CapaPresentacion
             this.tabPage6.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            this.tabPage7.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
             this.tabPage11.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
@@ -1488,9 +1392,9 @@ namespace CapaPresentacion
             this.panel13.ResumeLayout(false);
             this.panel14.ResumeLayout(false);
             this.panel15.ResumeLayout(false);
+            this.panel18.ResumeLayout(false);
             this.panel16.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.panel18.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1538,14 +1442,6 @@ namespace CapaPresentacion
         private System.Windows.Forms.DateTimePicker dateTimePicker6;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.TabPage tabPage7;
-        private Telerik.ReportViewer.WinForms.ReportViewer reportViewer7;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.DateTimePicker dateTimePicker7;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.DateTimePicker dateTimePicker8;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Button button6;
         private System.Windows.Forms.TabPage tabPage8;
         private Telerik.ReportViewer.WinForms.ReportViewer reportViewer8;
         private System.Windows.Forms.Panel panel7;

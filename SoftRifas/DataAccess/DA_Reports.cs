@@ -137,13 +137,13 @@ namespace DataAccess
             return dt;
         }
 
-        public static DataTable mostrarPagos(DateTime fechaIni, DateTime fechaFin)
+        public static DataTable mostrarListadoComisionesPagadas(DateTime fechaIni, DateTime fechaFin)
         {
             DataTable dt = new DataTable();
             try
             {
                 con.Open();
-                SqlDataAdapter command = new SqlDataAdapter("sp_reporte_pagos", con);
+                SqlDataAdapter command = new SqlDataAdapter("rpt_listado_comisiones_pagadas", con);
                 command.SelectCommand.CommandType = CommandType.StoredProcedure;
                 command.SelectCommand.Parameters.AddWithValue("fecha_ini", fechaIni);
                 command.SelectCommand.Parameters.AddWithValue("fecha_fin", fechaFin);
@@ -160,28 +160,6 @@ namespace DataAccess
             return dt;
         }
 
-        public static DataTable mostrarDetallePagoComisiones(DateTime fechaIni, DateTime fechaFin)
-        {
-            DataTable dt = new DataTable();
-            try
-            {
-                con.Open();
-                SqlDataAdapter command = new SqlDataAdapter("sp_reporte_detalle_pago_comisiones", con);
-                command.SelectCommand.CommandType = CommandType.StoredProcedure;
-                command.SelectCommand.Parameters.AddWithValue("fecha_ini", fechaIni);
-                command.SelectCommand.Parameters.AddWithValue("fecha_fin", fechaFin);
-                command.Fill(dt);
-            }
-            catch (Exception e)
-            {
-                throw new Exception(e.Message);
-            }
-            finally
-            {
-                con.Close();
-            }
-            return dt;
-        }
         public static DataTable mostrarPagoComisionesPorVendedores(int vendedorId)
         {
             DataTable dt = new DataTable();

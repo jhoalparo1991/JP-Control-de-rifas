@@ -197,9 +197,9 @@ namespace DataAccess
                 con.Open();
                 SqlCommand command = new SqlCommand("sp_pagar_comision_vendedor", con);
                 command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@boleta_id", boletaId);
                 command.Parameters.AddWithValue("@vendedor_id", vendedorId);
                 command.Parameters.AddWithValue("@cliente_id", clienteId);
-                command.Parameters.AddWithValue("@boleta_id", boletaId);
                 command.Parameters.AddWithValue("@abono_id", abonoId);
                 command.Parameters.AddWithValue("@valor_pagado", valorPagado);
 
@@ -222,13 +222,11 @@ namespace DataAccess
             try
             {
                 con.Open();
-                string sql = "delete from tbl_pago_comisiones where vendedor_id=@vendedor_id and cliente_id=@cliente_id " +
-                    "and boleta_id=@boleta_id and abono_id=@abono_id";
-                SqlCommand command = new SqlCommand(sql, con);
-                command.CommandType = CommandType.Text;
+                SqlCommand command = new SqlCommand("sp_borrar_pago_comision_vendedor", con);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@boleta_id", boletaId);
                 command.Parameters.AddWithValue("@vendedor_id", vendedorId);
                 command.Parameters.AddWithValue("@cliente_id", clienteId);
-                command.Parameters.AddWithValue("@boleta_id", boletaId);
                 command.Parameters.AddWithValue("@abono_id", abonoId);
 
                 result = Convert.ToInt32(command.ExecuteNonQuery()) != 0 ? true : false;
@@ -244,6 +242,29 @@ namespace DataAccess
             return result;
         }
 
+        public static DataTable mostrarPagoComisionPorVendedor(int vendedorId, DateTime fecha1, DateTime fecha2)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                con.Open();
+                SqlDataAdapter command = new SqlDataAdapter("rpt_listado_pago_comisiones", con);
+                command.SelectCommand.CommandType = CommandType.StoredProcedure;
+                command.SelectCommand.Parameters.AddWithValue("vendedor_id", vendedorId);
+                command.SelectCommand.Parameters.AddWithValue("fecha1", fecha1);
+                command.SelectCommand.Parameters.AddWithValue("fecha2", fecha2);
+                command.Fill(dt);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+            return dt;
+        }
         #endregion
 
     }

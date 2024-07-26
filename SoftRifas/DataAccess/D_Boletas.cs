@@ -406,32 +406,5 @@ namespace DataAccess
             return dt;
         }
 
-        public static bool pagarReversarPagoComision(int boletaId, int idAbonoBoleta, int vendedorId, bool estado)
-        {
-            bool result = false;
-            try
-            {
-                con.Open();
-                string sql = "update tbl_abonos_boleta set abono_pagado=@estado where " +
-                    "id=@id and boleta_id=@boleta_id and vendedor_id=@vendedor_id";
-                SqlCommand command = new SqlCommand(sql, con);
-                command.CommandType = CommandType.Text;
-                command.Parameters.AddWithValue("@boleta_id", boletaId);
-                command.Parameters.AddWithValue("@vendedor_id", vendedorId);
-                command.Parameters.AddWithValue("@id", idAbonoBoleta);
-                command.Parameters.AddWithValue("@estado", estado);
-
-                result = Convert.ToInt32(command.ExecuteNonQuery()) != 0 ? true : false;
-            }
-            catch (Exception e)
-            {
-                throw new Exception(e.Message);
-            }
-            finally
-            {
-                con.Close();
-            }
-            return result;
-        }
     }
 }

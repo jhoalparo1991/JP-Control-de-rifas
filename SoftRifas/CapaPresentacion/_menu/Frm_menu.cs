@@ -157,7 +157,7 @@ namespace CapaPresentacion._menu
 
         private void Btn_pago_abonos_Click(object sender, EventArgs e)
         {
-            AbrirFormularioHijo(new Frm_pagos_abonos(), "Pago de comisiones");
+            AbrirFormularioHijo(new Frm_pago_comisiones(), "Pago de comisiones");
         }
 
         private void btnCerrarSesion_Click(object sender, EventArgs e)

@@ -199,16 +199,10 @@ namespace CapaPresentacion
             try
             {
 
-                DataTable dt = N_Reports.mostrarPagos(dateTimePicker5.Value, dateTimePicker6.Value);
+                DataTable dt = N_Reports.mostrarListadoComisionesPagadas(dateTimePicker5.Value, dateTimePicker6.Value);
                 RptPagosRealizados rpt = new RptPagosRealizados();
 
-                decimal totalVendidas = 0;
-                foreach (DataRow row in dt.Rows)
-                {
-                    totalVendidas += Convert.ToDecimal(row["valor_pagos"].ToString());
-                }
                 rpt.table1.DataSource = dt;
-                rpt.textBox11.Value = totalVendidas.ToString();
                 rpt.txt_fecha_ini.Value = dateTimePicker5.Value.ToShortDateString();
                 rpt.Txt_fecha_fin.Value = dateTimePicker6.Value.ToShortDateString();
                 reportViewer6.Report = rpt;
@@ -223,29 +217,6 @@ namespace CapaPresentacion
 
         private void button6_Click(object sender, EventArgs e)
         {
-            try
-            {
-
-                DataTable dt = N_Reports.mostrarDetallePagoComisiones(dateTimePicker7.Value, dateTimePicker8.Value);
-                RptPagoComisiones rpt = new RptPagoComisiones();
-
-                decimal totalVendidas = 0;
-                foreach (DataRow row in dt.Rows)
-                {
-                    totalVendidas += Convert.ToDecimal(row["valor_pagado"].ToString());
-                }
-                rpt.table1.DataSource = dt;
-                rpt.textBox11.Value = totalVendidas.ToString();
-                rpt.txt_fecha_ini.Value = dateTimePicker7.Value.ToShortDateString();
-                rpt.Txt_fecha_fin.Value = dateTimePicker8.Value.ToShortDateString();
-                reportViewer7.Report = rpt;
-                reportViewer7.RefreshReport();
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Aviso del sistema");
-            }
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -285,6 +256,7 @@ namespace CapaPresentacion
                 RptMostrarComisionesVendedores rpt = new RptMostrarComisionesVendedores();
              
                 rpt.table1.DataSource = dt;
+                rpt.txtVendedor.Value = cbx_vendedor.Text.Trim().ToUpper();
                 reportViewer9.Report = rpt;
                 reportViewer9.RefreshReport();
 
