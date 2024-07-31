@@ -387,10 +387,8 @@ namespace DataAccess
             try
             {
                 con.Open();
-                string sql = "select id,cliente_id,cliente,boleta_id,nro_boleta,valor_abono,valor_comision,abono_pagado " +
-                    "from v_listado_abonos where vendedor_id=@vendedor_id and valor_comision>0";
-                SqlDataAdapter data = new SqlDataAdapter(sql, con);
-                data.SelectCommand.CommandType = CommandType.Text;
+                SqlDataAdapter data = new SqlDataAdapter("sp_mostrar_abonos_boleta_por_vendedor", con);
+                data.SelectCommand.CommandType = CommandType.StoredProcedure;
                 data.SelectCommand.Parameters.AddWithValue("@vendedor_id", vendedorId);
                 data.Fill(dt);
 
