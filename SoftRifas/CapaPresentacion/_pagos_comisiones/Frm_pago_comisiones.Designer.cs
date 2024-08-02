@@ -35,6 +35,9 @@ namespace CapaPresentacion._pagos_comisiones
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvAbonosBoleta = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.txtTotalAbonos = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btnReportes = new System.Windows.Forms.Button();
             this.txtTotalComisionPendiente = new System.Windows.Forms.TextBox();
             this.txtTotalComisionPagada = new System.Windows.Forms.TextBox();
             this.txttotalComision = new System.Windows.Forms.TextBox();
@@ -43,12 +46,15 @@ namespace CapaPresentacion._pagos_comisiones
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnReportes = new System.Windows.Forms.Button();
-            this.txtTotalAbonos = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.dtFechaIni = new System.Windows.Forms.DateTimePicker();
+            this.dtFechaFinal = new System.Windows.Forms.DateTimePicker();
+            this.btnPagarTodos = new System.Windows.Forms.Button();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cliente_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha_abono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.boleta_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nro_boleta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.valor_abono = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,12 +68,16 @@ namespace CapaPresentacion._pagos_comisiones
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.dtFechaFinal);
+            this.panel1.Controls.Add(this.dtFechaIni);
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.cbxVendedores);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1028, 47);
+            this.panel1.Size = new System.Drawing.Size(844, 72);
             this.panel1.TabIndex = 0;
             // 
             // cbxVendedores
@@ -93,10 +103,10 @@ namespace CapaPresentacion._pagos_comisiones
             // 
             this.panel2.Controls.Add(this.dgvAbonosBoleta);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 47);
+            this.panel2.Location = new System.Drawing.Point(0, 72);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(10);
-            this.panel2.Size = new System.Drawing.Size(727, 543);
+            this.panel2.Size = new System.Drawing.Size(597, 413);
             this.panel2.TabIndex = 1;
             // 
             // dgvAbonosBoleta
@@ -109,6 +119,7 @@ namespace CapaPresentacion._pagos_comisiones
             this.id,
             this.cliente_id,
             this.cliente,
+            this.fecha_abono,
             this.boleta_id,
             this.nro_boleta,
             this.valor_abono,
@@ -122,12 +133,13 @@ namespace CapaPresentacion._pagos_comisiones
             this.dgvAbonosBoleta.RowTemplate.Height = 30;
             this.dgvAbonosBoleta.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvAbonosBoleta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvAbonosBoleta.Size = new System.Drawing.Size(707, 523);
+            this.dgvAbonosBoleta.Size = new System.Drawing.Size(577, 393);
             this.dgvAbonosBoleta.TabIndex = 0;
             this.dgvAbonosBoleta.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAbonosBoleta_CellClick);
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.btnPagarTodos);
             this.panel3.Controls.Add(this.txtTotalAbonos);
             this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.btnReportes);
@@ -140,105 +152,15 @@ namespace CapaPresentacion._pagos_comisiones
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(727, 47);
+            this.panel3.Location = new System.Drawing.Point(597, 72);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(301, 543);
+            this.panel3.Size = new System.Drawing.Size(247, 413);
             this.panel3.TabIndex = 2;
-            // 
-            // txtTotalComisionPendiente
-            // 
-            this.txtTotalComisionPendiente.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalComisionPendiente.Location = new System.Drawing.Point(39, 220);
-            this.txtTotalComisionPendiente.Name = "txtTotalComisionPendiente";
-            this.txtTotalComisionPendiente.ReadOnly = true;
-            this.txtTotalComisionPendiente.Size = new System.Drawing.Size(225, 38);
-            this.txtTotalComisionPendiente.TabIndex = 1;
-            this.txtTotalComisionPendiente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtTotalComisionPagada
-            // 
-            this.txtTotalComisionPagada.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalComisionPagada.Location = new System.Drawing.Point(39, 160);
-            this.txtTotalComisionPagada.Name = "txtTotalComisionPagada";
-            this.txtTotalComisionPagada.ReadOnly = true;
-            this.txtTotalComisionPagada.Size = new System.Drawing.Size(225, 38);
-            this.txtTotalComisionPagada.TabIndex = 1;
-            this.txtTotalComisionPagada.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txttotalComision
-            // 
-            this.txttotalComision.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txttotalComision.Location = new System.Drawing.Point(39, 100);
-            this.txttotalComision.Name = "txttotalComision";
-            this.txttotalComision.ReadOnly = true;
-            this.txttotalComision.Size = new System.Drawing.Size(225, 38);
-            this.txttotalComision.TabIndex = 1;
-            this.txttotalComision.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtNroAbonos
-            // 
-            this.txtNroAbonos.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNroAbonos.Location = new System.Drawing.Point(39, 40);
-            this.txtNroAbonos.Name = "txtNroAbonos";
-            this.txtNroAbonos.ReadOnly = true;
-            this.txtNroAbonos.Size = new System.Drawing.Size(225, 38);
-            this.txtNroAbonos.TabIndex = 1;
-            this.txtNroAbonos.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(57, 199);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(188, 20);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Total Comision pendiente";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(66, 139);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(171, 20);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Total Comision pagada";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(95, 79);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(113, 20);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Total Comision";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(95, 19);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(113, 20);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Nro de abonos";
-            // 
-            // btnReportes
-            // 
-            this.btnReportes.Location = new System.Drawing.Point(30, 367);
-            this.btnReportes.Name = "btnReportes";
-            this.btnReportes.Size = new System.Drawing.Size(93, 49);
-            this.btnReportes.TabIndex = 2;
-            this.btnReportes.Text = "Reportes";
-            this.btnReportes.UseVisualStyleBackColor = true;
-            this.btnReportes.Click += new System.EventHandler(this.btnReportes_Click);
             // 
             // txtTotalAbonos
             // 
             this.txtTotalAbonos.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalAbonos.Location = new System.Drawing.Point(39, 285);
+            this.txtTotalAbonos.Location = new System.Drawing.Point(9, 285);
             this.txtTotalAbonos.Name = "txtTotalAbonos";
             this.txtTotalAbonos.ReadOnly = true;
             this.txtTotalAbonos.Size = new System.Drawing.Size(225, 38);
@@ -249,21 +171,156 @@ namespace CapaPresentacion._pagos_comisiones
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(95, 261);
+            this.label6.Location = new System.Drawing.Point(65, 261);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(113, 20);
             this.label6.TabIndex = 3;
             this.label6.Text = "Total Abonado";
             // 
+            // btnReportes
+            // 
+            this.btnReportes.Location = new System.Drawing.Point(9, 329);
+            this.btnReportes.Name = "btnReportes";
+            this.btnReportes.Size = new System.Drawing.Size(93, 28);
+            this.btnReportes.TabIndex = 2;
+            this.btnReportes.Text = "Reportes";
+            this.btnReportes.UseVisualStyleBackColor = true;
+            this.btnReportes.Click += new System.EventHandler(this.btnReportes_Click);
+            // 
+            // txtTotalComisionPendiente
+            // 
+            this.txtTotalComisionPendiente.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalComisionPendiente.Location = new System.Drawing.Point(9, 220);
+            this.txtTotalComisionPendiente.Name = "txtTotalComisionPendiente";
+            this.txtTotalComisionPendiente.ReadOnly = true;
+            this.txtTotalComisionPendiente.Size = new System.Drawing.Size(225, 38);
+            this.txtTotalComisionPendiente.TabIndex = 1;
+            this.txtTotalComisionPendiente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtTotalComisionPagada
+            // 
+            this.txtTotalComisionPagada.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalComisionPagada.Location = new System.Drawing.Point(9, 160);
+            this.txtTotalComisionPagada.Name = "txtTotalComisionPagada";
+            this.txtTotalComisionPagada.ReadOnly = true;
+            this.txtTotalComisionPagada.Size = new System.Drawing.Size(225, 38);
+            this.txtTotalComisionPagada.TabIndex = 1;
+            this.txtTotalComisionPagada.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txttotalComision
+            // 
+            this.txttotalComision.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txttotalComision.Location = new System.Drawing.Point(9, 100);
+            this.txttotalComision.Name = "txttotalComision";
+            this.txttotalComision.ReadOnly = true;
+            this.txttotalComision.Size = new System.Drawing.Size(225, 38);
+            this.txttotalComision.TabIndex = 1;
+            this.txttotalComision.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtNroAbonos
+            // 
+            this.txtNroAbonos.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNroAbonos.Location = new System.Drawing.Point(9, 40);
+            this.txtNroAbonos.Name = "txtNroAbonos";
+            this.txtNroAbonos.ReadOnly = true;
+            this.txtNroAbonos.Size = new System.Drawing.Size(225, 38);
+            this.txtNroAbonos.TabIndex = 1;
+            this.txtNroAbonos.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(27, 199);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(188, 20);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Total Comision pendiente";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(36, 139);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(171, 20);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Total Comision pagada";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(65, 79);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(113, 20);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Total Comision";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(65, 19);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(113, 20);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Nro de abonos";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(12, 41);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(83, 17);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "Fecha Inicio";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(238, 41);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(81, 17);
+            this.label8.TabIndex = 3;
+            this.label8.Text = "Fecha Final";
+            // 
+            // dtFechaIni
+            // 
+            this.dtFechaIni.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtFechaIni.Location = new System.Drawing.Point(101, 38);
+            this.dtFechaIni.Name = "dtFechaIni";
+            this.dtFechaIni.Size = new System.Drawing.Size(124, 23);
+            this.dtFechaIni.TabIndex = 4;
+            this.dtFechaIni.ValueChanged += new System.EventHandler(this.dtFechaIni_ValueChanged);
+            // 
+            // dtFechaFinal
+            // 
+            this.dtFechaFinal.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtFechaFinal.Location = new System.Drawing.Point(327, 38);
+            this.dtFechaFinal.Name = "dtFechaFinal";
+            this.dtFechaFinal.Size = new System.Drawing.Size(124, 23);
+            this.dtFechaFinal.TabIndex = 5;
+            this.dtFechaFinal.ValueChanged += new System.EventHandler(this.dtFechaFinal_ValueChanged);
+            // 
+            // btnPagarTodos
+            // 
+            this.btnPagarTodos.Location = new System.Drawing.Point(108, 329);
+            this.btnPagarTodos.Name = "btnPagarTodos";
+            this.btnPagarTodos.Size = new System.Drawing.Size(126, 28);
+            this.btnPagarTodos.TabIndex = 5;
+            this.btnPagarTodos.Text = "Pagar Todos";
+            this.btnPagarTodos.UseVisualStyleBackColor = true;
+            this.btnPagarTodos.Click += new System.EventHandler(this.btnPagarTodos_Click);
+            // 
             // id
             // 
             this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.id.DataPropertyName = "id";
-            this.id.HeaderText = "Id";
+            this.id.HeaderText = "Codigo";
             this.id.Name = "id";
             this.id.ReadOnly = true;
-            this.id.Visible = false;
-            this.id.Width = 25;
+            this.id.Width = 77;
             // 
             // cliente_id
             // 
@@ -273,7 +330,7 @@ namespace CapaPresentacion._pagos_comisiones
             this.cliente_id.Name = "cliente_id";
             this.cliente_id.ReadOnly = true;
             this.cliente_id.Visible = false;
-            this.cliente_id.Width = 74;
+            this.cliente_id.Width = 93;
             // 
             // cliente
             // 
@@ -282,6 +339,15 @@ namespace CapaPresentacion._pagos_comisiones
             this.cliente.HeaderText = "Cliente";
             this.cliente.Name = "cliente";
             this.cliente.ReadOnly = true;
+            // 
+            // fecha_abono
+            // 
+            this.fecha_abono.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.fecha_abono.DataPropertyName = "fecha_abono";
+            this.fecha_abono.HeaderText = "F. Abono";
+            this.fecha_abono.Name = "fecha_abono";
+            this.fecha_abono.ReadOnly = true;
+            this.fecha_abono.Width = 90;
             // 
             // boleta_id
             // 
@@ -335,7 +401,7 @@ namespace CapaPresentacion._pagos_comisiones
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1028, 590);
+            this.ClientSize = new System.Drawing.Size(844, 485);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
@@ -372,9 +438,15 @@ namespace CapaPresentacion._pagos_comisiones
         private System.Windows.Forms.Button btnReportes;
         private System.Windows.Forms.TextBox txtTotalAbonos;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DateTimePicker dtFechaFinal;
+        private System.Windows.Forms.DateTimePicker dtFechaIni;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btnPagarTodos;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn cliente_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn cliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fecha_abono;
         private System.Windows.Forms.DataGridViewTextBoxColumn boleta_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn nro_boleta;
         private System.Windows.Forms.DataGridViewTextBoxColumn valor_abono;

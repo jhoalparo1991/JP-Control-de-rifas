@@ -67,9 +67,9 @@ namespace Domain
             return D_Boletas.cambiarClienteBoleta(boletaId, clienteId);
         }
 
-        public static DataTable mostrarAbonosBoletaPorVendedor(int vendedorId)
+        public static DataTable mostrarAbonosBoletaPorVendedor(int vendedorId, DateTime fechaIni, DateTime fechaFin)
         {
-            return D_Boletas.mostrarAbonosBoletaPorVendedor(vendedorId);
+            return D_Boletas.mostrarAbonosBoletaPorVendedor(vendedorId,fechaIni,fechaFin);
         }
 
 

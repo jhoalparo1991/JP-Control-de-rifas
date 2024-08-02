@@ -51,6 +51,11 @@ namespace Domain
         {
             return D_Pagos.mostrarPagoComisionPorVendedor(vendedorId, fecha1, fecha2);
         }
+
+        public static bool sp_pagar_comision_vendedor_por_fecha(int vendedorId, DateTime fecha1, DateTime fecha2)
+        {
+            return D_Pagos.sp_pagar_comision_vendedor_por_fecha(vendedorId, fecha1, fecha2);
+        }
         #endregion
 
     }

@@ -74,7 +74,7 @@ namespace CapaPresentacion._pagos_comisiones
             try
             {
                 DataTable dt = new DataTable();
-                dt=  N_Boletas.mostrarAbonosBoletaPorVendedor(_vendedorId);
+                dt=  N_Boletas.mostrarAbonosBoletaPorVendedor(_vendedorId,dtFechaIni.Value,dtFechaFinal.Value);
                 dgvAbonosBoleta.DataSource = dt;
 
                 txtNroAbonos.Text = dgvAbonosBoleta.Rows.Count.ToString();
@@ -171,8 +171,51 @@ namespace CapaPresentacion._pagos_comisiones
                 txtTotalComisionPendiente.Text.Trim(),
                 cbxVendedores.Text);
             //frm.mostrarInformacionComisionesVendedor(_nroAbonos, 0, 0, 0,cbxVendedores.Text);
-            frm.mostrarTotalAbonos(_vendedorId, cbxVendedores.Text);
+            frm.mostrarTotalAbonos(_vendedorId, cbxVendedores.Text, dtFechaIni.Value, dtFechaFinal.Value);
             frm.ShowDialog();
+        }
+
+        private void dtFechaFinal_ValueChanged(object sender, EventArgs e)
+        {
+            mostrarAbonosBoletaPorVendedores();
+        }
+
+        private void dtFechaIni_ValueChanged(object sender, EventArgs e)
+        {
+            mostrarAbonosBoletaPorVendedores();
+        }
+
+        private void btnPagarTodos_Click(object sender, EventArgs e)
+        {
+
+            if(dgvAbonosBoleta.Rows.Count <= 0)
+            {
+                MessageBox.Show("Debes tener registros disponibles");
+                return;
+            }
+
+            try
+            {
+                DialogResult dialog = MessageBox.Show("Deseas hacer un pago de comision en bloque, estas seguro?",
+                    "Mensaje de confirmacion", MessageBoxButtons.OKCancel,
+                    MessageBoxIcon.Question);
+
+                if(dialog == DialogResult.OK)
+                {
+                    int vendedorId = Convert.ToInt32(cbxVendedores.SelectedValue);
+                    N_Pagos.sp_pagar_comision_vendedor_por_fecha(vendedorId, dtFechaIni.Value, dtFechaFinal.Value);
+                    mostrarAbonosBoletaPorVendedores();
+                    MessageBox.Show("Pagos realizados de manera exitosa", "Aviso del sistema");
+                }
+                else
+                {
+                    MessageBox.Show("Operacion cancelada", "Aviso del sistema");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Aviso del sistema");
+            }
         }
     }
 }

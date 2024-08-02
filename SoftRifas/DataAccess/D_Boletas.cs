@@ -381,7 +381,7 @@ namespace DataAccess
             return result;
         }
 
-        public static DataTable mostrarAbonosBoletaPorVendedor(int vendedorId)
+        public static DataTable mostrarAbonosBoletaPorVendedor(int vendedorId,DateTime fechaIni, DateTime fechaFin)
         {
             DataTable dt = new DataTable();
             try
@@ -390,6 +390,8 @@ namespace DataAccess
                 SqlDataAdapter data = new SqlDataAdapter("sp_mostrar_abonos_boleta_por_vendedor", con);
                 data.SelectCommand.CommandType = CommandType.StoredProcedure;
                 data.SelectCommand.Parameters.AddWithValue("@vendedor_id", vendedorId);
+                data.SelectCommand.Parameters.AddWithValue("@fecha_ini", fechaIni);
+                data.SelectCommand.Parameters.AddWithValue("@fecha_fin", fechaFin);
                 data.Fill(dt);
 
             }

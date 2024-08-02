@@ -265,6 +265,33 @@ namespace DataAccess
             }
             return dt;
         }
+
+        public static bool sp_pagar_comision_vendedor_por_fecha(int vendedorId, DateTime fecha1, DateTime fecha2)
+        {
+            bool result = false;
+            try
+            {
+                con.Open();
+                SqlCommand command = new SqlCommand("sp_pagar_comision_vendedor_por_fecha", con);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@vendedor_id", vendedorId);
+                command.Parameters.AddWithValue("@fecha_ini", fecha1);
+                command.Parameters.AddWithValue("@fecha_fin", fecha2);
+
+                result = Convert.ToInt32(command.ExecuteNonQuery()) != 0 ? true : false;
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+            return result;
+        }
+
+
         #endregion
 
     }

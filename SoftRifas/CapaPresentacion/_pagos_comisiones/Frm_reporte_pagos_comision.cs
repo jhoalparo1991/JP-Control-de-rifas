@@ -61,13 +61,13 @@ namespace CapaPresentacion._pagos_comisiones
             }
         }
 
-        public void mostrarTotalAbonos( int _vendedorId, string vendedor)
+        public void mostrarTotalAbonos( int _vendedorId, string vendedor,DateTime fechaIni, DateTime fechaFin)
         {
             try
             {
 
                 DataTable dt = new DataTable();
-                dt = N_Boletas.mostrarAbonosBoletaPorVendedor(_vendedorId);
+                dt = N_Boletas.mostrarAbonosBoletaPorVendedor(_vendedorId,fechaIni, fechaFin);
                 rptInfoAbonos  rpt = new rptInfoAbonos();
                 //rpt.DataSource = dt;
 
