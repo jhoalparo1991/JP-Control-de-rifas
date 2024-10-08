@@ -1,6 +1,7 @@
 ﻿using CapaPresentacion._auxiliar_instalacion;
 using CapaPresentacion._clientes;
 using CapaPresentacion._egresos;
+using CapaPresentacion._logs;
 using CapaPresentacion._pagos;
 using CapaPresentacion._pagos_comisiones;
 using CapaPresentacion._rifas_boletas;
@@ -47,6 +48,7 @@ namespace CapaPresentacion._menu
 
         private void AbrirFormularioHijo(Form childForm, string title)
         {
+            _helpers.Sesion.guardarDatosLog("Abrió o intentó abrir el menu -- " + title);
             //open only form
             if (currentChildForm != null)
             {
@@ -71,6 +73,25 @@ namespace CapaPresentacion._menu
                 if(sesion != null)
                 {
                     Lbl_usuario.Text = sesion.NombreCompleto.ToString();
+                    UsuariosPermisos permiso = _helpers.Sesion.permisosUsuarios(sesion.UsuarioId);
+
+                    if(permiso != null)
+                    {
+                        //MessageBox.Show(permiso.Boletas.ToString());
+                        Btn_usuario.Enabled = permiso.Vendedores;
+                        Btn_clientes.Enabled = permiso.Clientes;
+                        Btn_rifas.Enabled = permiso.Rifas;
+                        Btn_boletas.Enabled = permiso.Boletas;
+                        Btn_pago_abonos.Enabled = permiso.PagoComisiones;
+                        Btn_reportes.Enabled = permiso.Reportes;
+                        btnRegistrarGastos.Enabled = permiso.Egresos;
+                        btnTiposGastos.Enabled = permiso.CrearTipoEgreso;
+                        Btn_config.Enabled = permiso.CrearCopiaSeguridad;
+                    }
+                    else
+                    {
+                        _helpers.Sesion.guardarDatosLog("Error con los permisos");
+                    }
                 }
             }
             catch (Exception e)
@@ -145,6 +166,7 @@ namespace CapaPresentacion._menu
 
         private void Btn_info_Click(object sender, EventArgs e)
         {
+            _helpers.Sesion.guardarDatosLog("Abrió la opcion de informacion del sistema");
             Frm_about frm = new Frm_about();
             frm.ShowDialog();
         }
@@ -162,6 +184,7 @@ namespace CapaPresentacion._menu
 
         private void btnCerrarSesion_Click(object sender, EventArgs e)
         {
+            _helpers.Sesion.guardarDatosLog("Cerró sesion");
             this.Dispose();
             Frm_login frm = new Frm_login();
             frm.ShowDialog();
@@ -180,6 +203,16 @@ namespace CapaPresentacion._menu
         private void btnRegistrarGastos_Click(object sender, EventArgs e)
         {
             AbrirFormularioHijo(new Frm_gastos(), "Gastos");
+        }
+
+        private void Frm_menu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            _helpers.Sesion.guardarDatosLog("Cerró el sistema");
+        }
+
+        private void Btn_logs_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo(new Frm_logs(), "Logs");
         }
     }
 }

@@ -19,6 +19,7 @@ namespace CapaPresentacion
             mostrarVendedores(cbx_vendedor);
             mostrarVendedores(Cbx_vendedor_01);
             mostrarReporteTotalCaja();
+            _helpers.Sesion.guardarDatosLog("REPORTES - formualrio de reportes");
         }
         private void mostrarVendedores(ComboBox cbx)
         {
@@ -40,6 +41,7 @@ namespace CapaPresentacion
         {
             try
             {
+                _helpers.Sesion.guardarDatosLog("REPORTES - Mostrar rifas");
                 List<Rifas> rifas = N_Rifas.mostrarRifas();
                 cbx_rifa.DataSource = rifas;
                 cbx_rifa.DisplayMember = "descripcion";
@@ -55,7 +57,7 @@ namespace CapaPresentacion
         {
             try
             {
-
+                _helpers.Sesion.guardarDatosLog("REPORTES - cargar estados boletas");
                 DataTable dt = N_Reports.ObtenerEstadosBoletas();
                 RptEstadosBoletas rpt = new RptEstadosBoletas();
                 SubReport subReport1 = new SubReport();
@@ -76,7 +78,7 @@ namespace CapaPresentacion
         {
             try
             {
-
+                _helpers.Sesion.guardarDatosLog("REPORTES - mostrar boletas por numeros");
                 int nroBoleta = Convert.ToInt32(Txt_nro_boleta.Text.Trim());
                 DataTable dt = N_Reports.mostrarAbonosPorBoleta(nroBoleta.ToString("D4"));
 
@@ -117,7 +119,7 @@ namespace CapaPresentacion
         {
             try
             {
-
+                _helpers.Sesion.guardarDatosLog("REPORTES - Boletas vendidas");
                 DataTable dt = N_Reports.mostrarboletasVendidasPorVendedores();
                 RptVendidasPorVendedores rpt = new RptVendidasPorVendedores();
                 //rpt.DataSource = dt;
@@ -144,7 +146,7 @@ namespace CapaPresentacion
         {
             try
             {
-
+                _helpers.Sesion.guardarDatosLog("REPORTES - Formas de pago");
                 DataTable dt = N_Reports.mostrarReporteFormasPago(dateTimePicker1.Value,dateTimePicker2.Value,
                     Convert.ToInt32(cbx_rifa.SelectedValue));
                 RptMostrarAbonosPorFormasDePago rpt = new RptMostrarAbonosPorFormasDePago();
@@ -172,7 +174,7 @@ namespace CapaPresentacion
         {
             try
             {
-
+                _helpers.Sesion.guardarDatosLog("REPORTES - Filtrar abonos fecha valor");
                 DataTable dt = N_Reports.mostrarAbonosFechaValor(dateTimePicker3.Value, dateTimePicker4.Value,
                     Convert.ToDecimal(textBox1.Text.Trim()));
                 RptAbonosFechaMonto rpt = new RptAbonosFechaMonto();
@@ -198,7 +200,7 @@ namespace CapaPresentacion
         {
             try
             {
-
+                _helpers.Sesion.guardarDatosLog("REPORTES - Comisiones pagadas");
                 DataTable dt = N_Reports.mostrarListadoComisionesPagadas(dateTimePicker5.Value, dateTimePicker6.Value);
                 RptPagosRealizados rpt = new RptPagosRealizados();
 
@@ -226,7 +228,7 @@ namespace CapaPresentacion
 
                 DataTable dt = N_Reports.mostrarAbonos();
                 RptMostrarTodosAbonos rpt = new RptMostrarTodosAbonos();
-
+                _helpers.Sesion.guardarDatosLog("REPORTES - Mostrar todos los abonos");
                 decimal totalAbonos = 0;
                 decimal totalComisiones= 0;
                 foreach (DataRow row in dt.Rows)
@@ -254,7 +256,7 @@ namespace CapaPresentacion
 
                 DataTable dt = N_Reports.mostrarPagoComisionesPorVendedores(Convert.ToInt32(cbx_vendedor.SelectedValue));
                 RptMostrarComisionesVendedores rpt = new RptMostrarComisionesVendedores();
-             
+                _helpers.Sesion.guardarDatosLog("REPORTES - Mostrar comisiones pagadas por vendedores");
                 rpt.table1.DataSource = dt;
                 rpt.txtVendedor.Value = cbx_vendedor.Text.Trim().ToUpper();
                 reportViewer9.Report = rpt;
@@ -271,7 +273,7 @@ namespace CapaPresentacion
         {
             try
             {
-
+                _helpers.Sesion.guardarDatosLog("REPORTES - mostrar abonos por vendedores");
                 DataTable dt = N_Reports.mostrarAbonosComisionesPorVendedores(dateTimePicker9.Value, dateTimePicker10.Value,
                     Convert.ToInt32(Cbx_vendedor_01.SelectedValue));
                
@@ -307,7 +309,7 @@ namespace CapaPresentacion
         {
             try
             {
-
+                _helpers.Sesion.guardarDatosLog("REPORTES - gastos");
                 DateTime fechaIni = Convert.ToDateTime(dateTimePicker11.Text);
                 DateTime fechaFin= Convert.ToDateTime(dateTimePicker12.Text);
 
@@ -342,6 +344,7 @@ namespace CapaPresentacion
         {
             try
             {
+                _helpers.Sesion.guardarDatosLog("REPORTES - Caja");
                 string fecha1 = dateTimePicker13.Text;
                 string fecha2 = dateTimePicker14.Text;
                 DataTable dt = N_Reports.mostrarReporteCaja(fecha1,fecha2);
@@ -392,6 +395,7 @@ namespace CapaPresentacion
         {
             try
             {
+                _helpers.Sesion.guardarDatosLog("REPORTES - reporte abonos por formas de pago");
                 DateTime fecha1 = Convert.ToDateTime(dtFecha15.Text);
                 DateTime fecha2 = Convert.ToDateTime(dtFecha16.Text);
                 string formaPago = cbxFormaPago.Text.Trim();
@@ -431,6 +435,7 @@ namespace CapaPresentacion
 
         private void cargaInicial()
         {
+            _helpers.Sesion.guardarDatosLog("REPORTES - Acumulados");
             cargarTotalcomisionesPagada();
             cargarTotalGastos();
             cargarTotalAbonos();
@@ -444,6 +449,7 @@ namespace CapaPresentacion
         {
             try
             {
+           
                 DataTable dt = N_Reports.mostrarTotalComisionesPagadas();
 
                 Lbl_total_comisiones_paga.Text =Convert.ToDecimal(dt.Rows[0]["comision"].ToString()).ToString("C2");

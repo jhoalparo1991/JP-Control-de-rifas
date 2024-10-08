@@ -38,11 +38,6 @@ namespace CapaPresentacion._egresos
             this.Btn_cerrar_ventana = new System.Windows.Forms.Button();
             this.error = new System.Windows.Forms.ErrorProvider(this.components);
             this.Dgv = new System.Windows.Forms.DataGridView();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.Lbl_total = new System.Windows.Forms.ToolStripStatusLabel();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TipoGastoId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UsuarioId = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,6 +50,11 @@ namespace CapaPresentacion._egresos
             this.btn_editar_egreso = new System.Windows.Forms.DataGridViewImageColumn();
             this.btn_borrar_egreso = new System.Windows.Forms.DataGridViewImageColumn();
             this.btn_imprimir = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.Lbl_total = new System.Windows.Forms.ToolStripStatusLabel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
@@ -175,44 +175,6 @@ namespace CapaPresentacion._egresos
             this.Dgv.TabIndex = 1;
             this.Dgv.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_CellClick);
             // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewImageColumn1.HeaderText = "Editar";
-            this.dataGridViewImageColumn1.Image = global::CapaPresentacion.Properties.Resources.editar24_gris;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.Visible = false;
-            // 
-            // dataGridViewImageColumn2
-            // 
-            this.dataGridViewImageColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewImageColumn2.HeaderText = "Borrar";
-            this.dataGridViewImageColumn2.Image = global::CapaPresentacion.Properties.Resources.borrar24_gris;
-            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1,
-            this.Lbl_total});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 393);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(879, 22);
-            this.statusStrip1.TabIndex = 2;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // toolStripStatusLabel1
-            // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(75, 17);
-            this.toolStripStatusLabel1.Text = "Total Egresos";
-            // 
-            // Lbl_total
-            // 
-            this.Lbl_total.Name = "Lbl_total";
-            this.Lbl_total.Size = new System.Drawing.Size(13, 17);
-            this.Lbl_total.Text = "0";
-            // 
             // id
             // 
             this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -221,7 +183,6 @@ namespace CapaPresentacion._egresos
             this.id.Name = "id";
             this.id.ReadOnly = true;
             this.id.Visible = false;
-            this.id.Width = 29;
             // 
             // TipoGastoId
             // 
@@ -231,7 +192,6 @@ namespace CapaPresentacion._egresos
             this.TipoGastoId.Name = "TipoGastoId";
             this.TipoGastoId.ReadOnly = true;
             this.TipoGastoId.Visible = false;
-            this.TipoGastoId.Width = 103;
             // 
             // UsuarioId
             // 
@@ -241,7 +201,6 @@ namespace CapaPresentacion._egresos
             this.UsuarioId.Name = "UsuarioId";
             this.UsuarioId.ReadOnly = true;
             this.UsuarioId.Visible = false;
-            this.UsuarioId.Width = 84;
             // 
             // Codigo
             // 
@@ -320,6 +279,44 @@ namespace CapaPresentacion._egresos
             this.btn_imprimir.Image = global::CapaPresentacion.Properties.Resources.imprimir;
             this.btn_imprimir.Name = "btn_imprimir";
             this.btn_imprimir.ReadOnly = true;
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewImageColumn1.HeaderText = "Editar";
+            this.dataGridViewImageColumn1.Image = global::CapaPresentacion.Properties.Resources.editar24_gris;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Visible = false;
+            // 
+            // dataGridViewImageColumn2
+            // 
+            this.dataGridViewImageColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewImageColumn2.HeaderText = "Borrar";
+            this.dataGridViewImageColumn2.Image = global::CapaPresentacion.Properties.Resources.borrar24_gris;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1,
+            this.Lbl_total});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 393);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(879, 22);
+            this.statusStrip1.TabIndex = 2;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(75, 17);
+            this.toolStripStatusLabel1.Text = "Total Egresos";
+            // 
+            // Lbl_total
+            // 
+            this.Lbl_total.Name = "Lbl_total";
+            this.Lbl_total.Size = new System.Drawing.Size(13, 17);
+            this.Lbl_total.Text = "0";
             // 
             // Frm_gastos
             // 

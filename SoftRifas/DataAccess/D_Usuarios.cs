@@ -56,7 +56,7 @@ namespace DataAccess
                         Celular = reader["celular"].ToString(),
                         Clave = reader["clave"].ToString(),
                         Comision = Convert.ToDecimal(reader["comision"]),
-                        IsAdmin = Convert.ToBoolean(reader["is_admin"]),
+                        Activo = Convert.ToBoolean(reader["activo"]),
                     });
                 }
             }
@@ -123,10 +123,10 @@ namespace DataAccess
             {
                 con.Open();
                 StringBuilder builder = new StringBuilder();
-                builder.Append("select a.id,a.usuario_id,b.nombre_completo,b.is_admin,");
+                builder.Append("select a.id,a.usuario_id,b.nombre_completo,b.activo,");
                 builder.Append("a.fecha from tbl_inicio_sesion a ");
                 builder.Append("inner join tbl_usuarios b on a.usuario_id=b.id ");
-                builder.Append("where a.terminal =@terminal");
+                builder.Append("where a.terminal =@terminal and a.estado=1");
                 SqlCommand command = new SqlCommand(builder.ToString(), con);
                 command.CommandType = CommandType.Text;
                 command.Parameters.AddWithValue("terminal",Environment.MachineName.Trim());
@@ -138,7 +138,7 @@ namespace DataAccess
                         Id = Convert.ToInt32(reader["id"]),
                         UsuarioId = Convert.ToInt32(reader["usuario_id"]),
                         NombreCompleto = reader["nombre_completo"].ToString(),
-                        IsAdmin = Convert.ToBoolean(reader["is_admin"]),
+                        Activo = Convert.ToBoolean(reader["activo"]),
                         Fecha = Convert.ToDateTime(reader["fecha"]),
                     };
                 }
@@ -169,7 +169,7 @@ namespace DataAccess
                 command.Parameters.AddWithValue("telefono", obj.Telefono);
                 command.Parameters.AddWithValue("clave", obj.Clave);
                 command.Parameters.AddWithValue("comision", obj.Comision);
-                command.Parameters.AddWithValue("is_admin", obj.IsAdmin);
+                command.Parameters.AddWithValue("activo", obj.Activo);
 
                 result = Convert.ToInt32(command.ExecuteNonQuery()) != 0 ? true : false;
             }
@@ -200,7 +200,7 @@ namespace DataAccess
                 command.Parameters.AddWithValue("telefono", obj.Telefono);
                 command.Parameters.AddWithValue("clave", obj.Clave);
                 command.Parameters.AddWithValue("comision", obj.Comision);
-                command.Parameters.AddWithValue("is_admin", obj.IsAdmin);
+                command.Parameters.AddWithValue("activo", obj.Activo);
                 //Permisos
                 command.Parameters.AddWithValue("vendedores", obj2.Vendedores);
                 command.Parameters.AddWithValue("clientes", obj2.Clientes);

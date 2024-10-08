@@ -40,7 +40,7 @@ namespace CapaPresentacion._helpers
 
         public static void agregarPaginas(TabControl control, Form form, string titulo)
         {
-
+            _helpers.Sesion.guardarDatosLog("Se abrió la pagina - " + titulo);
             form.TopLevel = false;
             form.Visible = true;
             form.BringToFront();
@@ -54,7 +54,7 @@ namespace CapaPresentacion._helpers
 
         public static void agregarFormPanel(Form form, Panel panel)
         {
-
+            _helpers.Sesion.guardarDatosLog("Se muestra el formulario - " + form.Text);
             form.TopLevel = false;
             form.Visible = true;
             form.BringToFront();

@@ -383,6 +383,13 @@
     </Compile>
     <Compile Include="_helpers\DatosMaestros.cs" />
     <Compile Include="_helpers\Disenios.cs" />
+    <Compile Include="_helpers\Sesion.cs" />
+    <Compile Include="_logs\Frm_logs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_logs\Frm_logs.Designer.cs">
+      <DependentUpon>Frm_logs.cs</DependentUpon>
+    </Compile>
     <Compile Include="_menu\Frm_about.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -620,6 +627,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="_egresos\Frm_tipos_de_gastos.resx">
       <DependentUpon>Frm_tipos_de_gastos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_logs\Frm_logs.resx">
+      <DependentUpon>Frm_logs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="_menu\Frm_about.resx">
       <DependentUpon>Frm_about.cs</DependentUpon>

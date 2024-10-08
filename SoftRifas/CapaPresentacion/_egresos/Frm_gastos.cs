@@ -12,12 +12,37 @@ namespace CapaPresentacion._egresos
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
+            mostrarDatosSesion();
             _helpers.Formularios.marcarCampoSeleccionado(this.Controls);
             _helpers.Disenios.dataGridView(Dgv);
             mostrarGastos();
+            _helpers.Sesion.guardarDatosLog("Se cargan todos los gastos");
         }
         private int gastoId = 0;
         #region metodos
+        private void mostrarDatosSesion()
+        {
+            try
+            {
+                InicioSesion sesion = N_Usuarios.mostrarUsuarioSesion();
+                if (sesion != null)
+                {
+                    UsuariosPermisos permiso = _helpers.Sesion.permisosUsuarios(sesion.UsuarioId);
+
+                    if (permiso != null)
+                    {
+                        Btn_nuevos.Visible = permiso.CrearEgreso;
+                        Dgv.Columns["btn_imprimir"].Visible = permiso.ImprimirEgreso;
+                        Dgv.Columns["btn_editar_egreso"].Visible = permiso.EditarEgreso;
+                        Dgv.Columns["btn_borrar_egreso"].Visible = permiso.BorrarEgreso;
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                _helpers.Mensajes.mensajeErrorException(e);
+            }
+        }
         public void mostrarGastos()
         {
             try
@@ -86,6 +111,7 @@ namespace CapaPresentacion._egresos
                 {
                     N_Gastos.borrar(gastoId);
                     mostrarGastos();
+                    _helpers.Sesion.guardarDatosLog("Elimina gasto con codigo #" + gastoId);
                     gastoId = 0;
                 }
 
@@ -119,6 +145,7 @@ namespace CapaPresentacion._egresos
                     frm.txt_descripcion.Text = Dgv.CurrentRow.Cells["Descripcion"].Value.ToString();
                     frm.txt_valor.Text = Dgv.CurrentRow.Cells["Valor"].Value.ToString();
                     frm.dt_fecha.Text = Dgv.CurrentRow.Cells["Fecha"].Value.ToString();
+                    _helpers.Sesion.guardarDatosLog("Obtiene datos del gasto para modificarlo");
                     frm.ShowDialog();
                 }
                 else if (Dgv.Columns[e.ColumnIndex].Name == "btn_borrar_egreso")
@@ -127,6 +154,7 @@ namespace CapaPresentacion._egresos
                 }
                 else if (Dgv.Columns[e.ColumnIndex].Name == "btn_imprimir")
                 {
+                    _helpers.Sesion.guardarDatosLog("Imprime el gasto seleccionado #"+ gastoId);
                     Frm_reporte_egresos frm = new Frm_reporte_egresos();
                     frm.gastoId = gastoId;
                     frm.mostrarGasto();

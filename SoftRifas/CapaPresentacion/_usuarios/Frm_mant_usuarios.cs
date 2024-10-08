@@ -35,6 +35,7 @@ namespace CapaPresentacion._usuarios
             Txt_tel.Text = string.Empty;
             Txt_clave.Enabled = true;
             Txt_nombres.Select();
+            Chk_activo.Checked = true;
             iniciarPermisos(false);
             
         }
@@ -53,7 +54,7 @@ namespace CapaPresentacion._usuarios
             Chk_editar_egreso.Checked = estado;
             Chk_egresos.Checked = estado;
             Chk_imprimir_egreso.Checked = estado;
-            Chk_is_admin.Checked = estado;
+            Chk_activo.Checked = estado;
             Chk_pago_comisiones.Checked = estado;
             Chk_registrar_abonos.Checked = estado;
             Chk_reportes.Checked = estado;
@@ -84,7 +85,7 @@ namespace CapaPresentacion._usuarios
                 }
 
 
-                if (Convert.ToBoolean(Chk_is_admin.CheckState) == true)
+                if (Convert.ToBoolean(Chk_activo.CheckState) == true)
                 {
 
                     if (string.IsNullOrEmpty(Txt_clave.Text.Trim()))
@@ -105,7 +106,7 @@ namespace CapaPresentacion._usuarios
                     Celular = Txt_cel.Text.Trim(),
                     Clave = Txt_clave.Text.Trim(),
                     Comision = Convert.ToDecimal(Txt_comision.Text.Trim()),
-                    IsAdmin = Convert.ToBoolean(Chk_is_admin.CheckState),
+                    Activo = Convert.ToBoolean(Chk_activo.CheckState),
                 };
 
                 UsuariosPermisos obj2 = new UsuariosPermisos()
@@ -131,6 +132,7 @@ namespace CapaPresentacion._usuarios
 
                 if (N_Usuarios.registrarVendedor(obj,obj2))
                 {
+                    _helpers.Sesion.guardarDatosLog("USUARIOS - usuario guardado con exito");
                     limpiar();
                     frm.mostrarUsuarios();
                 }

@@ -96,6 +96,7 @@ namespace CapaPresentacion._egresos
             this.Name = "Frm_reporte_egresos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_reporte_egresos";
+            this.Load += new System.EventHandler(this.Frm_reporte_egresos_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

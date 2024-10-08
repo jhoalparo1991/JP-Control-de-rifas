@@ -65,6 +65,7 @@ namespace CapaPresentacion._menu
             this.Btn_maximizar = new FontAwesome.Sharp.IconButton();
             this.Btn_cerrar = new FontAwesome.Sharp.IconButton();
             this.panelEscritorio = new System.Windows.Forms.Panel();
+            this.Btn_logs = new FontAwesome.Sharp.IconButton();
             this.statusStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelGastos.SuspendLayout();
@@ -165,6 +166,7 @@ namespace CapaPresentacion._menu
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Green;
+            this.panel1.Controls.Add(this.Btn_logs);
             this.panel1.Controls.Add(this.panelGastos);
             this.panel1.Controls.Add(this.Btn_reportes);
             this.panel1.Controls.Add(this.Btn_pago_abonos);
@@ -602,6 +604,29 @@ namespace CapaPresentacion._menu
             this.panelEscritorio.Size = new System.Drawing.Size(819, 617);
             this.panelEscritorio.TabIndex = 5;
             // 
+            // Btn_logs
+            // 
+            this.Btn_logs.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btn_logs.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Btn_logs.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.Btn_logs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_logs.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_logs.ForeColor = System.Drawing.Color.White;
+            this.Btn_logs.IconChar = FontAwesome.Sharp.IconChar.Route;
+            this.Btn_logs.IconColor = System.Drawing.Color.White;
+            this.Btn_logs.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Btn_logs.IconSize = 32;
+            this.Btn_logs.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Btn_logs.Location = new System.Drawing.Point(0, 471);
+            this.Btn_logs.Name = "Btn_logs";
+            this.Btn_logs.Size = new System.Drawing.Size(189, 41);
+            this.Btn_logs.TabIndex = 10;
+            this.Btn_logs.Text = "Logs";
+            this.Btn_logs.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Btn_logs.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Btn_logs.UseVisualStyleBackColor = true;
+            this.Btn_logs.Click += new System.EventHandler(this.Btn_logs_Click);
+            // 
             // Frm_menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -619,6 +644,7 @@ namespace CapaPresentacion._menu
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_menu";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Frm_menu_FormClosed);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -668,5 +694,6 @@ namespace CapaPresentacion._menu
         private System.Windows.Forms.Panel panel4;
         private FontAwesome.Sharp.IconButton btnRegistrarGastos;
         private FontAwesome.Sharp.IconButton btnTiposGastos;
+        private FontAwesome.Sharp.IconButton Btn_logs;
     }
 }

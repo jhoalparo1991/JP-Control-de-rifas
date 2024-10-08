@@ -285,6 +285,7 @@ namespace CapaPresentacion._rifas_boletas
                 {
                     limpiar();
                     this.Close();
+                    _helpers.Sesion.guardarDatosLog("Registra abono de boleta #" +Txt_nro_boleta.Text);
                     frm.dibujarBoletas();
                 }
 

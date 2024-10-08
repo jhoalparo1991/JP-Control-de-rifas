@@ -99,13 +99,16 @@ namespace CapaPresentacion._auxiliar_instalacion
                     Lbl_estado.ForeColor = Color.White;
                     if (N_Config.crearBackup(txtRutaCopiaSeguridad.Text.Trim()))
                     {
+
                         Lbl_estado.Text = "Estado : Copia de base de datos generada con exito";
                         Lbl_estado.BackColor = Color.Green;
+                        _helpers.Sesion.guardarDatosLog("Se creó una copia de la base de datos");
                     }
                     else
                     {
                         Lbl_estado.Text = "Estado : Hubo un error, no se pudo crear la copia de seguridad";
                         Lbl_estado.BackColor = Color.Red;
+                        _helpers.Sesion.guardarDatosLog("Hubo un error en la creacion de la copia de base de datos");
                     }
                 }
 

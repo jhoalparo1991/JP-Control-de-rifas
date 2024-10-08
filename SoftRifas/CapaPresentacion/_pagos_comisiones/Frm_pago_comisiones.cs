@@ -1,4 +1,5 @@
 ﻿using Domain;
+using Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +17,8 @@ namespace CapaPresentacion._pagos_comisiones
         public Frm_pago_comisiones()
         {
             InitializeComponent();
+            _helpers.Sesion.guardarDatosLog("PAGO COMISIONES");
+            mostrarDatosSesion();
             mostrarVendedores();
             mostrarAbonosBoletaPorVendedores();
         }
@@ -26,7 +29,28 @@ namespace CapaPresentacion._pagos_comisiones
         int _clienteId = 0;
         decimal _valorPagado = 0;
 
+        private void mostrarDatosSesion()
+        {
+            try
+            {
+                InicioSesion sesion = N_Usuarios.mostrarUsuarioSesion();
+                if (sesion != null)
+                {
+                    UsuariosPermisos permiso = _helpers.Sesion.permisosUsuarios(sesion.UsuarioId);
 
+                    if (permiso != null)
+                    {
+                        btnReportes.Visible = permiso.Reportes;
+                        btnPagarTodos.Visible = permiso.PagoComisiones;
+                       
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                _helpers.Mensajes.mensajeErrorException(e);
+            }
+        }
         private void mostrarVendedores()
         {
             try
@@ -162,6 +186,7 @@ namespace CapaPresentacion._pagos_comisiones
 
         private void btnReportes_Click(object sender, EventArgs e)
         {
+            _helpers.Sesion.guardarDatosLog("PAGO COMISIONES - Reportes");
             int _nroAbonos = Convert.ToInt32(txtNroAbonos.Text.Trim());
             Frm_reporte_pagos_comision frm = new Frm_reporte_pagos_comision();
             frm.mostrarInformacionComisionesVendedor(
@@ -187,8 +212,8 @@ namespace CapaPresentacion._pagos_comisiones
 
         private void btnPagarTodos_Click(object sender, EventArgs e)
         {
-
-            if(dgvAbonosBoleta.Rows.Count <= 0)
+            _helpers.Sesion.guardarDatosLog("PAGO COMISIONES - pagar todos");
+            if (dgvAbonosBoleta.Rows.Count <= 0)
             {
                 MessageBox.Show("Debes tener registros disponibles");
                 return;
@@ -205,16 +230,17 @@ namespace CapaPresentacion._pagos_comisiones
                     int vendedorId = Convert.ToInt32(cbxVendedores.SelectedValue);
                     N_Pagos.sp_pagar_comision_vendedor_por_fecha(vendedorId, dtFechaIni.Value, dtFechaFinal.Value);
                     mostrarAbonosBoletaPorVendedores();
+                    _helpers.Sesion.guardarDatosLog("PAGO COMISIONES - Pagos realizados de manera exitosa");
                     MessageBox.Show("Pagos realizados de manera exitosa", "Aviso del sistema");
                 }
                 else
                 {
-                    MessageBox.Show("Operacion cancelada", "Aviso del sistema");
+                    _helpers.Mensajes.mensajeError("Operacion cancelada");
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Aviso del sistema");
+                _helpers.Mensajes.mensajeErrorException(ex);
             }
         }
     }

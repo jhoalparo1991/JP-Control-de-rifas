@@ -19,6 +19,7 @@ namespace CapaPresentacion._clientes
             mostrarClientes();
             mostrarBoletasClientes();
             limpiar();
+                _helpers.Sesion.guardarDatosLog("Cargó el listado de clientes");
         }
         private int clienteId = 0;
         #region metodos
@@ -43,6 +44,7 @@ namespace CapaPresentacion._clientes
                 DataTable dt = new DataTable();
                 dt = N_Clientes.mostrarBoletasClientes(clienteId);
                 dgvBoletas.DataSource = dt;
+                _helpers.Sesion.guardarDatosLog("Muestra boletas por clientes");
             }
             catch (Exception e)
             {
@@ -97,12 +99,14 @@ namespace CapaPresentacion._clientes
                 {
                     mostrarClientes();
                     limpiar();
+                    _helpers.Sesion.guardarDatosLog("Registra un nuevo cliente");
                 }
 
 
             }
             catch (Exception e)
             {
+                _helpers.Sesion.guardarDatosLog("Ocurrio una exception la momento de guardar un cliente");
                 _helpers.Mensajes.mensajeErrorException(e);
             }
         }
@@ -177,6 +181,7 @@ namespace CapaPresentacion._clientes
         {
             if (clienteId > 0)
             {
+                _helpers.Sesion.guardarDatosLog("Obtiene el cliente para modificarlo");
                 Txt_id.Text = Dgv_clientes.CurrentRow.Cells["id"].Value.ToString();
                 Txt_nombres.Text = Dgv_clientes.CurrentRow.Cells["nombre_completo"].Value.ToString();
                 Txt_nro_doc.Text = Dgv_clientes.CurrentRow.Cells["nro_doc"].Value.ToString();
@@ -203,6 +208,7 @@ namespace CapaPresentacion._clientes
 
                 if (result == DialogResult.OK)
                 {
+                    _helpers.Sesion.guardarDatosLog("Borra el cliente con el identificador #" + clienteId);
                     N_Clientes.borrar(clienteId);
                     mostrarClientes();
                     clienteId = 0;
@@ -217,6 +223,7 @@ namespace CapaPresentacion._clientes
 
         private void Btn_cerrar_ventana_Click(object sender, EventArgs e)
         {
+            _helpers.Sesion.guardarDatosLog("Cierra la ventana de clientes");
             this.Close();
 
         }

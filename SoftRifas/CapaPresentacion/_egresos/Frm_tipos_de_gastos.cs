@@ -74,6 +74,7 @@ namespace CapaPresentacion._egresos
                 {
                     mostrarTiposGastos();
                     limpiar();
+                    _helpers.Sesion.guardarDatosLog("Registra el tipo de gasto  - " + txtDescripcion.Text);
                 }
 
 
@@ -149,6 +150,7 @@ namespace CapaPresentacion._egresos
                 {
                     N_TiposGastos.borrar(tipoGastoId);
                     mostrarTiposGastos();
+                    _helpers.Sesion.guardarDatosLog("Borra el tipo de gasto #"+tipoGastoId);
                     tipoGastoId = 0;
                 }
 

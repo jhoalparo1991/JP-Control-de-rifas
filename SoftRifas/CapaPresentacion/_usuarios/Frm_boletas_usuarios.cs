@@ -102,6 +102,7 @@ namespace CapaPresentacion._usuarios
                 N_Boletas.asignarBoletasVendedores(obj);
                 Txt_nro_boleta.Text = string.Empty;
                 Txt_nro_boleta.Select();
+                _helpers.Sesion.guardarDatosLog("USUARIOS - asignar boletas");
                 dibujarBoletas();
 
             }
@@ -150,8 +151,8 @@ namespace CapaPresentacion._usuarios
                 if (result == DialogResult.OK)
                 {
                     N_Boletas.borrarBoletaAsignadaVendedor(boletaId);
-                   
-                   // usuarioId = 0;
+                    _helpers.Sesion.guardarDatosLog("USUARIOS - Borró una boleta");
+                    // usuarioId = 0;
                 }
                 dibujarBoletas();
             }

@@ -48,6 +48,7 @@ namespace CapaPresentacion._rifas_boletas._boletas
                     bool result = N_Boletas.cambiarFormaPagoBoleta(id, cbx_formas_pago.Text);
                     if (result)
                     {
+                        _helpers.Sesion.guardarDatosLog("Forma de pago cambiada");
                         _helpers.Mensajes.mensajeInformacion("Forma de pago cambiada con exito");
                         this.Close();
                     }

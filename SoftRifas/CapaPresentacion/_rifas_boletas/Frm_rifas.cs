@@ -17,6 +17,7 @@ namespace CapaPresentacion._rifas_boletas
             limpiar();
             mostrarDatosSesion();
             mostrarRifas();
+            _helpers.Sesion.guardarDatosLog("Muestra el listado de rifas");
         }
         private int rifaId = 0;
         private int usuarioId = 0;
@@ -114,6 +115,7 @@ namespace CapaPresentacion._rifas_boletas
                 {
                     limpiar();
                     mostrarRifas();
+                    _helpers.Sesion.guardarDatosLog("Se crea una nueva rifa");
                     panel2.Visible = false;
                 }
 
@@ -248,6 +250,7 @@ namespace CapaPresentacion._rifas_boletas
                 {
                     N_Rifas.borrar(rifaId);
                     mostrarRifas();
+                    _helpers.Sesion.guardarDatosLog("Borra la rifa");
                     rifaId = 0;
                 }
 

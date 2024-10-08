@@ -47,7 +47,7 @@ namespace CapaPresentacion._usuarios
             this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clave = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comision = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.is_admin = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Activo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.agregarBoletasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verInformacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -181,7 +181,7 @@ namespace CapaPresentacion._usuarios
             this.telefono,
             this.clave,
             this.comision,
-            this.is_admin});
+            this.Activo});
             this.Dgv_usuarios.ContextMenuStrip = this.contextMenuStrip1;
             this.Dgv_usuarios.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Dgv_usuarios.Location = new System.Drawing.Point(0, 49);
@@ -266,14 +266,14 @@ namespace CapaPresentacion._usuarios
             this.comision.ReadOnly = true;
             this.comision.Width = 105;
             // 
-            // is_admin
+            // Activo
             // 
-            this.is_admin.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.is_admin.DataPropertyName = "IsAdmin";
-            this.is_admin.HeaderText = "Admin";
-            this.is_admin.Name = "is_admin";
-            this.is_admin.ReadOnly = true;
-            this.is_admin.Visible = false;
+            this.Activo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Activo.DataPropertyName = "Activo";
+            this.Activo.HeaderText = "Activo";
+            this.Activo.Name = "Activo";
+            this.Activo.ReadOnly = true;
+            this.Activo.Width = 58;
             // 
             // contextMenuStrip1
             // 
@@ -386,6 +386,6 @@ namespace CapaPresentacion._usuarios
         private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
         private System.Windows.Forms.DataGridViewTextBoxColumn clave;
         private System.Windows.Forms.DataGridViewTextBoxColumn comision;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn is_admin;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Activo;
     }
 }

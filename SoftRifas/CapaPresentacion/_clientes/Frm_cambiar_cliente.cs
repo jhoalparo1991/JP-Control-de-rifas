@@ -15,6 +15,7 @@ namespace CapaPresentacion._clientes
             InitializeComponent();
             this.ControlBox = false;
             this.Text = "";
+            _helpers.Sesion.guardarDatosLog("Muestra clientes para cambio en boleta");
             mostrarClientes();
         }
 
@@ -52,6 +53,7 @@ namespace CapaPresentacion._clientes
                   
                     if (result)
                     {
+                        _helpers.Sesion.guardarDatosLog("Cambia cliente a una boleta");
                         _helpers.Mensajes.mensajeInformacion("Cliente cambiado con exito");
                         this.Close();
                     }
@@ -72,6 +74,7 @@ namespace CapaPresentacion._clientes
                 List<Clientes> clientes = N_Clientes.mostrarClientes().FindAll(x => x.NombreCompleto.Contains(txtBuscar.Text.Trim()) ||
                                                            x.NroDoc.Contains(txtBuscar.Text.Trim()));
                 Dgv_clientes.DataSource = clientes;
+               
             }
             catch (Exception e)
             {

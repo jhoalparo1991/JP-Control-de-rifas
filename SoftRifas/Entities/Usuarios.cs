@@ -13,7 +13,7 @@ namespace Entities
         public string Celular { get; set; }
         public string Clave { get; set; }
         public decimal Comision { get; set; }
-        public bool IsAdmin { get; set; }
+        public bool Activo { get; set; }
     }
 
     public class UsuariosPermisos
@@ -42,7 +42,7 @@ namespace Entities
         public int Id { get; set; }
         public int UsuarioId { get; set; }
         public string NombreCompleto  { get; set; }
-        public bool IsAdmin  { get; set; }
+        public bool Activo  { get; set; }
         public DateTime Fecha  { get; set; }
     }
 }

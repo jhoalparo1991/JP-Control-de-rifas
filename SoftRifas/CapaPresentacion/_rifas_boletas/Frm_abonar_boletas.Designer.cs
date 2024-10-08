@@ -35,6 +35,7 @@ namespace CapaPresentacion._rifas_boletas
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.Lbl_deuda = new System.Windows.Forms.ToolStripStatusLabel();
@@ -88,7 +89,6 @@ namespace CapaPresentacion._rifas_boletas
             this.label2 = new System.Windows.Forms.Label();
             this.error = new System.Windows.Forms.ErrorProvider(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -106,7 +106,7 @@ namespace CapaPresentacion._rifas_boletas
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.panel1.Size = new System.Drawing.Size(690, 40);
+            this.panel1.Size = new System.Drawing.Size(1227, 40);
             this.panel1.TabIndex = 0;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
@@ -119,7 +119,7 @@ namespace CapaPresentacion._rifas_boletas
             this.Btn_cerrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.Btn_cerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.Btn_cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_cerrar.Location = new System.Drawing.Point(655, 5);
+            this.Btn_cerrar.Location = new System.Drawing.Point(1192, 5);
             this.Btn_cerrar.Name = "Btn_cerrar";
             this.Btn_cerrar.Size = new System.Drawing.Size(31, 30);
             this.Btn_cerrar.TabIndex = 1;
@@ -144,7 +144,7 @@ namespace CapaPresentacion._rifas_boletas
             this.panel2.Location = new System.Drawing.Point(0, 40);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(2);
-            this.panel2.Size = new System.Drawing.Size(690, 611);
+            this.panel2.Size = new System.Drawing.Size(1227, 611);
             this.panel2.TabIndex = 1;
             // 
             // panel3
@@ -181,8 +181,17 @@ namespace CapaPresentacion._rifas_boletas
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(2, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(686, 607);
+            this.panel3.Size = new System.Drawing.Size(1223, 607);
             this.panel3.TabIndex = 0;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(166, 35);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(224, 20);
+            this.label5.TabIndex = 16;
+            this.label5.Text = "Porcentaje Comision vendedor";
             // 
             // statusStrip1
             // 
@@ -196,7 +205,7 @@ namespace CapaPresentacion._rifas_boletas
             this.Lbl_total_comision});
             this.statusStrip1.Location = new System.Drawing.Point(0, 583);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(686, 24);
+            this.statusStrip1.Size = new System.Drawing.Size(1223, 24);
             this.statusStrip1.TabIndex = 15;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -751,15 +760,6 @@ namespace CapaPresentacion._rifas_boletas
             // 
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(166, 35);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(224, 20);
-            this.label5.TabIndex = 16;
-            this.label5.Text = "Porcentaje Comision vendedor";
             // 
             // Frm_abonar_boletas
             // 

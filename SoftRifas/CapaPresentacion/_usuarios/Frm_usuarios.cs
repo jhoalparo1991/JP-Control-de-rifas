@@ -36,7 +36,7 @@ namespace CapaPresentacion._usuarios
             frm.Txt_clave.Text = Dgv_usuarios.CurrentRow.Cells["Clave"].Value.ToString();
             frm.Txt_clave.Enabled = false;
             frm.Txt_comision.Text = Dgv_usuarios.CurrentRow.Cells["Comision"].Value.ToString();
-            frm.Chk_is_admin.Checked = Convert.ToBoolean(Dgv_usuarios.CurrentRow.Cells["is_admin"].Value);
+            frm.Chk_activo.Checked = Convert.ToBoolean(Dgv_usuarios.CurrentRow.Cells["activo"].Value);
 
             UsuariosPermisos permisos = N_Usuarios.mostrarPermisosUsuarios(usuarioId);
 
@@ -74,7 +74,7 @@ namespace CapaPresentacion._usuarios
                 frm.Txt_clave.Enabled = true;
                 frm.Txt_clave.Enabled = true;
                 frm.Txt_comision.Enabled = true;
-                frm.Chk_is_admin.Enabled = true;
+                frm.Chk_activo.Enabled = true;
                 frm.Btn_registrar.Enabled = true;
 
                 frm.Chk_backup.Enabled = true;
@@ -89,7 +89,7 @@ namespace CapaPresentacion._usuarios
                 frm.Chk_editar_egreso.Enabled = true;
                 frm.Chk_egresos.Enabled = true;
                 frm.Chk_imprimir_egreso.Enabled = true;
-                frm.Chk_is_admin.Enabled = true;
+                frm.Chk_activo.Enabled = true;
                 frm.Chk_pago_comisiones.Enabled = true;
                 frm.Chk_registrar_abonos.Enabled = true;
                 frm.Chk_reportes.Enabled = true;
@@ -107,7 +107,7 @@ namespace CapaPresentacion._usuarios
                 frm.Txt_clave.Enabled = false;
                 frm.Txt_clave.Enabled = false;
                 frm.Txt_comision.Enabled = false;
-                frm.Chk_is_admin.Enabled = false;
+                frm.Chk_activo.Enabled = false;
                 frm.Btn_registrar.Enabled = false;
 
                 frm.Chk_backup.Enabled = false;
@@ -122,7 +122,7 @@ namespace CapaPresentacion._usuarios
                 frm.Chk_editar_egreso.Enabled = false;
                 frm.Chk_egresos.Enabled = false;
                 frm.Chk_imprimir_egreso.Enabled = false;
-                frm.Chk_is_admin.Enabled = false;
+                frm.Chk_activo.Enabled = false;
                 frm.Chk_pago_comisiones.Enabled = false;
                 frm.Chk_registrar_abonos.Enabled = false;
                 frm.Chk_reportes.Enabled = false;
@@ -186,6 +186,7 @@ namespace CapaPresentacion._usuarios
                 {
                     N_Usuarios.borrar(usuarioId);
                     mostrarUsuarios();
+                    _helpers.Sesion.guardarDatosLog("USUARIOS - usuario borrado con exito");
                     usuarioId = 0;
                 }
 

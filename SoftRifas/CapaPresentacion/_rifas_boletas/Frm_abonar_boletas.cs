@@ -32,7 +32,6 @@ namespace CapaPresentacion._rifas_boletas
         private int _usuarioId = 0;
 
         #region metodos
-
         private void obtenerComisionVendedor()
         {
             try
@@ -103,6 +102,16 @@ namespace CapaPresentacion._rifas_boletas
                 if (sesion != null)
                 {
                     _usuarioId = sesion.UsuarioId;
+                    UsuariosPermisos permiso = _helpers.Sesion.permisosUsuarios(sesion.UsuarioId);
+
+                    if (permiso != null)
+                    {
+                        Btn_registrar.Visible = permiso.RegistrarAbono;
+
+                        Dgv_abonos.Columns["btn_editar_forma_pago"].Visible = permiso.CambiarFpAbono;
+                        Dgv_abonos.Columns["btn_cambiar_cliente"].Visible = permiso.CambiarClienteAbono;
+                        Dgv_abonos.Columns["btn_borrar_abono"].Visible = permiso.BorrarAbono;
+                    }
                 }
             }
             catch (Exception e)

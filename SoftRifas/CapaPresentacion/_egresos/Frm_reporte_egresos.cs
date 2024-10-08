@@ -50,12 +50,18 @@ namespace CapaPresentacion._egresos
         }
         private void Btn_cerrar_Click(object sender, EventArgs e)
         {
+            _helpers.Sesion.guardarDatosLog("Cierra reporte de gastos");
             this.Close();
         }
 
         private void panel1_MouseDown(object sender, MouseEventArgs e)
         {
             _helpers.Formularios.moverFormulario(sender, e, this);
+        }
+
+        private void Frm_reporte_egresos_Load(object sender, EventArgs e)
+        {
+            _helpers.Sesion.guardarDatosLog("Se carga el reporte de gastos");
         }
     }
 }

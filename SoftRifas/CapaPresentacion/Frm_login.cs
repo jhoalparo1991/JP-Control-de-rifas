@@ -18,7 +18,7 @@ namespace CapaPresentacion
             this.Text = "";
             _helpers.Formularios.marcarCampoSeleccionado(this.Controls);
             limpiar();
-           // mostrarBotonCrearUsuarios();
+            mostrarBotonCrearUsuarios();
         }
 
         private void mostrarBotonCrearUsuarios()
@@ -65,13 +65,14 @@ namespace CapaPresentacion
                     return;
                 }
 
-                usuario = N_Usuarios.mostrarUsuarios().Find(x=>x.NroDoc == Txt_nro_doc.Text.Trim() && x.Clave ==Txt_clave.Text.Trim() && x.IsAdmin == true);
+                usuario = N_Usuarios.mostrarUsuarios().Find(x=>x.NroDoc == Txt_nro_doc.Text.Trim() && x.Clave ==Txt_clave.Text.Trim() && x.Activo == true);
 
                 if(usuario  != null)
                 {
                     if (N_Usuarios.registrarSesion(usuario.Id))
                     {
                         //_helpers.Mensajes.mensajeInformacion($"Bienvenido {usuario.NombreCompleto}");
+                        N_Logs.guardarLog(usuario.Id,"Inició sesion");
                         this.Dispose();
                         Frm_menu frm = new Frm_menu();
                         frm.ShowDialog();

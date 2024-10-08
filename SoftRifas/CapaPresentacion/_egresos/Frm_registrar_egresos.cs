@@ -127,6 +127,7 @@ namespace CapaPresentacion._egresos
                     bool result = N_Gastos.crearGastos(obj);
                     if (result)
                     {
+                        _helpers.Sesion.guardarDatosLog("se registra el gasto - " + txt_descripcion.Text.Trim());
                         _helpers.Mensajes.mensajeInformacion("Gasto registrado con exito");
                         limpiar();
                         frm.mostrarGastos();
@@ -144,6 +145,7 @@ namespace CapaPresentacion._egresos
 
         private void Btn_cerrar_Click(object sender, EventArgs e)
         {
+            _helpers.Sesion.guardarDatosLog("Sale de la ventana de registro de gastos");
             this.Close();
         }
 

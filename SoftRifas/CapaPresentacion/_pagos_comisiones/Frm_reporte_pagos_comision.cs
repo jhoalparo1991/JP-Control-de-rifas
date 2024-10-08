@@ -10,6 +10,7 @@ namespace CapaPresentacion._pagos_comisiones
         public Frm_reporte_pagos_comision()
         {
             InitializeComponent();
+            _helpers.Sesion.guardarDatosLog("RPORTE PAGO COMISIONES");
         }
 
         private void Frm_reporte_pagos_comision_Load(object sender, EventArgs e)
@@ -86,6 +87,7 @@ namespace CapaPresentacion._pagos_comisiones
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
+            _helpers.Sesion.guardarDatosLog("RPORTE PAGO COMISIONES - comisiones por vendedores");
             DateTime fecha1 = dateTimePicker1.Value;
             DateTime fecha2 = dateTimePicker2.Value;
             int _vendedorId = Convert.ToInt32(cbxVendedores.SelectedValue);

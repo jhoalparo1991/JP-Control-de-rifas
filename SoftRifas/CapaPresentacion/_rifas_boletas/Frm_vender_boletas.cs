@@ -10,14 +10,17 @@ namespace CapaPresentacion._rifas_boletas
 {
     public partial class Frm_vender_boletas : Form
     {
+        UsuariosPermisos permiso;
         public Frm_vender_boletas()
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
+            mostrarDatosSesion();
             mostrarRifas();
             dibujarBotones();
             mostrarVendedores();
-           // mostrarTodasBoletas();
+            _helpers.Sesion.guardarDatosLog("Se muestra el tablero de boletas");
+            // mostrarTodasBoletas();
         }
         private int boletaId = 0;
         private int boletaVendedorId = 0;
@@ -28,7 +31,21 @@ namespace CapaPresentacion._rifas_boletas
         List<Boletas> boletas = new List<Boletas>();
 
         #region metodos
-
+        private void mostrarDatosSesion()
+        {
+            try
+            {
+                InicioSesion sesion = N_Usuarios.mostrarUsuarioSesion();
+                if (sesion != null)
+                {
+                    permiso = _helpers.Sesion.permisosUsuarios(sesion.UsuarioId);
+                }
+            }
+            catch (Exception e)
+            {
+                _helpers.Mensajes.mensajeErrorException(e);
+            }
+        }
         private void mostrarFormAgregarAbonos()
         {
             try
@@ -71,6 +88,7 @@ namespace CapaPresentacion._rifas_boletas
         }
         private void dibujarBotones()
         {
+            _helpers.Sesion.guardarDatosLog("Se dibujan los botenes para el paginado de boletas");
             Fyp_botones_paginado.Controls.Clear();
             for (int i =1; i<= 40; i++)
             {
@@ -85,7 +103,10 @@ namespace CapaPresentacion._rifas_boletas
                 btnNum.FlatAppearance.BorderSize = 0;
                 btnNum.FlatStyle = FlatStyle.Flat;
                 btnNum.Cursor = Cursors.Hand;
-                btnNum.Click += BtnNum_Click;
+                if (permiso.Boletas)
+                {
+                    btnNum.Click += BtnNum_Click;
+                }
                 Fyp_botones_paginado.Controls.Add(btnNum);
             }
         }
@@ -184,6 +205,7 @@ namespace CapaPresentacion._rifas_boletas
         }
         public void dibujarBoletas()
         {
+            _helpers.Sesion.guardarDatosLog("Se dibujan las boletas");
             Fyp_botones.Controls.Clear();
             List<Boletas> boletas = new List<Boletas>();
 
@@ -250,6 +272,7 @@ namespace CapaPresentacion._rifas_boletas
         private void BtnBoleta_Click(object sender, EventArgs e)
         {
             boletaId = Convert.ToInt32(((Button)sender).Name);
+            _helpers.Sesion.guardarDatosLog("Abre la boleta id#" + boletaId);
             boletaVendedorId = Convert.ToInt32(((Button)sender).Tag);
             buscarBoletas();
         }
@@ -257,7 +280,7 @@ namespace CapaPresentacion._rifas_boletas
         private void BtnNum_Click(object sender, EventArgs e)
         {
             int num = Convert.ToInt32(((Button)sender).Text);
-
+            _helpers.Sesion.guardarDatosLog("Muestra las boletas de la pagina #"+ num);
             //if (num == 1)
             //{
             //    dibujarBoletas(0, visualizados);
@@ -374,7 +397,6 @@ namespace CapaPresentacion._rifas_boletas
                 _helpers.Mensajes.mensajeErrorException(e);
             }
         }
-      
         private void mostrarRifas()
         {
             try
