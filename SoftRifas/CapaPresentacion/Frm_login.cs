@@ -18,7 +18,7 @@ namespace CapaPresentacion
             this.Text = "";
             _helpers.Formularios.marcarCampoSeleccionado(this.Controls);
             limpiar();
-            mostrarBotonCrearUsuarios();
+           // mostrarBotonCrearUsuarios();
         }
 
         private void mostrarBotonCrearUsuarios()
@@ -36,8 +36,8 @@ namespace CapaPresentacion
 
         private void limpiar()
         {
-            Txt_clave.Text = "0614";
-            Txt_nro_doc.Text = "1036620759";
+            Txt_clave.Text = "";
+            Txt_nro_doc.Text = "";
             Txt_nro_doc.Select();
         }
         private void Txt_nro_doc_KeyPress(object sender, KeyPressEventArgs e)

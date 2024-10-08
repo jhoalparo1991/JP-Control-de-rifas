@@ -588,6 +588,12 @@
     <Compile Include="_usuarios\Frm_boletas_usuarios.Designer.cs">
       <DependentUpon>Frm_boletas_usuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="_usuarios\Frm_mant_usuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_usuarios\Frm_mant_usuarios.Designer.cs">
+      <DependentUpon>Frm_mant_usuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="_usuarios\Frm_usuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -724,6 +730,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="_usuarios\Frm_boletas_usuarios.resx">
       <DependentUpon>Frm_boletas_usuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_usuarios\Frm_mant_usuarios.resx">
+      <DependentUpon>Frm_mant_usuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="_usuarios\Frm_usuarios.resx">
       <DependentUpon>Frm_usuarios.cs</DependentUpon>

@@ -107,7 +107,7 @@ namespace CapaPresentacion._rifas_boletas
             }
             catch (Exception e)
             {
-                _helpers.Mensajes.mensajeErrorException(e);
+                _helpers.Mensajes.mensajeError(e.StackTrace);
             }
         }
         private void calcularComision()

@@ -70,7 +70,52 @@ namespace DataAccess
             }
             return usuarios;
         }
-
+        public static UsuariosPermisos mostrarPermisosUsuarios(int usuarioId)
+        {
+            UsuariosPermisos usuarios = new UsuariosPermisos();
+            try
+            {
+                con.Open();
+                StringBuilder builder = new StringBuilder();
+                builder.Append("SELECT * FROM tbl_usuarios_permisos where usuario_id=@usuario_id");
+                SqlCommand command = new SqlCommand(builder.ToString(), con);
+                command.CommandType = CommandType.Text;
+                command.Parameters.AddWithValue("usuario_id", usuarioId);
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    usuarios = new UsuariosPermisos()
+                    {
+                        Vendedores = Convert.ToBoolean(reader["vendedores"]),
+                        Clientes = Convert.ToBoolean(reader["clientes"]),
+                        Rifas = Convert.ToBoolean(reader["rifas"]),
+                        Boletas = Convert.ToBoolean(reader["boletas"]),
+                        PagoComisiones = Convert.ToBoolean(reader["pago_comisiones"]),
+                        Reportes = Convert.ToBoolean(reader["reportes"]),
+                        Egresos = Convert.ToBoolean(reader["egresos"]),
+                        CrearTipoEgreso = Convert.ToBoolean(reader["crear_tipo_egreso"]),
+                        BorrarEgreso = Convert.ToBoolean(reader["borrar_egreso"]),
+                        EditarEgreso = Convert.ToBoolean(reader["editar_egreso"]),
+                        CrearEgreso = Convert.ToBoolean(reader["crear_egreso"]),
+                        ImprimirEgreso = Convert.ToBoolean(reader["imprimir_egreso"]),
+                        CrearCopiaSeguridad = Convert.ToBoolean(reader["crear_copia_seguridad"]),
+                        RegistrarAbono = Convert.ToBoolean(reader["registrar_abono"]),
+                        BorrarAbono = Convert.ToBoolean(reader["borrar_abono"]),
+                        CambiarFpAbono = Convert.ToBoolean(reader["cambiar_fp_abono"]),
+                        CambiarClienteAbono = Convert.ToBoolean(reader["cambiar_cliente_abono"]),
+                    };
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+            return usuarios;
+        }
         public static InicioSesion mostrarUsuarioSesion()
         {
             InicioSesion sesion = new InicioSesion();
@@ -125,6 +170,56 @@ namespace DataAccess
                 command.Parameters.AddWithValue("clave", obj.Clave);
                 command.Parameters.AddWithValue("comision", obj.Comision);
                 command.Parameters.AddWithValue("is_admin", obj.IsAdmin);
+
+                result = Convert.ToInt32(command.ExecuteNonQuery()) != 0 ? true : false;
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+            return result;
+        }
+
+        public static bool registrarVendedor(Usuarios obj, UsuariosPermisos obj2)
+        {
+            bool result = false;
+            try
+            {
+                con.Open();
+                SqlCommand command = new SqlCommand("sp_guardar_usuarios", con);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("id", obj.Id);
+                command.Parameters.AddWithValue("nombre_completo", obj.NombreCompleto);
+                command.Parameters.AddWithValue("nro_doc", obj.NroDoc);
+                command.Parameters.AddWithValue("direccion", obj.Direccion);
+                command.Parameters.AddWithValue("celular", obj.Celular);
+                command.Parameters.AddWithValue("telefono", obj.Telefono);
+                command.Parameters.AddWithValue("clave", obj.Clave);
+                command.Parameters.AddWithValue("comision", obj.Comision);
+                command.Parameters.AddWithValue("is_admin", obj.IsAdmin);
+                //Permisos
+                command.Parameters.AddWithValue("vendedores", obj2.Vendedores);
+                command.Parameters.AddWithValue("clientes", obj2.Clientes);
+                command.Parameters.AddWithValue("rifas", obj2.Rifas);
+                command.Parameters.AddWithValue("boletas", obj2.Boletas);
+                command.Parameters.AddWithValue("pago_comisiones", obj2.PagoComisiones);
+                command.Parameters.AddWithValue("reportes", obj2.Reportes);
+                command.Parameters.AddWithValue("egresos", obj2.Egresos);
+                command.Parameters.AddWithValue("crear_tipo_egreso", obj2.CrearTipoEgreso);
+                command.Parameters.AddWithValue("borrar_egreso", obj2.BorrarEgreso);
+                command.Parameters.AddWithValue("editar_egreso", obj2.EditarEgreso);
+                command.Parameters.AddWithValue("crear_egreso", obj2.CrearEgreso);
+                command.Parameters.AddWithValue("imprimir_egreso", obj2.ImprimirEgreso);
+                command.Parameters.AddWithValue("crear_copia_seguridad", obj2.CrearCopiaSeguridad);
+                command.Parameters.AddWithValue("registrar_abono", obj2.RegistrarAbono);
+                command.Parameters.AddWithValue("borrar_abono", obj2.BorrarAbono);
+                command.Parameters.AddWithValue("cambiar_fp_abono", obj2.CambiarFpAbono);
+                command.Parameters.AddWithValue("cambiar_cliente_abono", obj2.CambiarClienteAbono);
+
 
                 result = Convert.ToInt32(command.ExecuteNonQuery()) != 0 ? true : false;
             }

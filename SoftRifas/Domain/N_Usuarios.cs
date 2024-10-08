@@ -15,6 +15,11 @@ namespace Domain
         {
             return D_Usuarios.mostrarUsuarios();
         }
+
+        public static UsuariosPermisos mostrarPermisosUsuarios(int usuarioId)
+        {
+            return D_Usuarios.mostrarPermisosUsuarios(usuarioId);
+        }
         public static InicioSesion mostrarUsuarioSesion()
         {
             return D_Usuarios.mostrarUsuarioSesion();
@@ -22,6 +27,11 @@ namespace Domain
         public static bool guardar(Usuarios obj)
         {
             return D_Usuarios.guardar(obj);
+        }
+
+        public static bool registrarVendedor(Usuarios obj, UsuariosPermisos obj2)
+        {
+            return D_Usuarios.registrarVendedor(obj,obj2);
         }
         public static bool registrarSesion(int usuarioId)
         {

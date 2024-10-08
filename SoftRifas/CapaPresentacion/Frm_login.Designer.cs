@@ -145,7 +145,7 @@ namespace CapaPresentacion
             this.Txt_clave.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt_clave.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Txt_clave.Location = new System.Drawing.Point(0, 0);
-            this.Txt_clave.MaxLength = 50;
+            this.Txt_clave.MaxLength = 150;
             this.Txt_clave.Name = "Txt_clave";
             this.Txt_clave.PasswordChar = '*';
             this.Txt_clave.Size = new System.Drawing.Size(258, 28);
