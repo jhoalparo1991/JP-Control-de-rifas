@@ -56,9 +56,9 @@ namespace CapaPresentacion._auxiliar_instalacion
         {
             try
             {
-               Config config =  N_Config.mostrarConfig().FirstOrDefault();
+                Config config = N_Config.mostrarConfig().FirstOrDefault();
 
-                if(config != null)
+                if (config != null)
                 {
                     id = config.Id;
                     txtRutaCopiaSeguridad.Text = config.RutaCopiaSeguridad.ToString();
@@ -86,7 +86,8 @@ namespace CapaPresentacion._auxiliar_instalacion
                 }
 
 
-                Config config = new Config() { 
+                Config config = new Config()
+                {
                     Id = id,
                     RutaCopiaSeguridad = txtRutaCopiaSeguridad.Text.Trim()
                 };
@@ -137,13 +138,13 @@ namespace CapaPresentacion._auxiliar_instalacion
 
         private void button1_Click(object sender, EventArgs e)
         {
-            using(FolderBrowserDialog fbd = new FolderBrowserDialog())
+            using (FolderBrowserDialog fbd = new FolderBrowserDialog())
             {
                 fbd.Description = "Ruta copias de seguridad";
-                
-                if(fbd.ShowDialog() == DialogResult.OK)
+
+                if (fbd.ShowDialog() == DialogResult.OK)
                 {
-                    txtRutaCopiaSeguridad.Text = Path.Combine(fbd.SelectedPath.ToString(),"DBRIFAS.BAK");
+                    txtRutaCopiaSeguridad.Text = Path.Combine(fbd.SelectedPath.ToString(), "DBRIFAS.BAK");
                 }
             }
         }

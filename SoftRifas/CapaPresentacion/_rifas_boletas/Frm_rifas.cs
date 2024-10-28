@@ -143,12 +143,12 @@ namespace CapaPresentacion._rifas_boletas
         }
         private void Btn_modificar_Click(object sender, EventArgs e)
         {
-          
+
         }
 
         private void Btn_eliminar_Click(object sender, EventArgs e)
         {
-          
+
         }
 
         private void Dgv_rifas_CellClick(object sender, DataGridViewCellEventArgs e)

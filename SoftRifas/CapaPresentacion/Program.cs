@@ -1,5 +1,4 @@
-﻿using CapaPresentacion._pagos_comisiones;
-using System;
+﻿using System;
 using System.Windows.Forms;
 
 namespace CapaPresentacion
@@ -23,7 +22,7 @@ namespace CapaPresentacion
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.Message,"Aviso del sistema");
+                MessageBox.Show(e.Message, "Aviso del sistema");
             }
         }
 

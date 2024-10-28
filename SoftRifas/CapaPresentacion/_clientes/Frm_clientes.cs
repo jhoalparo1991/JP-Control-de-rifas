@@ -19,7 +19,7 @@ namespace CapaPresentacion._clientes
             mostrarClientes();
             mostrarBoletasClientes();
             limpiar();
-                _helpers.Sesion.guardarDatosLog("Cargó el listado de clientes");
+            _helpers.Sesion.guardarDatosLog("Cargó el listado de clientes");
         }
         private int clienteId = 0;
         #region metodos
@@ -126,7 +126,7 @@ namespace CapaPresentacion._clientes
 
         private void Dgv_clientes_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(Dgv_clientes.Rows.Count > 0)
+            if (Dgv_clientes.Rows.Count > 0)
             {
                 clienteId = Convert.ToInt32(Dgv_clientes.CurrentRow.Cells["id"].Value.ToString());
                 if (Dgv_clientes.Columns[e.ColumnIndex].Name == "btn_sel")
@@ -233,7 +233,7 @@ namespace CapaPresentacion._clientes
             if (Dgv_clientes.Rows.Count > 0)
             {
                 clienteId = Convert.ToInt32(Dgv_clientes.CurrentRow.Cells["id"].Value.ToString());
-          
+
                 mostrarBoletasClientes();
             }
         }

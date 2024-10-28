@@ -57,12 +57,12 @@ namespace DataAccess
                     {
                         Id = Convert.ToInt32(reader["id"]),
                         UsuarioId = Convert.ToInt32(reader["usuario_id"]),
-                        Identificador= reader["identificador"].ToString(),
+                        Identificador = reader["identificador"].ToString(),
                         FechaPago = Convert.ToDateTime(reader["fecha_pago"].ToString()),
-                        PeriodoPagado= reader["periodo_pagado"].ToString(),
+                        PeriodoPagado = reader["periodo_pagado"].ToString(),
                         HoraPago = Convert.ToDateTime(reader["hora_pago"].ToString()),
                         ValorPagos = Convert.ToDecimal(reader["valor_pagos"].ToString()),
-                        Descripcion= reader["descripcion"].ToString(),
+                        Descripcion = reader["descripcion"].ToString(),
                     });
                 }
             }
@@ -136,7 +136,7 @@ namespace DataAccess
             }
             return dt;
         }
-        public static bool borrarPagos(int id, int abonoId, int vendedorId,int boletaId,int pagoId,decimal valor, int idInfoBoletaPagada)
+        public static bool borrarPagos(int id, int abonoId, int vendedorId, int boletaId, int pagoId, decimal valor, int idInfoBoletaPagada)
         {
             bool result = false;
             try
@@ -189,7 +189,7 @@ namespace DataAccess
         }
 
         #region Pago comisiones vendedores
-        public static bool sp_pagar_comision_vendedor(int vendedorId, int clienteId, int boletaId, int abonoId,decimal valorPagado)
+        public static bool sp_pagar_comision_vendedor(int vendedorId, int clienteId, int boletaId, int abonoId, decimal valorPagado)
         {
             bool result = false;
             try

@@ -36,6 +36,10 @@ namespace CapaPresentacion
             this.reportViewer8 = new Telerik.ReportViewer.WinForms.ReportViewer();
             this.panel7 = new System.Windows.Forms.Panel();
             this.button7 = new System.Windows.Forms.Button();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.reportViewer7 = new Telerik.ReportViewer.WinForms.ReportViewer();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.button6 = new System.Windows.Forms.Button();
             this.tabPage9 = new System.Windows.Forms.TabPage();
             this.reportViewer9 = new Telerik.ReportViewer.WinForms.ReportViewer();
             this.panel8 = new System.Windows.Forms.Panel();
@@ -137,10 +141,14 @@ namespace CapaPresentacion
             this.forma_pago = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.abono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label26 = new System.Windows.Forms.Label();
+            this.Cbx_vendedores_3 = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage8.SuspendLayout();
             this.panel7.SuspendLayout();
+            this.tabPage7.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.tabPage9.SuspendLayout();
             this.panel8.SuspendLayout();
             this.tabPage10.SuspendLayout();
@@ -176,6 +184,7 @@ namespace CapaPresentacion
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage8);
+            this.tabControl1.Controls.Add(this.tabPage7);
             this.tabControl1.Controls.Add(this.tabPage9);
             this.tabControl1.Controls.Add(this.tabPage10);
             this.tabControl1.Controls.Add(this.tabPage2);
@@ -261,6 +270,52 @@ namespace CapaPresentacion
             this.button7.Text = "Generar Reporte";
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // tabPage7
+            // 
+            this.tabPage7.Controls.Add(this.reportViewer7);
+            this.tabPage7.Controls.Add(this.panel6);
+            this.tabPage7.Location = new System.Drawing.Point(4, 25);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage7.Size = new System.Drawing.Size(1059, 525);
+            this.tabPage7.TabIndex = 14;
+            this.tabPage7.Text = "Abonos Totales Por clientes";
+            this.tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // reportViewer7
+            // 
+            this.reportViewer7.AccessibilityKeyMap = null;
+            this.reportViewer7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.reportViewer7.Location = new System.Drawing.Point(3, 49);
+            this.reportViewer7.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.reportViewer7.Name = "reportViewer7";
+            this.reportViewer7.Size = new System.Drawing.Size(1053, 473);
+            this.reportViewer7.TabIndex = 8;
+            this.reportViewer7.ViewMode = Telerik.ReportViewer.WinForms.ViewMode.PrintPreview;
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.Cbx_vendedores_3);
+            this.panel6.Controls.Add(this.label10);
+            this.panel6.Controls.Add(this.button6);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel6.Location = new System.Drawing.Point(3, 3);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(1053, 46);
+            this.panel6.TabIndex = 7;
+            // 
+            // button6
+            // 
+            this.button6.AutoSize = true;
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.Location = new System.Drawing.Point(399, 6);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(182, 30);
+            this.button6.TabIndex = 2;
+            this.button6.Text = "Generar Reporte";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click_1);
             // 
             // tabPage9
             // 
@@ -1340,6 +1395,25 @@ namespace CapaPresentacion
             this.label26.Text = "Abonos por formas de pago";
             this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // Cbx_vendedores_3
+            // 
+            this.Cbx_vendedores_3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Cbx_vendedores_3.FormattingEnabled = true;
+            this.Cbx_vendedores_3.Location = new System.Drawing.Point(93, 9);
+            this.Cbx_vendedores_3.Name = "Cbx_vendedores_3";
+            this.Cbx_vendedores_3.Size = new System.Drawing.Size(300, 24);
+            this.Cbx_vendedores_3.TabIndex = 5;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(8, 11);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(79, 20);
+            this.label10.TabIndex = 4;
+            this.label10.Text = "Vendedor";
+            // 
             // Frm_reports_menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1356,6 +1430,9 @@ namespace CapaPresentacion
             this.tabPage8.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
+            this.tabPage7.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.tabPage9.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
@@ -1509,6 +1586,12 @@ namespace CapaPresentacion
         private System.Windows.Forms.Panel panel18;
         private System.Windows.Forms.Label lblTotalCaja;
         private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.TabPage tabPage7;
+        private Telerik.ReportViewer.WinForms.ReportViewer reportViewer7;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.ComboBox Cbx_vendedores_3;
+        private System.Windows.Forms.Label label10;
     }
 }
 

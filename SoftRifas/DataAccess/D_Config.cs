@@ -22,7 +22,7 @@ namespace DataAccess
                 SqlCommand command = new SqlCommand(builder.ToString(), con);
                 command.CommandType = CommandType.Text;
                 SqlDataReader reader = command.ExecuteReader();
-                if(reader.Read())
+                if (reader.Read())
                 {
                     config.Add(new Config()
                     {

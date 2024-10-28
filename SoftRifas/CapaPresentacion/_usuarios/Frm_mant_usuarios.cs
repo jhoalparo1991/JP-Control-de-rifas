@@ -1,13 +1,6 @@
 ﻿using Domain;
 using Entities;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CapaPresentacion._usuarios
@@ -37,7 +30,7 @@ namespace CapaPresentacion._usuarios
             Txt_nombres.Select();
             Chk_activo.Checked = true;
             iniciarPermisos(false);
-            
+
         }
 
         private void iniciarPermisos(bool estado)
@@ -60,6 +53,12 @@ namespace CapaPresentacion._usuarios
             Chk_reportes.Checked = estado;
             Chk_rifas.Checked = estado;
             Chk_vendedor.Checked = estado;
+            Chk_crear_vendedores.Checked = estado;
+            Chk_borrar_vendedores.Checked = estado;
+            Chk_editar_vendedores.Checked = estado;
+            Chk_asignar_boletas_vendedores.Checked = estado;
+            Chk_ver_log.Checked = estado;
+            Chk_ver_boleta.Checked = estado;
         }
         private void guardar()
         {
@@ -128,9 +127,15 @@ namespace CapaPresentacion._usuarios
                     BorrarAbono = Convert.ToBoolean(Chk_borrar_abonos.CheckState),
                     CambiarFpAbono = Convert.ToBoolean(Chk_cambiar_fp_abono.CheckState),
                     CambiarClienteAbono = Convert.ToBoolean(Chk_cambiar_cliente_abono.CheckState),
+                    CrearVendedores = Convert.ToBoolean(Chk_crear_vendedores.CheckState),
+                    EditarVendedores = Convert.ToBoolean(Chk_editar_vendedores.CheckState),
+                    BorrarVendedores = Convert.ToBoolean(Chk_borrar_vendedores.CheckState),
+                    AsignarBoletasVendedores = Convert.ToBoolean(Chk_asignar_boletas_vendedores.CheckState),
+                    VerBoleta = Convert.ToBoolean(Chk_ver_boleta.CheckState),
+                    VerLog = Convert.ToBoolean(Chk_ver_log.CheckState),
                 };
 
-                if (N_Usuarios.registrarVendedor(obj,obj2))
+                if (N_Usuarios.registrarVendedor(obj, obj2))
                 {
                     _helpers.Sesion.guardarDatosLog("USUARIOS - usuario guardado con exito");
                     limpiar();

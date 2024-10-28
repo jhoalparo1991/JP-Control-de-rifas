@@ -19,7 +19,7 @@ namespace Domain
 
         public static DataTable mostrarAbonosPorFormasDePago(DateTime fecha1, DateTime fecha2, string formaPago)
         {
-            return DA_Reports.mostrarAbonosPorFormaDePago(fecha1,fecha2,formaPago);
+            return DA_Reports.mostrarAbonosPorFormaDePago(fecha1, fecha2, formaPago);
         }
 
         public static DataTable mostrarAbonosPorBoleta(string boleta)
@@ -59,7 +59,7 @@ namespace Domain
 
         public static DataTable mostrarReporteCaja(string fecha, string fecha2)
         {
-            return DA_Reports.mostrarReporteCaja(fecha,fecha2);
+            return DA_Reports.mostrarReporteCaja(fecha, fecha2);
         }
 
         public static DataTable mostrarReporteFormasPagoCaja(DateTime fecha)
@@ -75,7 +75,7 @@ namespace Domain
 
         public static DataTable mostrarTotalComisionesPagadas()
         {
-             return DA_Reports.mostrarTotalComisionesPagadas();
+            return DA_Reports.mostrarTotalComisionesPagadas();
         }
 
         public static DataTable sumarTotalGastos()
@@ -101,6 +101,11 @@ namespace Domain
         public static DataTable mostrarReporteTotalCaja()
         {
             return DA_Reports.mostrarReporteTotalCaja();
+        }
+
+        public static DataTable mostrarTotalAbonosClientes(int vendedorId)
+        {
+            return DA_Reports.mostrarTotalAbonosClientes(vendedorId);
         }
 
     }

@@ -5,9 +5,9 @@ namespace Domain
 {
     public class N_Logs
     {
-        public static void mostrarLog(DataTable dt,string buscar)
+        public static void mostrarLog(DataTable dt, string buscar)
         {
-            D_Logs.mostrarLog(dt,buscar);
+            D_Logs.mostrarLog(dt, buscar);
         }
         public static bool guardarLog(int usuarioId, string accion)
         {

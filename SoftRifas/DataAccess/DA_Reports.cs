@@ -248,7 +248,27 @@ namespace DataAccess
             }
             return dt;
         }
-
+        public static DataTable mostrarTotalAbonosClientes(int vendedorId)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                con.Open();
+                SqlDataAdapter command = new SqlDataAdapter("sp_mostrar_total_abonos_cliente", con);
+                command.SelectCommand.CommandType = CommandType.StoredProcedure;
+                command.SelectCommand.Parameters.AddWithValue("vendedor_id", vendedorId);
+                command.Fill(dt);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+            return dt;
+        }
         public static DataTable mostrarReporteFormasPagoCaja(DateTime fecha)
         {
             DataTable dt = new DataTable();

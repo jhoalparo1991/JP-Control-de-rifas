@@ -35,14 +35,20 @@ namespace Entities
         public bool BorrarAbono { get; set; }
         public bool CambiarFpAbono { get; set; }
         public bool CambiarClienteAbono { get; set; }
+        public bool CrearVendedores { get; set; }
+        public bool EditarVendedores { get; set; }
+        public bool BorrarVendedores { get; set; }
+        public bool AsignarBoletasVendedores { get; set; }
+        public bool VerLog { get; set; }
+        public bool VerBoleta { get; set; }
     }
 
     public class InicioSesion
     {
         public int Id { get; set; }
         public int UsuarioId { get; set; }
-        public string NombreCompleto  { get; set; }
-        public bool Activo  { get; set; }
-        public DateTime Fecha  { get; set; }
+        public string NombreCompleto { get; set; }
+        public bool Activo { get; set; }
+        public DateTime Fecha { get; set; }
     }
 }

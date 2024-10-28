@@ -18,7 +18,7 @@ namespace CapaPresentacion._usuarios
             dibujarBoletas();
         }
         internal int usuarioId = 0;
-        int boletaId= 0;
+        int boletaId = 0;
         public void dibujarBoletas()
         {
             Fyp_boletas.Controls.Clear();
@@ -118,7 +118,7 @@ namespace CapaPresentacion._usuarios
 
         private void Txt_nro_boleta_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
             {
                 registrarBoleta();
             }

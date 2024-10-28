@@ -23,7 +23,7 @@ namespace CapaPresentacion._helpers
 
         public static void mensajeErrorException(Exception e)
         {
-            MessageBox.Show(e.Message,"Aviso del sistema",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            MessageBox.Show(e.Message, "Aviso del sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
             _helpers.Sesion.guardarDatosLog(e.Message);
         }
 

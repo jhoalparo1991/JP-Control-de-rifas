@@ -103,6 +103,12 @@ namespace DataAccess
                         BorrarAbono = Convert.ToBoolean(reader["borrar_abono"]),
                         CambiarFpAbono = Convert.ToBoolean(reader["cambiar_fp_abono"]),
                         CambiarClienteAbono = Convert.ToBoolean(reader["cambiar_cliente_abono"]),
+                        CrearVendedores = Convert.ToBoolean(reader["crear_vendedores"]),
+                        EditarVendedores = Convert.ToBoolean(reader["editar_vendedores"]),
+                        BorrarVendedores = Convert.ToBoolean(reader["borrar_vendedores"]),
+                        AsignarBoletasVendedores = Convert.ToBoolean(reader["asignar_boletas_vendedores"]),
+                        VerLog = Convert.ToBoolean(reader["ver_log"]),
+                        VerBoleta = Convert.ToBoolean(reader["ver_boleta"]),
                     };
                 }
             }
@@ -129,7 +135,7 @@ namespace DataAccess
                 builder.Append("where a.terminal =@terminal and a.estado=1");
                 SqlCommand command = new SqlCommand(builder.ToString(), con);
                 command.CommandType = CommandType.Text;
-                command.Parameters.AddWithValue("terminal",Environment.MachineName.Trim());
+                command.Parameters.AddWithValue("terminal", Environment.MachineName.Trim());
                 SqlDataReader reader = command.ExecuteReader();
                 if (reader.Read())
                 {
@@ -219,6 +225,12 @@ namespace DataAccess
                 command.Parameters.AddWithValue("borrar_abono", obj2.BorrarAbono);
                 command.Parameters.AddWithValue("cambiar_fp_abono", obj2.CambiarFpAbono);
                 command.Parameters.AddWithValue("cambiar_cliente_abono", obj2.CambiarClienteAbono);
+                command.Parameters.AddWithValue("crear_vendedores", obj2.CrearVendedores);
+                command.Parameters.AddWithValue("editar_vendedores", obj2.EditarVendedores);
+                command.Parameters.AddWithValue("borrar_vendedores", obj2.BorrarVendedores);
+                command.Parameters.AddWithValue("asignar_boletas_vendedores", obj2.AsignarBoletasVendedores);
+                command.Parameters.AddWithValue("ver_log", obj2.VerLog);
+                command.Parameters.AddWithValue("ver_boleta", obj2.VerBoleta);
 
 
                 result = Convert.ToInt32(command.ExecuteNonQuery()) != 0 ? true : false;

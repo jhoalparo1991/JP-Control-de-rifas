@@ -1,5 +1,4 @@
-﻿using CapaPresentacion._rifas_boletas;
-using Domain;
+﻿using Domain;
 using Entities;
 using System;
 using System.Collections.Generic;
@@ -66,7 +65,7 @@ namespace CapaPresentacion._egresos
                 TiposGastos obj = new TiposGastos()
                 {
                     Id = Convert.ToInt32(Txt_id.Text.Trim()),
-                    Descripcion= txtDescripcion.Text.Trim(),
+                    Descripcion = txtDescripcion.Text.Trim(),
                     Codigo = txtCodigo.Text.Trim(),
                 };
 
@@ -114,7 +113,7 @@ namespace CapaPresentacion._egresos
             guardar();
         }
 
-       
+
         private void Btn_nuevos_Click(object sender, EventArgs e)
         {
             Pn_mant.Visible = true;
@@ -150,7 +149,7 @@ namespace CapaPresentacion._egresos
                 {
                     N_TiposGastos.borrar(tipoGastoId);
                     mostrarTiposGastos();
-                    _helpers.Sesion.guardarDatosLog("Borra el tipo de gasto #"+tipoGastoId);
+                    _helpers.Sesion.guardarDatosLog("Borra el tipo de gasto #" + tipoGastoId);
                     tipoGastoId = 0;
                 }
 
@@ -174,7 +173,7 @@ namespace CapaPresentacion._egresos
                 tipoGastoId = Convert.ToInt32(Dgv.CurrentRow.Cells["id"].Value.ToString());
                 Txt_id.Text = Dgv.CurrentRow.Cells["Id"].Value.ToString();
                 txtCodigo.Text = Dgv.CurrentRow.Cells["Codigo"].Value.ToString();
-                txtDescripcion.Text =  Dgv.CurrentRow.Cells["Descripcion"].Value.ToString();
+                txtDescripcion.Text = Dgv.CurrentRow.Cells["Descripcion"].Value.ToString();
             }
         }
 

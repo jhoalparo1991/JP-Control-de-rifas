@@ -48,8 +48,8 @@ namespace CapaPresentacion._egresos
             try
             {
                 List<DtoMostarGastos> gastos = N_Gastos.mostrarGastos()
-                    .FindAll(x => x.Descripcion.Contains(Txt_buscar.Text.Trim()) 
-                               || x.Codigo.Contains(Txt_buscar.Text.Trim()) 
+                    .FindAll(x => x.Descripcion.Contains(Txt_buscar.Text.Trim())
+                               || x.Codigo.Contains(Txt_buscar.Text.Trim())
                                || x.TipoGasto.Contains(Txt_buscar.Text.Trim())
                                || x.Referencia.Contains(Txt_buscar.Text.Trim())
                                || x.Valor.ToString().Contains(Txt_buscar.Text.Trim())
@@ -58,7 +58,7 @@ namespace CapaPresentacion._egresos
 
                 decimal total = 0;
 
-                foreach(var gasto in gastos)
+                foreach (var gasto in gastos)
                 {
                     total += gasto.Valor;
                 }
@@ -86,7 +86,7 @@ namespace CapaPresentacion._egresos
             mostrarGastos();
         }
 
-     
+
         private void Btn_nuevos_Click(object sender, EventArgs e)
         {
             Frm_registrar_egresos frm = new Frm_registrar_egresos(this);
@@ -122,7 +122,7 @@ namespace CapaPresentacion._egresos
             }
         }
 
-       
+
         private void Btn_cerrar_ventana_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -135,7 +135,7 @@ namespace CapaPresentacion._egresos
             {
                 gastoId = Convert.ToInt32(Dgv.CurrentRow.Cells["id"].Value.ToString());
 
-                if(Dgv.Columns[e.ColumnIndex].Name == "btn_editar_egreso")
+                if (Dgv.Columns[e.ColumnIndex].Name == "btn_editar_egreso")
                 {
                     Frm_registrar_egresos frm = new Frm_registrar_egresos(this);
                     frm.Lbl_id.Text = Dgv.CurrentRow.Cells["Id"].Value.ToString();
@@ -154,14 +154,14 @@ namespace CapaPresentacion._egresos
                 }
                 else if (Dgv.Columns[e.ColumnIndex].Name == "btn_imprimir")
                 {
-                    _helpers.Sesion.guardarDatosLog("Imprime el gasto seleccionado #"+ gastoId);
+                    _helpers.Sesion.guardarDatosLog("Imprime el gasto seleccionado #" + gastoId);
                     Frm_reporte_egresos frm = new Frm_reporte_egresos();
                     frm.gastoId = gastoId;
                     frm.mostrarGasto();
                     frm.ShowDialog();
                 }
 
-              
+
             }
         }
 

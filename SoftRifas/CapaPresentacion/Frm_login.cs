@@ -25,7 +25,8 @@ namespace CapaPresentacion
         {
             int total = N_Usuarios.mostrarUsuarios().Count;
 
-            if(total <= 0) {
+            if (total <= 0)
+            {
                 Lbl_usuario.Visible = true;
             }
             else
@@ -52,7 +53,8 @@ namespace CapaPresentacion
 
                 N_Usuarios.cerrarSesion();
                 Usuarios usuario = new Usuarios();
-                if (string.IsNullOrEmpty(Txt_nro_doc.Text)) {
+                if (string.IsNullOrEmpty(Txt_nro_doc.Text))
+                {
                     _helpers.Mensajes.mensajeAdvertencia("El campo número de documento es requerido");
                     Txt_nro_doc.Select();
                     return;
@@ -65,14 +67,14 @@ namespace CapaPresentacion
                     return;
                 }
 
-                usuario = N_Usuarios.mostrarUsuarios().Find(x=>x.NroDoc == Txt_nro_doc.Text.Trim() && x.Clave ==Txt_clave.Text.Trim() && x.Activo == true);
+                usuario = N_Usuarios.mostrarUsuarios().Find(x => x.NroDoc == Txt_nro_doc.Text.Trim() && x.Clave == Txt_clave.Text.Trim() && x.Activo == true);
 
-                if(usuario  != null)
+                if (usuario != null)
                 {
                     if (N_Usuarios.registrarSesion(usuario.Id))
                     {
                         //_helpers.Mensajes.mensajeInformacion($"Bienvenido {usuario.NombreCompleto}");
-                        N_Logs.guardarLog(usuario.Id,"Inició sesion");
+                        N_Logs.guardarLog(usuario.Id, "Inició sesion");
                         this.Dispose();
                         Frm_menu frm = new Frm_menu();
                         frm.ShowDialog();
@@ -88,7 +90,7 @@ namespace CapaPresentacion
 
                 }
 
-               
+
                 limpiar();
 
             }
@@ -115,7 +117,7 @@ namespace CapaPresentacion
 
 
         }
-        
+
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -130,7 +132,7 @@ namespace CapaPresentacion
         private void Lbl_usuario_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Frm_usuarios frm = new Frm_usuarios();
-          //  frm.FormBorderStyle = FormBorderStyle.FixedDialog ;
+            //  frm.FormBorderStyle = FormBorderStyle.FixedDialog ;
             frm.MaximizeBox = false;
             frm.MinimizeBox = false;
             frm.Text = "Registrar usuarios";

@@ -28,9 +28,9 @@ namespace CapaPresentacion._helpers
             try
             {
                 InicioSesion sesion = N_Usuarios.mostrarUsuarioSesion();
-                if(sesion != null)
+                if (sesion != null)
                 {
-                    N_Logs.guardarLog(sesion.UsuarioId,accion);
+                    N_Logs.guardarLog(sesion.UsuarioId, accion);
                 }
             }
             catch (Exception e)

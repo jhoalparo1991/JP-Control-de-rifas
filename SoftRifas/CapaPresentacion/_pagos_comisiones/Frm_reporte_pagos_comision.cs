@@ -13,10 +13,11 @@ namespace CapaPresentacion._pagos_comisiones
             _helpers.Sesion.guardarDatosLog("RPORTE PAGO COMISIONES");
         }
 
+
         private void Frm_reporte_pagos_comision_Load(object sender, EventArgs e)
         {
             mostrarVendedores();
-            this.reportViewer1.RefreshReport();
+            //this.reportViewer1.RefreshReport();
             //this.reportViewer2.RefreshReport();
             //this.reportViewer3.RefreshReport();
         }
@@ -37,7 +38,7 @@ namespace CapaPresentacion._pagos_comisiones
             }
         }
 
-        public void mostrarInformacionComisionesVendedor(string nroAbonos,string totalComision,string totalPagado,string totalComisionPendiete,string vendedor)
+        public void mostrarInformacionComisionesVendedor(string nroAbonos, string totalComision, string totalPagado, string totalComisionPendiete, string vendedor, string fechaIni, string fechaFin)
         {
             try
             {
@@ -50,6 +51,8 @@ namespace CapaPresentacion._pagos_comisiones
                 rpt.txtTotalComisionPendiente.Value = totalComisionPendiete;
                 rpt.txtTotalComision.Value = totalComision;
                 rpt.txtTotalComisionPagada.Value = totalPagado;
+                rpt.Txt_fecha_ini.Value = fechaIni;
+                rpt.Txt_fecha_fin.Value = fechaFin;
                 rpt.txtNroAbonos.Value = nroAbonos.ToString();
                 reportViewer1.Report = rpt;
 
@@ -62,20 +65,21 @@ namespace CapaPresentacion._pagos_comisiones
             }
         }
 
-        public void mostrarTotalAbonos( int _vendedorId, string vendedor,DateTime fechaIni, DateTime fechaFin)
+        public void mostrarTotalAbonos(int _vendedorId, string vendedor, DateTime fechaIni, DateTime fechaFin)
         {
             try
             {
 
                 DataTable dt = new DataTable();
-                dt = N_Boletas.mostrarAbonosBoletaPorVendedor(_vendedorId,fechaIni, fechaFin);
-                rptInfoAbonos  rpt = new rptInfoAbonos();
+                dt = N_Boletas.mostrarAbonosBoletaPorVendedor(_vendedorId, fechaIni, fechaFin);
+                rptInfoAbonos rpt = new rptInfoAbonos();
                 //rpt.DataSource = dt;
 
                 rpt.table1.DataSource = dt;
                 rpt.txtVendedor.Value = vendedor;
                 reportViewer2.Report = rpt;
-
+                rpt.Txt_fecha_ini.Value = fechaIni.ToString();
+                rpt.Txt_fecha_fin.Value = fechaFin.ToString();
                 reportViewer2.RefreshReport();
 
             }

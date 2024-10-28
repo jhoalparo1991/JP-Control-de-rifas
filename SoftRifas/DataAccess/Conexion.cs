@@ -126,7 +126,7 @@ namespace DataAccess
                     b.UserID = properties[2];
                     b.Password = properties[3];
                     b.IntegratedSecurity = Convert.ToBoolean(properties[4]);
-                    using(SqlConnection con = new SqlConnection(b.ConnectionString))
+                    using (SqlConnection con = new SqlConnection(b.ConnectionString))
                     {
                         con.Open();
                         SqlCommand command = new SqlCommand(scriptSQL, con);

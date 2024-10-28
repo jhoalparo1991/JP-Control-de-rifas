@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
+﻿using System.Drawing;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CapaPresentacion._helpers
@@ -81,7 +76,7 @@ namespace CapaPresentacion._helpers
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
 
-        public static void moverFormulario(object sender, MouseEventArgs e,Form frm)
+        public static void moverFormulario(object sender, MouseEventArgs e, Form frm)
         {
             ReleaseCapture();
             SendMessage(frm.Handle, 0x112, 0xf012, 0);

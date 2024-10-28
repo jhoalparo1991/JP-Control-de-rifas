@@ -11,7 +11,7 @@ namespace Domain
         {
             return D_Rifas.mostrarRifas();
         }
-    
+
         public static bool crearRifas(Rifas obj)
         {
             return D_Rifas.crearRifas(obj);
@@ -20,6 +20,6 @@ namespace Domain
         {
             return D_Rifas.borrar(clienteId);
         }
-       
+
     }
 }

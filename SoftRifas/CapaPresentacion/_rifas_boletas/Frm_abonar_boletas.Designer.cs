@@ -106,7 +106,7 @@ namespace CapaPresentacion._rifas_boletas
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.panel1.Size = new System.Drawing.Size(1227, 40);
+            this.panel1.Size = new System.Drawing.Size(690, 40);
             this.panel1.TabIndex = 0;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
@@ -119,7 +119,7 @@ namespace CapaPresentacion._rifas_boletas
             this.Btn_cerrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.Btn_cerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.Btn_cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_cerrar.Location = new System.Drawing.Point(1192, 5);
+            this.Btn_cerrar.Location = new System.Drawing.Point(655, 5);
             this.Btn_cerrar.Name = "Btn_cerrar";
             this.Btn_cerrar.Size = new System.Drawing.Size(31, 30);
             this.Btn_cerrar.TabIndex = 1;
@@ -144,7 +144,7 @@ namespace CapaPresentacion._rifas_boletas
             this.panel2.Location = new System.Drawing.Point(0, 40);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(2);
-            this.panel2.Size = new System.Drawing.Size(1227, 611);
+            this.panel2.Size = new System.Drawing.Size(690, 611);
             this.panel2.TabIndex = 1;
             // 
             // panel3
@@ -181,7 +181,7 @@ namespace CapaPresentacion._rifas_boletas
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(2, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1223, 607);
+            this.panel3.Size = new System.Drawing.Size(686, 607);
             this.panel3.TabIndex = 0;
             // 
             // label5
@@ -205,7 +205,7 @@ namespace CapaPresentacion._rifas_boletas
             this.Lbl_total_comision});
             this.statusStrip1.Location = new System.Drawing.Point(0, 583);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1223, 24);
+            this.statusStrip1.Size = new System.Drawing.Size(686, 24);
             this.statusStrip1.TabIndex = 15;
             this.statusStrip1.Text = "statusStrip1";
             // 

@@ -27,7 +27,7 @@ namespace Domain
 
         public static DataTable obtenerBoletasEntreFechasAndVendedor(int vendedorId, DateTime FIni, DateTime FFin, string codigo)
         {
-            return D_Boletas.obtenerBoletasEntreFechasAndVendedor(vendedorId, FIni, FFin,codigo);
+            return D_Boletas.obtenerBoletasEntreFechasAndVendedor(vendedorId, FIni, FFin, codigo);
         }
         public static void contarBoletas(ref int total, int id)
         {
@@ -69,7 +69,7 @@ namespace Domain
 
         public static DataTable mostrarAbonosBoletaPorVendedor(int vendedorId, DateTime fechaIni, DateTime fechaFin)
         {
-            return D_Boletas.mostrarAbonosBoletaPorVendedor(vendedorId,fechaIni,fechaFin);
+            return D_Boletas.mostrarAbonosBoletaPorVendedor(vendedorId, fechaIni, fechaFin);
         }
 
 

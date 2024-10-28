@@ -40,7 +40,7 @@ namespace CapaPresentacion._pagos
             }
             catch (Exception)
             {
-               // _helpers.Mensajes.mensajeErrorException(e);
+                // _helpers.Mensajes.mensajeErrorException(e);
             }
         }
 
@@ -48,7 +48,7 @@ namespace CapaPresentacion._pagos
         {
             try
             {
-                List<DtoMostrarDetallePagos> pagos = N_Pagos.mostrarDetallePagos().FindAll(x => x.PagoId==pagoId);
+                List<DtoMostrarDetallePagos> pagos = N_Pagos.mostrarDetallePagos().FindAll(x => x.PagoId == pagoId);
                 Dgv_detalle_pagos_realizados.DataSource = pagos;
             }
             catch (Exception e)
@@ -61,12 +61,12 @@ namespace CapaPresentacion._pagos
         {
             dtDetallePagos = new DataTable();
 
-            dtDetallePagos.Columns.Add("pago_id",typeof(int));
-            dtDetallePagos.Columns.Add("vendedor_id",typeof(int));
-            dtDetallePagos.Columns.Add("nombre_vendedor",typeof(string));
-            dtDetallePagos.Columns.Add("valor_pagado",typeof(decimal));
-            dtDetallePagos.Columns.Add("forma_pago",typeof(string));
-            dtDetallePagos.Columns.Add("periodo_pagado",typeof(string));
+            dtDetallePagos.Columns.Add("pago_id", typeof(int));
+            dtDetallePagos.Columns.Add("vendedor_id", typeof(int));
+            dtDetallePagos.Columns.Add("nombre_vendedor", typeof(string));
+            dtDetallePagos.Columns.Add("valor_pagado", typeof(decimal));
+            dtDetallePagos.Columns.Add("forma_pago", typeof(string));
+            dtDetallePagos.Columns.Add("periodo_pagado", typeof(string));
 
             Dgv_nuevos_pagos.DataSource = dtDetallePagos;
             Dgv_nuevos_pagos.Refresh();
@@ -83,7 +83,7 @@ namespace CapaPresentacion._pagos
             row["valor_pagado"] = txt_valor_pagar.Text.Trim();
             row["forma_pago"] = cbx_forma_pago.Text.Trim();
             row["periodo_pagado"] = $"pagado del {dt_fecha_ini.Text} al {dt_fecha_fin.Text}".Trim();
-          
+
             dtDetallePagos.Rows.Add(row);
             Dgv_nuevos_pagos.DataSource = dtDetallePagos;
             Dgv_nuevos_pagos.Refresh();
@@ -187,9 +187,9 @@ namespace CapaPresentacion._pagos
         {
             try
             {
-               InicioSesion usuario =  N_Usuarios.mostrarUsuarioSesion();
+                InicioSesion usuario = N_Usuarios.mostrarUsuarioSesion();
 
-                if(usuario != null)
+                if (usuario != null)
                 {
                     txt_usuario_id.Text = usuario.Id.ToString();
                     Txt_usuario.Text = usuario.NombreCompleto.ToUpper();
@@ -218,11 +218,11 @@ namespace CapaPresentacion._pagos
             txt_descripcion.Text = string.Empty;
             dt_fecha_ini.Select();
         }
-        
+
         private void calcularTotal()
         {
             decimal valor = 0;
-            for(int i=0; i < Dgv_nuevos_pagos.Rows.Count; i++)
+            for (int i = 0; i < Dgv_nuevos_pagos.Rows.Count; i++)
             {
                 valor += Convert.ToDecimal(Dgv_nuevos_pagos.Rows[i].Cells["valor_pagado"].Value.ToString());
             }
@@ -268,7 +268,7 @@ namespace CapaPresentacion._pagos
 
         private void dgv_vendedores_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(dgv_vendedores.Rows.Count > 0)
+            if (dgv_vendedores.Rows.Count > 0)
             {
                 Txt_vendedor_id.Text = dgv_vendedores.CurrentRow.Cells["usId"].Value.ToString().Trim();
                 Txt_nro_doc.Text = dgv_vendedores.CurrentRow.Cells["usNroDoc"].Value.ToString().Trim();
@@ -282,9 +282,9 @@ namespace CapaPresentacion._pagos
         {
             Pn_listado_vendedores.Visible = false;
 
-            if(Dgv_nuevos_pagos.Rows.Count > 0)
+            if (Dgv_nuevos_pagos.Rows.Count > 0)
             {
-                if(Dgv_nuevos_pagos.Columns[e.ColumnIndex].Name == "btn_quitar")
+                if (Dgv_nuevos_pagos.Columns[e.ColumnIndex].Name == "btn_quitar")
                 {
                     Dgv_nuevos_pagos.Rows.Remove(Dgv_nuevos_pagos.CurrentRow);
                 }
@@ -302,17 +302,18 @@ namespace CapaPresentacion._pagos
         {
             bool existe = false;
 
-            foreach (DataGridViewRow rows in Dgv_nuevos_pagos.Rows) {
-            
-                if(Convert.ToInt32(rows.Cells["vendedor_id"].Value.ToString()) == Convert.ToInt32(Txt_vendedor_id.Text.Trim()))
+            foreach (DataGridViewRow rows in Dgv_nuevos_pagos.Rows)
+            {
+
+                if (Convert.ToInt32(rows.Cells["vendedor_id"].Value.ToString()) == Convert.ToInt32(Txt_vendedor_id.Text.Trim()))
                 {
                     existe = true;
                     break;
                 }
-            
+
             }
-            
-            if(existe == true)
+
+            if (existe == true)
             {
                 _helpers.Mensajes.mensajeAdvertencia("Este vendedor ya fue agregado");
                 return;
@@ -337,8 +338,8 @@ namespace CapaPresentacion._pagos
             }
             DateTime fechaIni = Convert.ToDateTime(dt_fecha_ini.Text);
             DateTime fechaFIn = Convert.ToDateTime(dt_fecha_fin.Text);
-            int result = DateTime.Compare(fechaIni,fechaFIn);
-            if (result > 0 )
+            int result = DateTime.Compare(fechaIni, fechaFIn);
+            if (result > 0)
             {
                 _helpers.Mensajes.mensajeAdvertencia("Tienes un error con la fecha, la fecha de inicio no puede ser mayor a la fecha de fin");
                 return;
@@ -347,9 +348,9 @@ namespace CapaPresentacion._pagos
 
             try
             {
-               
 
-                
+
+
 
                 agregarDetallesPagos(0);
             }
@@ -376,7 +377,7 @@ namespace CapaPresentacion._pagos
                     return;
                 }
 
-                if(Dgv_nuevos_pagos.Rows.Count <= 0)
+                if (Dgv_nuevos_pagos.Rows.Count <= 0)
                 {
                     _helpers.Mensajes.mensajeAdvertencia("Debes ingresar vendedores para realizar el pago");
                     return;
@@ -448,7 +449,7 @@ namespace CapaPresentacion._pagos
 
         private void Dgv_pagos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(Dgv_pagos.Rows.Count > 0)
+            if (Dgv_pagos.Rows.Count > 0)
             {
                 _pagoId = Convert.ToInt32(Dgv_pagos.CurrentRow.Cells["p_id"].Value.ToString());
                 mostrarDetallePagos(_pagoId);
@@ -459,7 +460,7 @@ namespace CapaPresentacion._pagos
         {
             if (Dgv_pagos.Rows.Count > 0)
             {
-                 _pagoId = Convert.ToInt32(Dgv_pagos.CurrentRow.Cells["p_id"].Value.ToString());
+                _pagoId = Convert.ToInt32(Dgv_pagos.CurrentRow.Cells["p_id"].Value.ToString());
                 mostrarDetallePagos(_pagoId);
             }
         }

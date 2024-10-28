@@ -1,11 +1,11 @@
 namespace ReportsModule._rdls
 {
     /// <summary>
-    /// 
+    /// Summary description for RptMostrarTodosAbonosClientes.
     /// </summary>
-    public partial class RptVendidasPorVendedores : Telerik.Reporting.Report
+    public partial class RptMostrarTodosAbonosClientes : Telerik.Reporting.Report
     {
-        public RptVendidasPorVendedores()
+        public RptMostrarTodosAbonosClientes()
         {
             //
             // Required for telerik Reporting designer support

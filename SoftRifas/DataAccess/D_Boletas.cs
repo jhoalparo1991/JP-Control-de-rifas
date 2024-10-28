@@ -189,7 +189,7 @@ namespace DataAccess
                 data.SelectCommand.Parameters.AddWithValue("@fecha_ini", FIni);
                 data.SelectCommand.Parameters.AddWithValue("@fecha_fin", FFin);
                 data.Fill(dt);
-                
+
             }
             catch (Exception e)
             {
@@ -201,7 +201,7 @@ namespace DataAccess
             }
             return dt;
         }
-        public static DataTable obtenerBoletasEntreFechasAndVendedor(int vendedorId, DateTime FIni, DateTime FFin,string codigo)
+        public static DataTable obtenerBoletasEntreFechasAndVendedor(int vendedorId, DateTime FIni, DateTime FFin, string codigo)
         {
             DataTable dt = new DataTable();
             try
@@ -381,7 +381,7 @@ namespace DataAccess
             return result;
         }
 
-        public static DataTable mostrarAbonosBoletaPorVendedor(int vendedorId,DateTime fechaIni, DateTime fechaFin)
+        public static DataTable mostrarAbonosBoletaPorVendedor(int vendedorId, DateTime fechaIni, DateTime fechaFin)
         {
             DataTable dt = new DataTable();
             try

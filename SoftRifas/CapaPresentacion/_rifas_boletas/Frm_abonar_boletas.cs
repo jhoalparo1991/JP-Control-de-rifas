@@ -36,7 +36,7 @@ namespace CapaPresentacion._rifas_boletas
         {
             try
             {
-              
+
 
                 Usuarios user = N_Usuarios.mostrarUsuarios().Find(x => x.Id == Convert.ToInt32(txt_vendedor_id.Text.Trim()));
 
@@ -74,7 +74,7 @@ namespace CapaPresentacion._rifas_boletas
                 decimal _totalAbonos = 0;
                 foreach (var abono in abonos)
                 {
-                    _totalAbonos +=(Convert.ToDecimal(abono.Abonos));
+                    _totalAbonos += (Convert.ToDecimal(abono.Abonos));
                     txt_cliente.Text = abono.Cliente.ToString().Trim();
                     txt_cliente_id.Text = abono.ClienteId.ToString().Trim();
                     txt_vendedor.Text = abono.Vendedor.ToString().Trim();
@@ -82,7 +82,7 @@ namespace CapaPresentacion._rifas_boletas
                     Txt_cc_ve.Text = abono.VendedorCC.ToString().Trim();
                     Txt_cc_cl.Text = abono.ClienteCC.ToString().Trim();
                 }
-                
+
                 obtenerComisionVendedor();
 
 
@@ -152,7 +152,7 @@ namespace CapaPresentacion._rifas_boletas
         {
             try
             {
-                
+
                 if (string.IsNullOrEmpty(Txt_boleta.Text.Trim()))
                 {
                     _helpers.Mensajes.mensajeAdvertencia("El número de boleta es requerido");
@@ -186,8 +186,8 @@ namespace CapaPresentacion._rifas_boletas
                     return;
                 }
 
-                decimal valorSaldado= Convert.ToDecimal(txt_saldado.Text.Trim());
-                decimal valorDeuda= Convert.ToDecimal(txt_deuda.Text.Trim());
+                decimal valorSaldado = Convert.ToDecimal(txt_saldado.Text.Trim());
+                decimal valorDeuda = Convert.ToDecimal(txt_deuda.Text.Trim());
 
 
                 if (valorDeuda > valorSaldado)
@@ -215,9 +215,9 @@ namespace CapaPresentacion._rifas_boletas
                     ClienteCC = Txt_cc_cl.Text.Trim(),
                 };
 
-               DialogResult result = MessageBox.Show("Estas seguro con el valor del abono, valida antes de guardar, no podras modificar un abono despues de guardarlo", "Confirmacion de abono", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                DialogResult result = MessageBox.Show("Estas seguro con el valor del abono, valida antes de guardar, no podras modificar un abono despues de guardarlo", "Confirmacion de abono", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
-                if(result == DialogResult.OK)
+                if (result == DialogResult.OK)
                 {
                     if (N_Boletas.registrarAbonosBoletas(obj))
                     {
@@ -230,7 +230,7 @@ namespace CapaPresentacion._rifas_boletas
                     }
                 }
 
-              
+
 
 
             }
@@ -239,15 +239,15 @@ namespace CapaPresentacion._rifas_boletas
                 _helpers.Mensajes.mensajeErrorException(e);
             }
         }
-  
+
         #endregion
-     
+
         private void Btn_cancel_Click(object sender, EventArgs e)
         {
             limpiar();
         }
 
-      
+
 
         private void Btn_registrar_Click(object sender, EventArgs e)
         {
@@ -300,7 +300,7 @@ namespace CapaPresentacion._rifas_boletas
                 return;
             }
 
-        
+
         }
 
         private void panel1_MouseDown(object sender, MouseEventArgs e)
@@ -310,15 +310,15 @@ namespace CapaPresentacion._rifas_boletas
 
         private void Dgv_abonos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(Dgv_abonos.Rows.Count > 0)
+            if (Dgv_abonos.Rows.Count > 0)
             {
                 id = Convert.ToInt32(Dgv_abonos.CurrentRow.Cells["b_Id"].Value.ToString().Trim());
                 if (Dgv_abonos.Columns[e.ColumnIndex].Name == "btn_editar_forma_pago")
                 {
-                   DialogResult result = MessageBox.Show("Deseas hacer un  cambio de la forma de pago de este abono","Mensaje de confirmacion",
-                        MessageBoxButtons.OKCancel,MessageBoxIcon.Question);
+                    DialogResult result = MessageBox.Show("Deseas hacer un  cambio de la forma de pago de este abono", "Mensaje de confirmacion",
+                         MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
-                    if(result == DialogResult.OK)
+                    if (result == DialogResult.OK)
                     {
                         Frm_cambiar_forma_pago_boleta frmCambio = new Frm_cambiar_forma_pago_boleta();
                         frmCambio.Lbl_id.Text = id.ToString();
@@ -326,9 +326,10 @@ namespace CapaPresentacion._rifas_boletas
                         frmCambio.FormClosed += FrmCambio_FormClosed;
                         frmCambio.ShowDialog();
                     }
-                }else if (Dgv_abonos.Columns[e.ColumnIndex].Name == "btn_cambiar_cliente")
+                }
+                else if (Dgv_abonos.Columns[e.ColumnIndex].Name == "btn_cambiar_cliente")
                 {
-                 
+
                     DialogResult result = MessageBox.Show("Deseas hacer el cambio de cliente a este abono", "Mensaje de confirmacion",
                         MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
@@ -336,13 +337,14 @@ namespace CapaPresentacion._rifas_boletas
                     {
                         Frm_cambiar_cliente frmCambioCl = new Frm_cambiar_cliente();
                         frmCambioCl.clienteIdActual = id;
-                        frmCambioCl._clienteActual= Dgv_abonos.CurrentRow.Cells["b_Cliente"].Value.ToString().Trim();
+                        frmCambioCl._clienteActual = Dgv_abonos.CurrentRow.Cells["b_Cliente"].Value.ToString().Trim();
                         frmCambioCl.Lbl_boleta_id.Text = Dgv_abonos.CurrentRow.Cells["b_boletaId"].Value.ToString().Trim();
                         frmCambioCl.FormClosed += FrmCambio_FormClosed;
                         frmCambioCl.ShowDialog();
                     }
                     //
-                } else if (Dgv_abonos.Columns[e.ColumnIndex].Name == "btn_borrar_abono")
+                }
+                else if (Dgv_abonos.Columns[e.ColumnIndex].Name == "btn_borrar_abono")
                 {
                     DialogResult result = MessageBox.Show("Estas segura que deseas eliminar este abono, se eliminaran sus pagos si tiene, este proceso no se podra revertir -- PRECAUCION", "Borrar Abono Boleta",
                        MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
@@ -358,9 +360,9 @@ namespace CapaPresentacion._rifas_boletas
 
                         try
                         {
-                            if(N_Boletas.borrarAbonosBoletas(_boletaId, _abonoBoletaId, _vendedorId))
+                            if (N_Boletas.borrarAbonosBoletas(_boletaId, _abonoBoletaId, _vendedorId))
                             {
-                            _helpers.Mensajes.mensajeInformacion("Registro borrado con exito");
+                                _helpers.Mensajes.mensajeInformacion("Registro borrado con exito");
                                 frm.mostrarTodasBoletas();
                                 frm.dibujarBoletas();
                                 mostrarAbonos(Convert.ToInt32(txt_id_boleta.Text.Trim()));
@@ -388,7 +390,7 @@ namespace CapaPresentacion._rifas_boletas
 
         private void hacerCalculos()
         {
-            if(Dgv_abonos.Rows.Count <= 0)
+            if (Dgv_abonos.Rows.Count <= 0)
             {
                 Lbl_deuda.Text = "0";
                 Lbl_total_abonos.Text = "0";
@@ -401,10 +403,10 @@ namespace CapaPresentacion._rifas_boletas
                 decimal _comision = 0;
                 decimal _valorBoleta = Convert.ToDecimal(txt_valor.Text.Trim());
 
-                for(int i=0; i < Dgv_abonos.Rows.Count; i++)
+                for (int i = 0; i < Dgv_abonos.Rows.Count; i++)
                 {
-                    _abonos += Convert.ToDecimal(Dgv_abonos.Rows[i].Cells["b_abonos"].Value.ToString()); 
-                    _comision += Convert.ToDecimal(Dgv_abonos.Rows[i].Cells["b_ValorComision"].Value.ToString()); 
+                    _abonos += Convert.ToDecimal(Dgv_abonos.Rows[i].Cells["b_abonos"].Value.ToString());
+                    _comision += Convert.ToDecimal(Dgv_abonos.Rows[i].Cells["b_ValorComision"].Value.ToString());
                 }
 
                 _deuda = (_valorBoleta - _abonos);

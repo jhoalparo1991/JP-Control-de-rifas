@@ -1,9 +1,6 @@
-﻿using Entities;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Data;
 using System.Data.SqlClient;
-using System.Text;
 
 namespace DataAccess
 {
@@ -17,7 +14,7 @@ namespace DataAccess
             try
             {
                 con.Open();
-               
+
                 SqlDataAdapter data = new SqlDataAdapter("sp_mostrar_log", con);
                 data.SelectCommand.CommandType = CommandType.StoredProcedure;
                 data.SelectCommand.Parameters.AddWithValue("buscar", buscar);
@@ -58,5 +55,5 @@ namespace DataAccess
             return result;
         }
 
- }
+    }
 }

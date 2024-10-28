@@ -63,7 +63,7 @@
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 48.12834F));
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.29947F));
-            this.tableLayoutPanel.Size = new System.Drawing.Size(557, 353);
+            this.tableLayoutPanel.Size = new System.Drawing.Size(557, 274);
             this.tableLayoutPanel.TabIndex = 0;
             // 
             // logoPictureBox
@@ -74,7 +74,7 @@
             this.logoPictureBox.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.logoPictureBox.Name = "logoPictureBox";
             this.tableLayoutPanel.SetRowSpan(this.logoPictureBox, 6);
-            this.logoPictureBox.Size = new System.Drawing.Size(173, 347);
+            this.logoPictureBox.Size = new System.Drawing.Size(173, 268);
             this.logoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.logoPictureBox.TabIndex = 12;
             this.logoPictureBox.TabStop = false;
@@ -98,13 +98,13 @@
             this.labelVersion.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelVersion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelVersion.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.labelVersion.Location = new System.Drawing.Point(191, 35);
+            this.labelVersion.Location = new System.Drawing.Point(191, 27);
             this.labelVersion.Margin = new System.Windows.Forms.Padding(8, 0, 5, 0);
             this.labelVersion.MaximumSize = new System.Drawing.Size(0, 21);
             this.labelVersion.Name = "labelVersion";
             this.labelVersion.Size = new System.Drawing.Size(361, 21);
             this.labelVersion.TabIndex = 0;
-            this.labelVersion.Text = "Versión : 1.0.0";
+            this.labelVersion.Text = "Versión : 4.1.0";
             this.labelVersion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // labelCopyright
@@ -112,7 +112,7 @@
             this.labelCopyright.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelCopyright.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCopyright.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.labelCopyright.Location = new System.Drawing.Point(191, 70);
+            this.labelCopyright.Location = new System.Drawing.Point(191, 54);
             this.labelCopyright.Margin = new System.Windows.Forms.Padding(8, 0, 5, 0);
             this.labelCopyright.MaximumSize = new System.Drawing.Size(0, 21);
             this.labelCopyright.Name = "labelCopyright";
@@ -126,7 +126,7 @@
             this.labelCompanyName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelCompanyName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCompanyName.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.labelCompanyName.Location = new System.Drawing.Point(191, 105);
+            this.labelCompanyName.Location = new System.Drawing.Point(191, 81);
             this.labelCompanyName.Margin = new System.Windows.Forms.Padding(8, 0, 5, 0);
             this.labelCompanyName.MaximumSize = new System.Drawing.Size(0, 21);
             this.labelCompanyName.Name = "labelCompanyName";
@@ -138,13 +138,13 @@
             // textBoxDescription
             // 
             this.textBoxDescription.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxDescription.Location = new System.Drawing.Point(191, 143);
+            this.textBoxDescription.Location = new System.Drawing.Point(191, 111);
             this.textBoxDescription.Margin = new System.Windows.Forms.Padding(8, 3, 5, 3);
             this.textBoxDescription.Multiline = true;
             this.textBoxDescription.Name = "textBoxDescription";
             this.textBoxDescription.ReadOnly = true;
             this.textBoxDescription.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBoxDescription.Size = new System.Drawing.Size(361, 163);
+            this.textBoxDescription.Size = new System.Drawing.Size(361, 125);
             this.textBoxDescription.TabIndex = 23;
             this.textBoxDescription.TabStop = false;
             this.textBoxDescription.Text = resources.GetString("textBoxDescription.Text");
@@ -153,7 +153,7 @@
             // 
             this.okButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.okButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.okButton.Location = new System.Drawing.Point(451, 321);
+            this.okButton.Location = new System.Drawing.Point(451, 242);
             this.okButton.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.okButton.Name = "okButton";
             this.okButton.Size = new System.Drawing.Size(101, 29);
@@ -168,7 +168,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(579, 375);
+            this.ClientSize = new System.Drawing.Size(579, 296);
             this.Controls.Add(this.tableLayoutPanel);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;

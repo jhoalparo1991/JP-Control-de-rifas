@@ -50,7 +50,7 @@ namespace CapaPresentacion._clientes
                 if (dialog == DialogResult.OK)
                 {
                     bool result = N_Boletas.cambiarClienteBoleta(_boletaId, _id);
-                  
+
                     if (result)
                     {
                         _helpers.Sesion.guardarDatosLog("Cambia cliente a una boleta");
@@ -74,14 +74,14 @@ namespace CapaPresentacion._clientes
                 List<Clientes> clientes = N_Clientes.mostrarClientes().FindAll(x => x.NombreCompleto.Contains(txtBuscar.Text.Trim()) ||
                                                            x.NroDoc.Contains(txtBuscar.Text.Trim()));
                 Dgv_clientes.DataSource = clientes;
-               
+
             }
             catch (Exception e)
             {
                 _helpers.Mensajes.mensajeErrorException(e);
             }
         }
-   
+
         private void Btn_cerrar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -96,8 +96,8 @@ namespace CapaPresentacion._clientes
         {
             if (Dgv_clientes.Rows.Count > 0)
             {
-                Lbl_id.Text =  Dgv_clientes.CurrentRow.Cells["id"].Value.ToString();
-                Lbl_cliente.Text =  Dgv_clientes.CurrentRow.Cells["nombre_completo"].Value.ToString();
+                Lbl_id.Text = Dgv_clientes.CurrentRow.Cells["id"].Value.ToString();
+                Lbl_cliente.Text = Dgv_clientes.CurrentRow.Cells["nombre_completo"].Value.ToString();
             }
         }
 

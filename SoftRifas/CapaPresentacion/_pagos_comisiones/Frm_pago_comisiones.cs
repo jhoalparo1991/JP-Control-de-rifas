@@ -1,13 +1,7 @@
 ﻿using Domain;
 using Entities;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CapaPresentacion._pagos_comisiones
@@ -42,7 +36,7 @@ namespace CapaPresentacion._pagos_comisiones
                     {
                         btnReportes.Visible = permiso.Reportes;
                         btnPagarTodos.Visible = permiso.PagoComisiones;
-                       
+
                     }
                 }
             }
@@ -98,7 +92,7 @@ namespace CapaPresentacion._pagos_comisiones
             try
             {
                 DataTable dt = new DataTable();
-                dt=  N_Boletas.mostrarAbonosBoletaPorVendedor(_vendedorId,dtFechaIni.Value,dtFechaFinal.Value);
+                dt = N_Boletas.mostrarAbonosBoletaPorVendedor(_vendedorId, dtFechaIni.Value, dtFechaFinal.Value);
                 dgvAbonosBoleta.DataSource = dt;
 
                 txtNroAbonos.Text = dgvAbonosBoleta.Rows.Count.ToString();
@@ -107,9 +101,10 @@ namespace CapaPresentacion._pagos_comisiones
                 decimal _totalPendiente = 0;
                 decimal _totalAbono = 0;
 
-                for (int i = 0; i < dgvAbonosBoleta.Rows.Count; i++) {
+                for (int i = 0; i < dgvAbonosBoleta.Rows.Count; i++)
+                {
                     _totalComision += Convert.ToDecimal(dgvAbonosBoleta.Rows[i].Cells["valor_comision"].Value.ToString());
-                    _totalAbono+= Convert.ToDecimal(dgvAbonosBoleta.Rows[i].Cells["valor_abono"].Value.ToString());
+                    _totalAbono += Convert.ToDecimal(dgvAbonosBoleta.Rows[i].Cells["valor_abono"].Value.ToString());
                     if (dgvAbonosBoleta.Rows[i].Cells["abono_pagado"].Value.ToString() == "Si")
                     {
                         _totalPagado += Convert.ToDecimal(dgvAbonosBoleta.Rows[i].Cells["valor_comision"].Value.ToString());
@@ -121,7 +116,7 @@ namespace CapaPresentacion._pagos_comisiones
                     }
                 }
 
-                
+
 
                 txttotalComision.Text = _totalComision.ToString("C2");
                 txtTotalComisionPagada.Text = _totalPagado.ToString("C2");
@@ -144,22 +139,22 @@ namespace CapaPresentacion._pagos_comisiones
         {
             if (dgvAbonosBoleta.Rows.Count <= 0) return;
 
-            if(dgvAbonosBoleta.Columns[e.ColumnIndex].Name == "abono_pagado")
+            if (dgvAbonosBoleta.Columns[e.ColumnIndex].Name == "abono_pagado")
             {
                 string abonoPagado = dgvAbonosBoleta.CurrentRow.Cells["abono_pagado"].Value.ToString().Trim();
-                 _boletaId = Convert.ToInt32(dgvAbonosBoleta.CurrentRow.Cells["boleta_id"].Value.ToString());
-                 _abonoId = Convert.ToInt32(dgvAbonosBoleta.CurrentRow.Cells["id"].Value.ToString());
-                 _clienteId = Convert.ToInt32(dgvAbonosBoleta.CurrentRow.Cells["cliente_id"].Value.ToString());
-                 _valorPagado = Convert.ToDecimal(dgvAbonosBoleta.CurrentRow.Cells["valor_comision"].Value.ToString());
-                
-                if(abonoPagado == "Si")
+                _boletaId = Convert.ToInt32(dgvAbonosBoleta.CurrentRow.Cells["boleta_id"].Value.ToString());
+                _abonoId = Convert.ToInt32(dgvAbonosBoleta.CurrentRow.Cells["id"].Value.ToString());
+                _clienteId = Convert.ToInt32(dgvAbonosBoleta.CurrentRow.Cells["cliente_id"].Value.ToString());
+                _valorPagado = Convert.ToDecimal(dgvAbonosBoleta.CurrentRow.Cells["valor_comision"].Value.ToString());
+
+                if (abonoPagado == "Si")
                 {
                     DialogResult dialog = MessageBox.Show("Estas seguro que deseas reversar el pago de esta comision", "Mensaje de confirmacion",
                        MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
                     if (dialog == DialogResult.OK)
                     {
-                            borrarPagoComisionVendedor();
+                        borrarPagoComisionVendedor();
                     }
                     else
                     {
@@ -171,9 +166,9 @@ namespace CapaPresentacion._pagos_comisiones
                     DialogResult dialog = MessageBox.Show("Estas seguro que deseas pagara esta comision", "Mensaje de confirmacion",
                         MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
-                    if(dialog == DialogResult.OK)
+                    if (dialog == DialogResult.OK)
                     {
-                            registrarPagoComision();                        
+                        registrarPagoComision();
                     }
                     else
                     {
@@ -194,8 +189,9 @@ namespace CapaPresentacion._pagos_comisiones
                 txttotalComision.Text.Trim(),
                 txtTotalComisionPagada.Text.Trim(),
                 txtTotalComisionPendiente.Text.Trim(),
-                cbxVendedores.Text);
-            //frm.mostrarInformacionComisionesVendedor(_nroAbonos, 0, 0, 0,cbxVendedores.Text);
+                cbxVendedores.Text, dtFechaIni.Text, dtFechaFinal.Text);
+
+
             frm.mostrarTotalAbonos(_vendedorId, cbxVendedores.Text, dtFechaIni.Value, dtFechaFinal.Value);
             frm.ShowDialog();
         }
@@ -225,7 +221,7 @@ namespace CapaPresentacion._pagos_comisiones
                     "Mensaje de confirmacion", MessageBoxButtons.OKCancel,
                     MessageBoxIcon.Question);
 
-                if(dialog == DialogResult.OK)
+                if (dialog == DialogResult.OK)
                 {
                     int vendedorId = Convert.ToInt32(cbxVendedores.SelectedValue);
                     N_Pagos.sp_pagar_comision_vendedor_por_fecha(vendedorId, dtFechaIni.Value, dtFechaFinal.Value);

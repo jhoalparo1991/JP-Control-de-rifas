@@ -18,6 +18,7 @@ namespace CapaPresentacion
             mostrarRifas();
             mostrarVendedores(cbx_vendedor);
             mostrarVendedores(Cbx_vendedor_01);
+            mostrarVendedores(Cbx_vendedores_3);
             mostrarReporteTotalCaja();
             _helpers.Sesion.guardarDatosLog("REPORTES - formualrio de reportes");
         }
@@ -33,7 +34,7 @@ namespace CapaPresentacion
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.Message, "Aviso del sistema");
+                _helpers.Mensajes.mensajeAdvertencia(e.Message);
             }
         }
 
@@ -49,7 +50,7 @@ namespace CapaPresentacion
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.Message, "Aviso del sistema");
+                _helpers.Mensajes.mensajeAdvertencia(e.Message);
             }
         }
 
@@ -70,7 +71,7 @@ namespace CapaPresentacion
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.Message,"Aviso del sistema");
+                _helpers.Mensajes.mensajeAdvertencia(e.Message);
             }
         }
 
@@ -100,7 +101,7 @@ namespace CapaPresentacion
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.Message, "Aviso del sistema");
+                _helpers.Mensajes.mensajeAdvertencia(e.Message);
             }
         }
 
@@ -108,7 +109,7 @@ namespace CapaPresentacion
         {
             if (string.IsNullOrEmpty(Txt_nro_boleta.Text.Trim()))
             {
-                MessageBox.Show("Debes ingresar el número de la boleta");
+                _helpers.Mensajes.mensajeAdvertencia("Debes ingresar el número de la boleta");
                 return;
             }
 
@@ -125,20 +126,20 @@ namespace CapaPresentacion
                 //rpt.DataSource = dt;
 
                 int totalVendidas = 0;
-                foreach(DataRow row in dt.Rows)
+                foreach (DataRow row in dt.Rows)
                 {
                     totalVendidas += Convert.ToInt32(row["contar"].ToString());
                 }
                 rpt.table1.DataSource = dt;
                 rpt.Txt_total_vendidas.Value = totalVendidas.ToString();
                 reportViewer3.Report = rpt;
-                
+
                 reportViewer3.RefreshReport();
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Aviso del sistema");
+                _helpers.Mensajes.mensajeAdvertencia(ex.Message);
             }
         }
 
@@ -147,10 +148,10 @@ namespace CapaPresentacion
             try
             {
                 _helpers.Sesion.guardarDatosLog("REPORTES - Formas de pago");
-                DataTable dt = N_Reports.mostrarReporteFormasPago(dateTimePicker1.Value,dateTimePicker2.Value,
+                DataTable dt = N_Reports.mostrarReporteFormasPago(dateTimePicker1.Value, dateTimePicker2.Value,
                     Convert.ToInt32(cbx_rifa.SelectedValue));
                 RptMostrarAbonosPorFormasDePago rpt = new RptMostrarAbonosPorFormasDePago();
-               // rpt.DataSource = dt;
+                // rpt.DataSource = dt;
 
                 decimal totalVendidas = 0;
                 foreach (DataRow row in dt.Rows)
@@ -166,7 +167,7 @@ namespace CapaPresentacion
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Aviso del sistema");
+                _helpers.Mensajes.mensajeAdvertencia(ex.Message);
             }
         }
 
@@ -192,7 +193,7 @@ namespace CapaPresentacion
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Aviso del sistema");
+                _helpers.Mensajes.mensajeAdvertencia(ex.Message);
             }
         }
 
@@ -213,7 +214,7 @@ namespace CapaPresentacion
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Aviso del sistema");
+                _helpers.Mensajes.mensajeAdvertencia(ex.Message);
             }
         }
 
@@ -230,7 +231,7 @@ namespace CapaPresentacion
                 RptMostrarTodosAbonos rpt = new RptMostrarTodosAbonos();
                 _helpers.Sesion.guardarDatosLog("REPORTES - Mostrar todos los abonos");
                 decimal totalAbonos = 0;
-                decimal totalComisiones= 0;
+                decimal totalComisiones = 0;
                 foreach (DataRow row in dt.Rows)
                 {
                     totalAbonos += Convert.ToDecimal(row["abonos"].ToString());
@@ -245,7 +246,7 @@ namespace CapaPresentacion
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Aviso del sistema");
+                _helpers.Mensajes.mensajeAdvertencia(ex.Message);
             }
         }
 
@@ -265,7 +266,7 @@ namespace CapaPresentacion
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Aviso del sistema");
+                _helpers.Mensajes.mensajeAdvertencia(ex.Message);
             }
         }
 
@@ -276,7 +277,7 @@ namespace CapaPresentacion
                 _helpers.Sesion.guardarDatosLog("REPORTES - mostrar abonos por vendedores");
                 DataTable dt = N_Reports.mostrarAbonosComisionesPorVendedores(dateTimePicker9.Value, dateTimePicker10.Value,
                     Convert.ToInt32(Cbx_vendedor_01.SelectedValue));
-               
+
                 RptMostrarComisionAbonosPorVendedores rpt = new RptMostrarComisionAbonosPorVendedores();
 
                 decimal totalAbonos = 0;
@@ -301,7 +302,7 @@ namespace CapaPresentacion
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Aviso del sistema");
+                _helpers.Mensajes.mensajeAdvertencia(ex.Message);
             }
         }
 
@@ -311,10 +312,10 @@ namespace CapaPresentacion
             {
                 _helpers.Sesion.guardarDatosLog("REPORTES - gastos");
                 DateTime fechaIni = Convert.ToDateTime(dateTimePicker11.Text);
-                DateTime fechaFin= Convert.ToDateTime(dateTimePicker12.Text);
+                DateTime fechaFin = Convert.ToDateTime(dateTimePicker12.Text);
 
                 List<DtoMostarGastos> dt = N_Gastos.mostrarGastos()
-                    .FindAll( x => x.Fecha >= fechaIni && x.Fecha <= fechaFin);
+                    .FindAll(x => x.Fecha >= fechaIni && x.Fecha <= fechaFin);
 
                 RptMostrarEgresosPorFecha rpt = new RptMostrarEgresosPorFecha();
 
@@ -336,7 +337,7 @@ namespace CapaPresentacion
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Aviso del sistema");
+                _helpers.Mensajes.mensajeAdvertencia(ex.Message);
             }
         }
 
@@ -347,7 +348,7 @@ namespace CapaPresentacion
                 _helpers.Sesion.guardarDatosLog("REPORTES - Caja");
                 string fecha1 = dateTimePicker13.Text;
                 string fecha2 = dateTimePicker14.Text;
-                DataTable dt = N_Reports.mostrarReporteCaja(fecha1,fecha2);
+                DataTable dt = N_Reports.mostrarReporteCaja(fecha1, fecha2);
 
                 RptMostrarReporteCajaDiario rpt = new RptMostrarReporteCajaDiario();
 
@@ -387,7 +388,7 @@ namespace CapaPresentacion
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Aviso del sistema");
+                _helpers.Mensajes.mensajeAdvertencia(ex.Message);
             }
         }
 
@@ -424,7 +425,7 @@ namespace CapaPresentacion
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Aviso del sistema");
+                _helpers.Mensajes.mensajeAdvertencia(ex.Message);
             }
         }
 
@@ -449,10 +450,10 @@ namespace CapaPresentacion
         {
             try
             {
-           
+
                 DataTable dt = N_Reports.mostrarTotalComisionesPagadas();
 
-                Lbl_total_comisiones_paga.Text =Convert.ToDecimal(dt.Rows[0]["comision"].ToString()).ToString("C2");
+                Lbl_total_comisiones_paga.Text = Convert.ToDecimal(dt.Rows[0]["comision"].ToString()).ToString("C2");
 
             }
             catch (Exception e)
@@ -527,9 +528,9 @@ namespace CapaPresentacion
             try
             {
                 DataTable dt = N_Reports.mostrarReporteTotalCaja();
-                if(dt.Rows.Count > 0)
+                if (dt.Rows.Count > 0)
                 {
-                    decimal _totalCaja = Convert.ToDecimal(dt.Rows[0]["caja"].ToString()); 
+                    decimal _totalCaja = Convert.ToDecimal(dt.Rows[0]["caja"].ToString());
                     lblTotalCaja.Text = _totalCaja.ToString("C2");
                 }
 
@@ -537,6 +538,26 @@ namespace CapaPresentacion
             catch (Exception e)
             {
                 _helpers.Mensajes.mensajeAdvertencia(e.Message);
+            }
+        }
+
+        private void button6_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+
+                DataTable dt = N_Reports.mostrarTotalAbonosClientes(Convert.ToInt32(Cbx_vendedores_3.SelectedValue));
+                RptMostrarTodosAbonosClientes rpt = new RptMostrarTodosAbonosClientes();
+                _helpers.Sesion.guardarDatosLog("REPORTES - Mostrar todos los abonos por clientes");
+                rpt.txtVendedor.Value = Cbx_vendedores_3.Text.Trim().ToUpper();
+                rpt.table1.DataSource = dt;
+                reportViewer7.Report = rpt;
+                reportViewer7.RefreshReport();
+
+            }
+            catch (Exception ex)
+            {
+                _helpers.Mensajes.mensajeAdvertencia(ex.Message);
             }
         }
     }

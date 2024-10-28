@@ -4,6 +4,7 @@ using Domain;
 using Entities;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace CapaPresentacion._rifas_boletas
@@ -256,7 +257,7 @@ namespace CapaPresentacion._rifas_boletas
                 decimal valorComision = Convert.ToDecimal(Txt_comision.Text.Trim());
 
 
-                if(valorAbono > valorBoleta)
+                if (valorAbono > valorBoleta)
                 {
                     _helpers.Mensajes.mensajeAdvertencia("El valor del abono no puede ser mayor que el valor del precio de la boleta");
                     Txt_abono.Select();
@@ -285,7 +286,7 @@ namespace CapaPresentacion._rifas_boletas
                 {
                     limpiar();
                     this.Close();
-                    _helpers.Sesion.guardarDatosLog("Registra abono de boleta #" +Txt_nro_boleta.Text);
+                    _helpers.Sesion.guardarDatosLog("Registra abono de boleta #" + Txt_nro_boleta.Text);
                     frm.dibujarBoletas();
                 }
 
@@ -296,15 +297,15 @@ namespace CapaPresentacion._rifas_boletas
                 _helpers.Mensajes.mensajeErrorException(e);
             }
         }
-  
+
         #endregion
-     
+
         private void Btn_cancel_Click(object sender, EventArgs e)
         {
             limpiar();
         }
 
-      
+
 
         private void Btn_registrar_Click(object sender, EventArgs e)
         {
@@ -340,7 +341,7 @@ namespace CapaPresentacion._rifas_boletas
 
         private void txt_valor_boleta_KeyPress(object sender, KeyPressEventArgs e)
         {
-            _helpers.Validaciones.soloNumero(sender,e);
+            _helpers.Validaciones.soloNumero(sender, e);
         }
 
         private void Txt_abono_KeyPress(object sender, KeyPressEventArgs e)
@@ -389,7 +390,7 @@ namespace CapaPresentacion._rifas_boletas
             }
 
             obtenerComisionVendedor();
-         //   decimal valorBoleta = Convert.ToDecimal(txt_valor_boleta.Text.Trim());
+            //   decimal valorBoleta = Convert.ToDecimal(txt_valor_boleta.Text.Trim());
             decimal valorAbono = Convert.ToDecimal(Txt_abono.Text.Trim());
 
             decimal comision = (valorAbono * porcentajeComision) / 100;
@@ -401,12 +402,24 @@ namespace CapaPresentacion._rifas_boletas
             dgv_vendedores.Visible = false;
             Dgv_clientes.Visible = false;
             Frm_usuarios frmU = new Frm_usuarios();
+            frmU.Padding = new Padding(10);
             frmU.WindowState = FormWindowState.Normal;
             frmU.StartPosition = FormStartPosition.CenterScreen;
+            frmU.Dgv_usuarios.Columns["nombre_completo"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            frmU.Dgv_usuarios.Columns["direccion"].Visible = false;
+            frmU.Dgv_usuarios.Columns["telefono"].Visible = false;
+            frmU.Dgv_usuarios.Columns["comision"].Visible = false;
+            frmU.Dgv_usuarios.Columns["activo"].Visible = false;
             frmU.Seleccion = 1;
             frmU.FormClosed += FrmU_FormClosed;
             frmU.Btn_cerrar_ventana.Visible = true;
             frmU.ShowDialog();
+        }
+
+        private void darkModeForm(Form form)
+        {
+            form.BackColor = Color.FromArgb(31, 31, 31);
+            form.ForeColor = Color.White;
         }
 
         private void FrmU_FormClosed(object sender, FormClosedEventArgs e)
@@ -436,6 +449,10 @@ namespace CapaPresentacion._rifas_boletas
             Frm_clientes frmC = new Frm_clientes();
             frmC.WindowState = FormWindowState.Normal;
             frmC.StartPosition = FormStartPosition.CenterScreen;
+            frmC.Btn_borrar.Visible = false;
+            frmC.Dgv_clientes.Columns["direccion"].Visible = false;
+            frmC.Dgv_clientes.Columns["telefono"].Visible = false;
+            frmC.Dgv_clientes.Columns["btn_sel"].Width = 80;
             frmC.Dgv_clientes.Columns["btn_sel"].Visible = true;
             frmC.Btn_cerrar_ventana.Visible = true;
             frmC.FormClosed += FrmC_FormClosed;
@@ -444,8 +461,7 @@ namespace CapaPresentacion._rifas_boletas
 
         private void FrmC_FormClosed(object sender, FormClosedEventArgs e)
         {
-            dgv_vendedores.Visible = false;
-            Dgv_clientes.Visible = false;
+
             if (GetIdCliente > 0)
             {
                 txt_cliente_id.Text = GetIdCliente.ToString();
@@ -458,6 +474,9 @@ namespace CapaPresentacion._rifas_boletas
                 txt_cliente_id.Text = "0";
                 txt_cc_cl.Text = "";
             }
+            dgv_vendedores.Visible = false;
+            Dgv_clientes.Visible = false;
+
         }
 
         private void Txt_vendedor_TextChanged(object sender, EventArgs e)
@@ -468,7 +487,7 @@ namespace CapaPresentacion._rifas_boletas
         private void Txt_cc_ve_TextChanged(object sender, EventArgs e)
         {
             buscarVendedor();
-           // obtenerComisionVendedor();
+            // obtenerComisionVendedor();
         }
 
         private void txt_cc_cl_KeyPress(object sender, KeyPressEventArgs e)
@@ -479,7 +498,7 @@ namespace CapaPresentacion._rifas_boletas
 
         private void dgv_vendedores_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(dgv_vendedores.Rows.Count > 0)
+            if (dgv_vendedores.Rows.Count > 0)
             {
 
                 Txt_vendedor.Text = dgv_vendedores.CurrentRow.Cells["usNombreCompleto"].Value.ToString();

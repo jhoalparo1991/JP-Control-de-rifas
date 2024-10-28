@@ -13,6 +13,7 @@ namespace CapaPresentacion._usuarios
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
+            mostrarDatosSesion();
             mostrarUsuarios();
             _helpers.Formularios.marcarCampoSeleccionado(this.Controls);
             //_helpers.Disenios.dataGridView(Dgv_usuarios);
@@ -22,11 +23,41 @@ namespace CapaPresentacion._usuarios
         internal int Seleccion = 0;
 
         #region metodos
+        private void mostrarDatosSesion()
+        {
+            try
+            {
+                InicioSesion sesion = N_Usuarios.mostrarUsuarioSesion();
+                if (sesion != null)
+                {
+                    UsuariosPermisos permiso = _helpers.Sesion.permisosUsuarios(sesion.UsuarioId);
 
-     
+                    if (permiso != null)
+                    {
+                        Btn_nuevos.Visible = permiso.CrearVendedores;
+                        Btn_editar.Visible = permiso.EditarVendedores;
+                        Btn_borrar.Visible = permiso.BorrarVendedores;
+
+                        agregarNuevoVendedorToolStripMenuItem.Visible = permiso.CrearVendedores;
+                        modificarVendedorToolStripMenuItem.Visible = permiso.EditarVendedores;
+                        borrarVendedorToolStripMenuItem.Visible = permiso.BorrarVendedores;
+                        agregarBoletasToolStripMenuItem.Visible = permiso.AsignarBoletasVendedores;
+
+                        //Dgv.Columns["btn_imprimir"].Visible = permiso.ImprimirEgreso;
+                        //Dgv.Columns["btn_editar_egreso"].Visible = permiso.EditarEgreso;
+                        //Dgv.Columns["btn_borrar_egreso"].Visible = permiso.BorrarEgreso;
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                _helpers.Mensajes.mensajeErrorException(e);
+            }
+        }
+
         private void verEditarInformacion(bool edit)
         {
-           Frm_mant_usuarios frm = new Frm_mant_usuarios(this);
+            Frm_mant_usuarios frm = new Frm_mant_usuarios(this);
             frm.Txt_id.Text = Dgv_usuarios.CurrentRow.Cells["id"].Value.ToString();
             frm.Txt_nombres.Text = Dgv_usuarios.CurrentRow.Cells["nombre_completo"].Value.ToString();
             frm.Txt_nro_doc.Text = Dgv_usuarios.CurrentRow.Cells["nro_doc"].Value.ToString();
@@ -40,30 +71,36 @@ namespace CapaPresentacion._usuarios
 
             UsuariosPermisos permisos = N_Usuarios.mostrarPermisosUsuarios(usuarioId);
 
-            if(permisos != null)
+            if (permisos != null)
             {
-                frm.Chk_backup.Checked = permisos.CrearCopiaSeguridad ;
-                frm.Chk_boletas.Checked = permisos.Boletas ;
-                frm.Chk_borrar_abonos.Checked = permisos.BorrarAbono ;
-                frm.Chk_borrar_egreso.Checked = permisos.BorrarEgreso ;
-                frm.Chk_cambiar_cliente_abono.Checked = permisos.CambiarClienteAbono ;
-                frm.Chk_cambiar_fp_abono.Checked = permisos.CambiarFpAbono ;
-                frm.Chk_clientes.Checked = permisos.Clientes ;
-                frm.Chk_crear_egreso.Checked = permisos.CrearEgreso ;
-                frm.Chk_crear_tipo_egreso.Checked = permisos. CrearTipoEgreso;
-                frm.Chk_editar_egreso.Checked = permisos.EditarEgreso ;
-                frm.Chk_egresos.Checked = permisos. Egresos;
-                frm.Chk_imprimir_egreso.Checked = permisos.ImprimirEgreso ;
-                frm.Chk_pago_comisiones.Checked = permisos.PagoComisiones ;
-                frm.Chk_registrar_abonos.Checked = permisos.RegistrarAbono ;
-                frm.Chk_reportes.Checked = permisos.Reportes ;
-                frm.Chk_rifas.Checked = permisos.Rifas ;
-                frm.Chk_vendedor.Checked = permisos.Vendedores ;
+                frm.Chk_backup.Checked = permisos.CrearCopiaSeguridad;
+                frm.Chk_boletas.Checked = permisos.Boletas;
+                frm.Chk_borrar_abonos.Checked = permisos.BorrarAbono;
+                frm.Chk_borrar_egreso.Checked = permisos.BorrarEgreso;
+                frm.Chk_cambiar_cliente_abono.Checked = permisos.CambiarClienteAbono;
+                frm.Chk_cambiar_fp_abono.Checked = permisos.CambiarFpAbono;
+                frm.Chk_clientes.Checked = permisos.Clientes;
+                frm.Chk_crear_egreso.Checked = permisos.CrearEgreso;
+                frm.Chk_crear_tipo_egreso.Checked = permisos.CrearTipoEgreso;
+                frm.Chk_editar_egreso.Checked = permisos.EditarEgreso;
+                frm.Chk_egresos.Checked = permisos.Egresos;
+                frm.Chk_imprimir_egreso.Checked = permisos.ImprimirEgreso;
+                frm.Chk_pago_comisiones.Checked = permisos.PagoComisiones;
+                frm.Chk_registrar_abonos.Checked = permisos.RegistrarAbono;
+                frm.Chk_reportes.Checked = permisos.Reportes;
+                frm.Chk_rifas.Checked = permisos.Rifas;
+                frm.Chk_vendedor.Checked = permisos.Vendedores;
+                frm.Chk_crear_vendedores.Checked = permisos.CrearVendedores;
+                frm.Chk_editar_vendedores.Checked = permisos.EditarVendedores;
+                frm.Chk_borrar_vendedores.Checked = permisos.BorrarVendedores;
+                frm.Chk_asignar_boletas_vendedores.Checked = permisos.AsignarBoletasVendedores;
+                frm.Chk_ver_log.Checked = permisos.VerLog;
+                frm.Chk_ver_boleta.Checked = permisos.VerBoleta;
             }
 
             if (edit == true)
             {
-         
+
                 frm.Btn_registrar.Enabled = false;
                 frm.Txt_id.Enabled = false;
                 frm.Txt_nombres.Enabled = true;
@@ -95,6 +132,12 @@ namespace CapaPresentacion._usuarios
                 frm.Chk_reportes.Enabled = true;
                 frm.Chk_rifas.Enabled = true;
                 frm.Chk_vendedor.Enabled = true;
+                frm.Chk_crear_vendedores.Enabled = true;
+                frm.Chk_editar_vendedores.Enabled = true;
+                frm.Chk_borrar_vendedores.Enabled = true;
+                frm.Chk_asignar_boletas_vendedores.Enabled = true;
+                frm.Chk_ver_log.Enabled = true;
+                frm.Chk_ver_boleta.Enabled = true;
             }
             else
             {
@@ -128,8 +171,14 @@ namespace CapaPresentacion._usuarios
                 frm.Chk_reportes.Enabled = false;
                 frm.Chk_rifas.Enabled = false;
                 frm.Chk_vendedor.Enabled = false;
+                frm.Chk_crear_vendedores.Enabled = false;
+                frm.Chk_editar_vendedores.Enabled = false;
+                frm.Chk_borrar_vendedores.Enabled = false;
+                frm.Chk_asignar_boletas_vendedores.Enabled = false;
+                frm.Chk_ver_log.Enabled = false;
+                frm.Chk_ver_boleta.Enabled = false;
             }
-           frm.ShowDialog();
+            frm.ShowDialog();
         }
         private void asignarBoletasPorVendedor()
         {
@@ -166,8 +215,6 @@ namespace CapaPresentacion._usuarios
                 _helpers.Mensajes.mensajeErrorException(e);
             }
         }
-
-      
         private void eliminarVendedor()
         {
             try
@@ -196,7 +243,7 @@ namespace CapaPresentacion._usuarios
                 _helpers.Mensajes.mensajeErrorException(ex);
             }
         }
-       
+
         #endregion
 
 
@@ -217,14 +264,14 @@ namespace CapaPresentacion._usuarios
 
         private void Dgv_usuarios_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(Dgv_usuarios.Rows.Count > 0)
+            if (Dgv_usuarios.Rows.Count > 0)
             {
                 usuarioId = Convert.ToInt32(Dgv_usuarios.CurrentRow.Cells["id"].Value.ToString());
-                           
+
             }
         }
 
-    
+
         private void Btn_cerrar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -232,7 +279,7 @@ namespace CapaPresentacion._usuarios
 
         private void Dgv_usuarios_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(Seleccion == 1)
+            if (Seleccion == 1)
             {
                 Frm_boletas.GetIdUsuario = usuarioId;
                 Frm_boletas.GetUsuarioNombre = Dgv_usuarios.CurrentRow.Cells["nombre_completo"].Value.ToString();
@@ -247,7 +294,7 @@ namespace CapaPresentacion._usuarios
             asignarBoletasPorVendedor();
         }
 
-        
+
         private void agregarBoletasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             asignarBoletasPorVendedor();
@@ -275,7 +322,7 @@ namespace CapaPresentacion._usuarios
             frm.ShowDialog();
         }
 
-        
+
 
         private void Btn_nuevos_Click(object sender, EventArgs e)
         {

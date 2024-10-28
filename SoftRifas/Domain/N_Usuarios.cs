@@ -31,7 +31,7 @@ namespace Domain
 
         public static bool registrarVendedor(Usuarios obj, UsuariosPermisos obj2)
         {
-            return D_Usuarios.registrarVendedor(obj,obj2);
+            return D_Usuarios.registrarVendedor(obj, obj2);
         }
         public static bool registrarSesion(int usuarioId)
         {

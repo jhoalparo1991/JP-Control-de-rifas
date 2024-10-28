@@ -15,7 +15,7 @@ namespace CapaPresentacion._rifas_boletas._boletas
             _helpers.DatosMaestros.mostrarFormasDePago(cbx_formas_pago);
         }
 
-       
+
 
         private void Btn_cancel_Click(object sender, EventArgs e)
         {
@@ -43,7 +43,7 @@ namespace CapaPresentacion._rifas_boletas._boletas
                 DialogResult dialog = MessageBox.Show("Deseas hacer un  cambio de la forma de pago de este abono", "Mensaje de confirmacion",
                     MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
-                if(dialog == DialogResult.OK)
+                if (dialog == DialogResult.OK)
                 {
                     bool result = N_Boletas.cambiarFormaPagoBoleta(id, cbx_formas_pago.Text);
                     if (result)

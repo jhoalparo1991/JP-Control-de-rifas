@@ -29,14 +29,14 @@ namespace CapaPresentacion._egresos
             cbx_tipo_egreso.Select();
             mostrarTiposGasto();
         }
-       
+
         private void cargarSesion()
         {
             try
             {
                 InicioSesion sesion = N_Usuarios.mostrarUsuarioSesion();
 
-                if(sesion != null)
+                if (sesion != null)
                 {
                     lblUsuarioId.Text = sesion.UsuarioId.ToString();
                 }
@@ -110,7 +110,7 @@ namespace CapaPresentacion._egresos
                 DialogResult dialog = MessageBox.Show("Deseas registrar este egreso?", "Mensaje de confirmacion",
                     MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
-                if(dialog == DialogResult.OK)
+                if (dialog == DialogResult.OK)
                 {
 
                     Gastos obj = new Gastos()
@@ -151,7 +151,7 @@ namespace CapaPresentacion._egresos
 
         private void txt_valor_KeyPress(object sender, KeyPressEventArgs e)
         {
-            _helpers.Validaciones.numeroDecimal(sender,e);
+            _helpers.Validaciones.numeroDecimal(sender, e);
         }
     }
 }

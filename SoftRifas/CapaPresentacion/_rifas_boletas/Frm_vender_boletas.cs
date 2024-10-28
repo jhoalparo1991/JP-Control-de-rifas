@@ -25,8 +25,8 @@ namespace CapaPresentacion._rifas_boletas
         private int boletaId = 0;
         private int boletaVendedorId = 0;
         private int visualizados = 250;
-        private int desde  = 0;
-        private int hasta =  250;
+        private int desde = 0;
+        private int hasta = 250;
 
         List<Boletas> boletas = new List<Boletas>();
 
@@ -90,12 +90,12 @@ namespace CapaPresentacion._rifas_boletas
         {
             _helpers.Sesion.guardarDatosLog("Se dibujan los botenes para el paginado de boletas");
             Fyp_botones_paginado.Controls.Clear();
-            for (int i =1; i<= 40; i++)
+            for (int i = 1; i <= 40; i++)
             {
                 Button btnNum = new Button();
                 btnNum.Text = i.ToString();
                 btnNum.Name = i.ToString();
-                btnNum.Size = new Size(45 , 43);
+                btnNum.Size = new Size(45, 43);
                 btnNum.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Bold);
                 btnNum.ForeColor = Color.White;
                 btnNum.BackgroundImage = Properties.Resources.naranja;
@@ -167,6 +167,72 @@ namespace CapaPresentacion._rifas_boletas
 
             foreach (var boleta in boletas)
             {
+                Label btnBoleta = new Label();
+                btnBoleta.Text = boleta.NroBoleta.ToString();
+                btnBoleta.Name = boleta.Id.ToString();
+                btnBoleta.Tag = boleta.VendedorId.ToString();
+                btnBoleta.Size = new Size(84, 50);
+                btnBoleta.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+                btnBoleta.ForeColor = Color.White;
+                btnBoleta.FlatStyle = FlatStyle.Flat;
+                btnBoleta.Cursor = Cursors.Hand;
+
+                if (boleta.Vendida)
+                {
+                    if (boleta.Pagada)
+                    {
+                        btnBoleta.BackColor = Color.Blue;
+                    }
+                    else
+                    {
+
+                        btnBoleta.BackColor = Color.Red;
+                    }
+
+                }
+
+                btnBoleta.Click += BtnBoletaVendida_Click1;
+                Fyp_botones.Controls.Add(btnBoleta);
+            }
+        }
+
+        private void BtnBoletaVendida_Click1(object sender, EventArgs e)
+        {
+            boletaId = Convert.ToInt32(((Label)sender).Name);
+            _helpers.Sesion.guardarDatosLog("Abre la boleta id#" + boletaId);
+            boletaVendedorId = Convert.ToInt32(((Button)sender).Tag);
+            buscarBoletas();
+        }
+
+        public void dibujarBoletas()
+        {
+            _helpers.Sesion.guardarDatosLog("Se dibujan las boletas");
+            Fyp_botones.Controls.Clear();
+            List<Boletas> boletas = new List<Boletas>();
+
+            if (string.IsNullOrEmpty(Txt_buscar.Text.Trim()))
+            {
+                if (Convert.ToBoolean(Chk_filtrar.Checked))
+                {
+                    boletas = N_Boletas.mostrarBoletasPaginadas(Convert.ToInt32(CbxRifas.SelectedValue), 0, 10000)
+                                   .FindAll(x => x.VendedorId == Convert.ToInt32(Cbx_vendedores.SelectedValue))
+                                   .FindAll(x => x.NroBoleta.Contains(Txt_buscar.Text.Trim()));
+                }
+                else
+                {
+                    boletas = N_Boletas.mostrarBoletasPaginadas(Convert.ToInt32(CbxRifas.SelectedValue), desde, hasta)
+                            .FindAll(x => x.NroBoleta.Contains(Txt_buscar.Text.Trim()));
+                }
+            }
+            else
+            {
+                boletas = N_Boletas.mostrarBoletasPaginadas(Convert.ToInt32(CbxRifas.SelectedValue), 0, 10000)
+                            .FindAll(x => x.NroBoleta.Contains(Txt_buscar.Text.Trim()));
+            }
+
+
+            foreach (var boleta in boletas)
+            {
                 Button btnBoleta = new Button();
                 btnBoleta.Text = boleta.NroBoleta.ToString();
                 btnBoleta.Name = boleta.Id.ToString();
@@ -203,84 +269,22 @@ namespace CapaPresentacion._rifas_boletas
                 Fyp_botones.Controls.Add(btnBoleta);
             }
         }
-        public void dibujarBoletas()
-        {
-            _helpers.Sesion.guardarDatosLog("Se dibujan las boletas");
-            Fyp_botones.Controls.Clear();
-            List<Boletas> boletas = new List<Boletas>();
-
-            if (string.IsNullOrEmpty(Txt_buscar.Text.Trim()))
-            {
-                if (Convert.ToBoolean(Chk_filtrar.Checked))
-                {
-                    boletas = N_Boletas.mostrarBoletasPaginadas(Convert.ToInt32(CbxRifas.SelectedValue), 0, 10000)
-                                   .FindAll(x => x.VendedorId == Convert.ToInt32(Cbx_vendedores.SelectedValue))
-                                   .FindAll(x => x.NroBoleta.Contains(Txt_buscar.Text.Trim()));
-                }
-                else
-                {
-                    boletas = N_Boletas.mostrarBoletasPaginadas(Convert.ToInt32(CbxRifas.SelectedValue), desde, hasta)
-                            .FindAll(x => x.NroBoleta.Contains(Txt_buscar.Text.Trim()));
-                }
-            }
-            else
-            {
-                boletas = N_Boletas.mostrarBoletasPaginadas(Convert.ToInt32(CbxRifas.SelectedValue), 0, 10000)
-                            .FindAll(x => x.NroBoleta.Contains(Txt_buscar.Text.Trim()));
-            }
-
-
-            foreach(var boleta in boletas)
-            {
-                Button btnBoleta = new Button();
-                btnBoleta.Text = boleta.NroBoleta.ToString();
-                btnBoleta.Name = boleta.Id.ToString();
-                btnBoleta.Tag = boleta.VendedorId.ToString();
-                btnBoleta.Size = new Size(84, 50);
-                btnBoleta.Font = new Font("Segoe UI", 12, FontStyle.Bold);
-                btnBoleta.ForeColor = Color.White;
-                btnBoleta.BackgroundImageLayout = ImageLayout.Stretch;
-                btnBoleta.FlatAppearance.BorderSize = 0;
-                btnBoleta.FlatStyle = FlatStyle.Flat;
-                btnBoleta.Cursor = Cursors.Hand;
-                btnBoleta.FlatAppearance.MouseDownBackColor = Color.Transparent;
-                btnBoleta.FlatAppearance.MouseOverBackColor = Color.Transparent;
-                if (boleta.Vendida)
-                {
-                    if (boleta.Pagada)
-                    {
-                        btnBoleta.BackgroundImage = Properties.Resources.azul;
-                    }
-                    else
-                    {
-
-                    btnBoleta.BackgroundImage = Properties.Resources.Rojo;
-                    }
-
-                }
-                else
-                {
-
-                btnBoleta.BackgroundImage = Properties.Resources.verde;
-                }
-
-                btnBoleta.Click += BtnBoleta_Click;
-                Fyp_botones.Controls.Add(btnBoleta);
-            }
-        }
 
         private void BtnBoleta_Click(object sender, EventArgs e)
         {
-            boletaId = Convert.ToInt32(((Button)sender).Name);
-            _helpers.Sesion.guardarDatosLog("Abre la boleta id#" + boletaId);
-            boletaVendedorId = Convert.ToInt32(((Button)sender).Tag);
-            buscarBoletas();
+            if (permiso.VerBoleta)
+            {
+                boletaId = Convert.ToInt32(((Button)sender).Name);
+                _helpers.Sesion.guardarDatosLog("Abre la boleta id#" + boletaId);
+                boletaVendedorId = Convert.ToInt32(((Button)sender).Tag);
+                buscarBoletas();
+            }
         }
 
         private void BtnNum_Click(object sender, EventArgs e)
         {
             int num = Convert.ToInt32(((Button)sender).Text);
-            _helpers.Sesion.guardarDatosLog("Muestra las boletas de la pagina #"+ num);
+            _helpers.Sesion.guardarDatosLog("Muestra las boletas de la pagina #" + num);
             //if (num == 1)
             //{
             //    dibujarBoletas(0, visualizados);
@@ -298,23 +302,22 @@ namespace CapaPresentacion._rifas_boletas
             return;
 
         }
-
         internal void mostrarTodasBoletas()
         {
             try
             {
                 Lv_boletas.Items.Clear();
-               List<DtoMostrarBoletasDatos> boletas = N_Boletas.mostrarTodasBoletas()
-                    .FindAll(x=> x.NroBoleta.Contains(Txt_buscar.Text.Trim()))
-                    .FindAll(x=> x.Vendida == Convert.ToBoolean(Chk_filtrar.CheckState))
-                    .FindAll(x=> x.RifaId == Convert.ToInt32(CbxRifas.SelectedValue));
+                List<DtoMostrarBoletasDatos> boletas = N_Boletas.mostrarTodasBoletas()
+                     .FindAll(x => x.NroBoleta.Contains(Txt_buscar.Text.Trim()))
+                     .FindAll(x => x.Vendida == Convert.ToBoolean(Chk_filtrar.CheckState))
+                     .FindAll(x => x.RifaId == Convert.ToInt32(CbxRifas.SelectedValue));
 
-                foreach(var boleta in boletas)
+                foreach (var boleta in boletas)
                 {
                     ListViewItem item = new ListViewItem(boleta.Id.ToString());
                     item.SubItems.Add(boleta.NroBoleta);
                     item.SubItems.Add(boleta.ValorBoleta.ToString("C2"));
-                    if(boleta.Pagada == true)
+                    if (boleta.Pagada == true)
                     {
                         item.SubItems.Add("SI");
                     }
@@ -336,30 +339,31 @@ namespace CapaPresentacion._rifas_boletas
         {
             try
             {
-                 if (boletaId <= 0)
-                  {
-                      _helpers.Mensajes.mensajeAdvertencia("Debes seleccionar la boleta que deseas vender");
-                      return;
-                  }
+                if (boletaId <= 0)
+                {
+                    _helpers.Mensajes.mensajeAdvertencia("Debes seleccionar la boleta que deseas vender");
+                    return;
+                }
 
-                  DtoMostrarBoletasDatos boleta = N_Boletas.mostrarTodasBoletas()
-                      .Find(x => x.Id == boletaId);
+                DtoMostrarBoletasDatos boleta = N_Boletas.mostrarTodasBoletas()
+                    .Find(x => x.Id == boletaId);
 
-                  if (boleta!= null)
-                  {
+                if (boleta != null)
+                {
 
-                      if (boleta.Vendida == true && boleta.Pagada == true)
-                      {
+                    if (boleta.Vendida == true && boleta.Pagada == true)
+                    {
                         mostrarFormAgregarAbonos();
-                      }else if (boleta.Vendida == true && boleta.Pagada == false)
-                      {
+                    }
+                    else if (boleta.Vendida == true && boleta.Pagada == false)
+                    {
                         mostrarFormAgregarAbonos();
-                        }
+                    }
                     else if (boleta.Vendida == false && boleta.Pagada == false)
-                        {
-                            Usuarios usuario =  N_Usuarios.mostrarUsuarios().Find(x => x.Id == boletaVendedorId);
+                    {
+                        Usuarios usuario = N_Usuarios.mostrarUsuarios().Find(x => x.Id == boletaVendedorId);
 
-                        if(usuario != null)
+                        if (usuario != null)
                         {
                             Frm_boletas frm = new Frm_boletas(this);
                             frm.txt_valor_boleta.ReadOnly = false;
@@ -373,6 +377,8 @@ namespace CapaPresentacion._rifas_boletas
                             frm.Txt_vendedor_id.Text = usuario.Id.ToString();
                             frm.dgv_vendedores.Visible = false;
                             frm.Btn_buscar_vendedor.Visible = false;
+                            frm.Btn_registrar.Visible = permiso.RegistrarAbono;
+                            frm.Btn_cancel.Visible = permiso.RegistrarAbono;
                             frm.ShowDialog();
                         }
                         else
@@ -382,13 +388,15 @@ namespace CapaPresentacion._rifas_boletas
                             frm.Txt_id_boleta.Text = boleta.Id.ToString();
                             frm.Txt_nro_boleta.Text = boleta.NroBoleta.ToString();
                             frm.txt_valor_boleta.Text = boleta.ValorBoleta.ToString().Trim();
+                            frm.Btn_registrar.Visible = permiso.RegistrarAbono;
+                            frm.Btn_cancel.Visible = permiso.RegistrarAbono;
                             frm.ShowDialog();
                         }
-                        }
+                    }
 
 
                 }
-               
+
 
             }
             catch (Exception e)
@@ -403,8 +411,8 @@ namespace CapaPresentacion._rifas_boletas
             {
                 List<Rifas> rifas = N_Rifas.mostrarRifas().FindAll(x => x.Activa == true);
                 CbxRifas.DataSource = rifas;
-                CbxRifas.DisplayMember ="descripcion";
-                CbxRifas.ValueMember ="id";
+                CbxRifas.DisplayMember = "descripcion";
+                CbxRifas.ValueMember = "id";
             }
             catch (Exception e)
             {
@@ -428,7 +436,7 @@ namespace CapaPresentacion._rifas_boletas
         }
         #endregion
 
-  
+
 
         private void CbxRifas_SelectionChangeCommitted(object sender, EventArgs e)
         {
@@ -452,12 +460,12 @@ namespace CapaPresentacion._rifas_boletas
 
         private void Btn_ver_boleta_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void Btn_reportes_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void iconPictureBox1_Click(object sender, EventArgs e)
@@ -474,12 +482,12 @@ namespace CapaPresentacion._rifas_boletas
 
         private void Btn_pagados_Click(object sender, EventArgs e)
         {
-            dibujarBoletasPagadas();
+            //dibujarBoletasPagadas();
         }
 
         private void Txt_buscar_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
             {
                 Chk_filtrar.Checked = false;
                 if (string.IsNullOrEmpty(Txt_buscar.Text))

@@ -90,10 +90,10 @@ namespace CapaPresentacion._clientes
             this.panel1.Controls.Add(this.Btn_borrar);
             this.panel1.Controls.Add(this.Btn_cerrar_ventana);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Location = new System.Drawing.Point(10, 10);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.panel1.Size = new System.Drawing.Size(1059, 46);
+            this.panel1.Size = new System.Drawing.Size(1039, 46);
             this.panel1.TabIndex = 0;
             // 
             // panel2
@@ -104,7 +104,7 @@ namespace CapaPresentacion._clientes
             this.panel2.Location = new System.Drawing.Point(4, 5);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(5);
-            this.panel2.Size = new System.Drawing.Size(659, 36);
+            this.panel2.Size = new System.Drawing.Size(639, 36);
             this.panel2.TabIndex = 4;
             // 
             // Txt_buscar
@@ -135,7 +135,7 @@ namespace CapaPresentacion._clientes
             this.Btn_nuevos.BackColor = System.Drawing.Color.White;
             this.Btn_nuevos.Dock = System.Windows.Forms.DockStyle.Right;
             this.Btn_nuevos.Image = global::CapaPresentacion.Properties.Resources.agregar24_gris;
-            this.Btn_nuevos.Location = new System.Drawing.Point(663, 5);
+            this.Btn_nuevos.Location = new System.Drawing.Point(643, 5);
             this.Btn_nuevos.Name = "Btn_nuevos";
             this.Btn_nuevos.Size = new System.Drawing.Size(95, 36);
             this.Btn_nuevos.TabIndex = 3;
@@ -150,7 +150,7 @@ namespace CapaPresentacion._clientes
             this.Btn_editar.BackColor = System.Drawing.Color.White;
             this.Btn_editar.Dock = System.Windows.Forms.DockStyle.Right;
             this.Btn_editar.Image = global::CapaPresentacion.Properties.Resources.editar24_gris;
-            this.Btn_editar.Location = new System.Drawing.Point(758, 5);
+            this.Btn_editar.Location = new System.Drawing.Point(738, 5);
             this.Btn_editar.Name = "Btn_editar";
             this.Btn_editar.Size = new System.Drawing.Size(107, 36);
             this.Btn_editar.TabIndex = 3;
@@ -165,7 +165,7 @@ namespace CapaPresentacion._clientes
             this.Btn_borrar.BackColor = System.Drawing.Color.White;
             this.Btn_borrar.Dock = System.Windows.Forms.DockStyle.Right;
             this.Btn_borrar.Image = global::CapaPresentacion.Properties.Resources.borrar24_gris;
-            this.Btn_borrar.Location = new System.Drawing.Point(865, 5);
+            this.Btn_borrar.Location = new System.Drawing.Point(845, 5);
             this.Btn_borrar.Name = "Btn_borrar";
             this.Btn_borrar.Size = new System.Drawing.Size(95, 36);
             this.Btn_borrar.TabIndex = 3;
@@ -180,7 +180,7 @@ namespace CapaPresentacion._clientes
             this.Btn_cerrar_ventana.BackColor = System.Drawing.Color.White;
             this.Btn_cerrar_ventana.Dock = System.Windows.Forms.DockStyle.Right;
             this.Btn_cerrar_ventana.Image = global::CapaPresentacion.Properties.Resources.salir24;
-            this.Btn_cerrar_ventana.Location = new System.Drawing.Point(960, 5);
+            this.Btn_cerrar_ventana.Location = new System.Drawing.Point(940, 5);
             this.Btn_cerrar_ventana.Name = "Btn_cerrar_ventana";
             this.Btn_cerrar_ventana.Size = new System.Drawing.Size(95, 36);
             this.Btn_cerrar_ventana.TabIndex = 3;
@@ -210,14 +210,14 @@ namespace CapaPresentacion._clientes
             this.telefono,
             this.btn_sel});
             this.Dgv_clientes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Dgv_clientes.Location = new System.Drawing.Point(0, 46);
+            this.Dgv_clientes.Location = new System.Drawing.Point(10, 56);
             this.Dgv_clientes.Name = "Dgv_clientes";
             this.Dgv_clientes.ReadOnly = true;
             this.Dgv_clientes.RowHeadersVisible = false;
             this.Dgv_clientes.RowTemplate.Height = 30;
             this.Dgv_clientes.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Dgv_clientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Dgv_clientes.Size = new System.Drawing.Size(505, 439);
+            this.Dgv_clientes.Size = new System.Drawing.Size(485, 419);
             this.Dgv_clientes.TabIndex = 1;
             this.Dgv_clientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_clientes_CellClick);
             this.Dgv_clientes.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_clientes_CellEnter);
@@ -303,9 +303,9 @@ namespace CapaPresentacion._clientes
             this.Pn_mant.Controls.Add(this.label3);
             this.Pn_mant.Controls.Add(this.label8);
             this.Pn_mant.Dock = System.Windows.Forms.DockStyle.Right;
-            this.Pn_mant.Location = new System.Drawing.Point(656, 46);
+            this.Pn_mant.Location = new System.Drawing.Point(646, 56);
             this.Pn_mant.Name = "Pn_mant";
-            this.Pn_mant.Size = new System.Drawing.Size(403, 439);
+            this.Pn_mant.Size = new System.Drawing.Size(403, 419);
             this.Pn_mant.TabIndex = 2;
             this.Pn_mant.Visible = false;
             // 
@@ -506,9 +506,9 @@ namespace CapaPresentacion._clientes
             this.panel3.Controls.Add(this.dgvBoletas);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(505, 46);
+            this.panel3.Location = new System.Drawing.Point(495, 56);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(151, 439);
+            this.panel3.Size = new System.Drawing.Size(151, 419);
             this.panel3.TabIndex = 3;
             // 
             // dgvBoletas
@@ -528,7 +528,7 @@ namespace CapaPresentacion._clientes
             this.dgvBoletas.RowTemplate.Height = 40;
             this.dgvBoletas.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvBoletas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBoletas.Size = new System.Drawing.Size(151, 389);
+            this.dgvBoletas.Size = new System.Drawing.Size(151, 369);
             this.dgvBoletas.TabIndex = 1;
             // 
             // cliente_id
@@ -573,6 +573,7 @@ namespace CapaPresentacion._clientes
             this.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Frm_clientes";
+            this.Padding = new System.Windows.Forms.Padding(10);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "conexion";
             this.panel1.ResumeLayout(false);

@@ -10,11 +10,11 @@ namespace Entities
         public decimal ValorBoleta { get; set; }
         public bool Pagada { get; set; }
         public bool Vendida { get; set; }
-        public int VendedorId{ get; set; }
+        public int VendedorId { get; set; }
     }
     public class DtoMostrarBoletasDatos : Boletas
     {
-       
+
     }
 
     public class DtoMostrarAbonos
@@ -25,7 +25,7 @@ namespace Entities
         public string NroBoleta { get; set; }
         public int VendedorId { get; set; }
         public string Vendedor { get; set; }
-        public string VendedorCC{ get; set; }
+        public string VendedorCC { get; set; }
         public int ClienteId { get; set; }
         public string Cliente { get; set; }
         public string ClienteCC { get; set; }

@@ -30,11 +30,11 @@ namespace DataAccess
                         UsuarioId = Convert.ToInt32(reader["usuario_id"]),
                         Descripcion = reader["descripcion"].ToString(),
                         FechaInicio = Convert.ToDateTime(reader["fecha_inicio"].ToString()),
-                        FechaFin= Convert.ToDateTime(reader["fecha_final"].ToString()),
+                        FechaFin = Convert.ToDateTime(reader["fecha_final"].ToString()),
                         NroInicial = Convert.ToInt32(reader["nro_inicial"]),
-                        NroFinal= Convert.ToInt32(reader["nro_final"]),
-                        Activa= Convert.ToBoolean(reader["activa"]),
-                        ValorRifa= Convert.ToDecimal(reader["valor_rifa"]),
+                        NroFinal = Convert.ToInt32(reader["nro_final"]),
+                        Activa = Convert.ToBoolean(reader["activa"]),
+                        ValorRifa = Convert.ToDecimal(reader["valor_rifa"]),
                     });
                 }
             }
@@ -102,6 +102,6 @@ namespace DataAccess
             return result;
         }
 
-        
+
     }
 }

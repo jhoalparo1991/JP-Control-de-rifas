@@ -2,7 +2,6 @@
 using CapaPresentacion._clientes;
 using CapaPresentacion._egresos;
 using CapaPresentacion._logs;
-using CapaPresentacion._pagos;
 using CapaPresentacion._pagos_comisiones;
 using CapaPresentacion._rifas_boletas;
 using CapaPresentacion._usuarios;
@@ -28,7 +27,7 @@ namespace CapaPresentacion._menu
 
         private void contraerMenuGastos()
         {
-            if(panelGastos.Height == 126)
+            if (panelGastos.Height == 126)
             {
                 panelGastos.Height = 41;
             }
@@ -69,13 +68,13 @@ namespace CapaPresentacion._menu
         {
             try
             {
-               InicioSesion sesion = N_Usuarios.mostrarUsuarioSesion();
-                if(sesion != null)
+                InicioSesion sesion = N_Usuarios.mostrarUsuarioSesion();
+                if (sesion != null)
                 {
                     Lbl_usuario.Text = sesion.NombreCompleto.ToString();
                     UsuariosPermisos permiso = _helpers.Sesion.permisosUsuarios(sesion.UsuarioId);
 
-                    if(permiso != null)
+                    if (permiso != null)
                     {
                         //MessageBox.Show(permiso.Boletas.ToString());
                         Btn_usuario.Enabled = permiso.Vendedores;
@@ -87,6 +86,7 @@ namespace CapaPresentacion._menu
                         btnRegistrarGastos.Enabled = permiso.Egresos;
                         btnTiposGastos.Enabled = permiso.CrearTipoEgreso;
                         Btn_config.Enabled = permiso.CrearCopiaSeguridad;
+                        Btn_logs.Enabled = permiso.VerLog;
                     }
                     else
                     {
@@ -113,7 +113,7 @@ namespace CapaPresentacion._menu
 
         private void Btn_maximizar_Click(object sender, EventArgs e)
         {
-            if(WindowState == FormWindowState.Maximized)
+            if (WindowState == FormWindowState.Maximized)
             {
                 WindowState = FormWindowState.Normal;
             }
@@ -141,7 +141,7 @@ namespace CapaPresentacion._menu
 
         private void Btn_usuario_Click(object sender, EventArgs e)
         {
-            AbrirFormularioHijo(new Frm_usuarios(),"Vendedores");
+            AbrirFormularioHijo(new Frm_usuarios(), "Vendedores");
         }
 
         private void Btn_clientes_Click(object sender, EventArgs e)
@@ -161,7 +161,7 @@ namespace CapaPresentacion._menu
 
         private void Btn_reportes_Click(object sender, EventArgs e)
         {
-          AbrirFormularioHijo(new Frm_reports_menu(), "Reportes");
+            AbrirFormularioHijo(new Frm_reports_menu(), "Reportes");
         }
 
         private void Btn_info_Click(object sender, EventArgs e)

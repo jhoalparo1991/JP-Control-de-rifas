@@ -26,7 +26,7 @@ namespace CapaPresentacion._pagos
         {
             try
             {
-                DataTable dt = N_Pagos.mostrarDetallePagado(_idDetallePago,_vendedorId);
+                DataTable dt = N_Pagos.mostrarDetallePagado(_idDetallePago, _vendedorId);
                 Dgv.DataSource = dt;
             }
             catch (Exception e)
@@ -34,7 +34,7 @@ namespace CapaPresentacion._pagos
                 _helpers.Mensajes.mensajeErrorException(e);
             }
         }
-   
+
         private void Btn_cerrar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -51,19 +51,19 @@ namespace CapaPresentacion._pagos
                 int _codigoAbonoId = Convert.ToInt32(Dgv.CurrentRow.Cells["codigo_abono"].Value.ToString());
                 int _VendedorId = Convert.ToInt32(Dgv.CurrentRow.Cells["vendedor_id"].Value.ToString());
                 decimal _valorComision = Convert.ToDecimal(Dgv.CurrentRow.Cells["valor_comision"].Value.ToString());
-                string _nroBoleta= Dgv.CurrentRow.Cells["nro_boleta"].Value.ToString();
+                string _nroBoleta = Dgv.CurrentRow.Cells["nro_boleta"].Value.ToString();
 
                 if (Dgv.Columns[e.ColumnIndex].Name == "btn_quitar")
                 {
 
                     try
                     {
-                        DialogResult dialog = MessageBox.Show("Seguro que deseas quitar el pago de esta comision?, te  aparecerá esta comision como pendiente de pagar","Mensaje de confirmacion",
+                        DialogResult dialog = MessageBox.Show("Seguro que deseas quitar el pago de esta comision?, te  aparecerá esta comision como pendiente de pagar", "Mensaje de confirmacion",
                            MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
                         if (dialog == DialogResult.OK)
                         {
-                            bool result = N_Pagos.borrarPagos(_detallePagoId,_codigoAbonoId,_VendedorId,_boletaId,_pagoId,_valorComision,_id);
+                            bool result = N_Pagos.borrarPagos(_detallePagoId, _codigoAbonoId, _VendedorId, _boletaId, _pagoId, _valorComision, _id);
 
                             if (result)
                             {
