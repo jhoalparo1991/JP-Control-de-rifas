@@ -285,17 +285,7 @@ namespace CapaPresentacion._rifas_boletas
         {
             int num = Convert.ToInt32(((Button)sender).Text);
             _helpers.Sesion.guardarDatosLog("Muestra las boletas de la pagina #" + num);
-            //if (num == 1)
-            //{
-            //    dibujarBoletas(0, visualizados);
-            //    return;
-            //}
-
-            //if (num >= 2)
-            //{
-            //    dibujarBoletas(visualizados*num, visualizados*(num+1));
-            //    return;
-            //}
+  
             desde = visualizados * (num - 1);
             hasta = visualizados * (num);
             dibujarBoletas();
