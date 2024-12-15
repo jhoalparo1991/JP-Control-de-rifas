@@ -4,6 +4,7 @@ using CapaPresentacion._egresos;
 using CapaPresentacion._logs;
 using CapaPresentacion._pagos_comisiones;
 using CapaPresentacion._rifas_boletas;
+using CapaPresentacion._rifas_boletas._boletas;
 using CapaPresentacion._usuarios;
 using Domain;
 using Entities;
@@ -87,6 +88,7 @@ namespace CapaPresentacion._menu
                         btnTiposGastos.Enabled = permiso.CrearTipoEgreso;
                         Btn_config.Enabled = permiso.CrearCopiaSeguridad;
                         Btn_logs.Enabled = permiso.VerLog;
+                        bntDesbloquearBoletas.Enabled = permiso.DesbloquearBoleta;
                     }
                     else
                     {
@@ -213,6 +215,12 @@ namespace CapaPresentacion._menu
         private void Btn_logs_Click(object sender, EventArgs e)
         {
             AbrirFormularioHijo(new Frm_logs(), "Logs");
+        }
+
+        private void bntDesbloquearBoletas_Click(object sender, EventArgs e)
+        {
+            Frm_desbloquear_boletas frm = new Frm_desbloquear_boletas();
+            frm.ShowDialog();
         }
     }
 }

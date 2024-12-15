@@ -74,6 +74,7 @@ namespace CapaPresentacion._usuarios
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.ChkBloquearBoleta = new System.Windows.Forms.CheckBox();
             this.Pn_mant.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -109,6 +110,7 @@ namespace CapaPresentacion._usuarios
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.ChkBloquearBoleta);
             this.groupBox1.Controls.Add(this.Chk_cambiar_cliente_abono);
             this.groupBox1.Controls.Add(this.Chk_ver_boleta);
             this.groupBox1.Controls.Add(this.Chk_ver_log);
@@ -577,6 +579,16 @@ namespace CapaPresentacion._usuarios
             this.label2.Text = "Codigo";
             this.label2.Visible = false;
             // 
+            // ChkBloquearBoleta
+            // 
+            this.ChkBloquearBoleta.AutoSize = true;
+            this.ChkBloquearBoleta.Location = new System.Drawing.Point(269, 298);
+            this.ChkBloquearBoleta.Name = "ChkBloquearBoleta";
+            this.ChkBloquearBoleta.Size = new System.Drawing.Size(228, 21);
+            this.ChkBloquearBoleta.TabIndex = 22;
+            this.ChkBloquearBoleta.Text = "Bloquear y desbloquear boletas";
+            this.ChkBloquearBoleta.UseVisualStyleBackColor = true;
+            // 
             // Frm_mant_usuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -646,5 +658,6 @@ namespace CapaPresentacion._usuarios
         internal System.Windows.Forms.CheckBox Chk_editar_vendedores;
         internal System.Windows.Forms.CheckBox Chk_crear_vendedores;
         internal System.Windows.Forms.CheckBox Chk_ver_boleta;
+        internal System.Windows.Forms.CheckBox ChkBloquearBoleta;
     }
 }

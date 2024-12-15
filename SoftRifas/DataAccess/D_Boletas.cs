@@ -381,6 +381,30 @@ namespace DataAccess
             return result;
         }
 
+        public static bool sp_bloquear_desbloquear_boleta(int boletaId, string nroBoleta)
+        {
+            bool result = false;
+            try
+            {
+                con.Open();
+                SqlCommand command = new SqlCommand("sp_bloquear_desbloquear_boleta", con);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@boleta_id", boletaId);
+                command.Parameters.AddWithValue("@nro_boleta", nroBoleta);
+
+                result = Convert.ToInt32(command.ExecuteNonQuery()) != 0 ? true : false;
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+            return result;
+        }
+
         public static DataTable mostrarAbonosBoletaPorVendedor(int vendedorId, DateTime fechaIni, DateTime fechaFin)
         {
             DataTable dt = new DataTable();

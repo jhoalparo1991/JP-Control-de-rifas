@@ -42,6 +42,7 @@ namespace CapaPresentacion._menu
             this.Lbl_usuario = new System.Windows.Forms.ToolStripStatusLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Btn_logs = new FontAwesome.Sharp.IconButton();
             this.panelGastos = new System.Windows.Forms.Panel();
             this.btnRegistrarGastos = new FontAwesome.Sharp.IconButton();
             this.btnTiposGastos = new FontAwesome.Sharp.IconButton();
@@ -65,7 +66,7 @@ namespace CapaPresentacion._menu
             this.Btn_maximizar = new FontAwesome.Sharp.IconButton();
             this.Btn_cerrar = new FontAwesome.Sharp.IconButton();
             this.panelEscritorio = new System.Windows.Forms.Panel();
-            this.Btn_logs = new FontAwesome.Sharp.IconButton();
+            this.bntDesbloquearBoletas = new FontAwesome.Sharp.IconButton();
             this.statusStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelGastos.SuspendLayout();
@@ -166,6 +167,7 @@ namespace CapaPresentacion._menu
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Green;
+            this.panel1.Controls.Add(this.bntDesbloquearBoletas);
             this.panel1.Controls.Add(this.Btn_logs);
             this.panel1.Controls.Add(this.panelGastos);
             this.panel1.Controls.Add(this.Btn_reportes);
@@ -182,6 +184,29 @@ namespace CapaPresentacion._menu
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(189, 681);
             this.panel1.TabIndex = 3;
+            // 
+            // Btn_logs
+            // 
+            this.Btn_logs.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btn_logs.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Btn_logs.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.Btn_logs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_logs.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_logs.ForeColor = System.Drawing.Color.White;
+            this.Btn_logs.IconChar = FontAwesome.Sharp.IconChar.Route;
+            this.Btn_logs.IconColor = System.Drawing.Color.White;
+            this.Btn_logs.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Btn_logs.IconSize = 32;
+            this.Btn_logs.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Btn_logs.Location = new System.Drawing.Point(0, 471);
+            this.Btn_logs.Name = "Btn_logs";
+            this.Btn_logs.Size = new System.Drawing.Size(189, 41);
+            this.Btn_logs.TabIndex = 10;
+            this.Btn_logs.Text = "Logs";
+            this.Btn_logs.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Btn_logs.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Btn_logs.UseVisualStyleBackColor = true;
+            this.Btn_logs.Click += new System.EventHandler(this.Btn_logs_Click);
             // 
             // panelGastos
             // 
@@ -604,28 +629,28 @@ namespace CapaPresentacion._menu
             this.panelEscritorio.Size = new System.Drawing.Size(819, 617);
             this.panelEscritorio.TabIndex = 5;
             // 
-            // Btn_logs
+            // bntDesbloquearBoletas
             // 
-            this.Btn_logs.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Btn_logs.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Btn_logs.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.Btn_logs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_logs.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_logs.ForeColor = System.Drawing.Color.White;
-            this.Btn_logs.IconChar = FontAwesome.Sharp.IconChar.Route;
-            this.Btn_logs.IconColor = System.Drawing.Color.White;
-            this.Btn_logs.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.Btn_logs.IconSize = 32;
-            this.Btn_logs.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Btn_logs.Location = new System.Drawing.Point(0, 471);
-            this.Btn_logs.Name = "Btn_logs";
-            this.Btn_logs.Size = new System.Drawing.Size(189, 41);
-            this.Btn_logs.TabIndex = 10;
-            this.Btn_logs.Text = "Logs";
-            this.Btn_logs.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Btn_logs.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Btn_logs.UseVisualStyleBackColor = true;
-            this.Btn_logs.Click += new System.EventHandler(this.Btn_logs_Click);
+            this.bntDesbloquearBoletas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bntDesbloquearBoletas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.bntDesbloquearBoletas.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.bntDesbloquearBoletas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bntDesbloquearBoletas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bntDesbloquearBoletas.ForeColor = System.Drawing.Color.White;
+            this.bntDesbloquearBoletas.IconChar = FontAwesome.Sharp.IconChar.LockOpen;
+            this.bntDesbloquearBoletas.IconColor = System.Drawing.Color.White;
+            this.bntDesbloquearBoletas.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.bntDesbloquearBoletas.IconSize = 32;
+            this.bntDesbloquearBoletas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bntDesbloquearBoletas.Location = new System.Drawing.Point(0, 512);
+            this.bntDesbloquearBoletas.Name = "bntDesbloquearBoletas";
+            this.bntDesbloquearBoletas.Size = new System.Drawing.Size(189, 41);
+            this.bntDesbloquearBoletas.TabIndex = 11;
+            this.bntDesbloquearBoletas.Text = "Desbloquear boletas";
+            this.bntDesbloquearBoletas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bntDesbloquearBoletas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.bntDesbloquearBoletas.UseVisualStyleBackColor = true;
+            this.bntDesbloquearBoletas.Click += new System.EventHandler(this.bntDesbloquearBoletas_Click);
             // 
             // Frm_menu
             // 
@@ -695,5 +720,6 @@ namespace CapaPresentacion._menu
         private FontAwesome.Sharp.IconButton btnRegistrarGastos;
         private FontAwesome.Sharp.IconButton btnTiposGastos;
         private FontAwesome.Sharp.IconButton Btn_logs;
+        private FontAwesome.Sharp.IconButton bntDesbloquearBoletas;
     }
 }

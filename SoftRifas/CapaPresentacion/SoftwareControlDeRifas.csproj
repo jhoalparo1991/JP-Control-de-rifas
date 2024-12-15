@@ -420,6 +420,12 @@
     <Compile Include="_modulo_reportes\_rdls\RptMostrarComisionesVendedores2.Designer.cs">
       <DependentUpon>RptMostrarComisionesVendedores2.cs</DependentUpon>
     </Compile>
+    <Compile Include="_modulo_reportes\_rdls\Rpt_reporte_boletas_entre_fechas.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="_modulo_reportes\_rdls\Rpt_reporte_boletas_entre_fechas.Designer.cs">
+      <DependentUpon>Rpt_reporte_boletas_entre_fechas.cs</DependentUpon>
+    </Compile>
     <Compile Include="_modulo_reportes\_rdls\RptMostrarReporteCajaDiario.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -595,6 +601,12 @@
     <Compile Include="_rifas_boletas\_boletas\Frm_cambiar_forma_pago_boleta.Designer.cs">
       <DependentUpon>Frm_cambiar_forma_pago_boleta.cs</DependentUpon>
     </Compile>
+    <Compile Include="_rifas_boletas\_boletas\Frm_desbloquear_boletas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_rifas_boletas\_boletas\Frm_desbloquear_boletas.Designer.cs">
+      <DependentUpon>Frm_desbloquear_boletas.cs</DependentUpon>
+    </Compile>
     <Compile Include="_usuarios\Frm_boletas_usuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -651,6 +663,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="_modulo_reportes\_rdls\RptMostrarComisionesVendedores2.resx">
       <DependentUpon>RptMostrarComisionesVendedores2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_modulo_reportes\_rdls\Rpt_reporte_boletas_entre_fechas.resx">
+      <DependentUpon>Rpt_reporte_boletas_entre_fechas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="_modulo_reportes\_rdls\RptMostrarReporteCajaDiario.resx">
       <DependentUpon>RptMostrarReporteCajaDiario.cs</DependentUpon>
@@ -746,6 +761,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="_rifas_boletas\_boletas\Frm_cambiar_forma_pago_boleta.resx">
       <DependentUpon>Frm_cambiar_forma_pago_boleta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_rifas_boletas\_boletas\Frm_desbloquear_boletas.resx">
+      <DependentUpon>Frm_desbloquear_boletas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="_usuarios\Frm_boletas_usuarios.resx">
       <DependentUpon>Frm_boletas_usuarios.cs</DependentUpon>

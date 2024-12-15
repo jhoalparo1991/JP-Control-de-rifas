@@ -41,6 +41,7 @@ namespace Entities
         public bool AsignarBoletasVendedores { get; set; }
         public bool VerLog { get; set; }
         public bool VerBoleta { get; set; }
+        public bool DesbloquearBoleta { get; set; }
     }
 
     public class InicioSesion

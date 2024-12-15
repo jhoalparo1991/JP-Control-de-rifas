@@ -59,6 +59,7 @@ namespace CapaPresentacion._usuarios
             Chk_asignar_boletas_vendedores.Checked = estado;
             Chk_ver_log.Checked = estado;
             Chk_ver_boleta.Checked = estado;
+            ChkBloquearBoleta.Checked = estado;
         }
         private void guardar()
         {
@@ -133,6 +134,7 @@ namespace CapaPresentacion._usuarios
                     AsignarBoletasVendedores = Convert.ToBoolean(Chk_asignar_boletas_vendedores.CheckState),
                     VerBoleta = Convert.ToBoolean(Chk_ver_boleta.CheckState),
                     VerLog = Convert.ToBoolean(Chk_ver_log.CheckState),
+                    DesbloquearBoleta = Convert.ToBoolean(ChkBloquearBoleta.CheckState),
                 };
 
                 if (N_Usuarios.registrarVendedor(obj, obj2))

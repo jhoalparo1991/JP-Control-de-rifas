@@ -560,5 +560,30 @@ namespace CapaPresentacion
                 _helpers.Mensajes.mensajeAdvertencia(ex.Message);
             }
         }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                _helpers.Sesion.guardarDatosLog("REPORTES - reporte_boletas_entre_fechas");
+                DateTime fecha1 = Convert.ToDateTime(dateTimePicker7.Value);
+                DateTime fecha2 = Convert.ToDateTime(dateTimePicker8.Value);
+               
+                DataTable dt = N_Reports.reporte_boletas_entre_fechas(fecha1, fecha2);
+
+                Rpt_reporte_boletas_entre_fechas rpt = new Rpt_reporte_boletas_entre_fechas();
+
+                rpt.table1.DataSource = dt;
+                rpt.txtFechaIni.Value = fecha1.ToString();
+                rpt.txtFechaFin.Value = fecha2.ToString();
+                reportViewer14.Report = rpt;
+                reportViewer14.RefreshReport();
+
+            }
+            catch (Exception ex)
+            {
+                _helpers.Mensajes.mensajeAdvertencia(ex.Message);
+            }
+        }
     }
 }

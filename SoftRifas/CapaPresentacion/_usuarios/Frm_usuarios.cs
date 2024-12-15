@@ -96,6 +96,7 @@ namespace CapaPresentacion._usuarios
                 frm.Chk_asignar_boletas_vendedores.Checked = permisos.AsignarBoletasVendedores;
                 frm.Chk_ver_log.Checked = permisos.VerLog;
                 frm.Chk_ver_boleta.Checked = permisos.VerBoleta;
+                frm.ChkBloquearBoleta.Checked = permisos.DesbloquearBoleta;
             }
 
             if (edit == true)
@@ -138,6 +139,7 @@ namespace CapaPresentacion._usuarios
                 frm.Chk_asignar_boletas_vendedores.Enabled = true;
                 frm.Chk_ver_log.Enabled = true;
                 frm.Chk_ver_boleta.Enabled = true;
+                frm.ChkBloquearBoleta.Enabled = true;
             }
             else
             {
@@ -177,6 +179,7 @@ namespace CapaPresentacion._usuarios
                 frm.Chk_asignar_boletas_vendedores.Enabled = false;
                 frm.Chk_ver_log.Enabled = false;
                 frm.Chk_ver_boleta.Enabled = false;
+                frm.ChkBloquearBoleta.Enabled = false;
             }
             frm.ShowDialog();
         }

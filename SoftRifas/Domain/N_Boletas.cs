@@ -72,6 +72,9 @@ namespace Domain
             return D_Boletas.mostrarAbonosBoletaPorVendedor(vendedorId, fechaIni, fechaFin);
         }
 
-
+        public static bool sp_bloquear_desbloquear_boleta(int boletaId, string nroBoleta)
+        {
+            return D_Boletas.sp_bloquear_desbloquear_boleta(boletaId, nroBoleta);
+        }
     }
 }

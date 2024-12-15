@@ -451,5 +451,28 @@ namespace DataAccess
             return dt;
         }
 
+           public static DataTable reporte_boletas_entre_fechas(DateTime fechaIni, DateTime fechaFin)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                con.Open();
+                SqlDataAdapter command = new SqlDataAdapter("reporte_boletas_entre_fechas", con);
+                command.SelectCommand.CommandType = CommandType.StoredProcedure;
+                command.SelectCommand.Parameters.AddWithValue("fecha_inicio", fechaIni);
+                command.SelectCommand.Parameters.AddWithValue("fecha_fin", fechaFin);
+                command.Fill(dt);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+            return dt;
+        }
+
     }
 }

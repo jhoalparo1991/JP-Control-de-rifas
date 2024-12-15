@@ -109,6 +109,7 @@ namespace DataAccess
                         AsignarBoletasVendedores = Convert.ToBoolean(reader["asignar_boletas_vendedores"]),
                         VerLog = Convert.ToBoolean(reader["ver_log"]),
                         VerBoleta = Convert.ToBoolean(reader["ver_boleta"]),
+                        DesbloquearBoleta = Convert.ToBoolean(reader["desbloquear_boleta"]),
                     };
                 }
             }
@@ -231,6 +232,7 @@ namespace DataAccess
                 command.Parameters.AddWithValue("asignar_boletas_vendedores", obj2.AsignarBoletasVendedores);
                 command.Parameters.AddWithValue("ver_log", obj2.VerLog);
                 command.Parameters.AddWithValue("ver_boleta", obj2.VerBoleta);
+                command.Parameters.AddWithValue("bloquear_desbloquear", obj2.DesbloquearBoleta);
 
 
                 result = Convert.ToInt32(command.ExecuteNonQuery()) != 0 ? true : false;

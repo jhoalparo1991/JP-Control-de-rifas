@@ -108,5 +108,10 @@ namespace Domain
             return DA_Reports.mostrarTotalAbonosClientes(vendedorId);
         }
 
+        public static DataTable reporte_boletas_entre_fechas(DateTime fechaIni, DateTime fechaFin)
+        {
+            return DA_Reports.reporte_boletas_entre_fechas(fechaIni,fechaFin);
+        }
+
     }
 }

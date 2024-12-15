@@ -39,6 +39,8 @@ namespace CapaPresentacion
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.reportViewer7 = new Telerik.ReportViewer.WinForms.ReportViewer();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.Cbx_vendedores_3 = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
             this.tabPage9 = new System.Windows.Forms.TabPage();
             this.reportViewer9 = new Telerik.ReportViewer.WinForms.ReportViewer();
@@ -141,8 +143,14 @@ namespace CapaPresentacion
             this.forma_pago = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.abono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label26 = new System.Windows.Forms.Label();
-            this.Cbx_vendedores_3 = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
+            this.tabPage15 = new System.Windows.Forms.TabPage();
+            this.reportViewer14 = new Telerik.ReportViewer.WinForms.ReportViewer();
+            this.panel19 = new System.Windows.Forms.Panel();
+            this.dateTimePicker7 = new System.Windows.Forms.DateTimePicker();
+            this.label11 = new System.Windows.Forms.Label();
+            this.dateTimePicker8 = new System.Windows.Forms.DateTimePicker();
+            this.label23 = new System.Windows.Forms.Label();
+            this.button13 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage8.SuspendLayout();
@@ -178,6 +186,8 @@ namespace CapaPresentacion
             this.panel18.SuspendLayout();
             this.panel16.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.tabPage15.SuspendLayout();
+            this.panel19.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -196,6 +206,7 @@ namespace CapaPresentacion
             this.tabControl1.Controls.Add(this.tabPage12);
             this.tabControl1.Controls.Add(this.tabPage13);
             this.tabControl1.Controls.Add(this.tabPage14);
+            this.tabControl1.Controls.Add(this.tabPage15);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
@@ -304,6 +315,25 @@ namespace CapaPresentacion
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(1053, 46);
             this.panel6.TabIndex = 7;
+            // 
+            // Cbx_vendedores_3
+            // 
+            this.Cbx_vendedores_3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Cbx_vendedores_3.FormattingEnabled = true;
+            this.Cbx_vendedores_3.Location = new System.Drawing.Point(93, 9);
+            this.Cbx_vendedores_3.Name = "Cbx_vendedores_3";
+            this.Cbx_vendedores_3.Size = new System.Drawing.Size(300, 24);
+            this.Cbx_vendedores_3.TabIndex = 5;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(8, 11);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(79, 20);
+            this.label10.TabIndex = 4;
+            this.label10.Text = "Vendedor";
             // 
             // button6
             // 
@@ -1395,24 +1425,87 @@ namespace CapaPresentacion
             this.label26.Text = "Abonos por formas de pago";
             this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Cbx_vendedores_3
+            // tabPage15
             // 
-            this.Cbx_vendedores_3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.Cbx_vendedores_3.FormattingEnabled = true;
-            this.Cbx_vendedores_3.Location = new System.Drawing.Point(93, 9);
-            this.Cbx_vendedores_3.Name = "Cbx_vendedores_3";
-            this.Cbx_vendedores_3.Size = new System.Drawing.Size(300, 24);
-            this.Cbx_vendedores_3.TabIndex = 5;
+            this.tabPage15.Controls.Add(this.reportViewer14);
+            this.tabPage15.Controls.Add(this.panel19);
+            this.tabPage15.Location = new System.Drawing.Point(4, 25);
+            this.tabPage15.Name = "tabPage15";
+            this.tabPage15.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage15.Size = new System.Drawing.Size(1059, 525);
+            this.tabPage15.TabIndex = 15;
+            this.tabPage15.Text = "Reporte boletas entre fechas";
+            this.tabPage15.UseVisualStyleBackColor = true;
             // 
-            // label10
+            // reportViewer14
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(8, 11);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(79, 20);
-            this.label10.TabIndex = 4;
-            this.label10.Text = "Vendedor";
+            this.reportViewer14.AccessibilityKeyMap = null;
+            this.reportViewer14.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.reportViewer14.Location = new System.Drawing.Point(3, 49);
+            this.reportViewer14.Margin = new System.Windows.Forms.Padding(9, 7, 9, 7);
+            this.reportViewer14.Name = "reportViewer14";
+            this.reportViewer14.Size = new System.Drawing.Size(1053, 473);
+            this.reportViewer14.TabIndex = 8;
+            this.reportViewer14.ViewMode = Telerik.ReportViewer.WinForms.ViewMode.PrintPreview;
+            // 
+            // panel19
+            // 
+            this.panel19.Controls.Add(this.dateTimePicker7);
+            this.panel19.Controls.Add(this.label11);
+            this.panel19.Controls.Add(this.dateTimePicker8);
+            this.panel19.Controls.Add(this.label23);
+            this.panel19.Controls.Add(this.button13);
+            this.panel19.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel19.Location = new System.Drawing.Point(3, 3);
+            this.panel19.Name = "panel19";
+            this.panel19.Size = new System.Drawing.Size(1053, 46);
+            this.panel19.TabIndex = 7;
+            // 
+            // dateTimePicker7
+            // 
+            this.dateTimePicker7.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker7.Location = new System.Drawing.Point(88, 10);
+            this.dateTimePicker7.Name = "dateTimePicker7";
+            this.dateTimePicker7.Size = new System.Drawing.Size(120, 23);
+            this.dateTimePicker7.TabIndex = 8;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(214, 13);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(19, 17);
+            this.label11.TabIndex = 6;
+            this.label11.Text = "al";
+            // 
+            // dateTimePicker8
+            // 
+            this.dateTimePicker8.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker8.Location = new System.Drawing.Point(239, 10);
+            this.dateTimePicker8.Name = "dateTimePicker8";
+            this.dateTimePicker8.Size = new System.Drawing.Size(120, 23);
+            this.dateTimePicker8.TabIndex = 9;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(12, 13);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(70, 17);
+            this.label23.TabIndex = 7;
+            this.label23.Text = "Fecha del";
+            // 
+            // button13
+            // 
+            this.button13.AutoSize = true;
+            this.button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button13.Location = new System.Drawing.Point(365, 6);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(182, 30);
+            this.button13.TabIndex = 2;
+            this.button13.Text = "Generar Reporte";
+            this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
             // Frm_reports_menu
             // 
@@ -1472,6 +1565,9 @@ namespace CapaPresentacion
             this.panel18.ResumeLayout(false);
             this.panel16.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.tabPage15.ResumeLayout(false);
+            this.panel19.ResumeLayout(false);
+            this.panel19.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1592,6 +1688,14 @@ namespace CapaPresentacion
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.ComboBox Cbx_vendedores_3;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TabPage tabPage15;
+        private Telerik.ReportViewer.WinForms.ReportViewer reportViewer14;
+        private System.Windows.Forms.Panel panel19;
+        private System.Windows.Forms.DateTimePicker dateTimePicker7;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.DateTimePicker dateTimePicker8;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Button button13;
     }
 }
 
