@@ -42,6 +42,22 @@ namespace Entities
         public bool VerLog { get; set; }
         public bool VerBoleta { get; set; }
         public bool DesbloquearBoleta { get; set; }
+        //Nuevos permisos
+        public bool ver_estado_boletas { get; set; }
+        public bool ver_caja { get; set; }
+        public bool ver_acumulado { get; set; }
+        public bool ver_todos_los_abonos { get; set; }
+        public bool ver_abonos_totales_por_clientes { get; set; }
+        public bool ver_comisiones_vendedores_pagada { get; set; }
+        public bool ver_abonos_por_vendedores { get; set; }
+        public bool ver_abonos_por_boletas { get; set; }
+        public bool ver_boletas_vendidas { get; set; }
+        public bool ver_formas_pago { get; set; }
+        public bool ver_filtrar_abonos_fecha_valor { get; set; }
+        public bool ver_comisiones_pagadas { get; set; }
+        public bool ver_gastos { get; set; }
+        public bool ver_reporte_abono_formas_pago { get; set; }
+        public bool ver_reporte_boletas_entre_fechas { get; set; }
     }
 
     public class InicioSesion

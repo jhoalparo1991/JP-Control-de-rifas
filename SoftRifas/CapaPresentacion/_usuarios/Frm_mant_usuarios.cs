@@ -60,6 +60,23 @@ namespace CapaPresentacion._usuarios
             Chk_ver_log.Checked = estado;
             Chk_ver_boleta.Checked = estado;
             ChkBloquearBoleta.Checked = estado;
+            chk_ver_estado_boletas.Checked = estado;
+            chk_ver_caja.Checked = estado;
+            chk_ver_acumulado.Checked = estado;
+            chk_ver_todos_los_abonos.Checked = estado;
+            chk_ver_abonos_totales_por_clientes.Checked = estado;
+            chk_ver_comisiones_vendedores_pagada.Checked = estado;
+            chk_ver_abonos_por_vendedores.Checked = estado;
+            chk_ver_abonos_por_boletas.Checked = estado;
+            chk_ver_boletas_vendidas.Checked = estado;
+            chk_ver_formas_pago.Checked = estado;
+            chk_ver_filtrar_abonos_fecha_valor.Checked = estado;
+            chk_ver_comisiones_pagadas.Checked = estado;
+            chk_ver_gastos.Checked = estado;
+            chk_ver_reporte_abono_formas_pago.Checked = estado;
+            chk_ver_reporte_boletas_entre_fechas.Checked = estado;
+
+
         }
         private void guardar()
         {
@@ -135,6 +152,21 @@ namespace CapaPresentacion._usuarios
                     VerBoleta = Convert.ToBoolean(Chk_ver_boleta.CheckState),
                     VerLog = Convert.ToBoolean(Chk_ver_log.CheckState),
                     DesbloquearBoleta = Convert.ToBoolean(ChkBloquearBoleta.CheckState),
+                    ver_estado_boletas = Convert.ToBoolean(chk_ver_estado_boletas.CheckState),
+                    ver_caja = Convert.ToBoolean(chk_ver_caja.CheckState),
+                    ver_acumulado = Convert.ToBoolean(chk_ver_acumulado.CheckState),
+                    ver_todos_los_abonos = Convert.ToBoolean(chk_ver_todos_los_abonos.CheckState),
+                    ver_abonos_totales_por_clientes = Convert.ToBoolean(chk_ver_abonos_totales_por_clientes.CheckState),
+                    ver_comisiones_vendedores_pagada = Convert.ToBoolean(chk_ver_comisiones_vendedores_pagada.CheckState),
+                    ver_abonos_por_vendedores = Convert.ToBoolean(chk_ver_abonos_por_vendedores.CheckState),
+                    ver_abonos_por_boletas = Convert.ToBoolean(chk_ver_abonos_por_boletas.CheckState),
+                    ver_boletas_vendidas = Convert.ToBoolean(chk_ver_boletas_vendidas.CheckState),
+                    ver_formas_pago = Convert.ToBoolean(chk_ver_formas_pago.CheckState),
+                    ver_filtrar_abonos_fecha_valor = Convert.ToBoolean(chk_ver_filtrar_abonos_fecha_valor.CheckState),
+                    ver_comisiones_pagadas = Convert.ToBoolean(chk_ver_comisiones_pagadas.CheckState),
+                    ver_gastos = Convert.ToBoolean(chk_ver_gastos.CheckState),
+                    ver_reporte_abono_formas_pago = Convert.ToBoolean(chk_ver_reporte_abono_formas_pago.CheckState),
+                    ver_reporte_boletas_entre_fechas = Convert.ToBoolean(chk_ver_reporte_boletas_entre_fechas.CheckState)
                 };
 
                 if (N_Usuarios.registrarVendedor(obj, obj2))

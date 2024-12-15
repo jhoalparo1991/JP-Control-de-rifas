@@ -11,9 +11,25 @@ namespace CapaPresentacion
 {
     public partial class Frm_reports_menu : Form
     {
+        private bool ver_estado_boletas;
+        private bool ver_caja;
+        private bool ver_acumulado;
+        private bool ver_todos_los_abonos;
+        private bool ver_abonos_totales_por_clientes;
+        private bool ver_comisiones_vendedores_pagada;
+        private bool ver_abonos_por_vendedores;
+        private bool ver_abonos_por_boletas;
+        private bool ver_boletas_vendidas;
+        private bool ver_formas_pago;
+        private bool ver_filtrar_abonos_fecha_valor;
+        private bool ver_comisiones_pagadas;
+        private bool ver_gastos;
+        private bool ver_reporte_abono_formas_pago;
+        private bool ver_reporte_boletas_entre_fechas;
         public Frm_reports_menu()
         {
             InitializeComponent();
+            cargarPermisos();
             cargarEstadosBoletas();
             mostrarRifas();
             mostrarVendedores(cbx_vendedor);
@@ -21,6 +37,45 @@ namespace CapaPresentacion
             mostrarVendedores(Cbx_vendedores_3);
             mostrarReporteTotalCaja();
             _helpers.Sesion.guardarDatosLog("REPORTES - formualrio de reportes");
+        }
+
+        public void cargarPermisos()
+        {
+            try
+            {
+                InicioSesion sesion = N_Usuarios.mostrarUsuarioSesion();
+                if (sesion != null)
+                {
+                    UsuariosPermisos permiso = _helpers.Sesion.permisosUsuarios(sesion.UsuarioId);
+
+                    if (permiso != null)
+                    {
+                        ver_estado_boletas = permiso.ver_estado_boletas;
+                        ver_caja = permiso.ver_caja;
+                        ver_acumulado = permiso.ver_acumulado;
+                        ver_todos_los_abonos = permiso.ver_todos_los_abonos;
+                        ver_abonos_totales_por_clientes = permiso.ver_abonos_totales_por_clientes;
+                        ver_comisiones_vendedores_pagada = permiso.ver_comisiones_vendedores_pagada;
+                        ver_abonos_por_vendedores = permiso.ver_abonos_por_vendedores;
+                        ver_abonos_por_boletas = permiso.ver_abonos_por_boletas;
+                        ver_boletas_vendidas = permiso.ver_boletas_vendidas;
+                        ver_formas_pago = permiso.ver_formas_pago;
+                        ver_filtrar_abonos_fecha_valor = permiso.ver_filtrar_abonos_fecha_valor;
+                        ver_comisiones_pagadas = permiso.ver_comisiones_pagadas;
+                        ver_gastos = permiso.ver_gastos;
+                        ver_reporte_abono_formas_pago = permiso.ver_reporte_abono_formas_pago;
+                        ver_reporte_boletas_entre_fechas = permiso.ver_reporte_boletas_entre_fechas;
+                    }
+                    else
+                    {
+                        _helpers.Sesion.guardarDatosLog("Error con los permisos");
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                _helpers.Mensajes.mensajeError(e.Message);
+            }
         }
         private void mostrarVendedores(ComboBox cbx)
         {
@@ -58,6 +113,8 @@ namespace CapaPresentacion
         {
             try
             {
+                if (!ver_estado_boletas) return;
+
                 _helpers.Sesion.guardarDatosLog("REPORTES - cargar estados boletas");
                 DataTable dt = N_Reports.ObtenerEstadosBoletas();
                 RptEstadosBoletas rpt = new RptEstadosBoletas();
@@ -107,6 +164,8 @@ namespace CapaPresentacion
 
         private void button1_Click(object sender, EventArgs e)
         {
+
+            if (!ver_abonos_por_boletas) return;
             if (string.IsNullOrEmpty(Txt_nro_boleta.Text.Trim()))
             {
                 _helpers.Mensajes.mensajeAdvertencia("Debes ingresar el número de la boleta");
@@ -120,6 +179,7 @@ namespace CapaPresentacion
         {
             try
             {
+                if (!ver_boletas_vendidas) return;
                 _helpers.Sesion.guardarDatosLog("REPORTES - Boletas vendidas");
                 DataTable dt = N_Reports.mostrarboletasVendidasPorVendedores();
                 RptVendidasPorVendedores rpt = new RptVendidasPorVendedores();
@@ -147,6 +207,7 @@ namespace CapaPresentacion
         {
             try
             {
+                if (!ver_formas_pago) return;
                 _helpers.Sesion.guardarDatosLog("REPORTES - Formas de pago");
                 DataTable dt = N_Reports.mostrarReporteFormasPago(dateTimePicker1.Value, dateTimePicker2.Value,
                     Convert.ToInt32(cbx_rifa.SelectedValue));
@@ -175,6 +236,7 @@ namespace CapaPresentacion
         {
             try
             {
+                if (!ver_filtrar_abonos_fecha_valor) return;
                 _helpers.Sesion.guardarDatosLog("REPORTES - Filtrar abonos fecha valor");
                 DataTable dt = N_Reports.mostrarAbonosFechaValor(dateTimePicker3.Value, dateTimePicker4.Value,
                     Convert.ToDecimal(textBox1.Text.Trim()));
@@ -201,6 +263,7 @@ namespace CapaPresentacion
         {
             try
             {
+                if (!ver_comisiones_pagadas) return;
                 _helpers.Sesion.guardarDatosLog("REPORTES - Comisiones pagadas");
                 DataTable dt = N_Reports.mostrarListadoComisionesPagadas(dateTimePicker5.Value, dateTimePicker6.Value);
                 RptPagosRealizados rpt = new RptPagosRealizados();
@@ -226,7 +289,7 @@ namespace CapaPresentacion
         {
             try
             {
-
+                if (!ver_todos_los_abonos) return;
                 DataTable dt = N_Reports.mostrarAbonos();
                 RptMostrarTodosAbonos rpt = new RptMostrarTodosAbonos();
                 _helpers.Sesion.guardarDatosLog("REPORTES - Mostrar todos los abonos");
@@ -254,7 +317,7 @@ namespace CapaPresentacion
         {
             try
             {
-
+                if (!ver_comisiones_vendedores_pagada) return;
                 DataTable dt = N_Reports.mostrarPagoComisionesPorVendedores(Convert.ToInt32(cbx_vendedor.SelectedValue));
                 RptMostrarComisionesVendedores rpt = new RptMostrarComisionesVendedores();
                 _helpers.Sesion.guardarDatosLog("REPORTES - Mostrar comisiones pagadas por vendedores");
@@ -274,6 +337,7 @@ namespace CapaPresentacion
         {
             try
             {
+                if (!ver_abonos_por_vendedores) return;
                 _helpers.Sesion.guardarDatosLog("REPORTES - mostrar abonos por vendedores");
                 DataTable dt = N_Reports.mostrarAbonosComisionesPorVendedores(dateTimePicker9.Value, dateTimePicker10.Value,
                     Convert.ToInt32(Cbx_vendedor_01.SelectedValue));
@@ -310,6 +374,7 @@ namespace CapaPresentacion
         {
             try
             {
+                if (!ver_gastos) return;
                 _helpers.Sesion.guardarDatosLog("REPORTES - gastos");
                 DateTime fechaIni = Convert.ToDateTime(dateTimePicker11.Text);
                 DateTime fechaFin = Convert.ToDateTime(dateTimePicker12.Text);
@@ -345,6 +410,7 @@ namespace CapaPresentacion
         {
             try
             {
+                if (!ver_caja) return;
                 _helpers.Sesion.guardarDatosLog("REPORTES - Caja");
                 string fecha1 = dateTimePicker13.Text;
                 string fecha2 = dateTimePicker14.Text;
@@ -396,6 +462,7 @@ namespace CapaPresentacion
         {
             try
             {
+                if (!ver_reporte_abono_formas_pago) return;
                 _helpers.Sesion.guardarDatosLog("REPORTES - reporte abonos por formas de pago");
                 DateTime fecha1 = Convert.ToDateTime(dtFecha15.Text);
                 DateTime fecha2 = Convert.ToDateTime(dtFecha16.Text);
@@ -437,6 +504,7 @@ namespace CapaPresentacion
         private void cargaInicial()
         {
             _helpers.Sesion.guardarDatosLog("REPORTES - Acumulados");
+            if (!ver_acumulado) return;
             cargarTotalcomisionesPagada();
             cargarTotalGastos();
             cargarTotalAbonos();
@@ -527,6 +595,7 @@ namespace CapaPresentacion
         {
             try
             {
+                if (!ver_caja) return;
                 DataTable dt = N_Reports.mostrarReporteTotalCaja();
                 if (dt.Rows.Count > 0)
                 {
@@ -545,7 +614,7 @@ namespace CapaPresentacion
         {
             try
             {
-
+                if (!ver_abonos_totales_por_clientes) return;
                 DataTable dt = N_Reports.mostrarTotalAbonosClientes(Convert.ToInt32(Cbx_vendedores_3.SelectedValue));
                 RptMostrarTodosAbonosClientes rpt = new RptMostrarTodosAbonosClientes();
                 _helpers.Sesion.guardarDatosLog("REPORTES - Mostrar todos los abonos por clientes");
@@ -565,6 +634,7 @@ namespace CapaPresentacion
         {
             try
             {
+                if (!ver_reporte_boletas_entre_fechas) return;
                 _helpers.Sesion.guardarDatosLog("REPORTES - reporte_boletas_entre_fechas");
                 DateTime fecha1 = Convert.ToDateTime(dateTimePicker7.Value);
                 DateTime fecha2 = Convert.ToDateTime(dateTimePicker8.Value);

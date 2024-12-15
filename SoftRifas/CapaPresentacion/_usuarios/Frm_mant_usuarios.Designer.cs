@@ -31,7 +31,7 @@ namespace CapaPresentacion._usuarios
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_mant_usuarios));
             this.Pn_mant = new System.Windows.Forms.Panel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.ChkBloquearBoleta = new System.Windows.Forms.CheckBox();
             this.Chk_cambiar_cliente_abono = new System.Windows.Forms.CheckBox();
             this.Chk_ver_boleta = new System.Windows.Forms.CheckBox();
             this.Chk_ver_log = new System.Windows.Forms.CheckBox();
@@ -74,15 +74,34 @@ namespace CapaPresentacion._usuarios
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.ChkBloquearBoleta = new System.Windows.Forms.CheckBox();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.chk_ver_estado_boletas = new System.Windows.Forms.CheckBox();
+            this.chk_ver_caja = new System.Windows.Forms.CheckBox();
+            this.chk_ver_acumulado = new System.Windows.Forms.CheckBox();
+            this.chk_ver_todos_los_abonos = new System.Windows.Forms.CheckBox();
+            this.chk_ver_abonos_totales_por_clientes = new System.Windows.Forms.CheckBox();
+            this.chk_ver_comisiones_vendedores_pagada = new System.Windows.Forms.CheckBox();
+            this.chk_ver_abonos_por_vendedores = new System.Windows.Forms.CheckBox();
+            this.chk_ver_abonos_por_boletas = new System.Windows.Forms.CheckBox();
+            this.chk_ver_boletas_vendidas = new System.Windows.Forms.CheckBox();
+            this.chk_ver_formas_pago = new System.Windows.Forms.CheckBox();
+            this.chk_ver_filtrar_abonos_fecha_valor = new System.Windows.Forms.CheckBox();
+            this.chk_ver_comisiones_pagadas = new System.Windows.Forms.CheckBox();
+            this.chk_ver_gastos = new System.Windows.Forms.CheckBox();
+            this.chk_ver_reporte_abono_formas_pago = new System.Windows.Forms.CheckBox();
+            this.chk_ver_reporte_boletas_entre_fechas = new System.Windows.Forms.CheckBox();
             this.Pn_mant.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // Pn_mant
             // 
             this.Pn_mant.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.Pn_mant.Controls.Add(this.groupBox1);
+            this.Pn_mant.Controls.Add(this.tabControl1);
             this.Pn_mant.Controls.Add(this.Btn_registrar);
             this.Pn_mant.Controls.Add(this.Btn_cancelar);
             this.Pn_mant.Controls.Add(this.Txt_dir);
@@ -105,46 +124,23 @@ namespace CapaPresentacion._usuarios
             this.Pn_mant.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Pn_mant.Location = new System.Drawing.Point(0, 0);
             this.Pn_mant.Name = "Pn_mant";
-            this.Pn_mant.Size = new System.Drawing.Size(953, 407);
+            this.Pn_mant.Size = new System.Drawing.Size(973, 429);
             this.Pn_mant.TabIndex = 3;
             // 
-            // groupBox1
+            // ChkBloquearBoleta
             // 
-            this.groupBox1.Controls.Add(this.ChkBloquearBoleta);
-            this.groupBox1.Controls.Add(this.Chk_cambiar_cliente_abono);
-            this.groupBox1.Controls.Add(this.Chk_ver_boleta);
-            this.groupBox1.Controls.Add(this.Chk_ver_log);
-            this.groupBox1.Controls.Add(this.Chk_cambiar_fp_abono);
-            this.groupBox1.Controls.Add(this.Chk_borrar_abonos);
-            this.groupBox1.Controls.Add(this.Chk_registrar_abonos);
-            this.groupBox1.Controls.Add(this.Chk_backup);
-            this.groupBox1.Controls.Add(this.Chk_imprimir_egreso);
-            this.groupBox1.Controls.Add(this.Chk_crear_egreso);
-            this.groupBox1.Controls.Add(this.Chk_editar_egreso);
-            this.groupBox1.Controls.Add(this.Chk_borrar_egreso);
-            this.groupBox1.Controls.Add(this.Chk_crear_tipo_egreso);
-            this.groupBox1.Controls.Add(this.Chk_egresos);
-            this.groupBox1.Controls.Add(this.Chk_reportes);
-            this.groupBox1.Controls.Add(this.Chk_pago_comisiones);
-            this.groupBox1.Controls.Add(this.Chk_boletas);
-            this.groupBox1.Controls.Add(this.Chk_rifas);
-            this.groupBox1.Controls.Add(this.Chk_clientes);
-            this.groupBox1.Controls.Add(this.Chk_asignar_boletas_vendedores);
-            this.groupBox1.Controls.Add(this.Chk_borrar_vendedores);
-            this.groupBox1.Controls.Add(this.Chk_editar_vendedores);
-            this.groupBox1.Controls.Add(this.Chk_crear_vendedores);
-            this.groupBox1.Controls.Add(this.Chk_vendedor);
-            this.groupBox1.Location = new System.Drawing.Point(423, 29);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(518, 366);
-            this.groupBox1.TabIndex = 31;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Permisos";
+            this.ChkBloquearBoleta.AutoSize = true;
+            this.ChkBloquearBoleta.Location = new System.Drawing.Point(276, 294);
+            this.ChkBloquearBoleta.Name = "ChkBloquearBoleta";
+            this.ChkBloquearBoleta.Size = new System.Drawing.Size(228, 21);
+            this.ChkBloquearBoleta.TabIndex = 22;
+            this.ChkBloquearBoleta.Text = "Bloquear y desbloquear boletas";
+            this.ChkBloquearBoleta.UseVisualStyleBackColor = true;
             // 
             // Chk_cambiar_cliente_abono
             // 
             this.Chk_cambiar_cliente_abono.AutoSize = true;
-            this.Chk_cambiar_cliente_abono.Location = new System.Drawing.Point(16, 327);
+            this.Chk_cambiar_cliente_abono.Location = new System.Drawing.Point(23, 323);
             this.Chk_cambiar_cliente_abono.Name = "Chk_cambiar_cliente_abono";
             this.Chk_cambiar_cliente_abono.Size = new System.Drawing.Size(188, 21);
             this.Chk_cambiar_cliente_abono.TabIndex = 12;
@@ -154,7 +150,7 @@ namespace CapaPresentacion._usuarios
             // Chk_ver_boleta
             // 
             this.Chk_ver_boleta.AutoSize = true;
-            this.Chk_ver_boleta.Location = new System.Drawing.Point(269, 271);
+            this.Chk_ver_boleta.Location = new System.Drawing.Point(276, 267);
             this.Chk_ver_boleta.Name = "Chk_ver_boleta";
             this.Chk_ver_boleta.Size = new System.Drawing.Size(207, 21);
             this.Chk_ver_boleta.TabIndex = 21;
@@ -164,7 +160,7 @@ namespace CapaPresentacion._usuarios
             // Chk_ver_log
             // 
             this.Chk_ver_log.AutoSize = true;
-            this.Chk_ver_log.Location = new System.Drawing.Point(269, 244);
+            this.Chk_ver_log.Location = new System.Drawing.Point(276, 240);
             this.Chk_ver_log.Name = "Chk_ver_log";
             this.Chk_ver_log.Size = new System.Drawing.Size(72, 21);
             this.Chk_ver_log.TabIndex = 21;
@@ -174,7 +170,7 @@ namespace CapaPresentacion._usuarios
             // Chk_cambiar_fp_abono
             // 
             this.Chk_cambiar_fp_abono.AutoSize = true;
-            this.Chk_cambiar_fp_abono.Location = new System.Drawing.Point(269, 217);
+            this.Chk_cambiar_fp_abono.Location = new System.Drawing.Point(276, 213);
             this.Chk_cambiar_fp_abono.Name = "Chk_cambiar_fp_abono";
             this.Chk_cambiar_fp_abono.Size = new System.Drawing.Size(239, 21);
             this.Chk_cambiar_fp_abono.TabIndex = 20;
@@ -184,7 +180,7 @@ namespace CapaPresentacion._usuarios
             // Chk_borrar_abonos
             // 
             this.Chk_borrar_abonos.AutoSize = true;
-            this.Chk_borrar_abonos.Location = new System.Drawing.Point(15, 302);
+            this.Chk_borrar_abonos.Location = new System.Drawing.Point(22, 298);
             this.Chk_borrar_abonos.Name = "Chk_borrar_abonos";
             this.Chk_borrar_abonos.Size = new System.Drawing.Size(119, 21);
             this.Chk_borrar_abonos.TabIndex = 11;
@@ -194,7 +190,7 @@ namespace CapaPresentacion._usuarios
             // Chk_registrar_abonos
             // 
             this.Chk_registrar_abonos.AutoSize = true;
-            this.Chk_registrar_abonos.Location = new System.Drawing.Point(269, 190);
+            this.Chk_registrar_abonos.Location = new System.Drawing.Point(276, 186);
             this.Chk_registrar_abonos.Name = "Chk_registrar_abonos";
             this.Chk_registrar_abonos.Size = new System.Drawing.Size(136, 21);
             this.Chk_registrar_abonos.TabIndex = 19;
@@ -204,7 +200,7 @@ namespace CapaPresentacion._usuarios
             // Chk_backup
             // 
             this.Chk_backup.AutoSize = true;
-            this.Chk_backup.Location = new System.Drawing.Point(15, 277);
+            this.Chk_backup.Location = new System.Drawing.Point(22, 273);
             this.Chk_backup.Name = "Chk_backup";
             this.Chk_backup.Size = new System.Drawing.Size(194, 21);
             this.Chk_backup.TabIndex = 10;
@@ -214,7 +210,7 @@ namespace CapaPresentacion._usuarios
             // Chk_imprimir_egreso
             // 
             this.Chk_imprimir_egreso.AutoSize = true;
-            this.Chk_imprimir_egreso.Location = new System.Drawing.Point(269, 163);
+            this.Chk_imprimir_egreso.Location = new System.Drawing.Point(276, 159);
             this.Chk_imprimir_egreso.Name = "Chk_imprimir_egreso";
             this.Chk_imprimir_egreso.Size = new System.Drawing.Size(131, 21);
             this.Chk_imprimir_egreso.TabIndex = 18;
@@ -224,7 +220,7 @@ namespace CapaPresentacion._usuarios
             // Chk_crear_egreso
             // 
             this.Chk_crear_egreso.AutoSize = true;
-            this.Chk_crear_egreso.Location = new System.Drawing.Point(16, 252);
+            this.Chk_crear_egreso.Location = new System.Drawing.Point(23, 248);
             this.Chk_crear_egreso.Name = "Chk_crear_egreso";
             this.Chk_crear_egreso.Size = new System.Drawing.Size(117, 21);
             this.Chk_crear_egreso.TabIndex = 9;
@@ -234,7 +230,7 @@ namespace CapaPresentacion._usuarios
             // Chk_editar_egreso
             // 
             this.Chk_editar_egreso.AutoSize = true;
-            this.Chk_editar_egreso.Location = new System.Drawing.Point(269, 136);
+            this.Chk_editar_egreso.Location = new System.Drawing.Point(276, 132);
             this.Chk_editar_egreso.Name = "Chk_editar_egreso";
             this.Chk_editar_egreso.Size = new System.Drawing.Size(119, 21);
             this.Chk_editar_egreso.TabIndex = 17;
@@ -244,7 +240,7 @@ namespace CapaPresentacion._usuarios
             // Chk_borrar_egreso
             // 
             this.Chk_borrar_egreso.AutoSize = true;
-            this.Chk_borrar_egreso.Location = new System.Drawing.Point(15, 227);
+            this.Chk_borrar_egreso.Location = new System.Drawing.Point(22, 223);
             this.Chk_borrar_egreso.Name = "Chk_borrar_egreso";
             this.Chk_borrar_egreso.Size = new System.Drawing.Size(116, 21);
             this.Chk_borrar_egreso.TabIndex = 8;
@@ -254,7 +250,7 @@ namespace CapaPresentacion._usuarios
             // Chk_crear_tipo_egreso
             // 
             this.Chk_crear_tipo_egreso.AutoSize = true;
-            this.Chk_crear_tipo_egreso.Location = new System.Drawing.Point(269, 109);
+            this.Chk_crear_tipo_egreso.Location = new System.Drawing.Point(276, 105);
             this.Chk_crear_tipo_egreso.Name = "Chk_crear_tipo_egreso";
             this.Chk_crear_tipo_egreso.Size = new System.Drawing.Size(143, 21);
             this.Chk_crear_tipo_egreso.TabIndex = 16;
@@ -264,7 +260,7 @@ namespace CapaPresentacion._usuarios
             // Chk_egresos
             // 
             this.Chk_egresos.AutoSize = true;
-            this.Chk_egresos.Location = new System.Drawing.Point(15, 202);
+            this.Chk_egresos.Location = new System.Drawing.Point(22, 198);
             this.Chk_egresos.Name = "Chk_egresos";
             this.Chk_egresos.Size = new System.Drawing.Size(104, 21);
             this.Chk_egresos.TabIndex = 7;
@@ -274,7 +270,7 @@ namespace CapaPresentacion._usuarios
             // Chk_reportes
             // 
             this.Chk_reportes.AutoSize = true;
-            this.Chk_reportes.Location = new System.Drawing.Point(269, 82);
+            this.Chk_reportes.Location = new System.Drawing.Point(276, 78);
             this.Chk_reportes.Name = "Chk_reportes";
             this.Chk_reportes.Size = new System.Drawing.Size(106, 21);
             this.Chk_reportes.TabIndex = 15;
@@ -284,7 +280,7 @@ namespace CapaPresentacion._usuarios
             // Chk_pago_comisiones
             // 
             this.Chk_pago_comisiones.AutoSize = true;
-            this.Chk_pago_comisiones.Location = new System.Drawing.Point(15, 177);
+            this.Chk_pago_comisiones.Location = new System.Drawing.Point(22, 173);
             this.Chk_pago_comisiones.Name = "Chk_pago_comisiones";
             this.Chk_pago_comisiones.Size = new System.Drawing.Size(141, 21);
             this.Chk_pago_comisiones.TabIndex = 6;
@@ -294,7 +290,7 @@ namespace CapaPresentacion._usuarios
             // Chk_boletas
             // 
             this.Chk_boletas.AutoSize = true;
-            this.Chk_boletas.Location = new System.Drawing.Point(269, 55);
+            this.Chk_boletas.Location = new System.Drawing.Point(276, 51);
             this.Chk_boletas.Name = "Chk_boletas";
             this.Chk_boletas.Size = new System.Drawing.Size(164, 21);
             this.Chk_boletas.TabIndex = 14;
@@ -304,7 +300,7 @@ namespace CapaPresentacion._usuarios
             // Chk_rifas
             // 
             this.Chk_rifas.AutoSize = true;
-            this.Chk_rifas.Location = new System.Drawing.Point(15, 152);
+            this.Chk_rifas.Location = new System.Drawing.Point(22, 148);
             this.Chk_rifas.Name = "Chk_rifas";
             this.Chk_rifas.Size = new System.Drawing.Size(120, 21);
             this.Chk_rifas.TabIndex = 5;
@@ -314,7 +310,7 @@ namespace CapaPresentacion._usuarios
             // Chk_clientes
             // 
             this.Chk_clientes.AutoSize = true;
-            this.Chk_clientes.Location = new System.Drawing.Point(269, 27);
+            this.Chk_clientes.Location = new System.Drawing.Point(276, 23);
             this.Chk_clientes.Name = "Chk_clientes";
             this.Chk_clientes.Size = new System.Drawing.Size(141, 21);
             this.Chk_clientes.TabIndex = 13;
@@ -324,7 +320,7 @@ namespace CapaPresentacion._usuarios
             // Chk_asignar_boletas_vendedores
             // 
             this.Chk_asignar_boletas_vendedores.AutoSize = true;
-            this.Chk_asignar_boletas_vendedores.Location = new System.Drawing.Point(16, 127);
+            this.Chk_asignar_boletas_vendedores.Location = new System.Drawing.Point(23, 123);
             this.Chk_asignar_boletas_vendedores.Name = "Chk_asignar_boletas_vendedores";
             this.Chk_asignar_boletas_vendedores.Size = new System.Drawing.Size(217, 21);
             this.Chk_asignar_boletas_vendedores.TabIndex = 4;
@@ -334,7 +330,7 @@ namespace CapaPresentacion._usuarios
             // Chk_borrar_vendedores
             // 
             this.Chk_borrar_vendedores.AutoSize = true;
-            this.Chk_borrar_vendedores.Location = new System.Drawing.Point(15, 102);
+            this.Chk_borrar_vendedores.Location = new System.Drawing.Point(22, 98);
             this.Chk_borrar_vendedores.Name = "Chk_borrar_vendedores";
             this.Chk_borrar_vendedores.Size = new System.Drawing.Size(148, 21);
             this.Chk_borrar_vendedores.TabIndex = 3;
@@ -344,7 +340,7 @@ namespace CapaPresentacion._usuarios
             // Chk_editar_vendedores
             // 
             this.Chk_editar_vendedores.AutoSize = true;
-            this.Chk_editar_vendedores.Location = new System.Drawing.Point(15, 77);
+            this.Chk_editar_vendedores.Location = new System.Drawing.Point(22, 73);
             this.Chk_editar_vendedores.Name = "Chk_editar_vendedores";
             this.Chk_editar_vendedores.Size = new System.Drawing.Size(145, 21);
             this.Chk_editar_vendedores.TabIndex = 2;
@@ -354,7 +350,7 @@ namespace CapaPresentacion._usuarios
             // Chk_crear_vendedores
             // 
             this.Chk_crear_vendedores.AutoSize = true;
-            this.Chk_crear_vendedores.Location = new System.Drawing.Point(15, 52);
+            this.Chk_crear_vendedores.Location = new System.Drawing.Point(22, 48);
             this.Chk_crear_vendedores.Name = "Chk_crear_vendedores";
             this.Chk_crear_vendedores.Size = new System.Drawing.Size(141, 21);
             this.Chk_crear_vendedores.TabIndex = 1;
@@ -364,7 +360,7 @@ namespace CapaPresentacion._usuarios
             // Chk_vendedor
             // 
             this.Chk_vendedor.AutoSize = true;
-            this.Chk_vendedor.Location = new System.Drawing.Point(15, 27);
+            this.Chk_vendedor.Location = new System.Drawing.Point(22, 23);
             this.Chk_vendedor.Name = "Chk_vendedor";
             this.Chk_vendedor.Size = new System.Drawing.Size(128, 21);
             this.Chk_vendedor.TabIndex = 0;
@@ -579,22 +575,231 @@ namespace CapaPresentacion._usuarios
             this.label2.Text = "Codigo";
             this.label2.Visible = false;
             // 
-            // ChkBloquearBoleta
+            // tabControl1
             // 
-            this.ChkBloquearBoleta.AutoSize = true;
-            this.ChkBloquearBoleta.Location = new System.Drawing.Point(269, 298);
-            this.ChkBloquearBoleta.Name = "ChkBloquearBoleta";
-            this.ChkBloquearBoleta.Size = new System.Drawing.Size(228, 21);
-            this.ChkBloquearBoleta.TabIndex = 22;
-            this.ChkBloquearBoleta.Text = "Bloquear y desbloquear boletas";
-            this.ChkBloquearBoleta.UseVisualStyleBackColor = true;
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Location = new System.Drawing.Point(414, 6);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(551, 414);
+            this.tabControl1.TabIndex = 32;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.ChkBloquearBoleta);
+            this.tabPage1.Controls.Add(this.Chk_vendedor);
+            this.tabPage1.Controls.Add(this.Chk_cambiar_cliente_abono);
+            this.tabPage1.Controls.Add(this.Chk_crear_vendedores);
+            this.tabPage1.Controls.Add(this.Chk_ver_boleta);
+            this.tabPage1.Controls.Add(this.Chk_editar_vendedores);
+            this.tabPage1.Controls.Add(this.Chk_ver_log);
+            this.tabPage1.Controls.Add(this.Chk_borrar_vendedores);
+            this.tabPage1.Controls.Add(this.Chk_cambiar_fp_abono);
+            this.tabPage1.Controls.Add(this.Chk_asignar_boletas_vendedores);
+            this.tabPage1.Controls.Add(this.Chk_borrar_abonos);
+            this.tabPage1.Controls.Add(this.Chk_clientes);
+            this.tabPage1.Controls.Add(this.Chk_registrar_abonos);
+            this.tabPage1.Controls.Add(this.Chk_rifas);
+            this.tabPage1.Controls.Add(this.Chk_backup);
+            this.tabPage1.Controls.Add(this.Chk_boletas);
+            this.tabPage1.Controls.Add(this.Chk_imprimir_egreso);
+            this.tabPage1.Controls.Add(this.Chk_pago_comisiones);
+            this.tabPage1.Controls.Add(this.Chk_crear_egreso);
+            this.tabPage1.Controls.Add(this.Chk_reportes);
+            this.tabPage1.Controls.Add(this.Chk_editar_egreso);
+            this.tabPage1.Controls.Add(this.Chk_egresos);
+            this.tabPage1.Controls.Add(this.Chk_borrar_egreso);
+            this.tabPage1.Controls.Add(this.Chk_crear_tipo_egreso);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(543, 385);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Permisos base";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.chk_ver_reporte_boletas_entre_fechas);
+            this.tabPage2.Controls.Add(this.chk_ver_reporte_abono_formas_pago);
+            this.tabPage2.Controls.Add(this.chk_ver_gastos);
+            this.tabPage2.Controls.Add(this.chk_ver_comisiones_pagadas);
+            this.tabPage2.Controls.Add(this.chk_ver_filtrar_abonos_fecha_valor);
+            this.tabPage2.Controls.Add(this.chk_ver_formas_pago);
+            this.tabPage2.Controls.Add(this.chk_ver_boletas_vendidas);
+            this.tabPage2.Controls.Add(this.chk_ver_abonos_por_boletas);
+            this.tabPage2.Controls.Add(this.chk_ver_abonos_por_vendedores);
+            this.tabPage2.Controls.Add(this.chk_ver_comisiones_vendedores_pagada);
+            this.tabPage2.Controls.Add(this.chk_ver_abonos_totales_por_clientes);
+            this.tabPage2.Controls.Add(this.chk_ver_todos_los_abonos);
+            this.tabPage2.Controls.Add(this.chk_ver_acumulado);
+            this.tabPage2.Controls.Add(this.chk_ver_caja);
+            this.tabPage2.Controls.Add(this.chk_ver_estado_boletas);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(543, 385);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Permisos en reportes";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // chk_ver_estado_boletas
+            // 
+            this.chk_ver_estado_boletas.AutoSize = true;
+            this.chk_ver_estado_boletas.Location = new System.Drawing.Point(6, 6);
+            this.chk_ver_estado_boletas.Name = "chk_ver_estado_boletas";
+            this.chk_ver_estado_boletas.Size = new System.Drawing.Size(166, 21);
+            this.chk_ver_estado_boletas.TabIndex = 1;
+            this.chk_ver_estado_boletas.Text = "Ver estado de boletas";
+            this.chk_ver_estado_boletas.UseVisualStyleBackColor = true;
+            // 
+            // chk_ver_caja
+            // 
+            this.chk_ver_caja.AutoSize = true;
+            this.chk_ver_caja.Location = new System.Drawing.Point(6, 33);
+            this.chk_ver_caja.Name = "chk_ver_caja";
+            this.chk_ver_caja.Size = new System.Drawing.Size(79, 21);
+            this.chk_ver_caja.TabIndex = 2;
+            this.chk_ver_caja.Text = "Ver caja";
+            this.chk_ver_caja.UseVisualStyleBackColor = true;
+            // 
+            // chk_ver_acumulado
+            // 
+            this.chk_ver_acumulado.AutoSize = true;
+            this.chk_ver_acumulado.Location = new System.Drawing.Point(6, 60);
+            this.chk_ver_acumulado.Name = "chk_ver_acumulado";
+            this.chk_ver_acumulado.Size = new System.Drawing.Size(122, 21);
+            this.chk_ver_acumulado.TabIndex = 3;
+            this.chk_ver_acumulado.Text = "Ver acumulado";
+            this.chk_ver_acumulado.UseVisualStyleBackColor = true;
+            // 
+            // chk_ver_todos_los_abonos
+            // 
+            this.chk_ver_todos_los_abonos.AutoSize = true;
+            this.chk_ver_todos_los_abonos.Location = new System.Drawing.Point(6, 87);
+            this.chk_ver_todos_los_abonos.Name = "chk_ver_todos_los_abonos";
+            this.chk_ver_todos_los_abonos.Size = new System.Drawing.Size(161, 21);
+            this.chk_ver_todos_los_abonos.TabIndex = 4;
+            this.chk_ver_todos_los_abonos.Text = "Ver todos los abonos";
+            this.chk_ver_todos_los_abonos.UseVisualStyleBackColor = true;
+            // 
+            // chk_ver_abonos_totales_por_clientes
+            // 
+            this.chk_ver_abonos_totales_por_clientes.AutoSize = true;
+            this.chk_ver_abonos_totales_por_clientes.Location = new System.Drawing.Point(6, 114);
+            this.chk_ver_abonos_totales_por_clientes.Name = "chk_ver_abonos_totales_por_clientes";
+            this.chk_ver_abonos_totales_por_clientes.Size = new System.Drawing.Size(223, 21);
+            this.chk_ver_abonos_totales_por_clientes.TabIndex = 5;
+            this.chk_ver_abonos_totales_por_clientes.Text = "Ver abonos totales por clientes";
+            this.chk_ver_abonos_totales_por_clientes.UseVisualStyleBackColor = true;
+            // 
+            // chk_ver_comisiones_vendedores_pagada
+            // 
+            this.chk_ver_comisiones_vendedores_pagada.AutoSize = true;
+            this.chk_ver_comisiones_vendedores_pagada.Location = new System.Drawing.Point(6, 141);
+            this.chk_ver_comisiones_vendedores_pagada.Name = "chk_ver_comisiones_vendedores_pagada";
+            this.chk_ver_comisiones_vendedores_pagada.Size = new System.Drawing.Size(273, 21);
+            this.chk_ver_comisiones_vendedores_pagada.TabIndex = 6;
+            this.chk_ver_comisiones_vendedores_pagada.Text = "Ver comisiones pagadas a vendedores";
+            this.chk_ver_comisiones_vendedores_pagada.UseVisualStyleBackColor = true;
+            // 
+            // chk_ver_abonos_por_vendedores
+            // 
+            this.chk_ver_abonos_por_vendedores.AutoSize = true;
+            this.chk_ver_abonos_por_vendedores.Location = new System.Drawing.Point(6, 168);
+            this.chk_ver_abonos_por_vendedores.Name = "chk_ver_abonos_por_vendedores";
+            this.chk_ver_abonos_por_vendedores.Size = new System.Drawing.Size(204, 21);
+            this.chk_ver_abonos_por_vendedores.TabIndex = 7;
+            this.chk_ver_abonos_por_vendedores.Text = "Ver abonos por vendedores";
+            this.chk_ver_abonos_por_vendedores.UseVisualStyleBackColor = true;
+            // 
+            // chk_ver_abonos_por_boletas
+            // 
+            this.chk_ver_abonos_por_boletas.AutoSize = true;
+            this.chk_ver_abonos_por_boletas.Location = new System.Drawing.Point(6, 195);
+            this.chk_ver_abonos_por_boletas.Name = "chk_ver_abonos_por_boletas";
+            this.chk_ver_abonos_por_boletas.Size = new System.Drawing.Size(175, 21);
+            this.chk_ver_abonos_por_boletas.TabIndex = 8;
+            this.chk_ver_abonos_por_boletas.Text = "Ver abonos por boletas";
+            this.chk_ver_abonos_por_boletas.UseVisualStyleBackColor = true;
+            // 
+            // chk_ver_boletas_vendidas
+            // 
+            this.chk_ver_boletas_vendidas.AutoSize = true;
+            this.chk_ver_boletas_vendidas.Location = new System.Drawing.Point(6, 222);
+            this.chk_ver_boletas_vendidas.Name = "chk_ver_boletas_vendidas";
+            this.chk_ver_boletas_vendidas.Size = new System.Drawing.Size(160, 21);
+            this.chk_ver_boletas_vendidas.TabIndex = 9;
+            this.chk_ver_boletas_vendidas.Text = "Ver boletas vendidas";
+            this.chk_ver_boletas_vendidas.UseVisualStyleBackColor = true;
+            // 
+            // chk_ver_formas_pago
+            // 
+            this.chk_ver_formas_pago.AutoSize = true;
+            this.chk_ver_formas_pago.Location = new System.Drawing.Point(7, 249);
+            this.chk_ver_formas_pago.Name = "chk_ver_formas_pago";
+            this.chk_ver_formas_pago.Size = new System.Drawing.Size(211, 21);
+            this.chk_ver_formas_pago.TabIndex = 10;
+            this.chk_ver_formas_pago.Text = "Ver resumen formas de pago";
+            this.chk_ver_formas_pago.UseVisualStyleBackColor = true;
+            // 
+            // chk_ver_filtrar_abonos_fecha_valor
+            // 
+            this.chk_ver_filtrar_abonos_fecha_valor.AutoSize = true;
+            this.chk_ver_filtrar_abonos_fecha_valor.Location = new System.Drawing.Point(7, 276);
+            this.chk_ver_filtrar_abonos_fecha_valor.Name = "chk_ver_filtrar_abonos_fecha_valor";
+            this.chk_ver_filtrar_abonos_fecha_valor.Size = new System.Drawing.Size(210, 21);
+            this.chk_ver_filtrar_abonos_fecha_valor.TabIndex = 11;
+            this.chk_ver_filtrar_abonos_fecha_valor.Text = "Ver abonos por fecha y valor";
+            this.chk_ver_filtrar_abonos_fecha_valor.UseVisualStyleBackColor = true;
+            // 
+            // chk_ver_comisiones_pagadas
+            // 
+            this.chk_ver_comisiones_pagadas.AutoSize = true;
+            this.chk_ver_comisiones_pagadas.Location = new System.Drawing.Point(8, 303);
+            this.chk_ver_comisiones_pagadas.Name = "chk_ver_comisiones_pagadas";
+            this.chk_ver_comisiones_pagadas.Size = new System.Drawing.Size(182, 21);
+            this.chk_ver_comisiones_pagadas.TabIndex = 12;
+            this.chk_ver_comisiones_pagadas.Text = "Ver comisiones pagadas";
+            this.chk_ver_comisiones_pagadas.UseVisualStyleBackColor = true;
+            // 
+            // chk_ver_gastos
+            // 
+            this.chk_ver_gastos.AutoSize = true;
+            this.chk_ver_gastos.Location = new System.Drawing.Point(8, 330);
+            this.chk_ver_gastos.Name = "chk_ver_gastos";
+            this.chk_ver_gastos.Size = new System.Drawing.Size(95, 21);
+            this.chk_ver_gastos.TabIndex = 13;
+            this.chk_ver_gastos.Text = "Ver gastos";
+            this.chk_ver_gastos.UseVisualStyleBackColor = true;
+            // 
+            // chk_ver_reporte_abono_formas_pago
+            // 
+            this.chk_ver_reporte_abono_formas_pago.AutoSize = true;
+            this.chk_ver_reporte_abono_formas_pago.Location = new System.Drawing.Point(244, 6);
+            this.chk_ver_reporte_abono_formas_pago.Name = "chk_ver_reporte_abono_formas_pago";
+            this.chk_ver_reporte_abono_formas_pago.Size = new System.Drawing.Size(298, 21);
+            this.chk_ver_reporte_abono_formas_pago.TabIndex = 14;
+            this.chk_ver_reporte_abono_formas_pago.Text = "Ver reporte de abonos por formas de pago";
+            this.chk_ver_reporte_abono_formas_pago.UseVisualStyleBackColor = true;
+            // 
+            // chk_ver_reporte_boletas_entre_fechas
+            // 
+            this.chk_ver_reporte_boletas_entre_fechas.AutoSize = true;
+            this.chk_ver_reporte_boletas_entre_fechas.Location = new System.Drawing.Point(244, 33);
+            this.chk_ver_reporte_boletas_entre_fechas.Name = "chk_ver_reporte_boletas_entre_fechas";
+            this.chk_ver_reporte_boletas_entre_fechas.Size = new System.Drawing.Size(245, 21);
+            this.chk_ver_reporte_boletas_entre_fechas.TabIndex = 15;
+            this.chk_ver_reporte_boletas_entre_fechas.Text = "Ver reporte de boletas entre fecha";
+            this.chk_ver_reporte_boletas_entre_fechas.UseVisualStyleBackColor = true;
             // 
             // Frm_mant_usuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(953, 407);
+            this.ClientSize = new System.Drawing.Size(973, 429);
             this.Controls.Add(this.Pn_mant);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -606,8 +811,11 @@ namespace CapaPresentacion._usuarios
             this.Text = "Gestionar usuarios vendedores";
             this.Pn_mant.ResumeLayout(false);
             this.Pn_mant.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -626,7 +834,6 @@ namespace CapaPresentacion._usuarios
         internal System.Windows.Forms.TextBox Txt_id;
         internal System.Windows.Forms.CheckBox Chk_activo;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.GroupBox groupBox1;
         internal System.Windows.Forms.Button Btn_registrar;
         internal System.Windows.Forms.Label label9;
         internal System.Windows.Forms.Label label8;
@@ -659,5 +866,23 @@ namespace CapaPresentacion._usuarios
         internal System.Windows.Forms.CheckBox Chk_crear_vendedores;
         internal System.Windows.Forms.CheckBox Chk_ver_boleta;
         internal System.Windows.Forms.CheckBox ChkBloquearBoleta;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        internal System.Windows.Forms.CheckBox chk_ver_reporte_boletas_entre_fechas;
+        internal System.Windows.Forms.CheckBox chk_ver_reporte_abono_formas_pago;
+        internal System.Windows.Forms.CheckBox chk_ver_gastos;
+        internal System.Windows.Forms.CheckBox chk_ver_comisiones_pagadas;
+        internal System.Windows.Forms.CheckBox chk_ver_filtrar_abonos_fecha_valor;
+        internal System.Windows.Forms.CheckBox chk_ver_formas_pago;
+        internal System.Windows.Forms.CheckBox chk_ver_boletas_vendidas;
+        internal System.Windows.Forms.CheckBox chk_ver_abonos_por_boletas;
+        internal System.Windows.Forms.CheckBox chk_ver_abonos_por_vendedores;
+        internal System.Windows.Forms.CheckBox chk_ver_comisiones_vendedores_pagada;
+        internal System.Windows.Forms.CheckBox chk_ver_abonos_totales_por_clientes;
+        internal System.Windows.Forms.CheckBox chk_ver_todos_los_abonos;
+        internal System.Windows.Forms.CheckBox chk_ver_acumulado;
+        internal System.Windows.Forms.CheckBox chk_ver_caja;
+        internal System.Windows.Forms.CheckBox chk_ver_estado_boletas;
     }
 }

@@ -110,6 +110,21 @@ namespace DataAccess
                         VerLog = Convert.ToBoolean(reader["ver_log"]),
                         VerBoleta = Convert.ToBoolean(reader["ver_boleta"]),
                         DesbloquearBoleta = Convert.ToBoolean(reader["desbloquear_boleta"]),
+                        ver_estado_boletas = Convert.ToBoolean(reader["ver_estado_boletas"]),
+                        ver_caja = Convert.ToBoolean(reader["ver_caja"]),
+                        ver_acumulado = Convert.ToBoolean(reader["ver_acumulado"]),
+                        ver_todos_los_abonos = Convert.ToBoolean(reader["ver_todos_los_abonos"]),
+                        ver_abonos_totales_por_clientes = Convert.ToBoolean(reader["ver_abonos_totales_por_clientes"]),
+                        ver_comisiones_vendedores_pagada = Convert.ToBoolean(reader["ver_comisiones_vendedores_pagada"]),
+                        ver_abonos_por_vendedores = Convert.ToBoolean(reader["ver_abonos_por_vendedores"]),
+                        ver_abonos_por_boletas = Convert.ToBoolean(reader["ver_abonos_por_boletas"]),
+                        ver_boletas_vendidas = Convert.ToBoolean(reader["ver_boletas_vendidas"]),
+                        ver_formas_pago = Convert.ToBoolean(reader["ver_formas_pago"]),
+                        ver_filtrar_abonos_fecha_valor = Convert.ToBoolean(reader["ver_filtrar_abonos_fecha_valor"]),
+                        ver_comisiones_pagadas = Convert.ToBoolean(reader["ver_comisiones_pagadas"]),
+                        ver_gastos = Convert.ToBoolean(reader["ver_gastos"]),
+                        ver_reporte_abono_formas_pago = Convert.ToBoolean(reader["ver_reporte_abono_formas_pago"]),
+                        ver_reporte_boletas_entre_fechas = Convert.ToBoolean(reader["ver_reporte_boletas_entre_fechas"]),
                     };
                 }
             }
@@ -233,6 +248,21 @@ namespace DataAccess
                 command.Parameters.AddWithValue("ver_log", obj2.VerLog);
                 command.Parameters.AddWithValue("ver_boleta", obj2.VerBoleta);
                 command.Parameters.AddWithValue("bloquear_desbloquear", obj2.DesbloquearBoleta);
+                command.Parameters.AddWithValue("ver_estado_boletas", obj2.ver_estado_boletas);
+                command.Parameters.AddWithValue("ver_caja", obj2.ver_caja);
+                command.Parameters.AddWithValue("ver_acumulado", obj2.ver_acumulado);
+                command.Parameters.AddWithValue("ver_todos_los_abonos", obj2.ver_todos_los_abonos);
+                command.Parameters.AddWithValue("ver_abonos_totales_por_clientes", obj2.ver_abonos_totales_por_clientes);
+                command.Parameters.AddWithValue("ver_comisiones_vendedores_pagada", obj2.ver_comisiones_vendedores_pagada);
+                command.Parameters.AddWithValue("ver_abonos_por_vendedores", obj2.ver_abonos_por_vendedores);
+                command.Parameters.AddWithValue("ver_abonos_por_boletas", obj2.ver_abonos_por_boletas);
+                command.Parameters.AddWithValue("ver_boletas_vendidas", obj2.ver_boletas_vendidas);
+                command.Parameters.AddWithValue("ver_formas_pago", obj2.ver_formas_pago);
+                command.Parameters.AddWithValue("ver_filtrar_abonos_fecha_valor", obj2.ver_filtrar_abonos_fecha_valor);
+                command.Parameters.AddWithValue("ver_comisiones_pagadas", obj2.ver_comisiones_pagadas);
+                command.Parameters.AddWithValue("ver_gastos", obj2.ver_gastos);
+                command.Parameters.AddWithValue("ver_reporte_abono_formas_pago", obj2.ver_reporte_abono_formas_pago);
+                command.Parameters.AddWithValue("ver_reporte_boletas_entre_fechas", obj2.ver_reporte_boletas_entre_fechas);
 
 
                 result = Convert.ToInt32(command.ExecuteNonQuery()) != 0 ? true : false;

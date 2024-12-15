@@ -97,6 +97,21 @@ namespace CapaPresentacion._usuarios
                 frm.Chk_ver_log.Checked = permisos.VerLog;
                 frm.Chk_ver_boleta.Checked = permisos.VerBoleta;
                 frm.ChkBloquearBoleta.Checked = permisos.DesbloquearBoleta;
+                frm.chk_ver_estado_boletas.Checked = permisos.ver_estado_boletas;
+                frm.chk_ver_caja.Checked = permisos.ver_caja;
+                frm.chk_ver_acumulado.Checked = permisos.ver_acumulado;
+                frm.chk_ver_todos_los_abonos.Checked = permisos.ver_todos_los_abonos;
+                frm.chk_ver_abonos_totales_por_clientes.Checked = permisos.ver_abonos_totales_por_clientes;
+                frm.chk_ver_comisiones_vendedores_pagada.Checked = permisos.ver_comisiones_vendedores_pagada;
+                frm.chk_ver_abonos_por_vendedores.Checked = permisos.ver_abonos_por_vendedores;
+                frm.chk_ver_abonos_por_boletas.Checked = permisos.ver_abonos_por_boletas;
+                frm.chk_ver_boletas_vendidas.Checked = permisos.ver_boletas_vendidas;
+                frm.chk_ver_formas_pago.Checked = permisos.ver_formas_pago;
+                frm.chk_ver_filtrar_abonos_fecha_valor.Checked = permisos.ver_filtrar_abonos_fecha_valor;
+                frm.chk_ver_comisiones_pagadas.Checked = permisos.ver_comisiones_pagadas;
+                frm.chk_ver_gastos.Checked = permisos.ver_gastos;
+                frm.chk_ver_reporte_abono_formas_pago.Checked = permisos.ver_reporte_abono_formas_pago;
+                frm.chk_ver_reporte_boletas_entre_fechas.Checked = permisos.ver_reporte_boletas_entre_fechas;
             }
 
             if (edit == true)
@@ -140,6 +155,21 @@ namespace CapaPresentacion._usuarios
                 frm.Chk_ver_log.Enabled = true;
                 frm.Chk_ver_boleta.Enabled = true;
                 frm.ChkBloquearBoleta.Enabled = true;
+                frm.chk_ver_estado_boletas.Enabled = true;
+                frm.chk_ver_caja.Enabled = true;
+                frm.chk_ver_acumulado.Enabled = true;
+                frm.chk_ver_todos_los_abonos.Enabled = true;
+                frm.chk_ver_abonos_totales_por_clientes.Enabled = true;
+                frm.chk_ver_comisiones_vendedores_pagada.Enabled = true;
+                frm.chk_ver_abonos_por_vendedores.Enabled = true;
+                frm.chk_ver_abonos_por_boletas.Enabled = true;
+                frm.chk_ver_boletas_vendidas.Enabled = true;
+                frm.chk_ver_formas_pago.Enabled = true;
+                frm.chk_ver_filtrar_abonos_fecha_valor.Enabled = true;
+                frm.chk_ver_comisiones_pagadas.Enabled = true;
+                frm.chk_ver_gastos.Enabled = true;
+                frm.chk_ver_reporte_abono_formas_pago.Enabled = true;
+                frm.chk_ver_reporte_boletas_entre_fechas.Enabled = true;
             }
             else
             {
@@ -180,6 +210,21 @@ namespace CapaPresentacion._usuarios
                 frm.Chk_ver_log.Enabled = false;
                 frm.Chk_ver_boleta.Enabled = false;
                 frm.ChkBloquearBoleta.Enabled = false;
+                frm.chk_ver_estado_boletas.Enabled = false;
+                frm.chk_ver_caja.Enabled = false;
+                frm.chk_ver_acumulado.Enabled = false;
+                frm.chk_ver_todos_los_abonos.Enabled = false;
+                frm.chk_ver_abonos_totales_por_clientes.Enabled = false;
+                frm.chk_ver_comisiones_vendedores_pagada.Enabled = false;
+                frm.chk_ver_abonos_por_vendedores.Enabled = false;
+                frm.chk_ver_abonos_por_boletas.Enabled = false;
+                frm.chk_ver_boletas_vendidas.Enabled = false;
+                frm.chk_ver_formas_pago.Enabled = false;
+                frm.chk_ver_filtrar_abonos_fecha_valor.Enabled = false;
+                frm.chk_ver_comisiones_pagadas.Enabled = false;
+                frm.chk_ver_gastos.Enabled = false;
+                frm.chk_ver_reporte_abono_formas_pago.Enabled = false;
+                frm.chk_ver_reporte_boletas_entre_fechas.Enabled = false;
             }
             frm.ShowDialog();
         }
